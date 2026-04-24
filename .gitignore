@@ -33,12 +33,11 @@
 # Allow essential assets/code
 !functions/
 !functions/**
-!assets/
 !assets/**
-!css/
-!js/
-!fonts/
-!images/
+!css/**
+!js/**
+!fonts/**
+!images/**
 
 # Allow CI/CD
 !.github/
