@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -750,8 +750,8 @@
       <kbd>⌘K</kbd>
     </div>
     <div class="lang-switch" id="global-lang-switch">
-      <button class="active" onclick="setLanguage('ar')">العربية</button>
-      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('ar')">العربية</button>
+      <button class="active" onclick="setLanguage('en')">EN</button>
       <button onclick="setLanguage('fr')">FR</button>
     </div>
   </header>
@@ -1236,11 +1236,16 @@
   let glossaryData = { terms: [], tracks: {} };
   let terms = [];
   let currentTerm = null;
-  let currentLang = 'ar'; // Global language state
+  const storedLang = localStorage.getItem('mustalih_lang');
+  let currentLang = ['ar', 'en', 'fr'].includes(storedLang) ? storedLang : 'en'; // Global language state
+  let currentStoryTrackId = null;
+  let currentChapterPos = null;
   const NVIDIA_API_KEY = "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";
 
   function setLanguage(lang) {
+    if (!['ar', 'en', 'fr'].includes(lang)) lang = 'en';
     currentLang = lang;
+    localStorage.setItem('mustalih_lang', lang);
     const isAr = lang === 'ar';
     const isFr = lang === 'fr';
 
@@ -1315,6 +1320,8 @@
     });
     
     // Global Direction & Font
+    document.documentElement.lang = lang;
+    document.documentElement.dir = isAr ? 'rtl' : 'ltr';
     document.body.dir = isAr ? 'rtl' : 'ltr';
     document.body.style.fontFamily = isAr ? 'var(--font-ar)' : 'var(--font-main)';
 
@@ -1403,14 +1410,11 @@
     if (currentTerm) renderDetail(currentTerm);
     setupFlashcards();
     renderFeaturedTerms();
+    renderStoryTrackList();
     const activeTab = document.querySelector('.tab.active');
-    if (activeTab && activeTab.dataset.view === 'story') {
-      const activeChip = document.querySelector('#story-track-switcher .chip.active');
-      if (activeChip) {
-        // Find track id from name
-        const trackId = Object.keys(glossaryData.tracks).find(id => glossaryData.tracks[id].name === activeChip.textContent);
-        if (trackId) renderStoryTrack(trackId);
-      }
+    if (activeTab && activeTab.dataset.view === 'story' && currentStoryTrackId) {
+      renderStoryTrack(currentStoryTrackId);
+      if (currentChapterPos !== null) selectChapter(currentChapterPos, currentStoryTrackId);
     }
   }
 
@@ -1503,10 +1507,12 @@
     
     // Pick 12 random terms
     const featured = [...terms].sort(() => 0.5 - Math.random()).slice(0, 12);
+    const isAr = currentLang === 'ar';
+    const isFr = currentLang === 'fr';
     container.innerHTML = featured.map(t => `
       <div class="term-pill" style="padding:12px; border:1px solid var(--border); background:var(--surface); cursor:pointer; text-align:center;" onclick="findAndRender('${t.arabic_term}')">
-        <div style="font-weight:bold; font-size:15px;">${t.arabic_term}</div>
-        <div style="font-size:11px; color:var(--text-tertiary);">${t.english_term || ''}</div>
+        <div style="font-weight:bold; font-size:15px; direction:${isAr ? 'rtl' : 'ltr'};">${isAr ? (t.arabic_term || t.english_term || '') : (isFr ? (t.french_term || t.english_term || t.arabic_term || '') : (t.english_term || t.arabic_term || ''))}</div>
+        <div style="font-size:11px; color:var(--text-tertiary); direction:${isAr ? 'ltr' : 'rtl'};">${isAr ? (t.english_term || '') : (t.arabic_term || '')}</div>
       </div>
     `).join('');
   }
@@ -1519,7 +1525,8 @@
         const q = e.target.value.toLowerCase();
         const match = terms.find(t => 
           (t.arabic_term && t.arabic_term.toLowerCase().includes(q)) || 
-          (t.english_term && t.english_term.toLowerCase().includes(q))
+          (t.english_term && t.english_term.toLowerCase().includes(q)) ||
+          (t.french_term && t.french_term.toLowerCase().includes(q))
         );
         if (match) {
           renderDetail(match);
@@ -1548,6 +1555,17 @@
         explanation: isAr ? term.detailed_explanation_ar : (isEn ? term.detailed_explanation_en : term.detailed_explanation_fr),
         metaphor: isAr ? term.metaphor_ar : (isEn ? term.metaphor_en : term.metaphor_fr)
       };
+      const fallbackExplanation = isAr
+        ? (term.arabic_def || term.detailed_explanation_ar || "")
+        : (isEn ? (term.english_def || term.detailed_explanation_en || "") : (term.french_def || term.detailed_explanation_fr || ""));
+
+      const toTermPills = (items) => {
+        if (!items || !items.length) return `<span class="italic">${isAr ? "لا يوجد" : (isFr ? "Aucun" : "None")}</span>`;
+        return items.map(name => {
+          const encoded = encodeURIComponent(String(name || ""));
+          return `<span class="term-pill" onclick="findAndRender(decodeURIComponent('${encoded}'))">${name}</span>`;
+        }).join('');
+      };
 
       // 1. Update Headings
       const headAr = view.querySelector('.detail-ar');
@@ -1559,6 +1577,21 @@
       
       const headEn = view.querySelector('.detail-en');
       if (headEn) headEn.textContent = `${t.sub} · ${term.category || ""}`;
+      const badgeEls = view.querySelectorAll('.detail-head .badges .badge');
+      if (badgeEls.length >= 4) {
+        const chapter = term.story_assignments_v2 && term.story_assignments_v2.story_assignments && term.story_assignments_v2.story_assignments[0];
+        const chapterText = chapter
+          ? (isAr
+              ? `${chapter.track_name_ar || chapter.track_name || "مسار"} · الفصل ${chapter.position_in_track || "-"}`
+              : (isFr
+                  ? `${chapter.track_name_fr || chapter.track_name || "Parcours"} · Chapitre ${chapter.position_in_track || "-"}`
+                  : `${chapter.track_name_en || chapter.track_name || "Track"} · Chapter ${chapter.position_in_track || "-"}`))
+          : (isAr ? "غير مصنف" : (isFr ? "Non classé" : "Untracked"));
+        badgeEls[0].textContent = chapterText;
+        badgeEls[1].textContent = term.category || (isAr ? "غير مصنف" : (isFr ? "Catégorie inconnue" : "Unknown category"));
+        badgeEls[2].textContent = term.difficulty || (isAr ? "غير محدد" : (isFr ? "Non défini" : "Unspecified"));
+        badgeEls[3].textContent = `PageRank ${typeof term.pagerank === 'number' ? term.pagerank.toFixed(4) : 'N/A'}`;
+      }
 
       // 2. Update Content Rows
       const rows = view.querySelectorAll('.detail-row');
@@ -1579,13 +1612,13 @@
         ["Feel", "Definition", "Prerequisites", "Unlocks", "UML Flow", "Math", "Code"];
 
       setRow(0, labels[0], `<span class="italic">${t.feel || ""}</span>`);
-      setRow(1, labels[1], t.explanation || term.arabic_def || "");
+      setRow(1, labels[1], t.explanation || fallbackExplanation);
       
       const pr = (term.graph_raw && term.graph_raw.prerequisites) || [];
-      setRow(2, labels[2], pr.map(p => `<span class="term-pill" onclick="findAndRender('${p}')">${p}</span>`).join(''));
+      setRow(2, labels[2], toTermPills(pr));
       
       const un = (term.graph_raw && term.graph_raw.unlocks) || [];
-      setRow(3, labels[3], un.map(u => `<span class="term-pill" onclick="findAndRender('${u}')">${u}</span>`).join(''));
+      setRow(3, labels[3], toTermPills(un));
 
       setRow(4, labels[4], term.ai_mermaid ? `<div class="mermaid-block">${term.ai_mermaid}</div>` : "N/A");
       setRow(5, labels[5], `<div class="code-block">${term.math_notation || "N/A"}</div>`);
@@ -1606,6 +1639,7 @@
     const match = terms.find(t => 
       (t.arabic_term && t.arabic_term.toLowerCase() === q) || 
       (t.english_term && t.english_term.toLowerCase() === q) ||
+      (t.french_term && t.french_term.toLowerCase() === q) ||
       (t.arabic_term && t.arabic_term === termName)
     );
     if (match) {
@@ -1649,18 +1683,21 @@
     switcher.innerHTML = trackIds.map((id, i) => {
       const nameObj = localizedTrackNames[id] || { en: id };
       const displayName = currentLang === 'ar' ? (nameObj.ar || nameObj.en) : (currentLang === 'fr' ? (nameObj.fr || nameObj.en) : nameObj.en);
-      return `<button class="chip ${i === 0 ? 'active' : ''}" onclick="switchStoryTrack('${id}', this)">${displayName}</button>`;
+      const isActive = (currentStoryTrackId ? currentStoryTrackId === id : i === 0);
+      return `<button class="chip ${isActive ? 'active' : ''}" data-track-id="${id}" onclick="switchStoryTrack('${id}', this)">${displayName}</button>`;
     }).join('');
-    if (trackIds.length > 0) renderStoryTrack(trackIds[0]);
+    if (trackIds.length > 0) renderStoryTrack(currentStoryTrackId && trackIds.includes(currentStoryTrackId) ? currentStoryTrackId : trackIds[0]);
   }
 
   function switchStoryTrack(trackId, btn) {
+    currentStoryTrackId = trackId;
     document.querySelectorAll('#story-track-switcher .chip').forEach(c => c.classList.remove('active'));
     if(btn) btn.classList.add('active');
     renderStoryTrack(trackId);
   }
 
   function renderStoryTrack(trackId) {
+    currentStoryTrackId = trackId;
     const track = glossaryData.tracks ? glossaryData.tracks[trackId] : null;
     if (!track) return;
     const list = document.getElementById('story-chapter-list');
@@ -1708,6 +1745,7 @@
   }
 
   function selectChapter(pos, trackId) {
+    currentChapterPos = Number(pos);
     const track = glossaryData.tracks[trackId];
     if (!track || !track.chapters[pos]) return;
     const items = track.chapters[pos];
@@ -1800,21 +1838,63 @@
       name: isAr ? term.arabic_term : (isEn ? term.english_term : term.french_term),
       sub: isAr ? term.english_term : term.arabic_term,
       feel: isAr ? term.one_sentence_feel_ar : (isEn ? term.one_sentence_feel_en : term.one_sentence_feel_fr),
-      expl: isAr ? (term.detailed_explanation_ar || term.arabic_def) : (isEn ? (term.detailed_explanation_en || term.english_def) : (term.detailed_explanation_fr || term.french_def))
+      expl: isAr ? (term.detailed_explanation_ar || term.arabic_def) : (isEn ? (term.detailed_explanation_en || term.english_def) : (term.detailed_explanation_fr || term.french_def)),
+      metaphor: isAr ? term.metaphor_ar : (isEn ? term.metaphor_en : term.metaphor_fr)
     };
+    const labels = {
+      ar: { def: "التعريف", feel: "الإحساس", metaphor: "التشبيه", prereq: "المتطلبات", unlocks: "يفتح", uml: "مخطط UML", math: "الرياضيات", py: "بايثون", none: "لا يوجد" },
+      en: { def: "Definition", feel: "Feel", metaphor: "Metaphor", prereq: "Prerequisites", unlocks: "Unlocks", uml: "UML Flow", math: "Math", py: "Python", none: "None" },
+      fr: { def: "Définition", feel: "Intuition", metaphor: "Métaphore", prereq: "Prérequis", unlocks: "Débloque", uml: "Flux UML", math: "Math", py: "Python", none: "Aucun" }
+    };
+    const l = labels[currentLang] || labels.en;
+    const story = term.story_assignments_v2 && term.story_assignments_v2.story_assignments && term.story_assignments_v2.story_assignments[0];
+    const prereqs = (term.graph_raw && term.graph_raw.prerequisites) || [];
+    const unlocks = (term.graph_raw && term.graph_raw.unlocks) || [];
+    const toPills = (items) => items.length
+      ? items.map(name => {
+          const encoded = encodeURIComponent(String(name || ""));
+          return `<span class="term-pill" onclick="findAndRender(decodeURIComponent('${encoded}'))">${name}</span>`;
+        }).join('')
+      : `<span class="italic">${l.none}</span>`;
 
     content.innerHTML = `
-      <h2 style="font-family:var(--font-ar); margin-bottom:5px;">${t.name}</h2>
+      <h2 style="font-family:${isAr ? 'var(--font-ar)' : 'var(--font-main)'}; direction:${isAr ? 'rtl' : 'ltr'}; margin-bottom:5px;">${t.name || "---"}</h2>
       <div style="color:var(--text-secondary); margin-bottom:20px;">${t.sub}</div>
-      <div style="margin-bottom:20px;">${t.feel || ""}</div>
-      <div class="detail-label">Definition</div>
-      <p style="margin-bottom:20px;">${t.expl || ""}</p>
-      <div class="detail-label">Math</div>
+      <div class="badges" style="margin-bottom:16px;">
+        <span class="badge teal">${story ? `${story.track_name_en || story.track_name || "Track"} · ${isAr ? "الفصل" : (isEn ? "Chapter" : "Chapitre")} ${story.position_in_track || "-"}` : (isAr ? "غير مصنف" : (isEn ? "Untracked" : "Non classé"))}</span>
+        <span class="badge purple">${term.category || (isAr ? "غير مصنف" : (isEn ? "Unknown category" : "Catégorie inconnue"))}</span>
+        <span class="badge">${term.difficulty || (isAr ? "غير محدد" : (isEn ? "Unspecified" : "Non défini"))}</span>
+        <span class="badge">PageRank ${typeof term.pagerank === 'number' ? term.pagerank.toFixed(4) : 'N/A'}</span>
+      </div>
+      <div class="detail-label">${l.feel}</div>
+      <p style="margin-bottom:12px; direction:${isAr ? 'rtl' : 'ltr'};"><span class="italic">${t.feel || l.none}</span></p>
+      <div class="detail-label">${l.metaphor}</div>
+      <p style="margin-bottom:16px; direction:${isAr ? 'rtl' : 'ltr'};">${t.metaphor || l.none}</p>
+      <div class="detail-label">${l.def}</div>
+      <p style="margin-bottom:20px; direction:${isAr ? 'rtl' : 'ltr'};">${t.expl || ""}</p>
+      <div class="detail-label">${l.prereq}</div>
+      <p style="margin-bottom:16px;">${toPills(prereqs)}</p>
+      <div class="detail-label">${l.unlocks}</div>
+      <p style="margin-bottom:16px;">${toPills(unlocks)}</p>
+      <div class="detail-label">${l.uml}</div>
+      <div class="mermaid-block" style="margin-bottom:16px;">${term.ai_mermaid || "N/A"}</div>
+      <div class="detail-label">${l.math}</div>
       <div class="code-block" style="margin-bottom:20px;">${term.math_notation || 'N/A'}</div>
-      <div class="detail-label">Python</div>
+      <div class="detail-label">${l.py}</div>
       <div class="code-block">${term.code_example_python || '# No code'}</div>
+      <div style="margin-top:16px;">
+        <button class="btn primary" onclick="renderDetailByName('${encodeURIComponent(term.arabic_term || "")}')">${isAr ? "فتح صفحة التفاصيل الكاملة" : (isEn ? "Open full term detail" : "Ouvrir le détail complet")}</button>
+      </div>
     `;
     drawer.style.right = '0';
+  }
+
+  function renderDetailByName(encodedName) {
+    const name = decodeURIComponent(encodedName || "");
+    if (!name) return;
+    findAndRender(name);
+    goto('detail');
+    closeStoryDrawer();
   }
 
   function closeStoryDrawer() {
@@ -2400,6 +2480,7 @@
     }
   }
 
+  setLanguage(currentLang);
   init();
 </script>
 

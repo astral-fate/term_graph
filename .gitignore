@@ -11,6 +11,8 @@
 !explore.html
 !_redirects
 !package.json
+!README.md
+!DOCKER_CLOUDFLARE_RUNBOOK.md
 !build.js
 !build.ps1
 !wrangler.toml
