@@ -33,9 +33,14 @@
 
       gtag("config", "G-1FYW57GW3G");
     </script>
-  </head>
+  
+    
+
+</head>
 
   <body>
+
+    
     <main>
       <section id="intro">
         <div class="wrapper">
@@ -136,6 +141,30 @@
         <br />
         <br />
         <div class="articles-container">
+          <!-- card -->
+          <div class="article-card">
+            <div
+              class="imgBx"
+              onclick="location.href='./glossary-ar.html';"
+              style="cursor: pointer; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(15,23,42,1), rgba(30,41,59,1)); overflow: hidden;"
+            >
+              <img
+                src="./assets/arabic_ai_glossary_header.png"
+                alt="Arabic AI Glossary"
+                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;"
+              />
+            </div>
+            <div class="content">
+              <h2 class="article-title">قاموس الذكاء الاصطناعي (Arabic AI Glossary)</h2>
+              <p class="article-description">
+                Explore over 1,000 Artificial Intelligence and Machine Learning terms in Arabic, complete with definitions and a beautiful interactive interface.
+              </p>
+              <button class="content-button">
+                <a href="./glossary-ar.html">Explore (تصفح)</a>
+              </button>
+            </div>
+          </div>
+          <!-- card end -->
           <!-- card -->
           <div class="article-card">
             <div
@@ -498,7 +527,9 @@
     <br /><br />
     <br /><br />
 
-    <script src="js/rough-notation.js"></script>
+    <script src="./assets/translations_database.js"></script>
+<script src="js/rough-notation.js"></script>
     <script src="js/index.js"></script>
-  </body>
+  <script src="./assets/local_translator.js"></script>
+</body>
 </html>

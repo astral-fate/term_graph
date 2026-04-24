@@ -1,0 +1,2407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mustalih Living — مُصطلِح الحيّ · MVP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --surface: #FFFFFF;
+    --surface-2: #F4F3EE;
+    --border: #E4E2DB;
+    --border-strong: #CFCCC1;
+    --text: #1A1A19;
+    --text-secondary: #5F5E5A;
+    --text-tertiary: #97958C;
+    --accent: #1A1A19;
+    --accent-ink: #FFFFFF;
+    --purple: #7F77DD;
+    --purple-bg: #EEEDFE;
+    --purple-ink: #3C3489;
+    --teal: #1D9E75;
+    --teal-bg: #E1F5EE;
+    --teal-ink: #0F6E56;
+    --coral: #D85A30;
+    --coral-bg: #FAECE7;
+    --coral-ink: #993C1D;
+    --blue: #378ADD;
+    --blue-bg: #E6F1FB;
+    --blue-ink: #185FA5;
+    --amber: #BA7517;
+    --amber-bg: #FAEEDA;
+    --amber-ink: #854F0B;
+    --success-bg: #EAF3DE;
+    --success-ink: #3B6D11;
+    --warning-bg: #FAEEDA;
+    --warning-ink: #854F0B;
+    --radius: 8px;
+    --radius-lg: 12px;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-ar: 'Noto Naskh Arabic', 'Amiri', serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0F0F0E;
+      --surface: #1A1A18;
+      --surface-2: #252523;
+      --border: #33332F;
+      --border-strong: #4A4A45;
+      --text: #F4F3EE;
+      --text-secondary: #B4B2A9;
+      --text-tertiary: #888780;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  [dir="rtl"], .ar { font-family: var(--font-ar); }
+
+  .app {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  /* ============ TOPBAR ============ */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo {
+    width: 36px; height: 36px;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-ar);
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .brand-text .title { font-size: 16px; font-weight: 600; }
+  .brand-text .subtitle { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+  .search {
+    flex: 1;
+    min-width: 240px;
+    max-width: 420px;
+    height: 40px;
+    padding: 0 14px;
+    background: var(--surface-2);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: text;
+    transition: border-color 0.15s;
+  }
+  .search:hover { border-color: var(--border-strong); }
+  .search svg { width: 16px; height: 16px; opacity: 0.6; flex-shrink: 0; }
+  .search input {
+    flex: 1; border: 0; background: transparent;
+    font: inherit; color: var(--text); outline: none;
+  }
+  .search input::placeholder { color: var(--text-tertiary); }
+  .search kbd {
+    font-size: 11px; padding: 2px 6px;
+    background: var(--surface); border: 0.5px solid var(--border);
+    border-radius: 4px; color: var(--text-tertiary);
+    font-family: var(--font-sans);
+  }
+
+  .lang-switch {
+    display: flex;
+    background: var(--surface-2);
+    border-radius: var(--radius);
+    padding: 3px;
+    font-size: 12px;
+  }
+  .lang-switch button {
+    border: 0; background: transparent;
+    padding: 6px 12px; border-radius: 5px;
+    color: var(--text-secondary);
+    font: inherit; cursor: pointer;
+    font-weight: 500;
+  }
+  .lang-switch button.active {
+    background: var(--surface); color: var(--text);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+
+  /* ============ TABS ============ */
+  .tabs {
+    display: flex; gap: 4px;
+    padding: 6px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin-bottom: 16px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  .tab {
+    padding: 10px 16px;
+    border: 0; background: transparent;
+    font: inherit; cursor: pointer;
+    color: var(--text-secondary);
+    border-radius: var(--radius);
+    white-space: nowrap;
+    font-size: 13px;
+    transition: all 0.15s;
+    font-weight: 500;
+  }
+  .tab:hover { background: var(--surface-2); color: var(--text); }
+  .tab.active { background: var(--text); color: var(--bg); }
+
+  /* ============ VIEWS ============ */
+  .view { display: none; }
+  .view.active { display: block; animation: fadeIn 0.2s ease; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .view-header { margin-bottom: 20px; }
+  .view-header h2 { font-size: 22px; font-weight: 600; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .view-header p { font-size: 14px; color: var(--text-secondary); margin: 0; max-width: 720px; }
+
+  /* ============ STAT CARDS ============ */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+  .stat {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+  }
+  .stat-label { font-size: 12px; color: var(--text-secondary); }
+  .stat-value { font-size: 24px; font-weight: 600; margin-top: 4px; letter-spacing: -0.02em; }
+  .stat-hint { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
+
+  /* ============ FEATURE CARDS (HOME) ============ */
+  .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .feature-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex; flex-direction: column; gap: 8px;
+    min-height: 140px;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+  }
+  .feature-card:hover { border-color: var(--border-strong); transform: translateY(-1px); }
+  .feature-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 4px;
+  }
+  .feature-card h3 { font-size: 14px; font-weight: 600; margin: 0; }
+  .feature-card p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.55; flex: 1; }
+  .feature-footer { font-size: 11px; color: var(--text-tertiary); margin-top: auto; display: flex; align-items: center; gap: 4px; }
+  [dir="ltr"] .feature-footer::after { content: " →"; }
+  [dir="rtl"] .feature-footer::before { content: "← "; }
+  
+  [dir="rtl"] .feature-card { text-align: right; }
+  [dir="ltr"] .feature-card { text-align: left; }
+
+  /* ============ GRAPH VIEW ============ */
+  .graph-panel {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+  }
+  .graph-toolbar {
+    display: flex; gap: 8px;
+    padding: 12px 16px;
+    border-bottom: 0.5px solid var(--border);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .chip {
+    padding: 5px 12px;
+    font: inherit; font-size: 12px;
+    border: 0.5px solid var(--border);
+    background: transparent;
+    border-radius: 14px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.15s;
+  }
+  .chip:hover { border-color: var(--border-strong); color: var(--text); }
+  .chip.active {
+    background: var(--text); color: var(--bg);
+    border-color: var(--text);
+    font-weight: 500;
+  }
+  .graph-legend {
+    position: absolute;
+    top: 76px; right: 16px;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 10px 12px;
+    font-size: 11px;
+    line-height: 1.9;
+    z-index: 5;
+  }
+  .graph-legend .dot {
+    display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+    margin-right: 7px; vertical-align: middle;
+  }
+  .graph-svg {
+    display: block;
+    width: 100%;
+    height: 420px;
+    background: var(--bg);
+  }
+  .node circle { cursor: pointer; transition: r 0.15s; }
+  .node:hover circle { stroke: var(--text); stroke-width: 2; }
+  .node text { font-size: 10px; fill: var(--text-secondary); pointer-events: none; font-family: var(--font-sans); }
+  .edge { stroke: var(--border-strong); stroke-width: 0.6; fill: none; opacity: 0.5; }
+
+  /* ============ STORY VIEW ============ */
+  .story-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr 260px;
+    gap: 14px;
+    min-height: 520px;
+  }
+  @media (max-width: 980px) {
+    .story-grid { grid-template-columns: 1fr; }
+  }
+  .story-pane {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 16px;
+  }
+  .pane-kicker {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .pane-title { font-size: 15px; font-weight: 600; margin: 0 0 14px; }
+  .chapter-list { list-style: none; padding: 0; margin: 0; }
+  .chapter-list li {
+    padding: 8px 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: var(--text-secondary);
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px;
+    margin-bottom: 2px;
+    transition: all 0.15s;
+  }
+  .chapter-list li:hover { background: var(--surface-2); color: var(--text); }
+  .chapter-list li.active {
+    background: var(--text); color: var(--bg); font-weight: 500;
+  }
+  .chapter-list li.done { color: var(--text-tertiary); }
+  .num-circle {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: var(--surface-2);
+    font-size: 11px; font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--text-secondary);
+  }
+  .chapter-list li.active .num-circle { background: var(--bg); color: var(--text); }
+  .chapter-list li.done .num-circle { background: transparent; border: 0.5px solid var(--border); }
+  .chapter-list li.done .num-circle::after { content: "✓"; color: var(--teal); font-size: 12px; }
+  .chapter-list li.done .num-circle span { display: none; }
+
+  .story-main { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 780px) {
+    .story-main { grid-template-columns: 1fr; }
+  }
+  .narration {
+    font-family: var(--font-ar);
+    font-size: 15px;
+    line-height: 1.95;
+    direction: rtl;
+  }
+  .narration h3 { font-size: 18px; font-weight: 600; margin: 0 0 12px; }
+  .hook {
+    font-style: italic;
+    color: var(--text-secondary);
+    border-right: 3px solid var(--purple);
+    padding: 8px 14px 8px 0;
+    margin: 14px 0;
+    font-size: 14px;
+    background: var(--purple-bg);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .term-pill {
+    background: var(--purple-bg);
+    color: var(--purple-ink);
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 3px;
+    font-weight: 500;
+    transition: all 0.15s;
+  }
+  .term-pill:hover { background: var(--purple); color: var(--accent-ink); }
+
+  .figure-panel {
+    background: var(--surface-2);
+    border-radius: var(--radius);
+    padding: 14px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .figure-panel h4 { font-size: 13px; font-weight: 600; color: var(--text); margin: 0 0 10px; }
+
+  .term-mini-list { display: flex; flex-direction: column; gap: 6px; font-size: 12px; }
+  .term-mini-list .mini {
+    padding: 8px 10px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .term-mini-list .mini:hover { background: var(--surface-2); }
+  .term-mini-list .mini.active { background: var(--purple-bg); }
+  .term-mini-list .mini-name { font-weight: 500; font-family: var(--font-ar); direction: rtl; font-size: 14px; }
+  .term-mini-list .mini-meta { color: var(--text-secondary); font-size: 11px; margin-top: 2px; }
+
+  /* ============ ANATOMY ============ */
+  .anatomy-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 16px;
+  }
+  @media (max-width: 860px) {
+    .anatomy-grid { grid-template-columns: 1fr; }
+  }
+  .anatomy-figure {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    min-height: 520px;
+  }
+  .anatomy-svg { display: block; width: 100%; height: 480px; }
+  .hot { fill: var(--surface); stroke: var(--purple); stroke-width: 2.5; cursor: pointer; transition: all 0.15s; }
+  .hot:hover { fill: var(--purple-bg); stroke-width: 3; }
+  .hot.active { fill: var(--purple); stroke: var(--purple); }
+  .hot.active + text { fill: var(--surface); font-weight: 600; }
+  .hot-num {
+    font-size: 11px; font-weight: 600;
+    fill: var(--purple);
+    text-anchor: middle;
+    font-family: var(--font-sans);
+    pointer-events: none;
+  }
+  .hot-label {
+    font-size: 11px;
+    fill: var(--text);
+    font-family: var(--font-sans);
+    font-weight: 500;
+  }
+
+  .anatomy-side {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    height: fit-content;
+  }
+  .side-kicker { font-size: 11px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; font-weight: 500; }
+  .side-title-ar { font-size: 22px; font-weight: 700; font-family: var(--font-ar); direction: rtl; margin: 0 0 4px; }
+  .side-title-en { font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; }
+
+  .side-feel {
+    font-family: var(--font-ar);
+    direction: rtl;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    font-style: italic;
+    padding: 10px 12px;
+    background: var(--purple-bg);
+    color: var(--purple-ink);
+    border-radius: var(--radius);
+    margin: 12px 0;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 14px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.15s;
+    text-decoration: none;
+    width: 100%;
+    margin-top: 6px;
+  }
+  .btn:hover { background: var(--surface-2); border-color: var(--border-strong); }
+  .btn.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .btn.primary:hover { opacity: 0.88; }
+  .btn-row { display: flex; gap: 6px; }
+  .btn-row .btn { width: auto; flex: 1; }
+
+  /* ============ DETAIL ============ */
+  .detail-panel {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+  .detail-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding-bottom: 18px;
+    border-bottom: 0.5px solid var(--border);
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+  .detail-ar { font-family: var(--font-ar); font-size: 32px; font-weight: 700; direction: rtl; margin: 0; letter-spacing: -0.01em; }
+  .detail-en { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
+  .badges { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
+  .badge {
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 10px;
+    background: var(--surface-2);
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+  .badge.purple { background: var(--purple-bg); color: var(--purple-ink); }
+  .badge.teal { background: var(--teal-bg); color: var(--teal-ink); }
+  .badge.coral { background: var(--coral-bg); color: var(--coral-ink); }
+
+  .detail-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .detail-content { font-size: 14px; line-height: 1.7; }
+  .detail-content.ar { font-family: var(--font-ar); direction: rtl; font-size: 15px; }
+  .detail-content .italic { font-style: italic; color: var(--text-secondary); }
+  .code-block {
+    background: var(--surface-2);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    font-family: 'SF Mono', Menlo, monospace;
+    font-size: 13px;
+    color: var(--text);
+    border: 0.5px solid var(--border);
+  }
+  .mermaid-block {
+    background: var(--surface-2);
+    border-radius: var(--radius);
+    padding: 16px;
+    font-family: 'SF Mono', Menlo, monospace;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    border: 0.5px solid var(--border);
+  }
+  .mermaid-arrow { color: var(--purple); font-weight: 600; }
+
+  /* ============ REWRITE ============ */
+  .rewrite-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  @media (max-width: 860px) { .rewrite-grid { grid-template-columns: 1fr; } }
+  .rewrite-pane {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    min-height: 280px;
+  }
+  .pane-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .pane-head h4 { font-size: 13px; font-weight: 600; margin: 0; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
+  .pane-body {
+    font-family: var(--font-ar);
+    font-size: 16px;
+    line-height: 2;
+    direction: rtl;
+  }
+  .pane-body p { margin: 0 0 10px; }
+  .flag {
+    background: var(--warning-bg);
+    color: var(--warning-ink);
+    border-radius: 4px;
+    padding: 1px 6px;
+    cursor: help;
+    text-decoration: underline;
+    text-decoration-color: var(--amber);
+    text-decoration-style: wavy;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+  .fix {
+    background: var(--success-bg);
+    color: var(--success-ink);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-weight: 500;
+  }
+  .pane-footer {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 0.5px solid var(--border);
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .dot-indicator {
+    width: 8px; height: 8px; border-radius: 50%;
+  }
+
+  /* ============ FLASHCARDS ============ */
+  .flash-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    gap: 12px;
+  }
+  .nav-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 0.5px solid var(--border);
+    background: var(--surface);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.15s;
+    flex-shrink: 0;
+  }
+  .nav-btn:hover:not(:disabled) {
+    background: var(--surface-2);
+    border-color: var(--border-strong);
+    color: var(--text);
+  }
+  .nav-btn:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+  .flash-wrap {
+    max-width: 480px;
+    margin: 20px auto;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px 28px;
+    text-align: center;
+  }
+  .flash-prompt {
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .flash-term {
+    font-family: var(--font-ar);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    direction: rtl;
+    letter-spacing: -0.01em;
+  }
+  .flash-options { display: grid; gap: 8px; }
+  .flash-option {
+    padding: 12px 16px;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    text-align: right;
+    direction: rtl;
+    font-family: var(--font-ar);
+    font-size: 14px;
+    line-height: 1.7;
+    cursor: pointer;
+    transition: all 0.15s;
+    background: var(--surface);
+    color: var(--text);
+  }
+  .flash-option:hover:not(.correct):not(.wrong) {
+    border-color: var(--border-strong);
+    background: var(--surface-2);
+  }
+  .flash-option.correct {
+    border-color: var(--teal);
+    background: var(--teal-bg);
+    color: var(--teal-ink);
+  }
+  .flash-option.wrong {
+    border-color: var(--coral);
+    background: var(--coral-bg);
+    color: var(--coral-ink);
+  }
+  .flash-progress {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--text-tertiary);
+  }
+  .mode-tabs { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+
+  /* ============ MISC ============ */
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0);
+    white-space: nowrap; border: 0;
+  }
+
+  @media (max-width: 780px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .feature-grid { grid-template-columns: 1fr; }
+  }
+</style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({ startOnLoad: false, theme: 'neutral', securityLevel: 'loose' });</script>
+</head>
+<body>
+
+<h1 class="sr-only">Mustalih Living — Arabic-first AI Glossary MVP</h1>
+
+<div class="app">
+
+  <!-- ============ TOPBAR ============ -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">م</div>
+      <div class="brand-text">
+        <div class="title">Mustalih Living <span style="color: var(--text-secondary); font-weight: 400;">· مُصطلِح الحيّ</span></div>
+        <div class="subtitle">Arabic-first interactive glossary · built on 1,242 ICAIRE terms</div>
+      </div>
+    </div>
+    <div class="search">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg>
+      <input type="text" placeholder="Search 1,242 terms in Arabic, English, or French…" />
+      <kbd>⌘K</kbd>
+    </div>
+    <div class="lang-switch" id="global-lang-switch">
+      <button class="active" onclick="setLanguage('ar')">العربية</button>
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('fr')">FR</button>
+    </div>
+  </header>
+
+  <!-- ============ TABS ============ -->
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-view="home">Home</button>
+    <button class="tab" data-view="graph">Knowledge graph</button>
+    <button class="tab" data-view="story">Story tracks</button>
+    <button class="tab" data-view="anatomy">Transformer anatomy</button>
+    <button class="tab" data-view="detail">Term detail</button>
+    <button class="tab" data-view="rewrite">Rewrite tool</button>
+    <button class="tab" data-view="flash">Flashcards</button>
+  </nav>
+
+  <!-- ================================================================
+       HOME
+       ================================================================ -->
+  <section class="view active" data-view="home">
+    <div class="view-header">
+      <h2>A living, Arabic-first map of AI</h2>
+      <p id="load-status">Loading glossary data...</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label">Total Terms</div>
+        <div class="stat-value" id="stat-count">0</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Story Tracks</div>
+        <div class="stat-value">7</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Graph edges</div>
+        <div class="stat-value">8,400</div>
+        <div class="stat-hint">8 edge types</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">UML diagrams</div>
+        <div class="stat-value">1,180</div>
+        <div class="stat-hint">auto-generated</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px; padding: 20px; border: 0.5px solid var(--border); border-radius: var(--radius-lg);">
+      <h3 style="margin-bottom:12px; font-size: 14px;">Featured terms from your database</h3>
+      <div id="featured-terms" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:10px;">
+        <!-- Dynamic terms will go here -->
+      </div>
+    </div>
+
+    <div class="feature-grid">
+      <button class="feature-card" data-goto="graph">
+        <div class="feature-icon" style="background: var(--purple-bg);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple-ink)" stroke-width="2"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7 7l4 10M17 7l-4 10"/></svg>
+        </div>
+        <h3>Explore the knowledge graph</h3>
+        <p>1,242 nodes, 50+ auto-labeled clusters, typed edges for prerequisites, unlocks, and contrasts between every concept.</p>
+        <div class="feature-footer">interactive network</div>
+      </button>
+      <button class="feature-card" data-goto="story">
+        <div class="feature-icon" style="background: var(--teal-bg);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-ink)" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        </div>
+        <h3>Follow a story track</h3>
+        <p>7 chronological narratives from data foundations to trustworthy AI. Each chapter narrates 10–30 terms in context.</p>
+        <div class="feature-footer">scrollytelling</div>
+      </button>
+      <button class="feature-card" data-goto="anatomy">
+        <div class="feature-icon" style="background: var(--coral-bg);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--coral-ink)" stroke-width="2"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M10 10h4M10 14h4"/></svg>
+        </div>
+        <h3>Transformer anatomy</h3>
+        <p>Click any part of a Transformer figure to see the term, definition, Mermaid diagram, and audio explanation.</p>
+        <div class="feature-footer">figure-based</div>
+      </button>
+      <button class="feature-card" data-goto="detail">
+        <div class="feature-icon" style="background: var(--blue-bg);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-ink)" stroke-width="2"><path d="M4 4h16v4H4zM4 12h10v4H4zM4 20h16"/></svg>
+        </div>
+        <h3>Rich term detail</h3>
+        <p>Feel-metaphor, UML diagram, audio pronunciation, prerequisites, code example, math notation.</p>
+        <div class="feature-footer">per-term view</div>
+      </button>
+      <button class="feature-card" data-goto="rewrite">
+        <div class="feature-icon" style="background: var(--amber-bg);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber-ink)" stroke-width="2"><path d="M4 20h16M14 4l6 6-10 10H4v-6z"/></svg>
+        </div>
+        <h3>Rewrite with correction</h3>
+        <p>Paste any Arabic AI text. Non-canonical terms get flagged against ICAIRE's vocabulary with one-click fixes.</p>
+        <div class="feature-footer">Grammarly for Arabic AI</div>
+      </button>
+      <button class="feature-card" data-goto="flash">
+        <div class="feature-icon" style="background: var(--purple-bg);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple-ink)" stroke-width="2"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
+        </div>
+        <h3>Flashcards &amp; quizzes</h3>
+        <p>Auto-generated distractors, 3 quiz modes, spaced repetition, Anki export for 20M+ existing users.</p>
+        <div class="feature-footer">active recall</div>
+      </button>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       KNOWLEDGE GRAPH
+       ================================================================ -->
+  <section class="view" data-view="graph">
+    <div class="view-header">
+      <h2>Knowledge graph</h2>
+      <p>Every term is a node; every edge is typed. Clusters auto-discovered via Louvain community detection. Node size = PageRank.</p>
+    </div>
+
+    <div class="graph-panel">
+      <div class="graph-toolbar" id="graph-filters">
+        <!-- Filter chips will be injected here -->
+      </div>
+
+      <div class="graph-legend" id="graph-legend-dynamic">
+        <!-- Clusters will be listed here -->
+      </div>
+
+      <div id="graph-container" style="background: var(--surface); position: relative; height: 600px; cursor: crosshair; overflow: hidden; border-radius: var(--radius-lg); border: 0.5px solid var(--border);">
+        <canvas id="graph-canvas" style="width: 100%; height: 100%;"></canvas>
+        <div id="graph-tooltip" style="position: absolute; pointer-events: none; background: var(--bg); border: 1px solid var(--border); padding: 8px; border-radius: 6px; display: none; font-size: 12px; z-index: 1000; box-shadow: var(--shadow-lg);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       STORY TRACKS
+       ================================================================ -->
+  <section class="view" data-view="story">
+    <div class="view-header">
+      <h2>Story tracks</h2>
+      <p>Chronological journeys through the glossary. Each track groups terms into narrated chapters for a cinematic learning experience.</p>
+    </div>
+
+    <div class="chips" id="story-track-switcher" style="margin-bottom: 20px;">
+      <!-- Dynamic tracks will go here -->
+    </div>
+
+    <div class="story-grid">
+      <aside class="story-pane">
+        <div class="pane-kicker" id="story-track-info">Track 1</div>
+        <h3 class="pane-title" id="story-track-name">Select a track</h3>
+        <ul class="chapter-list" id="story-chapter-list">
+          <!-- Dynamic chapters will go here -->
+        </ul>
+      </aside>
+
+      <section class="story-pane story-main">
+        <div class="narration">
+          <div class="pane-kicker" style="direction:ltr">Chapter 4</div>
+          <h3>الترميز الموضعي</h3>
+          <p>الآن لدينا سلسلة من <span class="term-pill">المتجهات</span>. ولكنّ المحول لا يعرف أيّها كان أولاً — فآليّة <span class="term-pill">الانتباه</span> تنظر إلى كل <span class="term-pill">الرموز</span> دفعةً واحدة.</p>
+          <div class="hook">هنا يأتي دور الترميز الموضعي: نُضيف إلى كل متجه بصمةً رياضيةً تخبره بموقعه في الجملة.</div>
+          <p>قد تكون هذه البصمة <span class="term-pill">دوال جيبية</span> أو متجهات <span class="term-pill">مُتَعَلَّمة</span>. النتيجة واحدة: الرمز الأول يختلف عن الرمز العاشر، حتى لو كانا نفس الكلمة.</p>
+        </div>
+
+        <div class="live-figure" id="live-figure-container">
+          <div class="kicker">Logic Architecture</div>
+          <div class="fig-canvas" id="main-fig-canvas">
+            <div style="opacity:0.2; padding:80px; text-align:center;">Select a chapter to render its architecture.</div>
+          </div>
+          <div class="fig-caption">Local JS Rendering · No external tokens used</div>
+        </div>
+      </section>
+
+      <aside class="term-pane">
+        <div class="pane-kicker">In this chapter</div>
+        <div class="term-mini-list">
+          <!-- Dynamic terms will be injected here -->
+        </div>
+      </aside>
+    </div>
+
+    <!-- Term Drawer for Story View -->
+    <div id="story-term-drawer" style="position: fixed; top: 0; right: -450px; width: 450px; height: 100%; background: var(--bg); z-index: 2000; box-shadow: -10px 0 30px rgba(0,0,0,0.15); transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; padding: 40px; border-left: 1px solid var(--border);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+        <span class="pane-kicker" style="margin-bottom: 0;">Term Detail</span>
+        <button class="btn" onclick="closeStoryDrawer()" style="width: auto; padding: 8px 16px;">✕ Close</button>
+      </div>
+      <div id="drawer-content"></div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       TRANSFORMER ANATOMY
+       ================================================================ -->
+  <section class="view" data-view="anatomy">
+    <div class="view-header">
+      <h2>Transformer anatomy</h2>
+      <p>Click any numbered hotspot to follow the token's journey. Semantic zoom reveals sub-components at deeper levels.</p>
+    </div>
+
+    <div class="anatomy-grid">
+      <div class="anatomy-figure">
+        <svg class="anatomy-svg" viewBox="0 0 440 480">
+          <defs>
+            <marker id="arr-anat" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--text-secondary)"/>
+            </marker>
+          </defs>
+
+          <g font-family="var(--font-sans)">
+            <rect x="130" y="30" width="180" height="38" rx="10" fill="var(--coral-bg)" stroke="var(--coral)" stroke-width="1"/>
+            <text id="ana-out" x="220" y="55" text-anchor="middle" font-size="13" fill="var(--coral-ink)" font-weight="600">Output projection</text>
+
+            <rect x="100" y="85" width="240" height="260" rx="12" fill="var(--surface-2)" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="4 3"/>
+            <text id="ana-enc" x="110" y="102" font-size="10" fill="var(--text-tertiary)" font-weight="500">ENCODER STACK × 12</text>
+
+            <rect x="130" y="115" width="180" height="32" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="0.8"/>
+            <text id="ana-ff" x="220" y="136" text-anchor="middle" font-size="12" fill="var(--text-secondary)">Feed-forward</text>
+
+            <rect x="130" y="155" width="180" height="32" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="0.8"/>
+            <text id="ana-norm1" x="220" y="176" text-anchor="middle" font-size="12" fill="var(--text-secondary)">Add &amp; Norm</text>
+
+            <rect x="130" y="195" width="180" height="44" rx="6" fill="var(--purple-bg)" stroke="var(--purple)" stroke-width="1"/>
+            <text id="ana-mha" x="220" y="222" text-anchor="middle" font-size="13" fill="var(--purple-ink)" font-weight="600">Multi-head attention</text>
+
+            <rect x="130" y="247" width="180" height="32" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="0.8"/>
+            <text id="ana-norm2" x="220" y="268" text-anchor="middle" font-size="12" fill="var(--text-secondary)">Add &amp; Norm</text>
+
+            <rect x="130" y="293" width="180" height="44" rx="6" fill="var(--teal-bg)" stroke="var(--teal)" stroke-width="1"/>
+            <text id="ana-emb" x="220" y="315" text-anchor="middle" font-size="12" fill="var(--teal-ink)" font-weight="600">Embedding</text>
+            <text id="ana-pos" x="220" y="329" text-anchor="middle" font-size="10" fill="var(--teal-ink)">+ Positional encoding</text>
+
+            <rect x="130" y="365" width="180" height="38" rx="10" fill="var(--amber-bg)" stroke="var(--amber)" stroke-width="1"/>
+            <text id="ana-tok" x="220" y="390" text-anchor="middle" font-size="13" fill="var(--amber-ink)" font-weight="600">Tokenizer</text>
+
+            <rect x="130" y="420" width="180" height="34" rx="8" fill="var(--bg)" stroke="var(--border)" stroke-width="0.5"/>
+            <text id="ana-input" x="220" y="442" text-anchor="middle" font-size="12" fill="var(--text-secondary)" font-style="italic" font-family="var(--font-ar)">"النص المُدخَل"</text>
+
+            <g stroke="var(--text-secondary)" stroke-width="0.9" fill="none" marker-end="url(#arr-anat)">
+              <line x1="220" y1="418" x2="220" y2="407"/>
+              <line x1="220" y1="365" x2="220" y2="341"/>
+              <line x1="220" y1="293" x2="220" y2="283"/>
+              <line x1="220" y1="247" x2="220" y2="241"/>
+              <line x1="220" y1="195" x2="220" y2="191"/>
+              <line x1="220" y1="155" x2="220" y2="149"/>
+              <line x1="220" y1="115" x2="220" y2="74"/>
+            </g>
+
+            <g class="hotspots">
+              <circle class="hot" cx="350" cy="384" r="14" onclick="selectHotspot(1, 'الترميز')"/>
+              <text class="hot-num" x="350" y="388">1</text>
+              <text class="hs-label" x="370" y="388">Tokenize</text>
+
+              <circle class="hot" cx="350" cy="315" r="14" onclick="selectHotspot(2, 'التضمين')"/>
+              <text class="hot-num" x="350" y="319">2</text>
+              <text class="hs-label" x="370" y="319">Embed</text>
+
+              <circle class="hot active" cx="350" cy="217" r="14" onclick="selectHotspot(3, 'آلية الانتباه')"/>
+              <text class="hot-num" x="350" y="221">3</text>
+              <text class="hs-label" x="370" y="221">Attend</text>
+
+              <circle class="hot" cx="350" cy="131" r="14" onclick="selectHotspot(4, 'شبكة عصبية')"/>
+              <text class="hot-num" x="350" y="135">4</text>
+              <text class="hs-label" x="370" y="135">Transform</text>
+
+              <circle class="hot" cx="350" cy="49" r="14" onclick="selectHotspot(5, 'الخارج')"/>
+              <text class="hot-num" x="350" y="53">5</text>
+              <text class="hs-label" x="370" y="53">Output</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <aside class="anatomy-side">
+        <div class="side-kicker">Selected · Stop 3 of 5</div>
+        <h3 class="side-title-ar">آلية الانتباه</h3>
+        <div class="side-title-en">Attention Mechanism</div>
+
+        <div class="badges">
+          <span class="badge purple">core</span>
+          <span class="badge">intermediate</span>
+        </div>
+
+        <div class="side-feel">
+          يتوقّف الرمز للحظة ويتأمّل جيرانه — من يهمّه هنا؟
+        </div>
+
+        <div style="font-size: 13px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 8px; font-family: var(--font-ar); direction: rtl;">
+          تتوزّع الأوزان بحسب أهمية كل رمز آخر لفهم هذا الرمز. النتيجة: تمثيل جديد يضع الرمز في سياقه.
+        </div>
+
+        <div class="btn-row" style="margin-top: 14px;">
+          <button class="btn">▸ Audio</button>
+          <button class="btn">UML</button>
+        </div>
+        <button class="btn primary" onclick="goto('detail')">Open full detail</button>
+        <button class="btn">Show 12 related terms</button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       TERM DETAIL
+       ================================================================ -->
+  <section class="view" data-view="detail">
+    <div class="view-header">
+      <h2>Term detail</h2>
+      <p>Everything the enrichment pipeline generated per term — metaphor, UML, prerequisites, code, audio, math notation.</p>
+    </div>
+
+    <div class="detail-panel">
+      <div class="detail-head">
+        <div>
+          <h1 class="detail-ar">الانحدار التدريجي</h1>
+          <div class="detail-en">Gradient Descent · Descente de gradient</div>
+          <div class="badges">
+            <span class="badge teal">How a Model Learns · Chapter 3</span>
+            <span class="badge purple">Optimization</span>
+            <span class="badge">intermediate</span>
+            <span class="badge">PageRank 0.0184</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 6px;">
+          <button class="btn" style="width: auto;">▸ Audio</button>
+          <button class="btn" style="width: auto;">Quiz me</button>
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-label">Feel</div>
+        <div class="detail-content ar">
+          <span class="italic">مثل السير نزولاً في الضباب — تحسّ باتجاه الانخفاض، وتخطو نحوه.</span>
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-label">Definition</div>
+        <div class="detail-content ar">
+          خوارزمية تحسين تكرّر تحديث معاملات النموذج في عكس اتجاه ميل <span class="term-pill">دالة الخسارة</span>، لتقليل قيمتها خطوةً بعد خطوة.
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-label">Prerequisites</div>
+        <div class="detail-content">
+          <span class="term-pill">Loss function</span>
+          <span class="term-pill">Derivative</span>
+          <span class="term-pill">Learning rate</span>
+          <span class="term-pill">Parameter</span>
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-label">Unlocks</div>
+        <div class="detail-content">
+          <span class="term-pill">Stochastic Gradient Descent</span>
+          <span class="term-pill">Adam</span>
+          <span class="term-pill">Backpropagation</span>
+          <span class="term-pill">Momentum</span>
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-label">UML flow</div>
+        <div class="detail-content">
+          <div class="mermaid-block">
+            Initialize weights <span class="mermaid-arrow">→</span> Compute loss <span class="mermaid-arrow">→</span> Compute gradients <span class="mermaid-arrow">→</span> Update weights <span class="mermaid-arrow">↻</span> (repeat until convergence)
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-label">Math</div>
+        <div class="detail-content">
+          <div class="code-block">θ<sub>t+1</sub> = θ<sub>t</sub> − η · ∇<sub>θ</sub> L(θ<sub>t</sub>)</div>
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-label">Code</div>
+        <div class="detail-content">
+          <div class="code-block">w -= learning_rate * grad_w</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       REWRITE TOOL
+       ================================================================ -->
+  <section class="view" data-view="rewrite">
+    <div class="view-header">
+      <h2>Rewrite with correction</h2>
+      <p>"Grammarly for Arabic AI content." Paste any Arabic text — non-canonical terms get flagged against ICAIRE's vocabulary with one-click canonical replacements.</p>
+    </div>
+
+    <div class="rewrite-grid">
+      <div class="rewrite-pane">
+        <div class="pane-head">
+          <h4>Before · original text</h4>
+          <span style="font-size: 11px; color: var(--amber-ink);">4 flags</span>
+        </div>
+        <div class="pane-body">
+          <p>تستخدم الشبكات <span class="flag" title="Non-canonical · suggest: الشبكات العصبية">العصبونية</span> تقنية <span class="flag" title="Non-canonical · suggest: الانحدار التدريجي">الدفع المتدرج</span> لتدريب النموذج.</p>
+          <p>كما أنّ <span class="flag" title="Non-canonical · suggest: التعلم غير الخاضع للإشراف">التعلم غير الموجه</span> يُستخدم لاكتشاف الأنماط من البيانات دون تسميات.</p>
+          <p>الـ<span class="flag" title="Untranslated · suggest: نموذج اللغة الكبير">LLM</span> قد يُنتج هلوسات عند غياب البيانات الكافية.</p>
+        </div>
+        <div class="pane-footer">
+          <span class="dot-indicator" style="background: var(--amber);"></span>
+          4 terms flagged · 3 non-canonical, 1 untranslated
+        </div>
+      </div>
+
+      <div class="rewrite-pane">
+        <div class="pane-head">
+          <h4>After · ICAIRE canonical</h4>
+          <span style="font-size: 11px; color: var(--teal);">✓ 4 fixes applied</span>
+        </div>
+        <div class="pane-body">
+          <p>تستخدم <span class="fix">الشبكات العصبية</span> تقنية <span class="fix">الانحدار التدريجي</span> لتدريب النموذج.</p>
+          <p>كما أنّ <span class="fix">التعلم غير الخاضع للإشراف</span> يُستخدم لاكتشاف الأنماط من البيانات دون تسميات.</p>
+          <p>الـ<span class="fix">نموذج اللغة الكبير</span> قد يُنتج هلوسات عند غياب البيانات الكافية.</p>
+        </div>
+        <div class="pane-footer">
+          <span class="dot-indicator" style="background: var(--teal);"></span>
+          All terms aligned with ICAIRE glossary
+        </div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap;">
+      <button class="btn" style="width: auto;">View change log</button>
+      <button class="btn" style="width: auto;">Export .docx</button>
+      <button class="btn" style="width: auto;">Consistency report</button>
+      <button class="btn primary" style="width: auto;">Apply all fixes</button>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       FLASHCARDS
+       ================================================================ -->
+  <section class="view" data-view="flash">
+    <div class="view-header">
+      <h2>Flashcards &amp; quizzes</h2>
+      <p>Auto-generated distractors from the enrichment pipeline. Choose a difficulty level to focus your learning.</p>
+    </div>
+
+    <div class="filter-row" id="quiz-filters" style="margin-bottom: 20px; display: flex; gap: 8px;">
+      <button class="chip active" onclick="filterQuiz('all')">All Levels</button>
+      <button class="chip" onclick="filterQuiz('beginner')">Easy</button>
+      <button class="chip" onclick="filterQuiz('intermediate')">Intermediate</button>
+      <button class="chip" onclick="filterQuiz('advanced')">Hard</button>
+    </div>
+
+    <div class="flash-wrap">
+      <div class="flash-nav">
+        <button class="nav-btn" id="quiz-prev" onclick="prevQuestion()" title="Previous (Left Arrow)">←</button>
+        <div class="flash-prompt" id="quiz-mode-label">Which definition matches this term?</div>
+        <button class="nav-btn" id="quiz-next" onclick="setupFlashcards(true)" title="Skip (Right Arrow)">→</button>
+      </div>
+      
+      <div class="flash-term" id="quiz-term-display">---</div>
+      <div class="flash-options" id="quiz-options-container">
+        <!-- Dynamic options -->
+      </div>
+      <div class="flash-progress">
+        <span id="quiz-progress-text">
+          Card <input type="number" id="quiz-jump" min="1" value="1" onchange="jumpToQuestion(this.value)" style="width: 50px; background: transparent; border: 0.5px solid var(--border); border-radius: 4px; color: inherit; font: inherit; text-align: center; padding: 2px;"> 
+          of <span id="quiz-total">--</span>
+        </span>
+        <span id="quiz-streak">streak 0 · next review soon</span>
+      </div>
+    </div>
+
+    <div class="mode-tabs" style="display: flex; gap: 8px; margin-top: 16px;">
+      <button class="btn active" id="mode-mc" onclick="setQuizMode('multiple-choice')">Multiple choice</button>
+      <button class="btn" id="mode-rev" onclick="setQuizMode('reverse')">Reverse lookup</button>
+      <button class="btn primary" onclick="exportToAnki()">Export to Anki</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  // --- STATE ---
+  let glossaryData = { terms: [], tracks: {} };
+  let terms = [];
+  let currentTerm = null;
+  let currentLang = 'ar'; // Global language state
+  const NVIDIA_API_KEY = "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";
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    const isAr = lang === 'ar';
+    const isFr = lang === 'fr';
+
+    // UI Dictionary
+    const ui = {
+      ar: {
+        home: "الرئيسية", graph: "مخطط المعرفة", story: "مسارات القصة", anatomy: "تشريح المحول", detail: "تفاصيل المصطلح", rewrite: "أداة إعادة الكتابة", flash: "بطاقات الاستذكار",
+        brand_t: "مُصطلح الحيّ", brand_s: "قاموس تفاعلي يركز على العربية · بُني على 1,242 مصطلحاً من ICAIRE",
+        hero: "خريطة حيّة للذكاء الاصطناعي، بالعربية أولاً",
+        status: (n) => `تم تحميل ${n} مصطلحاً بنجاح من قاعدة بياناتك. ابحث أو اختر مصطلحاً للاستكشاف.`,
+        stats_terms: "إجمالي المصطلحات", stats_tracks: "مسارات القصة", stats_edges: "روابط المخطط", stats_uml: "مخططات UML",
+        featured: "مصطلحات مختارة من قاعدة بياناتك",
+        search: "ابحث في 1,242 مصطلحاً بالعربية أو الإنجليزية أو الفرنسية...",
+        feat_graph_t: "استكشف مخطط المعرفة", feat_graph_p: "1,242 عقدة، 50+ تكتلاً، روابط لأنواع العلاقات بين المفاهيم.",
+        feat_story_t: "اتبع مسار القصة", feat_story_p: "7 روايات زمنية من أسس البيانات إلى الذكاء الاصطناعي الموثوق.",
+        feat_anatomy_t: "تشريح المحول", feat_anatomy_p: "انقر على أي جزء من المحول لرؤية المصطلح والتعريف والمخطط.",
+        feat_detail_t: "تفاصيل المصطلح", feat_detail_p: "التشبيه، مخطط UML، النطق الصوتي، المتطلبات، كود بايثون.",
+        feat_rewrite_t: "إعادة الكتابة والتصحيح", feat_rewrite_p: "صحح نصوص الذكاء الاصطناعي العربية وفقاً لمصطلحات ICAIRE المعتمدة.",
+        feat_flash_t: "البطاقات والاختبارات", feat_flash_p: "اختبارات مولدة آلياً، تكرار متباعد، وتصدير لبرنامج Anki.",
+        feat_graph_f: "شبكة تفاعلية", feat_story_f: "سرد قصصي", feat_anatomy_f: "مبني على الرسوم", feat_detail_f: "عرض لكل مصطلح", feat_rewrite_f: "مدقق إملائي للذكاء الاصطناعي", feat_flash_f: "استذكار نشط",
+        track_label: (n) => `المسار ${n}`, chapter_label: (n) => `الفصل ${n}`, in_chapter: "في هذا الفصل",
+        graph_h: "مخطط المعرفة", graph_p: "كل مصطلح هو عقدة؛ كل رابط له نوع. يتم اكتشاف التكتلات تلقائياً. حجم العقدة = PageRank.",
+        all_terms: "الكل",
+        flash_h: "البطاقات والاختبارات", flash_p: "اختبارات مولدة آلياً من قاعدة البيانات. اختر مستوى الصعوبة للتركيز على تعلمك.",
+        diff_all: "كافة المستويات", diff_easy: "سهل", diff_int: "متوسط", diff_hard: "صعب"
+      },
+      en: {
+        home: "Home", graph: "Knowledge graph", story: "Story tracks", anatomy: "Transformer anatomy", detail: "Term detail", rewrite: "Rewrite tool", flash: "Flashcards",
+        brand_t: "Mustalih Living", brand_s: "Arabic-first interactive glossary · built on 1,242 ICAIRE terms",
+        hero: "A living, Arabic-first map of AI",
+        status: (n) => `Successfully loaded ${n} terms from your database. Search or click a term below to explore.`,
+        stats_terms: "Total Terms", stats_tracks: "Story Tracks", stats_edges: "Graph edges", stats_uml: "UML diagrams",
+        featured: "Featured terms from your database",
+        search: "Search 1,242 terms in Arabic, English, or French...",
+        feat_graph_t: "Explore the knowledge graph", feat_graph_p: "1,242 nodes, 50+ clusters, typed edges for prerequisites and unlocks.",
+        feat_story_t: "Follow a story track", feat_story_p: "7 chronological narratives from data foundations to trustworthy AI.",
+        feat_anatomy_t: "Transformer anatomy", feat_anatomy_p: "Click any part of a Transformer figure to see details and Mermaid diagrams.",
+        feat_detail_t: "Rich term detail", feat_detail_p: "Metaphors, UML flows, audio, code examples, and math notation.",
+        feat_rewrite_t: "Rewrite with correction", feat_rewrite_p: "Paste Arabic text to flag non-canonical terms against ICAIRE vocabulary.",
+        feat_flash_t: "Flashcards & quizzes", feat_flash_p: "Auto-generated distractors, spaced repetition, and Anki export.",
+        feat_graph_f: "interactive network", feat_story_f: "scrollytelling", feat_anatomy_f: "figure-based", feat_detail_f: "per-term view", feat_rewrite_f: "Grammarly for Arabic AI", feat_flash_f: "active recall",
+        story_h: "Story tracks", story_p: "Chronological journeys through the glossary. Each track groups terms into narrated chapters for a cinematic learning experience.",
+        track_label: (n) => `Track ${n}`, chapter_label: (n) => `Chapter ${n}`, in_chapter: "In this chapter",
+        graph_h: "Knowledge graph", graph_p: "Every term is a node; every edge is typed. Clusters auto-discovered. Node size = PageRank.",
+        all_terms: "All",
+        flash_h: "Flashcards & quizzes", flash_p: "Auto-generated distractors from the enrichment pipeline. Choose a difficulty level to focus your learning.",
+        diff_all: "All Levels", diff_easy: "Easy", diff_int: "Intermediate", diff_hard: "Hard"
+      }
+    };
+    ui.fr = {
+      ...ui.en,
+      home: "Accueil", graph: "Graphe", story: "Parcours", anatomy: "Anatomie", detail: "Détail", rewrite: "Correction", flash: "Flashcards",
+      brand_t: "Mustalih Living", brand_s: "Glossaire IA interactif · basé sur 1 242 termes ICAIRE",
+      hero: "Une carte vivante de l'IA, en arabe d'abord",
+      status: (n) => `${n} termes chargés avec succès. Recherchez ou cliquez sur un terme pour explorer.`,
+      search: "Recherchez 1 242 termes en arabe, anglais ou français...",
+      feat_graph_f: "réseau interactif", feat_story_f: "scrollytelling", feat_anatomy_f: "basé sur l'image", feat_detail_f: "vue par terme", feat_rewrite_f: "Correcteur IA", feat_flash_f: "rappel actif",
+      story_h: "Parcours", story_p: "Voyages chronologiques à travers le glossaire. Chaque parcours regroupe les termes en chapitres pour une expérience d'apprentissage.",
+      track_label: (n) => `Parcours ${n}`, chapter_label: (n) => `Chapitre ${n}`, in_chapter: "Dans ce chapitre",
+      graph_h: "Graphe de connaissances", graph_p: "Chaque terme est un nœud. Les clusters sont auto-découverts. Taille du nœud = PageRank.",
+      all_terms: "Tous",
+      flash_h: "Flashcards & quiz", flash_p: "Quiz générés automatiquement. Choisissez un niveau de difficulté.",
+      diff_all: "Tous les niveaux", diff_easy: "Facile", diff_int: "Intermédiaire", diff_hard: "Difficile"
+    };
+
+    const dict = isAr ? ui.ar : (isFr ? ui.fr : ui.en);
+
+    // Update button states
+    document.querySelectorAll('#global-lang-switch button').forEach((btn, idx) => {
+      const langs = ['ar', 'en', 'fr'];
+      btn.classList.toggle('active', langs[idx] === lang);
+    });
+    
+    // Global Direction & Font
+    document.body.dir = isAr ? 'rtl' : 'ltr';
+    document.body.style.fontFamily = isAr ? 'var(--font-ar)' : 'var(--font-main)';
+
+    // Update Brand Text
+    const bTitle = document.querySelector('.brand-text .title'); if(bTitle) bTitle.textContent = dict.brand_t;
+    const bSub = document.querySelector('.brand-text .subtitle'); if(bSub) bSub.textContent = dict.brand_s;
+
+    // Update Tabs
+    const tabBtns = document.querySelectorAll('.tab');
+    tabBtns[0].textContent = dict.home;
+    tabBtns[1].textContent = dict.graph;
+    tabBtns[2].textContent = dict.story;
+    tabBtns[3].textContent = dict.anatomy;
+    tabBtns[4].textContent = dict.detail;
+    tabBtns[5].textContent = dict.rewrite;
+    tabBtns[6].textContent = dict.flash;
+
+    // Update Story View
+    const storyH2 = document.querySelector('[data-view="story"] h2'); if(storyH2) storyH2.textContent = dict.story_h;
+    const storyP = document.querySelector('[data-view="story"] p'); if(storyP) storyP.textContent = dict.story_p;
+    const inChapter = document.querySelector('.term-pane .pane-kicker'); if(inChapter) inChapter.textContent = dict.in_chapter;
+
+    // Update Graph View
+    const graphH2 = document.querySelector('[data-view="graph"] h2'); if(graphH2) graphH2.textContent = dict.graph_h;
+    const graphP = document.querySelector('[data-view="graph"] p'); if(graphP) graphP.textContent = dict.graph_p;
+
+    // Update Flash View
+    const flashH2 = document.querySelector('[data-view="flash"] h2'); if(flashH2) flashH2.textContent = dict.flash_h;
+    const flashP = document.querySelector('[data-view="flash"] p'); if(flashP) flashP.textContent = dict.flash_p;
+    const diffChips = document.querySelectorAll('#quiz-filters .chip');
+    if(diffChips.length >= 4) {
+      diffChips[0].innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;"><path d="M4 6h16M4 12h16M4 18h16"/></svg>${dict.diff_all}`;
+      diffChips[1].textContent = dict.diff_easy;
+      diffChips[2].textContent = dict.diff_int;
+      diffChips[3].textContent = dict.diff_hard;
+    }
+
+    // Update Anatomy View
+    const anaH2 = document.querySelector('[data-view="anatomy"] h2'); if(anaH2) anaH2.textContent = dict.anatomy_h;
+    const anaP = document.querySelector('[data-view="anatomy"] p'); if(anaP) anaP.textContent = dict.anatomy_p;
+    const anaLabels = {
+      'ana-out': dict.ana_out, 'ana-enc': dict.ana_enc, 'ana-ff': dict.ana_ff, 'ana-norm1': dict.ana_norm,
+      'ana-norm2': dict.ana_norm, 'ana-mha': dict.ana_mha, 'ana-emb': dict.ana_emb, 'ana-pos': dict.ana_pos, 
+      'ana-tok': dict.ana_tok, 'ana-input': dict.ana_input
+    };
+    Object.entries(anaLabels).forEach(([id, txt]) => {
+      const el = document.getElementById(id); if(el) el.textContent = txt;
+    });
+    const hsLabels = [dict.step_tok, dict.step_emb, dict.step_att, dict.step_trans, dict.step_out];
+    document.querySelectorAll('.hs-label').forEach((el, i) => { if(hsLabels[i]) el.textContent = hsLabels[i]; });
+
+    const anaBtns = document.querySelectorAll('.anatomy-side .btn');
+    if(anaBtns.length >= 4) {
+      anaBtns[0].textContent = `▸ ${dict.btn_audio}`;
+      anaBtns[1].textContent = dict.btn_uml;
+      anaBtns[2].textContent = dict.btn_detail;
+      anaBtns[3].textContent = dict.btn_related;
+    }
+
+    // Update Feature Cards
+    const statsLabels = document.querySelectorAll('.stat-label');
+    if(statsLabels.length >= 4) {
+      statsLabels[0].textContent = dict.stats_terms;
+      statsLabels[1].textContent = dict.stats_tracks;
+      statsLabels[2].textContent = dict.stats_edges;
+      statsLabels[3].textContent = dict.stats_uml;
+    }
+    const featTitle = document.querySelector('.card h3'); if(featTitle) featTitle.textContent = dict.featured;
+    
+    // Update Feature Cards
+    const featCards = document.querySelectorAll('.feature-card');
+    if(featCards.length >= 6) {
+      featCards[0].querySelector('h3').textContent = dict.feat_graph_t; featCards[0].querySelector('p').textContent = dict.feat_graph_p; featCards[0].querySelector('.feature-footer').textContent = dict.feat_graph_f;
+      featCards[1].querySelector('h3').textContent = dict.feat_story_t; featCards[1].querySelector('p').textContent = dict.feat_story_p; featCards[1].querySelector('.feature-footer').textContent = dict.feat_story_f;
+      featCards[2].querySelector('h3').textContent = dict.feat_anatomy_t; featCards[2].querySelector('p').textContent = dict.feat_anatomy_p; featCards[2].querySelector('.feature-footer').textContent = dict.feat_anatomy_f;
+      featCards[3].querySelector('h3').textContent = dict.feat_detail_t; featCards[3].querySelector('p').textContent = dict.feat_detail_p; featCards[3].querySelector('.feature-footer').textContent = dict.feat_detail_f;
+      featCards[4].querySelector('h3').textContent = dict.feat_rewrite_t; featCards[4].querySelector('p').textContent = dict.feat_rewrite_p; featCards[4].querySelector('.feature-footer').textContent = dict.feat_rewrite_f;
+      featCards[5].querySelector('h3').textContent = dict.feat_flash_t; featCards[5].querySelector('p').textContent = dict.feat_flash_p; featCards[5].querySelector('.feature-footer').textContent = dict.feat_flash_f;
+    }
+
+    // Update Search Placeholder
+    const searchInput = document.querySelector('.search input'); if(searchInput) searchInput.placeholder = dict.search;
+    const statusEl = document.getElementById('load-status'); if(statusEl && terms.length > 0) statusEl.textContent = dict.status(terms.length);
+
+    // Re-render current views
+    if (currentTerm) renderDetail(currentTerm);
+    setupFlashcards();
+    renderFeaturedTerms();
+    const activeTab = document.querySelector('.tab.active');
+    if (activeTab && activeTab.dataset.view === 'story') {
+      const activeChip = document.querySelector('#story-track-switcher .chip.active');
+      if (activeChip) {
+        // Find track id from name
+        const trackId = Object.keys(glossaryData.tracks).find(id => glossaryData.tracks[id].name === activeChip.textContent);
+        if (trackId) renderStoryTrack(trackId);
+      }
+    }
+  }
+
+  // --- NAVIGATION (Top level to ensure it always works) ---
+  function goto(target) {
+    try {
+      const tabs = document.querySelectorAll('.tab');
+      const views = document.querySelectorAll('.view');
+      
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.view === target));
+      views.forEach(v => v.classList.toggle('active', v.dataset.view === target));
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      if (target === 'story') renderStoryTrack();
+      if (target === 'flash' && terms.length > 0) setupFlashcards();
+      if (target === 'graph') {
+        setTimeout(() => {
+          const canvas = document.getElementById('graph-canvas');
+          if (canvas && typeof graphResize === 'function') graphResize();
+        }, 50);
+      }
+    } catch (e) {
+      console.error("Navigation error:", e);
+    }
+  }
+
+  // Attach tab listeners
+  document.querySelectorAll('.tab').forEach(t => {
+    t.addEventListener('click', (e) => {
+      e.preventDefault();
+      goto(t.dataset.view);
+    });
+  });
+
+  document.querySelectorAll('[data-goto]').forEach(c =>
+    c.addEventListener('click', () => goto(c.dataset.goto)));
+
+  // --- INITIALIZATION ---
+  async function init() {
+    try {
+      console.log("Loading glossary_enriched.json...");
+      const response = await fetch('glossary_enriched.json');
+      if (!response.ok) throw new Error("Fetch failed: " + response.statusText);
+      
+      const data = await response.json();
+      glossaryData = data;
+      terms = data.terms || [];
+      console.log(`Loaded ${terms.length} terms.`);
+      
+      const statusEl = document.getElementById('load-status');
+      const ui = {
+        ar: (n) => `تم تحميل ${n} مصطلحاً بنجاح من قاعدة بياناتك. ابحث أو اختر مصطلحاً للاستكشاف.`,
+        en: (n) => `Successfully loaded ${n} terms from your database. Search or click a term below to explore.`,
+        fr: (n) => `${n} termes chargés avec succès. Recherchez ou cliquez sur un terme pour explorer.`
+      };
+      if (statusEl) statusEl.textContent = ui[currentLang](terms.length);
+
+      updateHomeStats();
+      setupSearch();
+      renderFeaturedTerms();
+      setupStoryTracks();
+      
+      // Initialize Graph Data
+      setupGraphData();
+      setupDynamicFilters();
+      initGraphEngine();
+
+      if (terms.length > 0) renderDetail(terms[0]);
+    } catch (e) {
+      console.error("Init failed:", e);
+      const homeHeader = document.querySelector('[data-view="home"] .view-header');
+      if (homeHeader) {
+        homeHeader.innerHTML += `<div style="padding:15px; background:#fff3cd; color:#856404; border-radius:8px; margin-top:10px; font-size:13px; border:1px solid #ffeeba;">
+          <b>Error:</b> ${e.message}<br>
+          <small>Check console for stack trace. Ensure you are using http://localhost:8080</small>
+        </div>`;
+      }
+    }
+  }
+
+  function updateHomeStats() {
+    const statEl = document.getElementById('stat-count');
+    if (statEl && terms.length > 0) statEl.textContent = terms.length;
+  }
+
+  function renderFeaturedTerms() {
+    const container = document.getElementById('featured-terms');
+    if (!container) return;
+    
+    // Pick 12 random terms
+    const featured = [...terms].sort(() => 0.5 - Math.random()).slice(0, 12);
+    container.innerHTML = featured.map(t => `
+      <div class="term-pill" style="padding:12px; border:1px solid var(--border); background:var(--surface); cursor:pointer; text-align:center;" onclick="findAndRender('${t.arabic_term}')">
+        <div style="font-weight:bold; font-size:15px;">${t.arabic_term}</div>
+        <div style="font-size:11px; color:var(--text-tertiary);">${t.english_term || ''}</div>
+      </div>
+    `).join('');
+  }
+
+  function setupSearch() {
+    const searchInput = document.querySelector('.search input');
+    if (!searchInput) return;
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const q = e.target.value.toLowerCase();
+        const match = terms.find(t => 
+          (t.arabic_term && t.arabic_term.toLowerCase().includes(q)) || 
+          (t.english_term && t.english_term.toLowerCase().includes(q))
+        );
+        if (match) {
+          renderDetail(match);
+          goto('detail');
+        }
+      }
+    });
+  }
+
+  function renderDetail(term) {
+    if (!term) return;
+    currentTerm = term;
+    const view = document.querySelector('[data-view="detail"]');
+    if (!view) return;
+    
+    try {
+      // Dynamic field mapping
+      const isAr = currentLang === 'ar';
+      const isEn = currentLang === 'en';
+      const isFr = currentLang === 'fr';
+
+      const t = {
+        title: isAr ? term.arabic_term : (isEn ? term.english_term : term.french_term),
+        sub: isAr ? `${term.english_term || ""} · ${term.french_term || ""}` : term.arabic_term,
+        feel: isAr ? term.one_sentence_feel_ar : (isEn ? term.one_sentence_feel_en : term.one_sentence_feel_fr),
+        explanation: isAr ? term.detailed_explanation_ar : (isEn ? term.detailed_explanation_en : term.detailed_explanation_fr),
+        metaphor: isAr ? term.metaphor_ar : (isEn ? term.metaphor_en : term.metaphor_fr)
+      };
+
+      // 1. Update Headings
+      const headAr = view.querySelector('.detail-ar');
+      if (headAr) {
+        headAr.textContent = t.title || "---";
+        headAr.style.direction = isAr ? 'rtl' : 'ltr';
+        headAr.style.fontFamily = isAr ? 'var(--font-ar)' : 'var(--font-main)';
+      }
+      
+      const headEn = view.querySelector('.detail-en');
+      if (headEn) headEn.textContent = `${t.sub} · ${term.category || ""}`;
+
+      // 2. Update Content Rows
+      const rows = view.querySelectorAll('.detail-row');
+      const setRow = (idx, label, html) => {
+        if (rows[idx]) {
+          const lbl = rows[idx].querySelector('.detail-label');
+          if (lbl) lbl.textContent = label;
+          const content = rows[idx].querySelector('.detail-content');
+          if (content) {
+            content.innerHTML = html;
+            content.style.direction = (isAr && idx < 2) ? 'rtl' : 'ltr'; // Feel and Expl are dir-sensitive
+          }
+        }
+      };
+
+      const labels = isAr ? 
+        ["الشعور", "التعريف", "المتطلبات", "يفتح", "مخطط UML", "الرياضيات", "الكود"] : 
+        ["Feel", "Definition", "Prerequisites", "Unlocks", "UML Flow", "Math", "Code"];
+
+      setRow(0, labels[0], `<span class="italic">${t.feel || ""}</span>`);
+      setRow(1, labels[1], t.explanation || term.arabic_def || "");
+      
+      const pr = (term.graph_raw && term.graph_raw.prerequisites) || [];
+      setRow(2, labels[2], pr.map(p => `<span class="term-pill" onclick="findAndRender('${p}')">${p}</span>`).join(''));
+      
+      const un = (term.graph_raw && term.graph_raw.unlocks) || [];
+      setRow(3, labels[3], un.map(u => `<span class="term-pill" onclick="findAndRender('${u}')">${u}</span>`).join(''));
+
+      setRow(4, labels[4], term.ai_mermaid ? `<div class="mermaid-block">${term.ai_mermaid}</div>` : "N/A");
+      setRow(5, labels[5], `<div class="code-block">${term.math_notation || "N/A"}</div>`);
+      setRow(6, labels[6], `<div class="code-block">${term.code_example_python || "# No code"}</div>`);
+
+      // 3. Update AI Button Label
+      const nimBtn = view.querySelector('.nim-section .btn');
+      if (nimBtn) nimBtn.textContent = isAr ? "اسأل DeepSeek-V3 للمزيد" : "Ask DeepSeek-V3 for a deep dive";
+      
+    } catch (err) {
+      console.error("RenderDetail error:", err);
+    }
+  }
+
+  function findAndRender(termName) {
+    if (!termName) return;
+    const q = termName.toLowerCase();
+    const match = terms.find(t => 
+      (t.arabic_term && t.arabic_term.toLowerCase() === q) || 
+      (t.english_term && t.english_term.toLowerCase() === q) ||
+      (t.arabic_term && t.arabic_term === termName)
+    );
+    if (match) {
+      renderDetail(match);
+      goto('detail');
+    } else {
+      console.warn("No match found for:", termName);
+    }
+  }
+
+  function setupStoryTracks() {
+    const tracks = {};
+    terms.forEach(t => {
+      if (t.story_assignments_v2 && t.story_assignments_v2.story_assignments) {
+        t.story_assignments_v2.story_assignments.forEach(sa => {
+          if (!tracks[sa.track]) tracks[sa.track] = { name: sa.track_name || sa.track, chapters: {} };
+          if (!tracks[sa.track].chapters[sa.position_in_track]) {
+            tracks[sa.track].chapters[sa.position_in_track] = [];
+          }
+          tracks[sa.track].chapters[sa.position_in_track].push({ term: t, sa });
+        });
+      }
+    });
+    glossaryData.tracks = tracks;
+    renderStoryTrackList();
+  }
+
+  function renderStoryTrackList() {
+    const switcher = document.getElementById('story-track-switcher');
+    if (!switcher) return;
+    const localizedTrackNames = {
+      HOW_A_MODEL_LEARNS: { ar: "كيف يتعلم النموذج", en: "How a Model Learns", fr: "Comment un modèle apprend" },
+      DATA_FOUNDATIONS: { ar: "أسس البيانات", en: "Data Foundations", fr: "Fondamentaux des données" },
+      NEURAL_NETWORKS_AND_DEEP: { ar: "الشبكات العصبية والتعلم العميق", en: "Neural Networks & Deep Learning", fr: "Réseaux neuronaux" },
+      CLASSICAL_ML_AND_STATS: { ar: "تعلم الآلة الكلاسيكي", en: "Classical ML & Stats", fr: "ML Classique et Stats" },
+      AI_INFRASTRUCTURE: { ar: "البنية التحتية للذكاء الاصطناعي", en: "AI Infrastructure", fr: "Infrastructure IA" },
+      TRUSTWORTHY_AI: { ar: "الذكاء الاصطناعي الموثوق", en: "Trustworthy AI", fr: "IA de confiance" },
+      APPLIED_AI: { ar: "الذكاء الاصطناعي التطبيقي", en: "Applied AI", fr: "IA Appliquée" }
+    };
+    const trackIds = Object.keys(glossaryData.tracks);
+    switcher.innerHTML = trackIds.map((id, i) => {
+      const nameObj = localizedTrackNames[id] || { en: id };
+      const displayName = currentLang === 'ar' ? (nameObj.ar || nameObj.en) : (currentLang === 'fr' ? (nameObj.fr || nameObj.en) : nameObj.en);
+      return `<button class="chip ${i === 0 ? 'active' : ''}" onclick="switchStoryTrack('${id}', this)">${displayName}</button>`;
+    }).join('');
+    if (trackIds.length > 0) renderStoryTrack(trackIds[0]);
+  }
+
+  function switchStoryTrack(trackId, btn) {
+    document.querySelectorAll('#story-track-switcher .chip').forEach(c => c.classList.remove('active'));
+    if(btn) btn.classList.add('active');
+    renderStoryTrack(trackId);
+  }
+
+  function renderStoryTrack(trackId) {
+    const track = glossaryData.tracks ? glossaryData.tracks[trackId] : null;
+    if (!track) return;
+    const list = document.getElementById('story-chapter-list');
+    const nameEl = document.getElementById('story-track-name');
+    const infoEl = document.getElementById('story-track-info');
+    
+    const localizedTrackNames = {
+      HOW_A_MODEL_LEARNS: { ar: "كيف يتعلم النموذج", en: "How a Model Learns", fr: "Comment un modèle apprend" },
+      DATA_FOUNDATIONS: { ar: "أسس البيانات", en: "Data Foundations", fr: "Fondamentaux des données" },
+      NEURAL_NETWORKS_AND_DEEP: { ar: "الشبكات العصبية والتعلم العميق", en: "Neural Networks & Deep Learning", fr: "Réseaux neuronaux" },
+      CLASSICAL_ML_AND_STATS: { ar: "تعلم الآلة الكلاسيكي", en: "Classical ML & Stats", fr: "ML Classique et Stats" },
+      AI_INFRASTRUCTURE: { ar: "البنية التحتية للذكاء الاصطناعي", en: "AI Infrastructure", fr: "Infrastructure IA" },
+      TRUSTWORTHY_AI: { ar: "الذكاء الاصطناعي الموثوق", en: "Trustworthy AI", fr: "IA de confiance" },
+      APPLIED_AI: { ar: "الذكاء الاصطناعي التطبيقي", en: "Applied AI", fr: "IA Appliquée" }
+    };
+    const nameObj = localizedTrackNames[trackId] || { en: trackId };
+    const trackDisplayName = currentLang === 'ar' ? (nameObj.ar || nameObj.en) : (currentLang === 'fr' ? (nameObj.fr || nameObj.en) : nameObj.en);
+    
+    const trackNum = Object.keys(glossaryData.tracks).indexOf(trackId) + 1;
+    const uiLabels = {
+      ar: { label: (n) => `المسار ${n}` },
+      en: { label: (n) => `Track ${n}` },
+      fr: { label: (n) => `Parcours ${n}` }
+    };
+    const currentLabels = uiLabels[currentLang] || uiLabels.en;
+
+    if (nameEl) nameEl.textContent = trackDisplayName;
+    if (infoEl) infoEl.textContent = currentLabels.label(trackNum);
+    
+    const sortedPositions = Object.keys(track.chapters).sort((a, b) => a - b);
+    if (list) {
+      list.innerHTML = sortedPositions.map((pos, i) => {
+        const item = track.chapters[pos][0];
+        const termName = currentLang === 'ar' ? item.term.arabic_term : (currentLang === 'en' ? item.term.english_term : item.term.french_term);
+        const countBadge = track.chapters[pos].length > 1 ? ` (+${track.chapters[pos].length - 1})` : '';
+        return `
+          <li class="${i === 0 ? 'active' : ''}" onclick="selectChapter(${pos}, '${trackId}')">
+            <span class="num-circle"><span>${pos}</span></span>
+            ${termName || item.term.arabic_term}${countBadge}
+          </li>
+        `;
+      }).join('');
+    }
+    selectChapter(sortedPositions[0], trackId);
+  }
+
+  function selectChapter(pos, trackId) {
+    const track = glossaryData.tracks[trackId];
+    if (!track || !track.chapters[pos]) return;
+    const items = track.chapters[pos];
+    document.querySelectorAll('#story-chapter-list li').forEach(li => {
+      const num = li.querySelector('.num-circle span').textContent;
+      li.classList.toggle('active', num == pos);
+    });
+    const narration = document.querySelector('.narration');
+    if (!narration) return;
+    const isAr = currentLang === 'ar';
+    const isEn = currentLang === 'en';
+    const isFr = currentLang === 'fr';
+
+    const h3 = narration.querySelector('h3'); 
+    if(h3) h3.textContent = isAr ? items[0].term.arabic_term : (isEn ? items[0].term.english_term : items[0].term.french_term);
+    
+    const kicker = narration.querySelector('.pane-kicker'); 
+    if(kicker) kicker.textContent = isAr ? `الفصل ${pos}` : (isFr ? `Chapitre ${pos}` : `Chapter ${pos}`);
+
+    const hook = isAr ? (items[0].sa.one_line_hook_ar || items[0].term.one_sentence_feel_ar) : 
+                (isEn ? (items[0].sa.one_line_hook_en || items[0].term.one_sentence_feel_en) : 
+                (items[0].sa.one_line_hook_fr || items[0].term.one_sentence_feel_fr));
+    const hookEl = narration.querySelector('.hook'); if(hookEl) hookEl.textContent = hook || "";
+    
+    // Force Local Mermaid Rendering with Syntax Sanitization
+    const figCanvas = document.getElementById('main-fig-canvas');
+    if (figCanvas) {
+      let uml = items[0].term.ai_mermaid;
+      if (uml) {
+        // Clean up JSON escape characters and ensure healthy newlines
+        uml = uml.replace(/\\n/g, '\n').replace(/\\"/g, '"');
+        
+        // Wrap labels in quotes if they aren't already (simple heuristic)
+        // This fixes syntax errors with spaces in Arabic terms
+        uml = uml.replace(/\[([^"\]]+)\]/g, '["$1"]');
+
+        figCanvas.innerHTML = `<div class="mermaid" id="story-mermaid">${uml}</div>`;
+        try {
+          // Reset Mermaid to clear previous state
+          figCanvas.removeAttribute('data-processed');
+          mermaid.init(undefined, figCanvas.querySelectorAll(".mermaid"));
+        } catch(e) { 
+          console.error("Mermaid error:", e);
+          figCanvas.innerHTML = `<div style="color:var(--coral); padding:20px; font-size:12px;">Syntax check: Please verify the UML structure for "${items[0].term.arabic_term}".</div>`;
+        }
+      } else {
+        figCanvas.innerHTML = `<div style="opacity:0.3; padding:40px; text-align:center;">Technical architecture for "${items[0].term.arabic_term}" coming soon.</div>`;
+      }
+    }
+
+    narration.querySelectorAll('p').forEach(p => p.remove());
+    items.forEach(item => {
+      const p = document.createElement('p');
+      const name = isAr ? item.term.arabic_term : (isEn ? item.term.english_term : item.term.french_term);
+      const expl = isAr ? (item.term.detailed_explanation_ar || item.term.arabic_def) : 
+                   (isEn ? (item.term.detailed_explanation_en || item.term.english_def) : 
+                   (item.term.detailed_explanation_fr || item.term.french_def));
+      p.innerHTML = `<strong>${name}:</strong> ${expl || ""}`;
+      p.style.marginBottom = "15px";
+      p.style.direction = isAr ? 'rtl' : 'ltr';
+      narration.appendChild(p);
+    });
+
+    const miniList = document.querySelector('.term-mini-list');
+    if (miniList) {
+      miniList.innerHTML = items.map((item, i) => {
+        const name = isAr ? item.term.arabic_term : (isEn ? item.term.english_term : item.term.french_term);
+        return `
+          <div class="mini ${i === 0 ? 'active' : ''}" onclick="openStoryDrawer('${item.term.arabic_term}')">
+            <div class="mini-name">${name}</div>
+            <div class="mini-meta">${item.term.architecture_role || 'core'} · ${item.term.difficulty || 'intermediate'}</div>
+          </div>
+        `;
+      }).join('');
+    }
+  }
+
+  function openStoryDrawer(termName) {
+    const term = terms.find(t => t.arabic_term === termName);
+    if (!term) return;
+    const drawer = document.getElementById('story-term-drawer');
+    const content = document.getElementById('drawer-content');
+    if (!drawer || !content) return;
+
+    const isAr = currentLang === 'ar';
+    const isEn = currentLang === 'en';
+    const isFr = currentLang === 'fr';
+
+    const t = {
+      name: isAr ? term.arabic_term : (isEn ? term.english_term : term.french_term),
+      sub: isAr ? term.english_term : term.arabic_term,
+      feel: isAr ? term.one_sentence_feel_ar : (isEn ? term.one_sentence_feel_en : term.one_sentence_feel_fr),
+      expl: isAr ? (term.detailed_explanation_ar || term.arabic_def) : (isEn ? (term.detailed_explanation_en || term.english_def) : (term.detailed_explanation_fr || term.french_def))
+    };
+
+    content.innerHTML = `
+      <h2 style="font-family:var(--font-ar); margin-bottom:5px;">${t.name}</h2>
+      <div style="color:var(--text-secondary); margin-bottom:20px;">${t.sub}</div>
+      <div style="margin-bottom:20px;">${t.feel || ""}</div>
+      <div class="detail-label">Definition</div>
+      <p style="margin-bottom:20px;">${t.expl || ""}</p>
+      <div class="detail-label">Math</div>
+      <div class="code-block" style="margin-bottom:20px;">${term.math_notation || 'N/A'}</div>
+      <div class="detail-label">Python</div>
+      <div class="code-block">${term.code_example_python || '# No code'}</div>
+    `;
+    drawer.style.right = '0';
+  }
+
+  function closeStoryDrawer() {
+    const drawer = document.getElementById('story-term-drawer');
+    if (drawer) drawer.style.right = '-400px';
+  }
+
+  async function askDeepSeek() {
+    const outputDiv = document.querySelector('.nim-output');
+    const reasoningDiv = document.querySelector('.nim-reasoning');
+    const contentDiv = document.querySelector('.nim-content');
+    const btn = document.querySelector('.nim-section .btn');
+    if (!outputDiv || !btn) return;
+    outputDiv.style.display = 'block';
+    reasoningDiv.textContent = 'Thinking...';
+    contentDiv.textContent = '';
+    btn.disabled = true;
+    const prompt = `اشرح لي مصطلح "${currentTerm.arabic_term}" (${currentTerm.english_term || ""}) في سياق الذكاء الاصطناعي بعمق، مع ذكر أمثلة تطبيقية وتشبيهات لتقريب المعنى.`;
+    try {
+      const response = await fetch("https://integrate.api.nvidia.com/v1/chat/completions", {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${NVIDIA_API_KEY}` },
+        body: JSON.stringify({ model: "deepseek-ai/deepseek-v3", messages: [{role: "user", content: prompt}], temperature: 0.7, max_tokens: 4000, stream: true })
+      });
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      reasoningDiv.textContent = '';
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value);
+        const lines = chunk.split('\n');
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const dataStr = line.slice(6);
+            if (dataStr === '[DONE]') break;
+            try {
+              const data = JSON.parse(dataStr);
+              const delta = data.choices[0].delta;
+              if (delta.reasoning_content) reasoningDiv.textContent += delta.reasoning_content;
+              if (delta.content) contentDiv.textContent += delta.content;
+            } catch (e) {}
+          }
+        }
+      }
+    } catch (e) { contentDiv.textContent = "Error: " + e.message; }
+    finally { btn.disabled = false; }
+  }
+
+  let quizDifficulty = 'all';
+  let quizMode = 'multiple-choice';
+  let quizStreak = parseInt(localStorage.getItem('mustalih_streak') || '0');
+
+  function filterQuiz(level) {
+    quizDifficulty = level;
+    document.querySelectorAll('#quiz-filters .chip').forEach(c => {
+      const isMatch = (level === 'all' && c.textContent.includes('All')) || c.textContent.toLowerCase().includes(level);
+      c.classList.toggle('active', isMatch);
+    });
+    setupFlashcards();
+  }
+
+  function setQuizMode(mode) {
+    quizMode = mode;
+    document.getElementById('mode-mc').classList.toggle('active', mode === 'multiple-choice');
+    document.getElementById('mode-rev').classList.toggle('active', mode === 'reverse');
+    setupFlashcards();
+  }
+
+  let quizHistory = [];
+  let quizHistoryIdx = -1;
+
+  function prevQuestion() {
+    if (quizHistoryIdx > 0) {
+      quizHistoryIdx--;
+      setupFlashcards(false, quizHistory[quizHistoryIdx]);
+    }
+  }
+
+  function jumpToQuestion(val) {
+    const idx = parseInt(val) - 1;
+    if (!isNaN(idx)) setupFlashcards(true, null, idx);
+  }
+
+  function setupFlashcards(isNew = true, savedState = null, jumpIdx = -1) {
+    const termEl = document.getElementById('quiz-term-display');
+    const optionsContainer = document.getElementById('quiz-options-container');
+    const modeLabel = document.getElementById('quiz-mode-label');
+    const streakEl = document.getElementById('quiz-streak');
+    const jumpInput = document.getElementById('quiz-jump');
+    const totalEl = document.getElementById('quiz-total');
+    const prevBtn = document.getElementById('quiz-prev');
+
+    if (!termEl || !optionsContainer || terms.length === 0) return;
+
+    if (prevBtn) prevBtn.disabled = quizHistoryIdx <= 0;
+
+    let pool = terms;
+    if (quizDifficulty !== 'all') pool = terms.filter(t => t.difficulty === quizDifficulty);
+    if (pool.length === 0) pool = terms;
+    
+    if (totalEl) totalEl.textContent = pool.length;
+
+    let term, correct, options, currentMode;
+
+    if (savedState) {
+      term = savedState.term;
+      correct = savedState.correct;
+      options = savedState.options;
+      currentMode = savedState.mode;
+    } else {
+      if (jumpIdx >= 0) {
+        term = pool[Math.max(0, Math.min(jumpIdx, pool.length - 1))];
+      } else {
+        term = pool[Math.floor(Math.random() * pool.length)];
+      }
+      
+      currentMode = quizMode;
+      const isAr = currentLang === 'ar';
+
+      if (currentMode === 'multiple-choice') {
+        correct = isAr ? (term.arabic_def || "---") : (currentLang === 'en' ? term.english_def : term.french_def);
+        options = [correct];
+        const distractors = isAr ? term.flashcard_distractors_ar : (currentLang === 'en' ? term.flashcard_distractors_en : term.flashcard_distractors_fr);
+        if (distractors) options.push(...distractors.slice(0, 3));
+        while(options.length < 4) {
+          const dTerm = pool[Math.floor(Math.random()*pool.length)];
+          const d = isAr ? dTerm.arabic_def : (currentLang === 'en' ? dTerm.english_def : dTerm.french_def);
+          if (d && !options.includes(d)) options.push(d);
+        }
+      } else {
+        correct = isAr ? term.arabic_term : (currentLang === 'en' ? term.english_term : term.french_term);
+        options = [correct];
+        while(options.length < 4) {
+          const dTerm = pool[Math.floor(Math.random()*pool.length)];
+          const d = isAr ? dTerm.arabic_term : (currentLang === 'en' ? dTerm.english_term : dTerm.french_term);
+          if (d && !options.includes(d)) options.push(d);
+        }
+      }
+      options.sort(() => Math.random() - 0.5);
+
+      if (isNew) {
+        quizHistory.push({ term, correct, options, mode: currentMode });
+        quizHistoryIdx = quizHistory.length - 1;
+      }
+    }
+
+    const isAr = currentLang === 'ar';
+    if (currentMode === 'multiple-choice') {
+      const labels = { ar: "أي تعريف يطابق هذا المصطلح؟", en: "Which definition matches this term?", fr: "Quelle définition correspond à ce terme ?" };
+      if(modeLabel) modeLabel.textContent = labels[currentLang] || labels.en;
+      if(termEl) {
+        termEl.textContent = isAr ? term.arabic_term : (currentLang === 'en' ? term.english_term : term.french_term);
+        termEl.style.fontSize = '2.5rem';
+      }
+    } else {
+      const labels = { ar: "أي مصطلح يطابق هذا التعريف؟", en: "Which term matches this definition?", fr: "Quel terme correspond à cette تعريف ?" };
+      if(modeLabel) modeLabel.textContent = labels[currentLang] || labels.en;
+      if(termEl) {
+        termEl.textContent = isAr ? (term.detailed_explanation_ar || term.arabic_def) : (currentLang === 'en' ? term.english_def : term.french_def);
+        termEl.style.fontSize = '1.1rem';
+      }
+    }
+    
+    if (streakEl) streakEl.textContent = `streak ${quizStreak} · next review soon`;
+    if (jumpInput) {
+      jumpInput.value = quizHistoryIdx + 1;
+      jumpInput.max = pool.length;
+    }
+
+    optionsContainer.innerHTML = options.map(opt => `<div class="flash-option ${opt === correct ? 'correct-answer' : ''}">${opt}</div>`).join('');
+    optionsContainer.querySelectorAll('.flash-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        if (opt.classList.contains('correct-answer')) { 
+          opt.classList.add('correct'); 
+          quizStreak++;
+          localStorage.setItem('mustalih_streak', quizStreak);
+          setTimeout(() => setupFlashcards(true), 1000); 
+        } else {
+          opt.classList.add('wrong');
+          quizStreak = 0;
+          localStorage.setItem('mustalih_streak', 0);
+          if (streakEl) streakEl.textContent = `streak 0 · next review soon`;
+        }
+      });
+    });
+  }
+
+  // Keyboard support
+  window.addEventListener('keydown', (e) => {
+    const activeView = document.querySelector('.view.active');
+    if (activeView && activeView.dataset.view === 'flash') {
+      if (e.key === 'ArrowLeft') prevQuestion();
+      if (e.key === 'ArrowRight') setupFlashcards(true);
+    }
+  });
+
+  function exportToAnki() {
+    alert("Anki Export: CSV structure generated for " + terms.length + " terms. Check downloads (simulated).");
+  }
+
+  document.querySelectorAll('.chip').forEach(c =>
+    c.addEventListener('click', () => {
+      document.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+      c.classList.add('active');
+    }));
+
+  // --- GRAPH RENDERING ---
+  function filterGraphByCategory(cat) {
+    document.querySelectorAll('#graph-filters .chip').forEach(c => 
+      c.classList.toggle('active', c.textContent.includes(cat) || (cat === 'all' && c.textContent.includes('All'))));
+    renderGraph(cat);
+  }
+
+  function filterGraph(query) {
+    renderGraph('all', query.toLowerCase());
+  }
+
+  function sortGraph(type) {
+    if (type === 'pagerank') terms.sort((a, b) => (b.pagerank || 0) - (a.pagerank || 0));
+    else terms.sort((a, b) => a.arabic_term.localeCompare(b.arabic_term));
+    renderGraph('all');
+  }
+
+  // --- HIGH-PERFORMANCE FORCE GRAPH ENGINE ---
+  let graphNodes = [];
+  let graphEdges = [];
+  let transform = { x: 0, y: 0, k: 1 };
+  let isDragging = false;
+  let draggedNode = null;
+  let mouse = { x: 0, y: 0 };
+
+  let graphResize = null;
+  function initGraphEngine() {
+    const canvas = document.getElementById('graph-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    
+    graphResize = function() {
+      if (!canvas.offsetWidth) return;
+      canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+      canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+      ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset scale
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      console.log("Graph resized:", canvas.width, canvas.height);
+    };
+    window.addEventListener('resize', graphResize);
+    graphResize();
+
+    // Physics Simulation
+    function updatePhysics() {
+      const k = 0.05; // Spring constant
+      const r = 1000; // Repulsion constant
+      
+      for (let n of graphNodes) {
+        // Center gravity
+        n.vx += (canvas.offsetWidth/2 - n.x) * 0.001;
+        n.vy += (canvas.offsetHeight/2 - n.y) * 0.001;
+
+        // Node repulsion
+        for (let other of graphNodes) {
+          if (n === other) continue;
+          const dx = n.x - other.x;
+          const dy = n.y - other.y;
+          const dist = Math.sqrt(dx*dx + dy*dy) || 1;
+          if (dist < 200) {
+            const force = r / (dist * dist);
+            n.vx += (dx / dist) * force;
+            n.vy += (dy / dist) * force;
+          }
+        }
+      }
+
+      // Edge springs
+      for (let e of graphEdges) {
+        const dx = e.target.x - e.source.x;
+        const dy = e.target.y - e.source.y;
+        const dist = Math.sqrt(dx*dx + dy*dy) || 1;
+        const force = (dist - 100) * k;
+        e.source.vx += (dx / dist) * force;
+        e.source.vy += (dy / dist) * force;
+        e.target.vx -= (dx / dist) * force;
+        e.target.vy -= (dy / dist) * force;
+      }
+
+      // Apply velocity
+      for (let n of graphNodes) {
+        if (n === draggedNode) continue;
+        n.x += n.vx;
+        n.y += n.vy;
+        n.vx *= 0.9; // Friction
+        n.vy *= 0.9;
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.save();
+      ctx.translate(transform.x, transform.y);
+      ctx.scale(transform.k, transform.k);
+
+      // Draw Edges
+      ctx.strokeStyle = 'rgba(150,150,150,0.15)';
+      ctx.lineWidth = 1;
+      for (let e of graphEdges) {
+        ctx.beginPath();
+        ctx.moveTo(e.source.x, e.source.y);
+        ctx.lineTo(e.target.x, e.target.y);
+        ctx.stroke();
+      }
+
+      // Draw Nodes
+      for (let n of graphNodes) {
+        const radius = 5 + (n.pagerank || 0) * 40;
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = n.color || 'var(--purple)';
+        ctx.fill();
+        
+        if (transform.k > 0.6) {
+          ctx.fillStyle = 'var(--text)';
+          ctx.font = `${Math.max(8, radius/2)}px var(--font-sans)`;
+          ctx.textAlign = 'center';
+          ctx.fillText(n.name_ar, n.x, n.y + radius + 12);
+        }
+      }
+      ctx.restore();
+      
+      updatePhysics();
+      requestAnimationFrame(draw);
+    }
+
+    // Interaction handling
+    canvas.addEventListener('mousedown', e => {
+      const rect = canvas.getBoundingClientRect();
+      const mx = (e.clientX - rect.left - transform.x) / transform.k;
+      const my = (e.clientY - rect.top - transform.y) / transform.k;
+      
+      draggedNode = graphNodes.find(n => {
+        const d = Math.sqrt((n.x-mx)**2 + (n.y-my)**2);
+        return d < 20;
+      });
+      
+      if (!draggedNode) isDragging = true;
+    });
+
+    window.addEventListener('mousemove', e => {
+      const rect = canvas.getBoundingClientRect();
+      const mx = (e.clientX - rect.left - transform.x) / transform.k;
+      const my = (e.clientY - rect.top - transform.y) / transform.k;
+      
+      if (draggedNode) {
+        draggedNode.x = mx;
+        draggedNode.y = my;
+      } else if (isDragging) {
+        transform.x += e.movementX;
+        transform.y += e.movementY;
+      }
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (draggedNode) findAndRender(draggedNode.name_ar);
+      draggedNode = null;
+      isDragging = false;
+    });
+
+    draw();
+  }
+
+  function setupGraphData() {
+    const colors = ['#2dd4bf', '#a855f7', '#fb7185', '#60a5fa', '#f59e0b'];
+    const clusterMap = {};
+    const uniqueClusters = [...new Set(terms.map(t => t.primary_cluster || t.category).filter(Boolean))];
+    uniqueClusters.forEach((c, i) => clusterMap[c] = colors[i % colors.length]);
+
+    // Use a subset for performance
+    const displayTerms = terms.slice(0, 500);
+
+    graphNodes = displayTerms.map(t => ({
+      id_ar: t.arabic_term,
+      id_en: t.english_term,
+      name_ar: t.arabic_term,
+      x: Math.random() * 800,
+      y: Math.random() * 600,
+      vx: 0,
+      vy: 0,
+      pagerank: t.pagerank || 0,
+      color: clusterMap[t.primary_cluster || t.category] || '#a855f7'
+    }));
+
+    // Build edges with bilingual mapping
+    const nodeLookup = {};
+    graphNodes.forEach(n => {
+      if (n.id_ar) nodeLookup[n.id_ar] = n;
+      if (n.id_en) nodeLookup[n.id_en] = n;
+      if (n.id_en) nodeLookup[n.id_en.toLowerCase()] = n;
+    });
+    
+    graphEdges = [];
+    displayTerms.forEach(t => {
+      const sourceNode = nodeLookup[t.arabic_term];
+      if (!sourceNode) return;
+
+      const prereqs = (t.graph_raw && t.graph_raw.prerequisites) || [];
+      prereqs.forEach(p => {
+        const targetNode = nodeLookup[p] || nodeLookup[p.toLowerCase()];
+        if (targetNode && targetNode !== sourceNode) {
+          graphEdges.push({ source: targetNode, target: sourceNode });
+        }
+      });
+    });
+    console.log(`Graph ready: ${graphNodes.length} nodes, ${graphEdges.length} edges.`);
+  }
+
+  const categoryMap = {
+    NLP_TASKS_AND_CONCEPTS: { ar: "مهام البرمجة اللغوية العصبية", en: "NLP Tasks & Concepts", fr: "Tâches & Concepts NLP" },
+    NLP_MODELS_AND_TECHNIQUES: { ar: "نماذج البرمجة اللغوية العصبية", en: "NLP Models & Techniques", fr: "Modèles & Techniques NLP" },
+    LARGE_LANGUAGE_MODELS: { ar: "نماذج اللغات الكبيرة", en: "Large Language Models", fr: "Grands modèles de langage" },
+    TRANSFORMER_ARCHITECTURE: { ar: "هندسة المحولات", en: "Transformer Architecture", fr: "Architecture Transformer" },
+    NEURAL_NETWORK_BASICS: { ar: "أساسيات الشبكات العصبية", en: "Neural Network Basics", fr: "Bases des réseaux neuronaux" },
+    NEURAL_NETWORKS_AND_DEEP: { ar: "الشبكات العصبية والتعلم العميق", en: "Neural Networks & Deep Learning", fr: "Réseaux neuronaux" },
+    AI_ETHICS_PRINCIPLES: { ar: "مبادئ أخلاقيات الذكاء الاصطناعي", en: "AI Ethics Principles", fr: "Principes d'éthique de l'IA" },
+    AI_GOVERNANCE: { ar: "حوكمة الذكاء الاصطناعي", en: "AI Governance", fr: "Gouvernance de l'IA" },
+    AI_SAFETY_AND_ALIGNMENT: { ar: "سلامة الذكاء الاصطناعي ومواءمته", en: "AI Safety & Alignment", fr: "Sécurité & Alignement de l'IA" },
+    TRUSTWORTHY_AI: { ar: "الذكاء الاصطناعي الموثوق", en: "Trustworthy AI", fr: "IA de confiance" },
+    BIAS_AND_FAIRNESS_TYPES: { ar: "أنواع الانحياز والعدالة", en: "Bias & Fairness Types", fr: "Types de biais & équité" },
+    FAIRNESS_METRICS: { ar: "مقاييس العدالة", en: "Fairness Metrics", fr: "Mesures d'équité" },
+    COMPUTER_VISION_TASKS: { ar: "مهام الرؤية الحاسوبية", en: "Computer Vision Tasks", fr: "Tâches de vision par ordinateur" },
+    COMPUTER_VISION_TECHNIQUES: { ar: "تقنيات الرؤية الحاسوبية", en: "Computer Vision Techniques", fr: "Techniques de vision par ordinateur" },
+    REINFORCEMENT_LEARNING_FUNDAMENTALS: { ar: "أساسيات التعلم التعزيزي", en: "Reinforcement Learning Fundamentals", fr: "Bases de l'apprentissage par renforcement" },
+    REINFORCEMENT_LEARNING_METHODS: { ar: "طرق التعلم التعزيزي", en: "Reinforcement Learning Methods", fr: "Méthodes d'apprentissage par renforcement" },
+    OPTIMIZATION_ALGORITHMS: { ar: "خوارزميات التحسين", en: "Optimization Algorithms", fr: "Algorithmes d'optimisation" },
+    LOSS_FUNCTIONS: { ar: "دوال الخسارة", en: "Loss Functions", fr: "Fonctions de perte" },
+    REGULARIZATION: { ar: "الضبط (Regularization)", en: "Regularization", fr: "Régularisation" },
+    EVALUATION_METRICS: { ar: "مقاييس التقييم", en: "Evaluation Metrics", fr: "Métriques d'évaluation" },
+    DATA_STORAGE_AND_ARCHITECTURE: { ar: "تخزين البيانات وهندستها", en: "Data Storage & Architecture", fr: "Stockage & Architecture de données" },
+    DATA_COLLECTION_AND_LABELING: { ar: "جمع البيانات وتصنيفها", en: "Data Collection & Labeling", fr: "Collecte & Étiquetage de données" },
+    DATA_QUALITY_AND_CLEANING: { ar: "جودة البيانات وتنظيفها", en: "Data Quality & Cleaning", fr: "Qualité & Nettoyage des données" },
+    DATA_GOVERNANCE_AND_ETHICS: { ar: "حوكمة البيانات وأخلاقياتها", en: "Data Governance & Ethics", fr: "Gouvernance & Éthique des données" },
+    MATH_FOUNDATIONS: { ar: "الأسس الرياضية", en: "Math Foundations", fr: "Fondamentaux mathématiques" },
+    PROBABILITY_DISTRIBUTIONS: { ar: "التوزيعات الاحتمالية", en: "Probability Distributions", fr: "Distributions de probabilité" },
+    BAYESIAN_METHODS: { ar: "الطرق البايزية", en: "Bayesian Methods", fr: "Méthodes bayésiennes" },
+    MLOPS_AND_DEPLOYMENT: { ar: "عمليات تعلم الآلة والنشر", en: "MLOps & Deployment", fr: "MLOps & Déploiement" },
+    CLOUD_AND_EDGE_COMPUTING: { ar: "الحوسبة السحابية وحوسبة الحافة", en: "Cloud & Edge Computing", fr: "Cloud & Edge Computing" },
+    AI_HARDWARE: { ar: "أجهزة الذكاء الاصطناعي", en: "AI Hardware", fr: "Matériel IA" },
+    AI_AGENTS: { ar: "وكلاء الذكاء الاصطناعي", en: "AI Agents", fr: "Agents d'IA" },
+    ROBOTICS: { ar: "الروبوتات", en: "Robotics", fr: "Robotique" },
+    GENERATIVE_MODELS: { ar: "النماذج التوليدية", en: "Generative Models", fr: "Modèles génératifs" },
+    DIFFUSION_AND_STABLE_GENERATION: { ar: "الانتشار والتوليد المستقر", en: "Diffusion & Stable Generation", fr: "Diffusion & Génération stable" },
+    RAG_AND_RETRIEVAL: { ar: "توليد الاسترجاع المعزز (RAG)", en: "RAG & Retrieval", fr: "RAG & Récupération" },
+    PROMPTING_TECHNIQUES: { ar: "تقنيات هندسة الأوامر", en: "Prompting Techniques", fr: "Techniques de prompt" },
+    FINE_TUNING_AND_ADAPTATION: { ar: "الضبط الدقيق والتكيف", en: "Fine-tuning & Adaptation", fr: "Fine-tuning & Adaptation" },
+    EXPLAINABILITY_AND_INTERPRETABILITY: { ar: "القابلية للتفسير والوضوح", en: "Explainability & Interpretability", fr: "Explicabilité & Interprétabilité" },
+    INFERENCE_OPTIMIZATION: { ar: "تحسين الاستدلال", en: "Inference Optimization", fr: "Optimisation de l'inférence" },
+    PRIVACY_AND_SECURITY: { ar: "الخصوصية والأمن", en: "Privacy & Security", fr: "Confidentialité & Sécurité" },
+    AI_HISTORY_AND_PARADIGMS: { ar: "تاريخ ونماذج الذكاء الاصطناعي", en: "AI History & Paradigms", fr: "Histoire & Paradigmes de l'IA" },
+    HUMAN_AI_INTERACTION: { ar: "التفاعل بين الإنسان والذكاء الاصطناعي", en: "Human-AI Interaction", fr: "Interaction Homme-IA" },
+    DATA_ANALYTICS_AND_BI: { ar: "تحليل البيانات وذكاء الأعمال", en: "Data Analytics & BI", fr: "Analyse de données & BI" },
+    TREE_AND_ENSEMBLE_METHODS: { ar: "طرق الأشجار والتعلم الجمعي", en: "Tree & Ensemble Methods", fr: "Méthodes d'arbres & ensemble" },
+    CLASSIFICATION_MODELS: { ar: "نماذج التصنيف", en: "Classification Models", fr: "Modèles de classification" },
+    REGRESSION_MODELS: { ar: "نماذج الانحدار", en: "Regression Models", fr: "Modèles de régression" },
+    CLUSTERING_ALGORITHMS: { ar: "خوارزميات التجميع", en: "Clustering Algorithms", fr: "Algorithmes de clustering" },
+    AUTOENCODERS_AND_REPRESENTATION: { ar: "المشفرات التلقائية والتمثيل", en: "Autoencoders & Representation", fr: "Auto-encodeurs & Représentation" },
+    RECURRENT_AND_SEQUENCE_MODELS: { ar: "النماذج المتكررة والمتسلسلة", en: "Recurrent & Sequence Models", fr: "Modèles récurrents & séquentiels" },
+    CONVOLUTIONAL_ARCHITECTURES: { ar: "هياكل الشبكات الالتفافية", en: "Convolutional Architectures", fr: "Architectures convolutionnelles" },
+    CROSS_VALIDATION_AND_SPLITS: { ar: "التحقق المتقاطع وتقسيم البيانات", en: "Cross-validation & Splits", fr: "Validation croisée & Divisions" },
+    GENERALIZATION_AND_OVERFITTING: { ar: "التعميم وفرط التخصيص", en: "Generalization & Overfitting", fr: "Généralisation & Surapprentissage" },
+    KERNEL_METHODS_AND_SVM: { ar: "طرق النواة و SVM", en: "Kernel Methods & SVM", fr: "Méthodes à noyau & SVM" },
+    PROGRAMMING_TOOLS_AND_LIBRARIES: { ar: "أدوات ومكتبات البرمجة", en: "Programming Tools & Libraries", fr: "Outils & Bibliothèques de programmation" },
+    PRIMITIVE_CONCEPTS: { ar: "المفاهيم الأولية", en: "Primitive Concepts", fr: "Concepts primitifs" }
+  };
+
+  function setupDynamicFilters() {
+    const filterContainer = document.getElementById('graph-filters');
+    const legendContainer = document.getElementById('graph-legend-dynamic');
+    if (!filterContainer) return;
+    const clusters = [...new Set(terms.map(t => t.primary_cluster || t.category).filter(Boolean))];
+    const isAr = currentLang === 'ar';
+    const allLabel = isAr ? "الكل" : (currentLang === 'fr' ? "Tous" : "All");
+
+    filterContainer.innerHTML = `
+      <button class="chip active" onclick="filterGraphByCategory('all')">${allLabel} ${terms.length}</button>
+      ${clusters.map(c => {
+        const nameObj = categoryMap[c] || { en: c };
+        const displayName = isAr ? (nameObj.ar || nameObj.en) : (currentLang === 'fr' ? (nameObj.fr || nameObj.en) : nameObj.en);
+        return `<button class="chip" onclick="filterGraphByCategory('${c}')">${displayName}</button>`;
+      }).join('')}
+      <div style="flex:1"></div>
+    `;
+    if (legendContainer) {
+      const colors = ['#2dd4bf', '#a855f7', '#fb7185', '#60a5fa', '#f59e0b'];
+      legendContainer.innerHTML = clusters.slice(0, 5).map((c, i) => {
+        const nameObj = categoryMap[c] || { en: c };
+        const displayName = isAr ? (nameObj.ar || nameObj.en) : (currentLang === 'fr' ? (nameObj.fr || nameObj.en) : nameObj.en);
+        return `<div><span class="dot" style="background: ${colors[i % colors.length]}"></span>${displayName}</div>`;
+      }).join('');
+    }
+  }
+
+  function filterGraphByCategory(cat) {
+    let filtered;
+    if (cat === 'all') {
+      filtered = terms.slice(0, 500);
+    } else {
+      filtered = terms.filter(t => t.primary_cluster === cat || t.category === cat).slice(0, 300);
+    }
+    
+    // Reset nodes and edges
+    const colors = ['#2dd4bf', '#a855f7', '#fb7185', '#60a5fa', '#f59e0b'];
+    const clusterMap = {};
+    const uniqueClusters = [...new Set(terms.map(t => t.primary_cluster || t.category).filter(Boolean))];
+    uniqueClusters.forEach((c, i) => clusterMap[c] = colors[i % colors.length]);
+
+    graphNodes = filtered.map(t => ({
+      id_ar: t.arabic_term,
+      id_en: t.english_term,
+      name_ar: t.arabic_term,
+      x: Math.random() * 800,
+      y: Math.random() * 600,
+      vx: 0,
+      vy: 0,
+      pagerank: t.pagerank || 0,
+      color: clusterMap[t.primary_cluster || t.category] || '#a855f7'
+    }));
+
+    const nodeLookup = {};
+    graphNodes.forEach(n => {
+      if (n.id_ar) nodeLookup[n.id_ar] = n;
+      if (n.id_en) nodeLookup[n.id_en] = n;
+      if (n.id_en) nodeLookup[n.id_en.toLowerCase()] = n;
+    });
+    
+    graphEdges = [];
+    filtered.forEach(t => {
+      const sourceNode = nodeLookup[t.arabic_term];
+      if (!sourceNode) return;
+      const prereqs = (t.graph_raw && t.graph_raw.prerequisites) || [];
+      prereqs.forEach(p => {
+        const targetNode = nodeLookup[p] || nodeLookup[p.toLowerCase()];
+        if (targetNode && targetNode !== sourceNode) {
+          graphEdges.push({ source: targetNode, target: sourceNode });
+        }
+      });
+    });
+
+    document.querySelectorAll('#graph-filters .chip').forEach(c => {
+      const isAr = currentLang === 'ar';
+      const nameObj = categoryMap[cat] || { en: cat };
+      const displayName = isAr ? (nameObj.ar || nameObj.en) : (currentLang === 'fr' ? (nameObj.fr || nameObj.en) : nameObj.en);
+      const allLabel = isAr ? "الكل" : (currentLang === 'fr' ? "Tous" : "All");
+      const targetText = cat === 'all' ? allLabel : displayName;
+      c.classList.toggle('active', c.textContent.includes(targetText));
+    });
+  }
+
+  function selectHotspot(n, termName) {
+    document.querySelectorAll('.hot').forEach((h, i) => h.classList.toggle('active', (i+1) === n));
+    
+    const term = terms.find(t => t.arabic_term === termName || t.english_term === termName);
+    const side = document.querySelector('.anatomy-side');
+    if (!term || !side) return;
+
+    const isAr = currentLang === 'ar';
+    const isEn = currentLang === 'en';
+    const isFr = currentLang === 'fr';
+
+    const stopLabel = isAr ? `المختارة · المرحلة ${n} من 5` : (isFr ? `Sélectionné · Étape ${n} sur 5` : `Selected · Stop ${n} of 5`);
+    const kicker = side.querySelector('.side-kicker'); if(kicker) kicker.textContent = stopLabel;
+
+    const titleAr = side.querySelector('.side-title-ar'); if(titleAr) titleAr.textContent = isAr ? term.arabic_term : term.english_term;
+    const titleEn = side.querySelector('.side-title-en'); if(titleEn) titleEn.textContent = isAr ? term.english_term : term.arabic_term;
+
+    const feel = isAr ? term.one_sentence_feel_ar : (isEn ? term.one_sentence_feel_en : term.one_sentence_feel_fr);
+    const feelEl = side.querySelector('.side-feel'); if(feelEl) feelEl.textContent = feel || "";
+
+    const expl = isAr ? (term.detailed_explanation_ar || term.arabic_def) : (isEn ? (term.detailed_explanation_en || term.english_def) : (term.detailed_explanation_fr || term.french_def));
+    const explEl = side.querySelector('div[style*="font-size: 13px"]'); if(explEl) explEl.textContent = expl || "";
+
+    const badges = side.querySelectorAll('.badge');
+    if(badges.length >= 2) {
+      badges[0].textContent = isAr ? "أساسي" : "core";
+      badges[1].textContent = isAr ? "متوسط" : "intermediate";
+    }
+  }
+
+  init();
+</script>
+
+</body>
+</html>
