@@ -1,9 +1,11 @@
 /**
- * Proxies POST /api/v1/chat/completions → NVIDIA integrate API.
- * Set NVIDIA_API_KEY in Cloudflare Pages → Settings → Environment variables (encrypted),
- * or in .dev.vars for local: wrangler pages dev dist --compatibility-date=2024-01-01
+ * Proxies POST /api/v1/chat/completions → NVIDIA Integrate OpenAI-compatible API
+ * (same host as Python: OpenAI(base_url="https://integrate.api.nvidia.com/v1", api_key=...)).
  *
- * Do not put the API key in client-side JavaScript.
+ * Set NVIDIA_API_KEY in Cloudflare Pages → Settings → Environment variables (encrypted),
+ * or in .dev.vars for local: `npx wrangler pages dev` from repo root (see wrangler.toml).
+ *
+ * The browser must only call same-origin `/api/v1/chat/completions` — never embed the key in JS.
  */
 export async function onRequest(context) {
   const { request, env } = context;

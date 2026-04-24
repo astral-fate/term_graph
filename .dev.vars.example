@@ -1,5 +1,7 @@
-# Copy to .dev.vars (gitignored) for local Pages + Functions:
-#   npx wrangler pages dev dist --compatibility-date=2024-01-01
+# Copy to .dev.vars (gitignored). From repo root:
+#   node build.js
+#   npx wrangler pages dev
+# Uses wrangler.toml (dist + ./functions). Plain static servers will 404 on /api/v1/chat/completions.
 #
 # Cloudflare production: set the same name in Pages → Settings → Environment variables.
 

@@ -72,6 +72,6 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           wranglerVersion: "4.85.0"
-          command: pages deploy dist --project-name=term-graph --branch=main
+          command: pages deploy --project-name=term-graph --branch=main
         env:
           WRANGLER_LOG: debug

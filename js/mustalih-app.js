@@ -44,6 +44,24 @@
     document.documentElement.style.colorScheme = isEffectiveDark() ? 'dark' : 'light';
   }
 
+  /** Mermaid v10+ often returns a Promise from run/init; swallow rejections so DevTools stays clean. */
+  function runMermaidOn(nodeList) {
+    if (typeof mermaid === 'undefined' || !nodeList || nodeList.length === 0) return;
+    const nodes = Array.from(nodeList);
+    nodes.forEach((el) => el.removeAttribute('data-processed'));
+    try {
+      if (typeof mermaid.run === 'function') {
+        const p = mermaid.run({ nodes });
+        if (p && typeof p.catch === 'function') void p.catch((e) => console.warn('mermaid', e));
+        return;
+      }
+      const p = mermaid.init(undefined, nodes);
+      if (p && typeof p.catch === 'function') void p.catch((e) => console.warn('mermaid', e));
+    } catch (e) {
+      console.warn('mermaid', e);
+    }
+  }
+
   function applyMermaidThemeForDocument() {
     if (typeof mermaid === 'undefined') return;
     try {
@@ -53,15 +71,7 @@
         securityLevel: 'loose'
       });
     } catch (e) {}
-    document.querySelectorAll('.mermaid').forEach((el) => el.removeAttribute('data-processed'));
-    const nodes = document.querySelectorAll('.mermaid');
-    if (nodes.length) {
-      try {
-        mermaid.init(undefined, nodes);
-      } catch (e) {
-        console.warn('mermaid reinit', e);
-      }
-    }
+    runMermaidOn(document.querySelectorAll('.mermaid'));
   }
 
   function updateThemeSwitch() {
@@ -731,9 +741,8 @@
 
         figCanvas.innerHTML = `<div class="mermaid" id="story-mermaid">${uml}</div>`;
         try {
-          // Reset Mermaid to clear previous state
           figCanvas.removeAttribute('data-processed');
-          mermaid.init(undefined, figCanvas.querySelectorAll(".mermaid"));
+          runMermaidOn(figCanvas.querySelectorAll('.mermaid'));
         } catch(e) { 
           console.error("Mermaid error:", e);
           figCanvas.innerHTML = `<div style="color:var(--coral); padding:20px; font-size:12px;">Syntax check: Please verify the UML structure for "${items[0].term.arabic_term}".</div>`;
@@ -840,8 +849,7 @@
         uml = uml.replace(/\[([^"\]]+)\]/g, '["$1"]');
         mermaidRoot.innerHTML = `<div class="mermaid drawer-mermaid">${uml}</div>`;
         try {
-          mermaidRoot.querySelectorAll('.mermaid').forEach((el) => el.removeAttribute('data-processed'));
-          mermaid.init(undefined, mermaidRoot.querySelectorAll('.mermaid'));
+          runMermaidOn(mermaidRoot.querySelectorAll('.mermaid'));
         } catch (e) {
           console.warn('drawer mermaid', e);
           mermaidRoot.innerHTML = `<div style="color:var(--coral);font-size:12px;">${isAr ? 'تعذّر عرض المخطط.' : (isEn ? 'Could not render diagram.' : 'Impossible d’afficher le diagramme.')}</div>`;
@@ -886,7 +894,7 @@
       const response = await fetch(nvidiaChatProxyUrl(), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ model: "deepseek-ai/deepseek-v3", messages: [{role: "user", content: prompt}], temperature: 0.7, max_tokens: 4000, stream: true })
+        body: JSON.stringify({ model: "qwen/qwen3-coder-480b-a35b-instruct", messages: [{role: "user", content: prompt}], temperature: 0.7, max_tokens: 4000, stream: true })
       });
       if (!response.ok) {
         const errBody = await response.text();

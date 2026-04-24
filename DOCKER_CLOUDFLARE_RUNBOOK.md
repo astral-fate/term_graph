@@ -7,7 +7,7 @@ This guide is for running and deploying the project **without installing Node.js
 - Auto deploy is configured in `.github/workflows/deploy.yml`.
 - Any push to `main` triggers:
   1. Build (`node build.js`)
-  2. Deploy to Cloudflare Pages (`wrangler pages deploy dist --project-name=term-graph --branch=main`)
+  2. Deploy to Cloudflare Pages (`wrangler pages deploy --project-name=term-graph --branch=main` — uses root `wrangler.toml` so static files come from `dist/` and **Pages Functions** from `./functions`; passing only `dist` on the CLI can omit Functions and break `/api/v1/chat/completions`.)
 
 Required GitHub repository secrets:
 

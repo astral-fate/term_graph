@@ -3,7 +3,8 @@
  * Mount once; call applyLabels(dict) from setLanguage.
  */
 (function (global) {
-  const MODEL = 'deepseek-ai/deepseek-v3';
+  /** NVIDIA Integrate OpenAI-compatible model id (same as Python OpenAI base_url integrate host). */
+  const MODEL = 'qwen/qwen3-coder-480b-a35b-instruct';
   const RAG_TOP_K = 28;
 
   /** Always same-origin (Pages Function). Never call NVIDIA's integrate chat URL from the browser — CORS will block. */
