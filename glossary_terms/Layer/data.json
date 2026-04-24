@@ -1,0 +1,6 @@
+{
+    "en_term": "Layer",
+    "ar_term": "طبقة",
+    "en_def": "A group of neurons in a neural network that processes the input features or the output of those neurons.",
+    "ar_def": "مجموعة من الخلايا العصبية في شبكة عصبية ما، تعالج خصائص المُدْخَلات أو مخرجات تلك الخلايا العصبية."
+}

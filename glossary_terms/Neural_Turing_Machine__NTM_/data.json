@@ -1,0 +1,6 @@
+{
+    "en_term": "Neural Turing Machine (NTM)",
+    "ar_term": "آلة تورينج العصبية",
+    "en_def": "A neural network architecture that combines traditional neural networks with external memory resources.",
+    "ar_def": "معمارية شبكة عصبية تجمع بين الشبكات العصبية التقليدية وموارد الذاكرة الخارجية."
+}

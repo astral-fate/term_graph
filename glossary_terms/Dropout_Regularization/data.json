@@ -1,0 +1,6 @@
+{
+    "en_term": "Dropout Regularization",
+    "ar_term": "ضبط الإسقاط",
+    "en_def": "A technique used in training neural networks to prevent overfitting by randomly deactivating a subset of neurons during each training iteration.",
+    "ar_def": "أسلوب يُستخدم في تدريب الشبكات العصبية لمنع فرط التخصيص، عن طريق إلغاء تنشيط مجموعة فرعية من الخلايا العصبية بشكل عشوائي أثناء تكرار التدريب."
+}

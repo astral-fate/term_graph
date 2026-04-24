@@ -1,0 +1,6 @@
+{
+    "en_term": "Quantization",
+    "ar_term": "تجزيء كمي",
+    "en_def": "An algorithm that applies quantile bucketing on a specific feature in a dataset.",
+    "ar_def": "خوارزمية تطبق التجميع الكمي على خاصية معينة في مجموعة البيانات."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Transposed Convolution",
+    "ar_term": "ترشيح معكوس",
+    "en_def": "A technique that allows upsampling a feature vector from a minimized dimensionality into a larger one. Also called \"Fractionally Strided Convolution\" or \"Deconvolution.\"",
+    "ar_def": "أسلوب يُتيح رفع عيِّنات مُتَّجه الخصائص من بُعد مصغر إلى بُعد أكبر. ويُطلق عليه أيضًا \"ترشيح متوسع جزئيًّا\" أو \"تفكيك الترشيح\"."
+}

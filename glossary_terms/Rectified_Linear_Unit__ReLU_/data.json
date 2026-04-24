@@ -1,0 +1,6 @@
+{
+    "en_term": "Rectified Linear Unit (ReLU)",
+    "ar_term": "وحدة خطية مصححة (ريلو)",
+    "en_def": "An activation function that returns 0 if the input is negative or zero and returns the same input value if the input is positive.",
+    "ar_def": "دالة تنشيط تُعطي القيمة صفرًا إذا كان المُدْخَل سالبًا أو صفرًا، وتعطي القيمة نفسها إذا كان المُدْخَل موجبًا."
+}

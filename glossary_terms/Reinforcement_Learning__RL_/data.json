@@ -1,0 +1,6 @@
+{
+    "en_term": "Reinforcement Learning (RL)",
+    "ar_term": "تعلُّم تعزيزي",
+    "en_def": "A type of machine learning that learns the optimal policy through rewards and punishments to optimize the total reward.",
+    "ar_def": "نوع من تعلُّم الآلة يتعلَّم السياسة المثلى عن طريق المكافآت والعقوبات؛ لأجل تحسين إجمالي المكافأة."
+}

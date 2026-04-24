@@ -1,0 +1,6 @@
+{
+    "en_term": "Data Pipeline",
+    "ar_term": "سير عمل البيانات",
+    "en_def": "A series of processes that move and transform raw data from various sources to a destination for analysis or use.",
+    "ar_def": "سلسلة من العمليات التي تنقل البيانات الخام وتحوِّلها من مصادر مختلفة إلى وجهة للتحليل أو الاستخدام."
+}

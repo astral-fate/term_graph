@@ -1,0 +1,6 @@
+{
+    "en_term": "Forward Chaining",
+    "ar_term": "تسلسل أمامي",
+    "en_def": "A reasoning method that starts with a set of known facts and applies inference rules to derive new facts until a specific goal or conclusion is reached.",
+    "ar_def": "طريقة استدلال تبدأ بمجموعة من الحقائق المعروفة، وتطبق قواعد الاستنتاج لاستخلاص حقائق جديدة للوصول إلى هدف أو استنتاج محدد."
+}

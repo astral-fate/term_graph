@@ -1,0 +1,6 @@
+{
+    "en_term": "Long-Term Memory",
+    "ar_term": "ذاكرة طويلة المدى",
+    "en_def": "A memory that allows a model to store information for an extended period and utilize it when generating responses.",
+    "ar_def": "ذاكرة تسمح للنموذج بتخزين المعلومات لفترة ممتدة واستخدامها عند توليد الاستجابات."
+}

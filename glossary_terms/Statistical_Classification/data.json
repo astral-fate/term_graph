@@ -1,0 +1,6 @@
+{
+    "en_term": "Statistical Classification",
+    "ar_term": "تصنيف إحصائي",
+    "en_def": "A supervised learning approach that trains a model to categorize new unlabeled data based on relevant labeled data.",
+    "ar_def": "طريقة تعلُّم موجَّه لتدريب النماذج على تصنيف بيانات جديدة غير مُسمَّاة بناءً على بيانات ذات علاقة ومُسمَّاة."
+}

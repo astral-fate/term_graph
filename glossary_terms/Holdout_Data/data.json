@@ -1,0 +1,6 @@
+{
+    "en_term": "Holdout Data",
+    "ar_term": "بيانات مستثناة",
+    "en_def": "The dataset that is intentionally not used during the training and will be used to evaluate the model's generalization ability.",
+    "ar_def": "مجموعة البيانات التي لم تُستخدم عن قصد أثناء التدريب، وستُستخدم لتقييم قدرة النموذج على التعميم."
+}

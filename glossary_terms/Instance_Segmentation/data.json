@@ -1,0 +1,6 @@
+{
+    "en_term": "Instance Segmentation",
+    "ar_term": "تقسيم الأشياء",
+    "en_def": "A computer vision task that involves identifying and outlining each distinct object within an image, providing precise boundaries and a unique label for each one.",
+    "ar_def": "مهمة في رؤية الحاسب تتضمن تحديد وتوضيح كل شيء مُميَّز داخل الصورة، وتُعيِّن حدودًا دقيقة واسمًا فريدًا لكل الأشياء فيها."
+}

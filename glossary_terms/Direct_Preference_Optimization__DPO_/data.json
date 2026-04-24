@@ -1,0 +1,6 @@
+{
+    "en_term": "Direct Preference Optimization (DPO)",
+    "ar_term": "تحسين التفضيل المباشر",
+    "en_def": "A technique that trains a model to align its behavior with human preferences.",
+    "ar_def": "أسلوب لتدريب النماذج على مواءمة سلوكها مع التفضيلات البشرية."
+}

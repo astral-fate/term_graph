@@ -1,0 +1,6 @@
+{
+    "en_term": "Reward",
+    "ar_term": "مكافأة",
+    "en_def": "A numerical result in reinforcement learning defined by the environment when taking action in a state.",
+    "ar_def": "نتيجة عددية في التعلُّم التعزيزي تحدده البيئة عند القيام بفعل في حالة ما."
+}

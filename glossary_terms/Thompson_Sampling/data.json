@@ -1,0 +1,6 @@
+{
+    "en_term": "Thompson Sampling",
+    "ar_term": "أخذ عيِّنات تومبسون",
+    "en_def": "A heuristic learning algorithm that performs actions sequentially to balance between maximizing immediate performance and accumulating new information that could improve performance in the future.",
+    "ar_def": "خوارزمية تعلُّم إرشادية تُنفِّذ الأفعال بطريقة متسلسلة لتوازن بين تعظيم الأداء الفوري وتجميع المعلومات الجديدة التي يمكن أن تحسن الأداء في المستقبل."
+}

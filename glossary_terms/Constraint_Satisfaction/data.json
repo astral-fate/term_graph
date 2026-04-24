@@ -1,0 +1,6 @@
+{
+    "en_term": "Constraint Satisfaction",
+    "ar_term": "تلبية القيود",
+    "en_def": "A decision problem with finite choices and the objective is to satisfy a given set of constraints by finding values for a set of variables.",
+    "ar_def": "مشكلة تتعلق باتخاذ القرار مع محدودية الخيارات، والهدف هو تلبية مجموعة معينة من القيود عن طريق إيجاد قيم مجموعة من المتغيرات."
+}

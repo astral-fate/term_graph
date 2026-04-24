@@ -1,0 +1,6 @@
+{
+    "en_term": "Output Layer",
+    "ar_term": "طبقة مخرجات",
+    "en_def": "The final layer in a neural network that contains the result.",
+    "ar_def": "الطبقة الأخيرة في الشبكة العصبية التي تشتمل على النتيجة."
+}

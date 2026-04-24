@@ -1,1 +1,16 @@
 .DS_Store
+node_modules/
+dist/
+.wrangler/
+*.log
+rename_project.py
+build_*.py
+validate_json.py
+inject_meta.py
+setup_*.py
+translate_all_folders.py
+automate_translation.py
+build.js
+build.ps1
+docker-compose.yaml
+package-lock.json

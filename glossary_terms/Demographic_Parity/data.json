@@ -1,0 +1,6 @@
+{
+    "en_term": "Demographic Parity",
+    "ar_term": "تكافؤ ديموغرافي",
+    "en_def": "A fairness metric that is satisfied if the classification results of a model are independent of a given sensitive attribute.",
+    "ar_def": "مقياس للإنصاف يكون استيفاؤه عندما لا تعتمد نتائج تصنيف النموذج على سمة حساسة معينة."
+}

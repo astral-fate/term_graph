@@ -1,0 +1,6 @@
+{
+    "en_term": "Decision Boundary",
+    "ar_term": "حدود القرار",
+    "en_def": "The separator between the classes that a model learned in binary or multi-class classification problems.",
+    "ar_def": "الفاصل بين الأصناف التي تعلمها النموذج في مشكلات التصنيف الثنائي أو المتعدد."
+}

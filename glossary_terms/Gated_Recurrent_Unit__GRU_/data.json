@@ -1,0 +1,6 @@
+{
+    "en_term": "Gated Recurrent Unit (GRU)",
+    "ar_term": "وحدة بوابة تكرارية",
+    "en_def": "A type of recurrent neural network designed to process sequential data by using gating mechanisms to control the flow of information.",
+    "ar_def": "نوع من الشبكات العصبية التكرارية المصممة لمعالجة البيانات المتسلسلة باستخدام آليات البوابات للتحكم في تدفق المعلومات."
+}

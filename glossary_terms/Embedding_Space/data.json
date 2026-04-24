@@ -1,0 +1,6 @@
+{
+    "en_term": "Embedding Space",
+    "ar_term": "فضاء التضمين",
+    "en_def": "The relatively low-dimensional vector space to which the features from a higher-dimensional vector space are mapped.",
+    "ar_def": "فضاء مُتَّجه قليل الأبعاد نسبيًّا تُعيّن عليه خصائص من فضاء مُتَّجه ذي أبعاد أكثر."
+}

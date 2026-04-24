@@ -1,0 +1,6 @@
+{
+    "en_term": "Soft Prompting",
+    "ar_term": "أوامر ناعمة",
+    "en_def": "A technique to enhance the output of a pre-trained model by adding non-textual embeddings to the input embeddings.",
+    "ar_def": "أسلوب لتحسين مخرجات نموذج مُدرَّب سابقًا، عن طريق إضافة تضمينات غير نصية إلى تضمينات المُدْخَلات."
+}

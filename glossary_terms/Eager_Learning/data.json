@@ -1,0 +1,6 @@
+{
+    "en_term": "Eager Learning",
+    "ar_term": "تعلُّم شغوف",
+    "en_def": "A learning method that processes the training data before receiving a query.",
+    "ar_def": "طريقة تعلُّم تعالج بيانات التدريب قبل تلقي أي استعلام."
+}

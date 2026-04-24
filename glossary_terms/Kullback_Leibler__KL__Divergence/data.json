@@ -1,0 +1,6 @@
+{
+    "en_term": "Kullback-Leibler (KL) Divergence",
+    "ar_term": "تباعد كولباك-ليبلر",
+    "en_def": "A measure that quantifies the difference between two probability distributions. Also called \"Relative Entropy.\"",
+    "ar_def": "مقياس يحدد الفرق بين توزيعين احتماليين. يُطلق عليه أيضًا \"انتروبيا نسبية\"."
+}

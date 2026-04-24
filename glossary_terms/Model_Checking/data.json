@@ -1,0 +1,6 @@
+{
+    "en_term": "Model Checking",
+    "ar_term": "فحص النموذج",
+    "en_def": "A verification technique that determines whether a model satisfies a given specification.",
+    "ar_def": "أسلوب تحقق يحدد مدى مطابقة النموذج لمواصفات معينة."
+}

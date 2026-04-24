@@ -1,0 +1,6 @@
+{
+    "en_term": "Clipping",
+    "ar_term": "تقليم",
+    "en_def": "A normalization technique used to deal with outliers by capping all feature values above or below a specific value to fixed value.",
+    "ar_def": "أسلوب تسوية يُستخدم للتعامل مع القيم الشاذة؛ عن طريق وضع حد أقصى بقيمة ثابتة لجميع قيم الخصائص التي تكون أعلى أو أقل من قيمة محددة."
+}

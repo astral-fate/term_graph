@@ -1,0 +1,6 @@
+{
+    "en_term": "Test Dataset (or Test Data, Test Set)",
+    "ar_term": "بيانات الاختبار (أو مجموعة الاختبار)",
+    "en_def": "The data used to evaluate the performance of a machine learning model after the training and validation phases. Also called \"Evaluation Data.\"",
+    "ar_def": "البيانات المستخدمة لتقييم أداء نموذج تعلُّم الآلة بعد مرحلتي التدريب والتحقق. ويُطلق عليها أيضًا \"بيانات التقييم\"."
+}

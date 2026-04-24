@@ -1,0 +1,6 @@
+{
+    "en_term": "Oversampling",
+    "ar_term": "زيادة العيِّنات",
+    "en_def": "A technique used to balance a class-imbalanced dataset by duplicating examples from the minority class. Also called \"Upsampling.\"",
+    "ar_def": "أسلوب يُستخدم لموازنة البيانات غير المتوازنة الأصناف، عن طريق تكرار أمثلة من صنف الأقلية. ويُطلق عليه ايضًا \"رفع العيِّنات\"."
+}

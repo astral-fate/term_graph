@@ -1,0 +1,6 @@
+{
+    "en_term": "Sensitivity",
+    "ar_term": "دقة الحساسية",
+    "en_def": "The rate of how a model correctly predicts positive labels when it is actually positive.",
+    "ar_def": "معدل صحة تنبؤ النموذج للأسماء الإيجابية عندما تكون بالفعل كذلك."
+}

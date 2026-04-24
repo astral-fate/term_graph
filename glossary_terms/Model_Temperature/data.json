@@ -1,0 +1,6 @@
+{
+    "en_term": "Model Temperature",
+    "ar_term": "مُعامِل حرارة النموذج",
+    "en_def": "A hyperparameter that controls the randomness and creativity of the model's output.",
+    "ar_def": "مُعامِل ضبط للتحكم في العشوائية والإبداع في مخرجات النماذج."
+}

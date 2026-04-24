@@ -1,0 +1,6 @@
+{
+    "en_term": "Weight",
+    "ar_term": "وزن",
+    "en_def": "A parameter in a neural network that determines the strength of the connection between neurons.",
+    "ar_def": "مُعامِل في الشبكة العصبية يُحدِّد قوة الاتصال بين الخلايا العصبية."
+}

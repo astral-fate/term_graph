@@ -1,0 +1,6 @@
+{
+    "en_term": "Term Frequency-Inverse Document Frequency (TF-IDF)",
+    "ar_term": "تكرار المصطلح ومعكوس تكرار المستند",
+    "en_def": "A measure to evaluate the importance of a word in a document relative to a collection of documents.",
+    "ar_def": "مقياس لتقييم أهمية الكلمة في مستند بالنسبة لمجموعة من المستندات."
+}

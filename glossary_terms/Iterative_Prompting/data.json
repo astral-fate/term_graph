@@ -1,0 +1,6 @@
+{
+    "en_term": "Iterative Prompting",
+    "ar_term": "أوامر تكرارية",
+    "en_def": "A prompt engineering technique that refines and adjusts prompts based on the model's responses over multiple iterations to get more accurate and desired results.",
+    "ar_def": "أسلوب في هندسة الأوامر تُحسِّن الأوامر وتُعدِّلها بناءً على استجابات النموذج، عبر تكرارات متعددة للحصول على نتائج مرغوبة وأكثر دقة."
+}

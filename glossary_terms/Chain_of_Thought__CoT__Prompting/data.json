@@ -1,0 +1,6 @@
+{
+    "en_term": "Chain-of-Thought (CoT) Prompting",
+    "ar_term": "أوامر تسلسل الأفكار",
+    "en_def": "A prompt engineering technique that encourages a model to break down complex tasks into smaller steps to show the reasoning process.",
+    "ar_def": "أسلوب لهندسة الأوامر، يحث النموذج على تقسيم المهام المعقدة إلى خطوات أصغر؛ لإظهار عملية الاستدلال."
+}

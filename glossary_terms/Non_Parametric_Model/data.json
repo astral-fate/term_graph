@@ -1,0 +1,6 @@
+{
+    "en_term": "Non-Parametric Model",
+    "ar_term": "نموذج غير مُعامِلي",
+    "en_def": "A machine learning model that does not make specific assumptions about the form of the mapping function and does not assume a finite set of parameters.",
+    "ar_def": "نموذج تعلُّم آلة لا يضع افتراضات محددة حول شكل دالة التعيين، ولا يفترض مجموعة محدودة من المُعامِلات."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Lazy Learning",
+    "ar_term": "تعلُّم كسول",
+    "en_def": "A learning method that defers the processing of training data until receiving a query.",
+    "ar_def": "طريقة تعلُّم تؤجل معالجة بيانات التدريب حتى تَلقِّي عملية استعلام."
+}

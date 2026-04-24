@@ -1,0 +1,6 @@
+{
+    "en_term": "Deterministic Algorithm",
+    "ar_term": "خوارزمية حتمية النتائج",
+    "en_def": "An algorithm that always produces the same output for a given input.",
+    "ar_def": "خوارزمية تنتج نفس المخرجات دائمًا لمُدْخَل معين."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Distributed File System (DFS)",
+    "ar_term": "نظام الملفات الموزَّع",
+    "en_def": "A file management system that allows files to be stored across a collection of devices while giving a single-file-system view to clients.",
+    "ar_def": "نظام إدارة ملفات يُتيح تخزين الملفات عبر مجموعة من الأجهزة، مع إعطاء طريقة عرض موحدة للعملاء."
+}

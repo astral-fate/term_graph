@@ -1,0 +1,6 @@
+{
+    "en_term": "Testing Error",
+    "ar_term": "خطأ الاختبار",
+    "en_def": "The error that occurs when running a model on new data.",
+    "ar_def": "الخطأ الذي يحدث عند تشغيل نموذج على بيانات جديدة."
+}

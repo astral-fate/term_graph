@@ -1,0 +1,6 @@
+{
+    "en_term": "Tiny Machine Learning (TinyML)",
+    "ar_term": "تعلُّم الآلة المُصغَّر",
+    "en_def": "A subfield of machine learning that focuses on running machine learning models on resource-constrained devices, such as IoT devices and microcontrollers.",
+    "ar_def": "مجال فرعي من تعلُّم الآلة يركز على تشغيل نماذج تعلُّم الآلة على الأجهزة المحدودة الموارد، مثل أجهزة إنترنت الأشياء ووحدات التحكم الدقيقة."
+}

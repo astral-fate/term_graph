@@ -1,0 +1,6 @@
+{
+    "en_term": "Content-Based Filtering",
+    "ar_term": "تصفية قائمة على المحتوى",
+    "en_def": "A technique used in recommendation systems to make predictions about a user's interests based on the item's features and user's likes.",
+    "ar_def": "أسلوب يُستخدم في أنظمة التوصية للتنبؤ باهتمامات المستخدم بناءً على إعجاباته وخصائص العناصر."
+}

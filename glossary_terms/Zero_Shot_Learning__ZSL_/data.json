@@ -1,0 +1,6 @@
+{
+    "en_term": "Zero-Shot Learning (ZSL)",
+    "ar_term": "تعلُّم بدون أمثلة",
+    "en_def": "An approach that enables the model to recognize classes never seen during training.",
+    "ar_def": "طريقة لتمكين النموذج من التعرُّف على الأصناف التي لم يسبق رؤيتها أثناء التدريب."
+}

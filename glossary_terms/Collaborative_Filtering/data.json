@@ -1,0 +1,6 @@
+{
+    "en_term": "Collaborative Filtering",
+    "ar_term": "تصفية تعاونية",
+    "en_def": "A technique used in recommendation systems to make predictions about the interests of a user based on the interests of other users.",
+    "ar_def": "أسلوب يُستخدم في أنظمة التوصية للتنبؤ باهتمامات المستخدم بناءً على اهتمامات المستخدمين الآخرين."
+}

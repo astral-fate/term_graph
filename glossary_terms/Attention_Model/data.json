@@ -1,0 +1,6 @@
+{
+    "en_term": "Attention Model",
+    "ar_term": "نموذج الانتباه",
+    "en_def": "A technique in a neural network that allows the network to focus on one aspect of a complex input each time until the whole dataset is categorized. Also called \"Attention Mechanism.\"",
+    "ar_def": "أسلوب في الشبكة العصبية يُتيح للشبكة التركيز على جانب واحد من المُدْخَلات المعقدة في كل مرة حتى تُصنَّف مجموعة البيانات بأكملها. ويُطلق عليه أيضًا \"آلية الانتباه\"."
+}

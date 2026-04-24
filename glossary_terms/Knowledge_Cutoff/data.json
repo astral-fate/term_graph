@@ -1,0 +1,6 @@
+{
+    "en_term": "Knowledge Cutoff",
+    "ar_term": "تاريخ آخر تحديث للمعرفة",
+    "en_def": "The point in time at which the data used to train the model was last updated.",
+    "ar_def": "النقطة الزمنية التي كان فيها آخر تحديث للبيانات المستخدمة لتدريب النموذج."
+}

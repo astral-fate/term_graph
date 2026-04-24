@@ -1,0 +1,6 @@
+{
+    "en_term": "Top-K Sampling",
+    "ar_term": "أخذ عيِّنات أعلى (ك)",
+    "en_def": "A text generation method that selects the next word from the top K most probable words.",
+    "ar_def": "طريقة لتوليد النصوص تختار الكلمة التالية من عدد (ك) من الكلمات الأكثر احتمالًا."
+}

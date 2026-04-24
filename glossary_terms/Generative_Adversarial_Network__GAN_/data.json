@@ -1,0 +1,6 @@
+{
+    "en_term": "Generative Adversarial Network (GAN)",
+    "ar_term": "شبكة توليدية تنافسية",
+    "en_def": "An unsupervised machine learning algorithm composed of two neural networks, a generative network and a discriminative one, compete with each other in a zero-sum game framework.",
+    "ar_def": "خوارزمية تعلُّم آلة غير موجَّه مكوَّنة من شبكتين عصبيتين: شبكة مولدة وشبكة تمييزية، تتنافسان في إطار لعبة صفرية الناتج."
+}

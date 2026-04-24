@@ -1,0 +1,6 @@
+{
+    "en_term": "Batch Size",
+    "ar_term": "حجم الحُزمة",
+    "en_def": "The number of samples passed to the machine learning model at each iteration for training the model.",
+    "ar_def": "عدد العيِّنات التي تُمرَّر إلى نموذج تعلُّم الآلة في كل تكرار لتدريب النموذج."
+}

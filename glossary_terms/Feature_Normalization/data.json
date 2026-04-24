@@ -1,0 +1,6 @@
+{
+    "en_term": "Feature Normalization",
+    "ar_term": "تسوية الخصائص",
+    "en_def": "A way to change a feature's range of values to a standard range of values, usually -1 to +1 or 0 to 1.",
+    "ar_def": "طريقة لتغيير نطاق قيم خاصية إلى نطاق قياسي من القيم، عادةً من -1 إلى +1 أو من 0 إلى 1."
+}

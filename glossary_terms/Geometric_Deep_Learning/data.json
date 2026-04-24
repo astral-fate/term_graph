@@ -1,0 +1,6 @@
+{
+    "en_term": "Geometric Deep Learning",
+    "ar_term": "تعلُّم عميق هندسي",
+    "en_def": "A subfield of deep learning focusing on designing neural networks that can process data with geometric structures, such as graphs and meshes.",
+    "ar_def": "مجال فرعي من التعلُّم العميق يركز على تصميم الشبكات العصبية التي يمكنها معالجة البيانات ذات الهياكل الهندسية، مثل الرسوم البيانية والشبكات."
+}

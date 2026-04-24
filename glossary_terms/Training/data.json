@@ -1,0 +1,6 @@
+{
+    "en_term": "Training",
+    "ar_term": "تدريب",
+    "en_def": "The process of determining or optimizing the parameters comprising a model based on a machine learning algorithm using training data. Also called \"Model Training.\"",
+    "ar_def": "عملية تحديد أو تحسين المُعامِلات التي تشكل نموذجًا يعتمد على خوارزمية تعلُّم الآلة باستخدام بيانات التدريب. ويُطلق عليها أيضًا \"تدريب النموذج\"."
+}

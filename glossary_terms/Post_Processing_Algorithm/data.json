@@ -1,0 +1,6 @@
+{
+    "en_term": "Post-Processing Algorithm",
+    "ar_term": "خوارزمية بعد المعالجة",
+    "en_def": "An algorithm that is used to adjust the output of a model.",
+    "ar_def": "خوارزمية تُستخدم لتعديل مخرجات النموذج."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Generative Model",
+    "ar_term": "نموذج توليدي",
+    "en_def": "A machine learning model that can create new examples similar to the training dataset.",
+    "ar_def": "نموذج تعلُّم آلة يمكنه إنشاء أمثلة جديدة مشابهة لبيانات التدريب."
+}

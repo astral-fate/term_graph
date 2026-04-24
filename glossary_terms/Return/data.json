@@ -1,0 +1,6 @@
+{
+    "en_term": "Return",
+    "ar_term": "عائد",
+    "en_def": "A total of rewards in reinforcement learning that an agent expects when following a specific policy.",
+    "ar_def": "إجمالي المكافآت في التعلُّم التعزيزي الذي يتوقعه الوكيل عند اتباع سياسة معينة."
+}

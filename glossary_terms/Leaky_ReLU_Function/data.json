@@ -1,0 +1,6 @@
+{
+    "en_term": "Leaky ReLU Function",
+    "ar_term": "دالة ريلو المتسربة",
+    "en_def": "An activation function that allows a small, non-zero gradient for negative input values.",
+    "ar_def": "دالة تنشيط تسمح بتدرُّج صغير غير صفري لقيم المُدْخَلات السالبة."
+}

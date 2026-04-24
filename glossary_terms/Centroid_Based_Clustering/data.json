@@ -1,0 +1,6 @@
+{
+    "en_term": "Centroid-Based Clustering",
+    "ar_term": "تجميع تمحوري",
+    "en_def": "A clustering algorithm that arranges data into non-hierarchical clusters represented by a central vector or a centroid.",
+    "ar_def": "خوارزمية تجميع، ترتب البيانات في مجموعات غير هرمية تُمثَّل بواسطة مُتَّجه مركزي أو بؤرة تجميع."
+}

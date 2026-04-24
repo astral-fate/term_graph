@@ -1,0 +1,6 @@
+{
+    "en_term": "Generated Knowledge Prompting",
+    "ar_term": "أوامر المعرفة المولَّدة",
+    "en_def": "A prompt engineering technique that generates additional useful knowledge for a model to improve its understanding and response to a prompt.",
+    "ar_def": "أسلوب في هندسة الأوامر يُولِّد معرفة مفيدة إضافية للنموذج لتحسين فهمه واستجابته للأوامر."
+}

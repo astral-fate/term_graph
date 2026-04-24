@@ -1,0 +1,6 @@
+{
+    "en_term": "Gradient Clipping",
+    "ar_term": "قص تدرجي",
+    "en_def": "A mechanism to reduce the exploding gradient problem by restricting the gradients' maximum value when training a model using gradient descent.",
+    "ar_def": "آلية لتقليل مشكلة انفجار التدرج عن طريق تقييد القيمة القصوى للتدرجات عند تدريب نموذج باستخدام النزول التدرجي."
+}

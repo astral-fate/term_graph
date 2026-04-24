@@ -1,0 +1,6 @@
+{
+    "en_term": "Kernel Support Vector Machine (KSVM)",
+    "ar_term": "آلة المُتَّجهات الداعمة باستخدام النواة",
+    "en_def": "A classification algorithm that transforms input data vectors to a higher-dimensional space to increase the margin between positive and negative classes.",
+    "ar_def": "خوارزمية تصنيف تُحوِّل مُتَّجهات البيانات المُدْخَلة إلى مساحة بُعدية أكثر لزيادة الهامش بين الأصناف الموجبة والسالبة."
+}

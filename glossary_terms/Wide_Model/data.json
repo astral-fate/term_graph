@@ -1,0 +1,6 @@
+{
+    "en_term": "Wide Model",
+    "ar_term": "نموذج عريض",
+    "en_def": "A type of neural network with many input features that connect directly to the output node.",
+    "ar_def": "نوع من الشبكات العصبية يشتمل على عدد من خصائص المُدْخَلات التي تتصل مباشرةً بعقدة مخرجات."
+}

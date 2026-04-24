@@ -1,0 +1,6 @@
+{
+    "en_term": "Branching Factor",
+    "ar_term": "عامل التفرع",
+    "en_def": "The number of descendants that a node generates.",
+    "ar_def": "عدد العُقَد الفرعية التي تُولِّدها العقدة."
+}

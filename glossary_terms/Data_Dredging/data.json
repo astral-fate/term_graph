@@ -1,0 +1,6 @@
+{
+    "en_term": "Data Dredging",
+    "ar_term": "تلاعب بالبيانات",
+    "en_def": "A statistical bias that occurs when data is manipulated or analyzed excessively to produce statistically significant results that may not be truly significant. Also called \"Data Snooping\", \"Data Fishing\", or \"P-Hacking.\"",
+    "ar_def": "تحيُّز إحصائي يحدث عند التلاعب بالبيانات أو تحليلها بطريقة مفرطة للوصول إلى نتائج ذات دلالة إحصائية مع أنها قد لا تكون كذلك. يُطلق عليه أيضًا \"تطفُّل على البيانات\" أو \"تصيُّد في البيانات\" أو \"قرصنة القيمة الاحتمالية\"."
+}

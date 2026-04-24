@@ -1,0 +1,6 @@
+{
+    "en_term": "Retraining",
+    "ar_term": "إعادة تدريب",
+    "en_def": "The process of updating a trained model by training it with new data.",
+    "ar_def": "عملية تحديث النموذج المدرَّب، عن طريق تدريبه ببيانات جديدة."
+}

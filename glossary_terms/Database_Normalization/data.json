@@ -1,0 +1,6 @@
+{
+    "en_term": "Database Normalization",
+    "ar_term": "تسوية قاعدة البيانات",
+    "en_def": "A process of designing data in a database by establishing relationships between tables to remove redundancy and inconsistent dependency.",
+    "ar_def": "عملية تصميم البيانات في قاعدة بيانات عن طريق إنشاء علاقات بين الجداول؛ لإزالة التكرار والتبعية غير المتسقة."
+}

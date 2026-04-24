@@ -1,0 +1,6 @@
+{
+    "en_term": "Independent and Identically Distributed (IID) Random Variables",
+    "ar_term": "متغيرات مستقلة ومتطابقة التوزيع",
+    "en_def": "The random variables that are mutually independent and have the same probability distribution.",
+    "ar_def": "متغيرات عشوائية مستقلة عن بعضها البعض، ولها نفس التوزيع الاحتمالي."
+}

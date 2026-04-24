@@ -1,0 +1,6 @@
+{
+    "en_term": "K-Modes (or K-Modes Clustering)",
+    "ar_term": "تجميع بالمنوال",
+    "en_def": "A clustering algorithm that uses mode to classify data into K groups based on features similarities.",
+    "ar_def": "خوارزمية تجميع تستخدم المنوال لتصنيف البيانات إلى عدد (ك) من المجموعات بناءً على تشابه خصائصها."
+}

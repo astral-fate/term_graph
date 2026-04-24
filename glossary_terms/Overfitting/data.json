@@ -1,0 +1,6 @@
+{
+    "en_term": "Overfitting",
+    "ar_term": "فرط التخصيص",
+    "en_def": "A machine learning problem that occurs when creating a model that matches a training dataset so closely, making the model fails to generalize on new data.",
+    "ar_def": "مشكلة في تعلُّم الآلة تحدث عند إنشاء نموذج يطابق بيانات التدريب بصورة كبيرة تجعله يفشل في التعميم على البيانات الجديدة."
+}

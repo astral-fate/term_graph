@@ -1,0 +1,6 @@
+{
+    "en_term": "False Positive (FP)",
+    "ar_term": "تصنيف إيجابي خاطئ",
+    "en_def": "A result that the model incorrectly predicted as positive while it is actually negative.",
+    "ar_def": "نتيجة تنبأ النموذج بأنها إيجابية، في حين هي في الواقع سلبية."
+}

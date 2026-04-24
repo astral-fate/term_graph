@@ -1,0 +1,6 @@
+{
+    "en_term": "Reservoir Computing (RC)",
+    "ar_term": "حوسبة المكامن",
+    "en_def": "A computational framework that simplifies the training of recurrent neural networks for processing sequential and temporal data.",
+    "ar_def": "إطار حوسبي يُبسِّط تدريب الشبكات العصبية التكرارية لمعالجة البيانات المتسلسلة والزمنية."
+}

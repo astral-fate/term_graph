@@ -1,0 +1,6 @@
+{
+    "en_term": "Squared Loss",
+    "ar_term": "مربع الخسارة",
+    "en_def": "A loss function that measures the error between a model's predictions and the actual values by squaring the difference between them. Also called \"L2 Loss.\"",
+    "ar_def": "دالة خسارة تقيس الخطأ بين تنبؤات النموذج والقيم الفعلية، عن طريق تربيع الفرق بينهما. ويُطلق عليها أيضًا \"خسارة إل 2\"."
+}

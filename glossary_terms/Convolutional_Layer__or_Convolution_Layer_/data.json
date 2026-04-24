@@ -1,0 +1,6 @@
+{
+    "en_term": "Convolutional Layer (or Convolution Layer)",
+    "ar_term": "طبقة ترشيحية",
+    "en_def": "A layer in a convolutional neural network that uses filters to perform convolution operations.",
+    "ar_def": "طبقة في الشبكة العصبية الترشيحية تستخدم المُرشِّحات لإجراء عمليات الترشيح."
+}

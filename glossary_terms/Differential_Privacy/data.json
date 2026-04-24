@@ -1,0 +1,6 @@
+{
+    "en_term": "Differential Privacy",
+    "ar_term": "خصوصية تباينية",
+    "en_def": "A mathematical definition of privacy in machine learning that allows collecting, analyzing, and sharing statistics about a dataset based on personal data while protecting individuals' privacy.",
+    "ar_def": "تعريف رياضي للخصوصية في تعلُّم الآلة يُتيح جمع الإحصاءات حول مجموعة البيانات وتحليلها ومشاركتها بناءً على البيانات الشخصية مع حماية خصوصية الأفراد."
+}

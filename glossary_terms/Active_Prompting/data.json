@@ -1,0 +1,6 @@
+{
+    "en_term": "Active Prompting",
+    "ar_term": "أوامر نشطة",
+    "en_def": "A method to adapt a model to specific tasks by selecting and annotating the most uncertain questions with task-specific prompts and chain-of-thought.",
+    "ar_def": "طريقة لتكييف نموذج على مهام محددة عن طريق اختيار الأسئلة الأكثر غموضًا، وتوصيفها باستخدام أوامر متعلقة بالمهام وتسلسل الأفكار."
+}

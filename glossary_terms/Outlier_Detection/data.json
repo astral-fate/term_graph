@@ -1,0 +1,6 @@
+{
+    "en_term": "Outlier Detection",
+    "ar_term": "اكتشاف القيم الشاذة",
+    "en_def": "The process of identifying values in a dataset that appear inconsistent with or distant from most other values. Also called \"Unsupervised Anomaly Detection.\"",
+    "ar_def": "طريقة لتحديد القيم التي تبدو غير متسقة مع معظم القيم الأخرى في مجموعة البيانات أو بعيدة عنها. ويُطلق عليها أيضًا \"اكتشاف الشذوذ غير الموجَّه\"."
+}

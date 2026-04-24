@@ -1,0 +1,6 @@
+{
+    "en_term": "Feature Engineering",
+    "ar_term": "هندسة الخصائص",
+    "en_def": "The process of selecting and creating useful features from raw data to train a model.",
+    "ar_def": "عملية اختيار وإنشاء خصائص مفيدة من البيانات الأولية لتدريب نموذج."
+}

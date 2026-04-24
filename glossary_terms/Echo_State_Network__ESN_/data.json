@@ -1,0 +1,6 @@
+{
+    "en_term": "Echo State Network (ESN)",
+    "ar_term": "شبكة حالة الصدى",
+    "en_def": "A type of reservoir computing that creates a randomly connected recurrent network and trains suitable connection weights to produce the desired output.",
+    "ar_def": "نوع من حوسبة المكامن ينشئ شبكة تكرارية متصلة عشوائيًّا ويدرب أوزان اتصال مناسبة لإنتاج المخرجات المرغوبة."
+}

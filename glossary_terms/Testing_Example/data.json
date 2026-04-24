@@ -1,0 +1,6 @@
+{
+    "en_term": "Testing Example",
+    "ar_term": "مثال اختبار",
+    "en_def": "An example in a testing dataset that consists of one or more features and sometimes a label.",
+    "ar_def": "مثال من بيانات الاختبار يتكون من خاصية واحدة أو أكثر، وقد يحوي اسمًا أيضًا."
+}

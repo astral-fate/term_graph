@@ -1,0 +1,6 @@
+{
+    "en_term": "Logistic Regression",
+    "ar_term": "انحدار لوجستي",
+    "en_def": "A statistical model that uses a logistic function to convert a linear model's prediction into a value between 0 and 1. Also called \"Logit Model.\"",
+    "ar_def": "نموذج إحصائي يستخدم دالة لوجستية لتحويل تنبؤ النموذج الخطي إلى قيمة بين 0 و 1. ويُطلق عليه أيضًا \"نموذج لوجيت\"."
+}

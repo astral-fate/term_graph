@@ -1,0 +1,6 @@
+{
+    "en_term": "Generalization Curve",
+    "ar_term": "منحنى التعميم",
+    "en_def": "A loss curve that illustrates the training set and the validation set to help in detecting overfitting.",
+    "ar_def": "منحنى خسارة يوضح مجموعة التدريب، ومجموعة التحقق؛ للمساعدة في اكتشاف فرط التخصيص."
+}

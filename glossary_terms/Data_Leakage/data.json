@@ -1,0 +1,6 @@
+{
+    "en_term": "Data Leakage",
+    "ar_term": "تسرُّب البيانات",
+    "en_def": "A situation in machine learning where information from outside the training dataset is used to create the model, leading to overly optimistic performance estimates.",
+    "ar_def": "حالة في تعلُّم الآلة تُستخدم فيها معلومات من خارج مجموعة بيانات التدريب لإنشاء النماذج؛ وهو ما يؤدي إلى تقديرات أداء غير دقيقة."
+}

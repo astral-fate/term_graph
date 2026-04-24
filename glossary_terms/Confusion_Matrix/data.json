@@ -1,0 +1,6 @@
+{
+    "en_term": "Confusion Matrix",
+    "ar_term": "مصفوفة الدقة",
+    "en_def": "A matrix that summarizes the performance of a classification model and shows how successful the predictions were.",
+    "ar_def": "مصفوفة تلخص أداء نموذج التصنيف، وتوضح مدى نجاح التنبؤات."
+}

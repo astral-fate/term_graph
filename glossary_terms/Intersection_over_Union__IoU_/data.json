@@ -1,0 +1,6 @@
+{
+    "en_term": "Intersection over Union (IoU)",
+    "ar_term": "تقاطع على الاتحاد",
+    "en_def": "A metric to measure the accuracy of object or image detection tasks by comparing the predicted bounding box versus the actual one.",
+    "ar_def": "مقياس لتحديد دقة مهام اكتشاف الأشياء أو الصور عن طريق مقارنة إطار التحديد المتوقع مع إطار التحديد الفعلي."
+}

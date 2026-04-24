@@ -1,0 +1,6 @@
+{
+    "en_term": "Admissible Heuristic",
+    "ar_term": "إرشادية مقبولة",
+    "en_def": "A function that never overestimates the cost of reaching the goal in a search algorithm.",
+    "ar_def": "دالة لا تبالغ في تقدير تكلفة الوصول إلى الهدف في خوارزمية البحث."
+}

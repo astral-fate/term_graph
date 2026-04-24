@@ -1,0 +1,6 @@
+{
+    "en_term": "Depthwise Separable Convolutional Neural Network (sepCNN)",
+    "ar_term": "شبكة عصبية ترشيحية قابلة للفصل عمقًا",
+    "en_def": "A convolutional neural network architecture where depthwise separable convolution replaces Inception modules.",
+    "ar_def": "معمارية شبكة عصبية ترشيحية يحل فيها الترشيح القابل للفصل عمقًا محل وحدات إنسيبشن."
+}

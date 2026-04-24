@@ -775,7 +775,7 @@ var app = (function () {
     			add_location(span, file$k, 45, 29, 1966);
     			attr_dev(h2, "class", "logo svelte-e42pgh");
     			add_location(h2, file$k, 45, 4, 1941);
-    			attr_dev(a, "href", "https://mlu-explain.github.io");
+    			attr_dev(a, "href", "https://Term Graph.github.io");
     			attr_dev(a, "class", "svelte-e42pgh");
     			add_location(a, file$k, 6, 2, 153);
     			attr_dev(div, "id", "intro-icon");
@@ -32417,7 +32417,7 @@ var app = (function () {
     			a2.textContent = "Dive into Deep Learning";
     			t12 = text("\n  textbook. If you have any comments or ideas related to\n  ");
     			a3 = element("a");
-    			a3.textContent = "MLU-Explain articles";
+    			a3.textContent = "Term Graph articles";
     			t14 = text(", feel free to reach out\n  ");
     			a4 = element("a");
     			a4.textContent = "directly";
@@ -32442,13 +32442,13 @@ var app = (function () {
     			attr_dev(a2, "href", "https://d2l.ai/");
     			add_location(a2, file$2, 28, 2, 1225);
     			attr_dev(a3, "class", "on-end");
-    			attr_dev(a3, "href", "https://mlu-explain.github.io/");
+    			attr_dev(a3, "href", "https://Term Graph.github.io/");
     			add_location(a3, file$2, 30, 2, 1353);
     			attr_dev(a4, "class", "on-end");
     			attr_dev(a4, "href", "https://twitter.com/jdwlbr");
     			add_location(a4, file$2, 33, 2, 1468);
     			attr_dev(a5, "class", "on-end");
-    			attr_dev(a5, "href", "https://github.com/aws-samples/aws-mlu-explain");
+    			attr_dev(a5, "href", "https://github.com/aws-samples/aws-Term Graph");
     			add_location(a5, file$2, 35, 2, 1577);
     			attr_dev(p1, "class", "body-text");
     			add_location(p1, file$2, 14, 0, 697);

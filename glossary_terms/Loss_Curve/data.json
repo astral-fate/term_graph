@@ -1,0 +1,6 @@
+{
+    "en_term": "Loss Curve",
+    "ar_term": "منحنى الخسارة",
+    "en_def": "A graph of the model error in training iterations.",
+    "ar_def": "رسم بياني يوضح خطأ النموذج في تكرارات التدريب."
+}

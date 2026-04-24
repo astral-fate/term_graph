@@ -1,0 +1,6 @@
+{
+    "en_term": "Edge Model",
+    "ar_term": "نموذج طرفي",
+    "en_def": "A model that runs on edge devices, such as sensors and IoT devices, enabling local data processing.",
+    "ar_def": "نموذج يعمل على الأجهزة الطرفية، مثل أجهزة الاستشعار وأجهزة إنترنت الأشياء، ويتيح معالجة البيانات محليًّا."
+}

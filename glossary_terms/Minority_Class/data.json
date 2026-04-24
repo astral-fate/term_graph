@@ -1,0 +1,6 @@
+{
+    "en_term": "Minority Class",
+    "ar_term": "صنف الأقلية",
+    "en_def": "The class with the fewest instances in a dataset.",
+    "ar_def": "الصنف الذي لديه أقل عدد من الحالات في مجموعة البيانات."
+}

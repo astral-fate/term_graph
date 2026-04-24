@@ -1,0 +1,6 @@
+{
+    "en_term": "Discriminative Model",
+    "ar_term": "نموذج تمييزي",
+    "en_def": "A model used in classification and regression to predict labels by defining the conditional probability of the output given the features and weights. Also called the \"Conditional Model.\"",
+    "ar_def": "نموذج يُستخدم في التصنيف والانحدار للتنبؤ بالأسماء، عن طريق تحديد الاحتمال الشرطي للمخرجات بالنظر إلى الخصائص والأوزان. ويُطلق عليه أيضًا \"نموذج شرطي\"."
+}

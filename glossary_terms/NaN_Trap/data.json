@@ -1,0 +1,6 @@
+{
+    "en_term": "NaN Trap",
+    "ar_term": "فخ القيم غير العددية",
+    "en_def": "A situation when a number in a model becomes \"Not a Number\" during the training process, causing other numbers to become \"Not a Number.\"",
+    "ar_def": "حالة يصبح فيها عدد في نموذج ما قيمة غير عددية أثناء عملية التدريب؛ وبسببه تصبح الأعداد الأخرى قيمًا غير عددية."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Offline Inference",
+    "ar_term": "استنتاج غير مباشر",
+    "en_def": "A process of generating predictions on a batch of observations. Also called \"Batch Inference.\"",
+    "ar_def": "عملية توليد التنبؤات على حُزمة من المشاهدات. ويُطلق عليها أيضًا \"استنتاج حُزَمي\"."
+}

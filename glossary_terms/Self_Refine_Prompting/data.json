@@ -1,0 +1,6 @@
+{
+    "en_term": "Self-Refine Prompting",
+    "ar_term": "أوامر التحسين الذاتي",
+    "en_def": "A prompt engineering technique that allows a model to improve its outputs through an iterative process of feedback and refinement. Also called \"Self-Criticism Prompting.\"",
+    "ar_def": "أسلوب في هندسة الأوامر يُتيح للنموذج تحسين مخرجاته، عن طريق عملية تكرارية من التغذية الراجعة والتحسين. يُطلق عليه أيضًا \"أوامر النقد الذاتي\"."
+}

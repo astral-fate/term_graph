@@ -1,0 +1,6 @@
+{
+    "en_term": "Edge Computing",
+    "ar_term": "حوسبة طرفية",
+    "en_def": "A computing approach in which the computation is executed in the network edge, such as IoT sensor devices or local appliances, instead of data centers.",
+    "ar_def": "طريقة حوسبية تُنفَّذ فيها عمليات الحوسبة في طرف الشبكة، مثل: أجهزة استشعار إنترنت الأشياء أو الأجهزة المحلية، بدلًا من مراكز البيانات."
+}

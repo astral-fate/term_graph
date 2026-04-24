@@ -1,0 +1,6 @@
+{
+    "en_term": "Hyperparameters Tuning",
+    "ar_term": "ضبط مُعامِلات الضبط",
+    "en_def": "The process of selecting the optimal hyperparameters to train a model on a given dataset.",
+    "ar_def": "عملية اختيار مُعامِلات الضبط المثلى لتدريب نموذج ما على مجموعة بيانات معينة."
+}

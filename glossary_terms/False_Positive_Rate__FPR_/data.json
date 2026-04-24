@@ -1,0 +1,6 @@
+{
+    "en_term": "False Positive Rate (FPR)",
+    "ar_term": "معدل إيجابي خاطئ",
+    "en_def": "The proportion of actual negative examples that are predicted as positives. Also called \"Fall-Out.\"",
+    "ar_def": "نسبة الأمثلة السلبية الفعلية التي يُتنبأ بأنها إيجابية. ويُطلق عليها أيضًا \"سقوط\"."
+}

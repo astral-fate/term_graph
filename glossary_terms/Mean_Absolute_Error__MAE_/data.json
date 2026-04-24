@@ -1,0 +1,6 @@
+{
+    "en_term": "Mean Absolute Error (MAE)",
+    "ar_term": "متوسط الخطأ المطلق",
+    "en_def": "A metric used to evaluate a model's accuracy by calculating the average absolute difference between the expected and predicted values for all training examples.",
+    "ar_def": "مقياس يُستخدم لتقييم دقة النموذج، عن طريق حساب متوسط الفرق المطلق بين القيم المتوقعة والتنبؤ لجميع أمثلة التدريب."
+}

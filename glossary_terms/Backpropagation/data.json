@@ -1,0 +1,6 @@
+{
+    "en_term": "Backpropagation",
+    "ar_term": "انتشار عكسي",
+    "en_def": "An algorithm used in training artificial neural networks to reduce errors by finding a gradient needed to calculate the network's weights.",
+    "ar_def": "خوارزمية تُستخدم عند تدريب الشبكات العصبية الاصطناعية لتقليل الأخطاء عن طريق إيجاد قيمة التدرج المطلوب لحساب أوزان الشبكة."
+}

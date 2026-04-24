@@ -1,0 +1,6 @@
+{
+    "en_term": "Token",
+    "ar_term": "وحدة",
+    "en_def": "The smallest unit of data that a model processes.",
+    "ar_def": "أصغر وحدة بيانات يعالجها النموذج."
+}

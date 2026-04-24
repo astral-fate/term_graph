@@ -1,0 +1,6 @@
+{
+    "en_term": "Entity Annotation",
+    "ar_term": "توصيف الكيانات",
+    "en_def": "The process of identifying, extracting, and tagging entities in the text to help the machine understand unstructured sentences.",
+    "ar_def": "عملية تحديد الكيانات واستخراجها ووسمها في النص لمساعدة الآلة على فهم الجمل غير المهيكلة."
+}

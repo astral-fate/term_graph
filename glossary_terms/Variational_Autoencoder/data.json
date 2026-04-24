@@ -1,0 +1,6 @@
+{
+    "en_term": "Variational Autoencoder",
+    "ar_term": "مُرَمِّز تلقائي متغير",
+    "en_def": "A neural network that learns to compress data into a lower-dimensional representation and then reconstructs the original data from this compressed form.",
+    "ar_def": "شبكة عصبية تتعلم ضغط البيانات إلى تمثيل قليل الأبعاد، ثم إعادة بناء البيانات الأصلية من التمثيل المضغوط."
+}

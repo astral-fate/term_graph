@@ -1,0 +1,6 @@
+{
+    "en_term": "Gaussian Error Linear Unit (GeLU)",
+    "ar_term": "وحدة الخطأ الخطي الجاوسي (جيلو)",
+    "en_def": "An activation function that applies a smooth, non-linear transformation to the input via the cumulative probability of the normal distribution.",
+    "ar_def": "دالة تنشيط تطبق تحويلًا سلسًا غير خطي على المُدْخَلات، عن طريق الاحتمال التراكمي للتوزيع الطبيعي."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "L2 Regularization",
+    "ar_term": "ضبط إل 2",
+    "en_def": "A type of regularization that adds a penalty to weights equivalent to the sum of the weights' squares. Also called \"Ridge Regularization.\"",
+    "ar_def": "نوع من الضبط يضيف جزاءً إلى الأوزان بقدر مكافئ لمجموع مربعات الأوزان. ويُطلق عليه أيضًا \"ضبط ريدج\"."
+}

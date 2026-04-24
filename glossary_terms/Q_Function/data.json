@@ -1,0 +1,6 @@
+{
+    "en_term": "Q-Function",
+    "ar_term": "دالة كيو",
+    "en_def": "A function in reinforcement learning that predicts the return when taking action in a state and following a given policy. Also called \"State-Action Value Function.\"",
+    "ar_def": "دالة في التعلُّم التعزيزي تتنبأ بالعائد عند القيام بفعل معين في حالة ما وعند سياسة معينة. ويُطلق عليها أيضًا \"دالة قيمة الحالة-الفعل\"."
+}

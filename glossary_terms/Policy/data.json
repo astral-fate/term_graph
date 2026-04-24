@@ -1,0 +1,6 @@
+{
+    "en_term": "Policy",
+    "ar_term": "سياسة",
+    "en_def": "The probabilistic mapping of an agent from states to actions in reinforcement learning.",
+    "ar_def": "الربط الاحتمالي للوكيل من الحالات إلى الأفعال في التعلُّم التعزيزي."
+}

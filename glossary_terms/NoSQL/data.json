@@ -1,0 +1,6 @@
+{
+    "en_term": "NoSQL",
+    "ar_term": "نو سيكوال",
+    "en_def": "A database design approach that allows for storing and querying data differently than relational databases. Also called \"Not Only SQL\", \"Non-SQL\" or \"Non-Relational.\"",
+    "ar_def": "طريقة لتصميم قواعد البيانات تُتيح تخزين البيانات والاستعلام عنها بطريقة مختلفة عن قواعد البيانات العلائقية. ويُطلق عليها أيضًا \"غير علائقية\"."
+}

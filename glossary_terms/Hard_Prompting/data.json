@@ -1,0 +1,6 @@
+{
+    "en_term": "Hard Prompting",
+    "ar_term": "أوامر صلبة",
+    "en_def": "Manually handcrafted text instructions given to the model to elicit a particular kind of response.",
+    "ar_def": "تعليمات نصية مُصاغة یدویًّا تُعطى للنموذج من أجل الحصول على نوع معين من الاستجابة."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Wasserstein Loss",
+    "ar_term": "خسارة واسرستين",
+    "en_def": "A loss function derived from the Wasserstein distance and used to measure the difference between two probability distributions.",
+    "ar_def": "دالة خسارة مشتقة من مسافة واسرستين، وتُستخدم لقياس الفرق بين توزيعين احتماليين."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Environment",
+    "ar_term": "بيئة",
+    "en_def": "ِA world in reinforcement learning that contains the agent and allows it to observe the state of that world.",
+    "ar_def": "عالم في التعلُّم التعزيزي يشتمل على الوكيل ويسمح له برصد حالة ذلك العالم."
+}

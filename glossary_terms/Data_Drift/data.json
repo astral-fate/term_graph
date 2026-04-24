@@ -1,0 +1,6 @@
+{
+    "en_term": "Data Drift",
+    "ar_term": "انحراف البيانات",
+    "en_def": "A change that happens over time in the distribution of model input data, which can cause a decline in model performance. Also called \"Data Shift.\"",
+    "ar_def": "تغيير في توزيع البيانات المُدْخَلة في النموذج، يحدث مع مرور الوقت؛ وقد يؤدي إلى انخفاض أداء النموذج. يُطلق عليه أيضًا \"تغيُّر البيانات\"."
+}

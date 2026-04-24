@@ -1,0 +1,6 @@
+{
+    "en_term": "Batch",
+    "ar_term": "حُزمة",
+    "en_def": "A group of examples used for model training.",
+    "ar_def": "مجموعة من الأمثلة المستخدمة لتدريب النموذج."
+}

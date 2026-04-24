@@ -1,0 +1,6 @@
+{
+    "en_term": "Convergence",
+    "ar_term": "تقارب",
+    "en_def": "A state reached by a model when additional training on the existing data will not significantly improve the model.",
+    "ar_def": "الحالة التي يصل إليها النموذج عندما لا يحقق التدريب الإضافي على البيانات الموجودة تحسينًا كبيرًا في النموذج."
+}

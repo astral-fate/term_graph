@@ -1,0 +1,6 @@
+{
+    "en_term": "Feedforward Neural Network",
+    "ar_term": "شبكة عصبية ذات تغذية أمامية",
+    "en_def": "An artificial neural network in which the information always travels in one direction, from the input layer to the output layer.",
+    "ar_def": "شبكة عصبية اصطناعية تنتقل فيها المعلومات دائمًا في اتجاه واحد، من طبقة المُدْخَلات إلى طبقة المخرجات."
+}

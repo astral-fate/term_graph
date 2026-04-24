@@ -1,0 +1,6 @@
+{
+    "en_term": "Feature Set",
+    "ar_term": "مجموعة الخصائص",
+    "en_def": "A collection of features on which a machine learning model trains.",
+    "ar_def": "مجموعة من الخصائص التي يتدرب عليها نموذج تعلُّم الآلة."
+}

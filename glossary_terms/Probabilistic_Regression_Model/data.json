@@ -1,0 +1,6 @@
+{
+    "en_term": "Probabilistic Regression Model",
+    "ar_term": "نموذج انحدار احتمالي",
+    "en_def": "A regression model that uses the feature weights and their uncertainty to generate a prediction and its uncertainty.",
+    "ar_def": "نموذج انحدار يستخدم أوزان الخصائص وعدم التيقن بها لتوليد التنبؤ وعدم التيقن به."
+}

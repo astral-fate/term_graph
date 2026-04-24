@@ -1,0 +1,6 @@
+{
+    "en_term": "Null Error Rate",
+    "ar_term": "معدل الخطأ الفارغ",
+    "en_def": "A measure of how incorrect the classifier would be if it just predicted the majority class.",
+    "ar_def": "مقياس لمدى خطأ المُصنِّف إذا تنبأ بصنف الأغلبية فقط."
+}

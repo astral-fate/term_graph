@@ -1,0 +1,6 @@
+{
+    "en_term": "Hadoop Distributed File System (HDFS)",
+    "ar_term": "نظام هدوب للملفات الموزَّعة",
+    "en_def": "An open-source storage engine, based on the Google File System (GFS) architecture, designed for efficient storage of large files.",
+    "ar_def": "مُحرِّك تخزين مفتوح المصدر، يعتمد على معمارية نظام ملفات جوجل، ومصمَّم للتخزين الفاعل للملفات الكبيرة."
+}

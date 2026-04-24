@@ -1,0 +1,6 @@
+{
+    "en_term": "Model Card",
+    "ar_term": "بطاقة النموذج",
+    "en_def": "A concise document that provides essential information about a machine learning model, including its purpose, performance, limitations, and ethical considerations.",
+    "ar_def": "وثيقة موجزة تقدم معلومات أساسية حول نموذج تعلُّم الآلة، بما في ذلك غرضه وأداؤه وقيوده واعتباراته الأخلاقية."
+}

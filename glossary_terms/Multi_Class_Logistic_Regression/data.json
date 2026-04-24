@@ -1,0 +1,6 @@
+{
+    "en_term": "Multi-Class Logistic Regression",
+    "ar_term": "انحدار لوجستي متعدد الأصناف",
+    "en_def": "The use of logistic regression for classification problems with multiple classes. Also called \"Multinomial Regression.\"",
+    "ar_def": "استخدام الانحدار اللوجستي لمشكلات التصنيف ذات الأصناف المتعددة. ويُطلق عليه أيضًا \"انحدار متعدد الحدود\"."
+}

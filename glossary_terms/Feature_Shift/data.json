@@ -1,0 +1,6 @@
+{
+    "en_term": "Feature Shift",
+    "ar_term": "تغيُّر الخاصية",
+    "en_def": "A change in the distribution of features, potentially impacting a model's performance.",
+    "ar_def": "تغيير في توزيع الخصائص، وقد يؤثر على أداء النموذج."
+}

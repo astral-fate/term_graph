@@ -1,0 +1,6 @@
+{
+    "en_term": "Random Policy",
+    "ar_term": "سياسة عشوائية",
+    "en_def": "A policy in reinforcement learning that selects an action at random.",
+    "ar_def": "سياسة في التعلُّم التعزيزي تختار الفعل عشوائيًّا."
+}

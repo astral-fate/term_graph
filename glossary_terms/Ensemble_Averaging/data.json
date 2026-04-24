@@ -1,0 +1,6 @@
+{
+    "en_term": "Ensemble Averaging",
+    "ar_term": "متوسط التجميع",
+    "en_def": "A technique used in artificial neural networks to produce a single averaged model from many moderately accurate models.",
+    "ar_def": "أسلوب مستخدم في الشبكات العصبية الاصطناعية لإنتاج نموذج متوسط من مجموعة من النماذج المتواضعة الدقة."
+}

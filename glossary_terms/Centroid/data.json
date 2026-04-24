@@ -1,0 +1,6 @@
+{
+    "en_term": "Centroid",
+    "ar_term": "بؤرة تجميع",
+    "en_def": "The center of a cluster that is specified by a clustering algorithm, such as k-means or k-median algorithms.",
+    "ar_def": "مركز مجموعة محدد بواسطة خوارزمية تجميع، مثل: خوارزميات تجميع بالمتوسط أو بالوسيط."
+}

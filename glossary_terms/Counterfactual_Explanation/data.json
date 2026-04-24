@@ -1,0 +1,6 @@
+{
+    "en_term": "Counterfactual Explanation",
+    "ar_term": "تفسير مغاير",
+    "en_def": "A method used to explain the decisions made by machine learning models by describing what changes to the input data would have resulted in a different outcome.",
+    "ar_def": "طريقة تُستخدم لشرح القرارات التي تتخذها نماذج تعلُّم الآلة؛ عن طريق وصف التغييرات في البيانات المُدْخَلة التي من الممكن أن تؤدي إلى نتائج مختلفة."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Validation Dataset (or Validation Data, Validation Set)",
+    "ar_term": "بيانات التحقق (أو مجموعة التحقق)",
+    "en_def": "The data used to evaluate the performance of a machine learning model after the training phase.",
+    "ar_def": "البيانات المستخدمة لتقييم أداء نموذج تعلُّم الآلة بعد مرحلة التدريب."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Triplet Loss",
+    "ar_term": "خسارة ثلاثية",
+    "en_def": "A loss function used to ensure that similar items are closer together and dissimilar items are farther apart in the embedding space.",
+    "ar_def": "دالة خسارة تُستخدم للتأكد من أن العناصر المتشابهة قريبة من بعضها بعضًا، والعناصر غير المتشابهة متباعدة في فضاء التضمين."
+}

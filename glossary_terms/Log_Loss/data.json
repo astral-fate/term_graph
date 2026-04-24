@@ -1,0 +1,6 @@
+{
+    "en_term": "Log Loss",
+    "ar_term": "خسارة لوغاريثمية",
+    "en_def": "A performance metric used to evaluate the classification models by quantifying the difference between predicted probabilities and actual labels. Also called \"Cross-Entropy Loss.\"",
+    "ar_def": "مقياس أداء يُستخدم لتقييم نماذج التصنيف، عن طريق تحديد الفرق بين الاحتمالات المتوقعة والأسماء الفعلية. ويُطلق عليه أيضًا \"خسارة الإنتروبيا التقاطعية\"."
+}

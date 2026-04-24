@@ -1,0 +1,6 @@
+{
+    "en_term": "Counterfactual Fairness",
+    "ar_term": "إنصاف مغاير",
+    "en_def": "A fairness metric that evaluates whether a classifier makes the same result for identical individuals except for one or more sensitive attributes.",
+    "ar_def": "مقياس إنصاف يُقيِّم ما إذا كان المُصنِّف يعطي نفس النتيجة لأفراد متطابقين إلا في سمة حساسة أو أكثر."
+}

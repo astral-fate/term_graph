@@ -1,0 +1,6 @@
+{
+    "en_term": "Single Linkage",
+    "ar_term": "ربط أحادي",
+    "en_def": "A clustering method that defines the distance between two clusters as the shortest distance between any two data points from each cluster.",
+    "ar_def": "طريقة تجميع تحدد المسافة بين مجموعتين، عن طريق أقصر مسافة بين أي نقطتي بيانات من كل مجموعة."
+}

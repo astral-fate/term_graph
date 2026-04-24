@@ -1,0 +1,6 @@
+{
+    "en_term": "Knowledge Distillation",
+    "ar_term": "تقطير المعرفة",
+    "en_def": "The process of transferring the knowledge of a large pre-trained model to a smaller one.",
+    "ar_def": "عملية نقل المعرفة من نموذج كبير مُدرَّب سابقًا إلى نموذج أصغر."
+}

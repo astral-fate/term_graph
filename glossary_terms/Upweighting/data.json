@@ -1,0 +1,6 @@
+{
+    "en_term": "Upweighting",
+    "ar_term": "زيادة الوزن",
+    "en_def": "The process of adding weight to the downsampled class proportional to the factor of the downsampling.",
+    "ar_def": "عملية إضافة وزن إلى الصنف الذي قُلِّلت عيناته بمقدار يتناسب مع عامل التقليل."
+}

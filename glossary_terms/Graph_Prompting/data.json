@@ -1,0 +1,6 @@
+{
+    "en_term": "Graph Prompting",
+    "ar_term": "أوامر شبكية",
+    "en_def": "A prompt engineering technique that utilizes graph-based data representations to enhance the understanding and response of the model.",
+    "ar_def": "أسلوب في هندسة الأوامر يستخدم تمثيلات البيانات القائمة على الشبكة من أجل تحسين فهم النموذج واستجابته."
+}

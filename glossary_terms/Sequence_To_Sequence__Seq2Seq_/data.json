@@ -1,0 +1,6 @@
+{
+    "en_term": "Sequence-To-Sequence (Seq2Seq)",
+    "ar_term": "تحويل تسلسل إلى تسلسل",
+    "en_def": "A type of neural network architecture designed to transform one sequence of data into another.",
+    "ar_def": "نوع من معمارية الشبكة العصبية مصمم لتحويل تسلسل من البيانات إلى تسلسل آخر."
+}

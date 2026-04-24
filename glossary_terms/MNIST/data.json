@@ -1,0 +1,6 @@
+{
+    "en_term": "MNIST",
+    "ar_term": "إم نيست",
+    "en_def": "A public-domain dataset containing images of handwritten digits used to train and test various supervised machine learning algorithms.",
+    "ar_def": "مجموعة بيانات عامة تشتمل على صور لأرقام مكتوبة بخط اليد تُستخدم لتدريب خوارزميات تعلُّم الآلة الموجَّه واختبارها."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Pseudo-Labeling",
+    "ar_term": "تسمية مستعارة",
+    "en_def": "A semi-supervised learning technique where a model generates labels for unlabeled data, and then using these labels to train the model further.",
+    "ar_def": "أسلوب في التعلُّم الشبه الموجَّه يُنشئ النموذج فيه أسماء للبيانات غير المُسمَّاة، ثم تُستخدم هذه الأسماء لتدريب النموذج بشكل أكبر."
+}

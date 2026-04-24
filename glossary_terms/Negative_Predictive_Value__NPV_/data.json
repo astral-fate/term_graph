@@ -1,0 +1,6 @@
+{
+    "en_term": "Negative Predictive Value (NPV)",
+    "ar_term": "قيمة تنبؤية سلبية",
+    "en_def": "The proportion of predicted negative results that are true negative results.",
+    "ar_def": "نسبة النتائج السلبية المتوقعة التي تُعد سلبية صحيحة."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Neuron",
+    "ar_term": "خلية عصبية",
+    "en_def": "A neural network node that processes multiple input values and produces a single output value. Also called \"Artificial Neuron\" or \"Node.\"",
+    "ar_def": "عقدة في الشبكة العصبية تعالج قيم مُدْخَلات متعددة، وينتج منها قيمة مخرج واحد. يُطلق عليها أيضًا \"خلية عصبية اصطناعية\" أو \"عقدة\"."
+}

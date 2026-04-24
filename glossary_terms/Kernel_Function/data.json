@@ -1,0 +1,6 @@
+{
+    "en_term": "Kernel Function",
+    "ar_term": "دالة النواة",
+    "en_def": "A similarity function between two instances to map the data into a high-dimensional vector space.",
+    "ar_def": "دالة لقياس التشابه بين حالتين وتحويل البيانات إلى فضاء مُتَّجه كثير الأبعاد."
+}

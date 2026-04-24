@@ -1,0 +1,6 @@
+{
+    "en_term": "Curriculum Learning",
+    "ar_term": "تعلُّم منهجي",
+    "en_def": "A machine learning training strategy where models are trained on data in a meaningful sequence, starting with easier examples and gradually progressing to more difficult ones.",
+    "ar_def": "إستراتيجية تدريب في تعلُّم الآلة، تُدرِّب النماذج على البيانات بتسلسل ذي معنى، بدءًا من الأمثلة الأسهل، ثم التقدم تدريجيًّا إلى الأمثلة الأكثر صعوبة."
+}

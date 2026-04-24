@@ -1,0 +1,6 @@
+{
+    "en_term": "Gradient Descent",
+    "ar_term": "نزول تدرجي",
+    "en_def": "An optimization algorithm for finding the minimum of a function by iteratively taking steps that are proportionate to the negative of the gradient.",
+    "ar_def": "خوارزمية تحسين للعثور على الحد الأدنى من الدالة، عن طريق اتخاذ خطوات بصورة تكرارية تتناسب مع سالب التدرج."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Temporal Difference (TD) Learning",
+    "ar_term": "تعلُّم الفرق الزمني",
+    "en_def": "An unsupervised learning technique used in reinforcement learning in which an agent learns to predict the value of a variable at the end of a sequence of states.",
+    "ar_def": "أسلوب تعلُّم غير موجَّه في التعلُّم التعزيزي، يتعلَّم فيه الوكيل التنبؤ بقيمة متغير في نهاية تسلسل من الحالات."
+}

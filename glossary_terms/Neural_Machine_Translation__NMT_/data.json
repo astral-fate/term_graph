@@ -1,0 +1,6 @@
+{
+    "en_term": "Neural Machine Translation (NMT)",
+    "ar_term": "ترجمة الآلة العصبية",
+    "en_def": "An approach in machine translation that uses a large artificial neural network to predict the probability of a sequence of words, often in complete sentences.",
+    "ar_def": "طريقة في ترجمة الآلة تستخدم شبكة عصبية اصطناعية كبيرة للتنبؤ باحتمالية تسلسل من الكلمات، وغالبًا ما تكون في جمل كاملة."
+}

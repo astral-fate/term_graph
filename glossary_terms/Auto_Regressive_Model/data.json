@@ -1,0 +1,6 @@
+{
+    "en_term": "Auto-Regressive Model",
+    "ar_term": "نموذج انحدار ذاتي",
+    "en_def": "A model that predicts future values based on past values.",
+    "ar_def": "نموذج يتنبأ بالقيم المستقبلية بناءً على القيم السابقة."
+}

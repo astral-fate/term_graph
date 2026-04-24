@@ -1,0 +1,6 @@
+{
+    "en_term": "Precision-Recall Curve",
+    "ar_term": "منحنى الإحكام-الاستدعاء",
+    "en_def": "A graph that represents the precision versus the recall at different classification thresholds.",
+    "ar_def": "رسم بياني يمثل الإحكام مقابل الاستدعاء عند حدود تصنيف مختلفة."
+}

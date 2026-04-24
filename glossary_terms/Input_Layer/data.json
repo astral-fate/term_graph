@@ -1,0 +1,6 @@
+{
+    "en_term": "Input Layer",
+    "ar_term": "طبقة مُدْخَلات",
+    "en_def": "The first layer in a neural network that receives the input data.",
+    "ar_def": "الطبقة الأولى في الشبكة العصبية التي تتلقى البيانات المُدْخَلة."
+}

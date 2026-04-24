@@ -1,0 +1,6 @@
+{
+    "en_term": "True Negative (TN)",
+    "ar_term": "تصنيف سلبي صحيح",
+    "en_def": "A result that the model correctly predicted as negative.",
+    "ar_def": "نتيجة تنبأ النموذج بأنها سلبية بصورة صحيحة."
+}

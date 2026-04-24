@@ -1,0 +1,6 @@
+{
+    "en_term": "Few-Shot Prompting",
+    "ar_term": "أوامر بأمثلة قليلة",
+    "en_def": "A prompt engineering technique where a model is given instructions and a few examples to guide its responses.",
+    "ar_def": "أسلوب لهندسة الأوامر يُعطى فيه النموذج تعليمات وبعض الأمثلة لتوجيه استجاباته."
+}

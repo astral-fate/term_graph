@@ -1,0 +1,6 @@
+{
+    "en_term": "Bag of Words",
+    "ar_term": "حقيبة كلمات",
+    "en_def": "A representation of words in a text that describes their occurrence within a document regardless of their order.",
+    "ar_def": "تمثيل للكلمات في نص يصف تكرارها داخل مستند، بغض النظر عن ترتيبها."
+}

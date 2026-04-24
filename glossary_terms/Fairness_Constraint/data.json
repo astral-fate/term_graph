@@ -1,0 +1,6 @@
+{
+    "en_term": "Fairness Constraint",
+    "ar_term": "قيد الإنصاف",
+    "en_def": "A condition or set of conditions to ensure that machine learning algorithms don't produce biased or discriminatory results.",
+    "ar_def": "شرط أو مجموعة من الشروط لضمان أن لا تُنتِج خوارزميات تعلم الآلة نتائج متحيزة أو تمييزية."
+}

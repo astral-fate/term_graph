@@ -1,0 +1,6 @@
+{
+    "en_term": "Self-Instruct",
+    "ar_term": "إرشاد ذاتي",
+    "en_def": "A method for improving a model's ability to follow natural language instructions by generating its instruction-following data.",
+    "ar_def": "طريقة لتحسين قدرة النماذج على اتباع تعليمات اللغات الطبيعية، عن طريق توليد بيانات اتباع التعليمات بنفسها."
+}

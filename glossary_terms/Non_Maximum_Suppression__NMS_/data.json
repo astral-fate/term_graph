@@ -1,0 +1,6 @@
+{
+    "en_term": "Non-Maximum Suppression (NMS)",
+    "ar_term": "إزالة غير الأكبر",
+    "en_def": "A technique used in object detection to eliminate redundant or overlapping bounding boxes, keeping only one for each detected object.",
+    "ar_def": "أسلوب يُستخدم في اكتشاف الأشياء لإزالة إطارات التحديد المتكررة أو المتداخلة، مع الاحتفاظ بمربع واحد فقط لكل شيء مكتشَف."
+}

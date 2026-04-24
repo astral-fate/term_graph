@@ -1,0 +1,6 @@
+{
+    "en_term": "Mini-Batch Stochastic Gradient Descent (SGD)",
+    "ar_term": "نزول تدرجي عشوائي بحُزَم صغيرة",
+    "en_def": "A gradient descent algorithm that divides the training dataset into small batches to estimate the gradient.",
+    "ar_def": "خوارزمية نزول تدرجي تقسم بيانات التدريب إلى حُزَم صغيرة لتقدير التدرج."
+}

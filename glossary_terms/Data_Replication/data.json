@@ -1,0 +1,6 @@
+{
+    "en_term": "Data Replication",
+    "ar_term": "تكرار البيانات",
+    "en_def": "The duplication of data on several computers within a distributed system to ensure the consistency level for accessing information.",
+    "ar_def": "تكرار البيانات على عدد من أجهزة الحاسب داخل نظام موزَّع؛ لضمان مستوى الاتساق في الوصول إلى المعلومات."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Classification Threshold",
+    "ar_term": "حد التصنيف",
+    "en_def": "A value criterion to classify a new observation to binary classification. Also called \"Decision Threshold.\"",
+    "ar_def": "معيار عددي لتصنيف مشاهدة جديدة إلى تصنيف ثنائي. ويُطلق عليه أيضًا \"حد القرار\"."
+}

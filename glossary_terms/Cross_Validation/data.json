@@ -1,0 +1,6 @@
+{
+    "en_term": "Cross-Validation",
+    "ar_term": "تحقق تقاطعي",
+    "en_def": "A mechanism for evaluating a model generalization on new data by testing the model against one or more subsets taken from the training set.",
+    "ar_def": "آلية لتقييم تعميم النموذج على البيانات الجديدة؛ عن طريق اختبار النموذج على مجموعة فرعية واحدة أو أكثر، مأخوذة من مجموعة التدريب."
+}

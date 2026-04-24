@@ -1,0 +1,6 @@
+{
+    "en_term": "Contrastive Loss",
+    "ar_term": "خسارة تباينية",
+    "en_def": "A loss function that encourages the model to learn embeddings by minimizing the distance between similar pairs of data points and maximizing the distance between dissimilar pairs.",
+    "ar_def": "دالة خسارة تشجع النموذج على تعلم عمليات التضمين؛ عن طريق تقليل المسافة بين الأزواج المتشابهة من نقاط البيانات، وتعظيم المسافة بين الأزواج غير المتشابهة."
+}

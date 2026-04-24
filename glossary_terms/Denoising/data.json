@@ -1,0 +1,6 @@
+{
+    "en_term": "Denoising",
+    "ar_term": "إزالة التشويش",
+    "en_def": "An approach to artificially add noise to the dataset and then the model attempts to remove it.",
+    "ar_def": "طريقة لإضافة تشويش مصطنع إلى مجموعة البيانات، ثم يحاول النموذج إزالتها."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Autoencoder",
+    "ar_term": "مُرمِّز تلقائي",
+    "en_def": "A type of artificial neural network used to produce efficient data representations for unsupervised learning.",
+    "ar_def": "نوع من الشبكات العصبية الاصطناعية يُستخدم لإنتاج تمثيلات بيانات فاعلة للتعلُّم غير الموجَّه."
+}

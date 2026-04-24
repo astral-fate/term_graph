@@ -1,0 +1,6 @@
+{
+    "en_term": "Model Parallelism",
+    "ar_term": "توازي النموذج",
+    "en_def": "A technique used to speed up training or inference by dividing the model on multiple devices.",
+    "ar_def": "أسلوب يُستخدم لتسريع التدريب أو الاستنتاج بتقسيم النموذج على أجهزة متعددة."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Step-Back Prompting",
+    "ar_term": "أوامر الرجوع إلى العموم",
+    "en_def": "A prompt engineering technique that enables a model to identify relevant high-level concepts or principles and use them to derive the correct response.",
+    "ar_def": "أسلوب في هندسة الأوامر يُمكِّن النموذج من تحديد المفاهيم أو المبادئ العامة ذات الصلة، واستخدامها لاستخلاص الاستجابات الصحيحة."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Sequence Model",
+    "ar_term": "نموذج تسلسلي",
+    "en_def": "A model that has inputs with a sequential dependence.",
+    "ar_def": "نموذج يشتمل على مُدْخَلات ذات اعتماد متسلسل."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Epsilon Greedy Policy",
+    "ar_term": "سياسة إبسيلون الجشعة",
+    "en_def": "A policy in reinforcement learning that follows a random policy with epsilon probability or a greedy policy.",
+    "ar_def": "سياسة في التعلُّم التعزيزي تتبع سياسة عشوائية مع احتمال إبسيلون أو سياسة الجشع."
+}

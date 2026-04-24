@@ -1,0 +1,6 @@
+{
+    "en_term": "Logit",
+    "ar_term": "لوجيت",
+    "en_def": "A vector of non-normalized predictions that a classification model makes.",
+    "ar_def": "مُتَّجه للتنبؤات بدون تسوية ينشئها نموذج التصنيف."
+}

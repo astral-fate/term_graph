@@ -1,0 +1,6 @@
+{
+    "en_term": "Hypothetical Document Embeddings (HyDE)",
+    "ar_term": "تضمين المستندات الافتراضي",
+    "en_def": "A retrieval technique that creates hypothetical documents embeddings, and then uses them to retrieve similar documents from the same embedding space.",
+    "ar_def": "أسلوب استرجاع يُنشئ تضمينات افتراضية للمستندات، ثم يستخدمها لاسترداد مستندات مماثلة من نفس مساحة التضمين."
+}

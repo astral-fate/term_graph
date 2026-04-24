@@ -1,0 +1,6 @@
+{
+    "en_term": "Layer Width",
+    "ar_term": "عرض الطبقة",
+    "en_def": "The number of neurons in a specific neural network layer.",
+    "ar_def": "عدد الخلايا العصبية في طبقة معينة من الشبكة العصبية."
+}

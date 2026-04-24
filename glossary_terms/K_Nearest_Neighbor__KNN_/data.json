@@ -1,0 +1,6 @@
+{
+    "en_term": "K-Nearest Neighbor (KNN)",
+    "ar_term": "خوارزمية أقرب الجيران",
+    "en_def": "An algorithm that classifies new data points based on the majority or average of their K closest data points in the training dataset.",
+    "ar_def": "خوارزمية تُصنِّف نقاط البيانات الجديدة بناءً على أغلبية أو متوسط أقرب ​​نقاط البيانات التي عددها (ك) في مجموعة بيانات التدريب."
+}

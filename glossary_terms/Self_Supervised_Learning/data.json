@@ -1,0 +1,6 @@
+{
+    "en_term": "Self-Supervised Learning",
+    "ar_term": "تعلُّم ذاتي التوجيه",
+    "en_def": "A type of machine learning that uses unlabeled data to learn features by adopting self-defined pseudo-labels for the supervision.",
+    "ar_def": "نوع من تعلُّم الآلة يستخدم بيانات غير مُسمَّاة لتعلُّم الخصائص؛ وذلك بالاعتماد على أسماء مستعارة محددة بصورة ذاتية في عملية التوجيه."
+}

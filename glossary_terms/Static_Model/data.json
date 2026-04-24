@@ -1,0 +1,6 @@
+{
+    "en_term": "Static Model",
+    "ar_term": "نموذج ثابت",
+    "en_def": "A model that is trained once on a fixed dataset and then remains unchanged.",
+    "ar_def": "نموذج يُدرَّب مرة واحدة على مجموعة بيانات ثابتة ثم يظل دون تغيير."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Softmax",
+    "ar_term": "سوفت ماكس",
+    "en_def": "A function that gives a probability for each class in a multi-class classification model.",
+    "ar_def": "دالة تعطي احتمالية لكل صنف في نموذج تصنيف متعدد الأصناف."
+}

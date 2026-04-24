@@ -1,0 +1,6 @@
+{
+    "en_term": "Diffusion Model",
+    "ar_term": "نموذج انتشاري",
+    "en_def": "A generative model that learns to create new data by reversing a process of adding noise to training data.",
+    "ar_def": "نموذج توليدي يتعلم كيفية إنشاء بيانات جديدة، عن طريق عكس عملية إضافة التشويش إلى بيانات التدريب."
+}

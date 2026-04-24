@@ -1,0 +1,6 @@
+{
+    "en_term": "Vanishing Gradient Problem",
+    "ar_term": "مشكلة تلاشي التدرج",
+    "en_def": "ِA case when the gradients of early hidden layers of a deep neural network become flat.",
+    "ar_def": "حالة تظهر عندما تنخفض قيمة تدرجات الطبقات المخفية في بداية الشبكة العصبية العميقة."
+}

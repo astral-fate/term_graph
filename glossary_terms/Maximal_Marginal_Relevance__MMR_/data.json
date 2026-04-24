@@ -1,0 +1,6 @@
+{
+    "en_term": "Maximal Marginal Relevance (MMR)",
+    "ar_term": "أهمية هامشية قصوى",
+    "en_def": "A technique that balances relevance and diversity when retrieving items.",
+    "ar_def": "أسلوب يوازن بين الصلة والتنوع عند استرجاع العناصر."
+}

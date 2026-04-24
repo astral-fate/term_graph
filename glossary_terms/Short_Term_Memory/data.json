@@ -1,0 +1,6 @@
+{
+    "en_term": "Short-Term Memory",
+    "ar_term": "ذاكرة قصيرة المدى",
+    "en_def": "A memory that allows a model to retain and utilize information within the context of a single conversation or session.",
+    "ar_def": "ذاكرة تُتيح للنموذج الاحتفاظ بالمعلومات واستخدامها في سياق محادثة أو جلسة واحدة."
+}

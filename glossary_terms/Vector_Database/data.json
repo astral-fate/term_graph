@@ -1,0 +1,6 @@
+{
+    "en_term": "Vector Database",
+    "ar_term": "قاعدة بيانات المتجَهات",
+    "en_def": "A database designed to store, index, and retrieve high-dimensional mathematical representations of data points.",
+    "ar_def": "قاعدة بيانات مصممة للتخزين والفهرسة والاسترجاع للتمثيلات الرياضية الكثيرة الأبعاد لنقاط البيانات."
+}

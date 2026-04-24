@@ -1,0 +1,6 @@
+{
+    "en_term": "Experience Replay",
+    "ar_term": "إعادة تشغيل التجربة",
+    "en_def": "A memory buffer in reinforcement learning to store state transitions acquired during the learning process and later use them for training the model.",
+    "ar_def": "مخزن مؤقت للذاكرة في التعلُّم التعزيزي لتخزين انتقالات الحالة المكتسبة أثناء عملية التعلُّم واستخدامها لاحقًا لتدريب النموذج."
+}

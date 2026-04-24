@@ -1,0 +1,6 @@
+{
+    "en_term": "Optimizer",
+    "ar_term": "مُحسِّن",
+    "en_def": "An algorithm or method used to reduce the loss function by adjusting the parameters of a neural network.",
+    "ar_def": "خوارزمية أو طريقة تُستخدم لتقليل دالة الخسارة عن طريق ضبط مُعامِلات الشبكة العصبية."
+}

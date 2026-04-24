@@ -1,0 +1,6 @@
+{
+    "en_term": "Tensor Shape",
+    "ar_term": "شكل تينسر",
+    "en_def": "The number of elements contained in the dimensions of a tensor.",
+    "ar_def": "عدد العناصر الموجودة في أبعاد تينسر."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Gradient Ascent",
+    "ar_term": "صعود تدرجي",
+    "en_def": "An optimization algorithm for finding the maximum of a function by repeatedly adjusting parameters in the direction of the gradient.",
+    "ar_def": "خوارزمية تحسين للعثور على الحد الأقصى للدالة، عن طريق ضبط المُعامِلات بشكل متكرر في اتجاه التدرج."
+}

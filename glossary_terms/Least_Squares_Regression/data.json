@@ -1,0 +1,6 @@
+{
+    "en_term": "Least Squares Regression",
+    "ar_term": "انحدار المربعات الصغرى",
+    "en_def": "A linear regression trained by reducing the L2 loss.",
+    "ar_def": "انحدار خطي مُدرَّب، عن طريق تقليل دالة خسارة إل 2."
+}

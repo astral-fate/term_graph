@@ -1,0 +1,6 @@
+{
+    "en_term": "Similarity Measure",
+    "ar_term": "قياس التشابه",
+    "en_def": "A metric used in clustering algorithms to evaluate how similar two examples are.",
+    "ar_def": "مقياس يُستخدم في خوارزميات التجميع لتقييم مدى تشابه مثالين."
+}

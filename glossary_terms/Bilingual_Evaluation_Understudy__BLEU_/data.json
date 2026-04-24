@@ -1,0 +1,6 @@
+{
+    "en_term": "Bilingual Evaluation Understudy (BLEU)",
+    "ar_term": "تقييم ثنائي اللغة",
+    "en_def": "A measure to automatically evaluate the quality of machine-translated text from one language to another.",
+    "ar_def": "مقياس لتقييم جودة النص المترجم تلقائيًّا من لغة إلى أخرى."
+}

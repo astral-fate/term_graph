@@ -1,0 +1,6 @@
+{
+    "en_term": "Distributional Robustness",
+    "ar_term": "متانة التوزيع",
+    "en_def": "A framework in machine learning to make models less sensitive to variations or changes in the data distribution.",
+    "ar_def": "إطار في تعلُّم الآلة لجعل النماذج أقل حساسية للاختلافات أو التغيرات في توزيع البيانات."
+}

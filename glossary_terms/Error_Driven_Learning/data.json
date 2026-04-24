@@ -1,0 +1,6 @@
+{
+    "en_term": "Error-Driven Learning",
+    "ar_term": "تعلُّم مبني على الخطأ",
+    "en_def": "A type of learning in which an agent uses information about the difference between current and target behavior to modify its behavior.",
+    "ar_def": "نوع من التعلُّم يستخدم فيه الوكيل معلومات حول الاختلاف بين السلوك الحالي والمستهدف لتعديل سلوكه."
+}

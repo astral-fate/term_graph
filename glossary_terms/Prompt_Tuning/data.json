@@ -1,0 +1,6 @@
+{
+    "en_term": "Prompt Tuning",
+    "ar_term": "ضبط الأوامر",
+    "en_def": "A technique to adapt a model to specific tasks by adjusting input prompts rather than modifying the model's parameters.",
+    "ar_def": "أسلوب لتكييف نموذج ما على مهام محددة، عن طريق ضبط الأوامر المُدْخَلة، بدلًا من تعديل مُعامِلات النموذج."
+}

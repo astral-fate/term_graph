@@ -1,0 +1,6 @@
+{
+    "en_term": "Leave-One-Out Cross-Validation (LOOCV)",
+    "ar_term": "تحقق تقاطعي عن طريق عزل نقطة",
+    "en_def": "A special case of K-Fold Cross-Validation where the number of folds equals the number of observations.",
+    "ar_def": "حالة خاصة من التحقق التقاطعي المُجَزَّأ يكون فيها عدد المجموعات مساويًا لعدد المشاهدات."
+}

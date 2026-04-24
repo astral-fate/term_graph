@@ -1,0 +1,6 @@
+{
+    "en_term": "Proximal Policy Optimization (PPO)",
+    "ar_term": "تحسين السياسة الأقرب",
+    "en_def": "A reinforcement learning algorithm that trains an agent to achieve complex tasks by optimizing a surrogate objective function to restrict the step size at each policy update.",
+    "ar_def": "خوارزمية للتعلُّم المُعَزَّز تُدرِّب الوكيل على تحقيق مهام معقدة، عن طريق تحسين دالة هدف بديلة لتقييد حجم الخطوة في كل تحديث للسياسة."
+}

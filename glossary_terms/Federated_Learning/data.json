@@ -1,0 +1,6 @@
+{
+    "en_term": "Federated Learning",
+    "ar_term": "تعلُّم مُتَّحِد",
+    "en_def": "A distributed machine learning approach that trains a model on multiple devices with local data to preserve data privacy.",
+    "ar_def": "طريقة من طُرُق تعلُّم الآلة الموزَّع تُدرِّب النموذج في أجهزة متعددة ببيانات محلية للمحافظة على خصوصية البيانات."
+}

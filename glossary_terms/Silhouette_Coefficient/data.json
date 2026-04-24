@@ -1,0 +1,6 @@
+{
+    "en_term": "Silhouette Coefficient",
+    "ar_term": "مُعامِل الظل",
+    "en_def": "A metric used to evaluate the quality of clustering by measuring how similar an object is to its cluster compared to other clusters.",
+    "ar_def": "مقياس يُستخدم لتقييم جودة التجميع، عن طريق قياس مدى تشابه الشيء مع مجموعته مقارنة بالمجموعات الأخرى."
+}

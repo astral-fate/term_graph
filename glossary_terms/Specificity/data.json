@@ -1,0 +1,6 @@
+{
+    "en_term": "Specificity",
+    "ar_term": "دقة التحديد",
+    "en_def": "The rate of how a model correctly predicts negative labels when it is actually negative. Also called \"True Negative Rate (TPR).\"",
+    "ar_def": "معدل صحة تنبؤ النموذج للأسماء السلبية عندما تكون بالفعل كذلك. ويُطلق عليه أيضًا \"المعدل السلبي الصحيح\"."
+}

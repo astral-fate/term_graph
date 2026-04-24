@@ -1,0 +1,6 @@
+{
+    "en_term": "Object Tracking",
+    "ar_term": "تتبُّع الأشياء",
+    "en_def": "A computer vision technique that continuously locates and monitors the movement of objects within a sequence of video frames.",
+    "ar_def": "أسلوب في رؤية الحاسب لتحديد موقع الأشياء ومراقبتها باستمرار في تسلسل من إطارات الفيديو."
+}

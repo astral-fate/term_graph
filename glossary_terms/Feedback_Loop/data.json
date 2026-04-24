@@ -1,0 +1,6 @@
+{
+    "en_term": "Feedback Loop",
+    "ar_term": "حلقة تغذية راجعة",
+    "en_def": "A situation in machine learning where a model's predictions impact the training data.",
+    "ar_def": "حالة في تعلُّم الآلة تؤثِّر فيها تنبؤات النموذج على بيانات التدريب."
+}

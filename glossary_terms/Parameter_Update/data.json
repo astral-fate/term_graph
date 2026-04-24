@@ -1,0 +1,6 @@
+{
+    "en_term": "Parameter Update",
+    "ar_term": "تحديث المُعامِلات",
+    "en_def": "The process of modifying a model's parameters during training.",
+    "ar_def": "عملية تعديل مُعامِلات النموذج أثناء التدريب."
+}

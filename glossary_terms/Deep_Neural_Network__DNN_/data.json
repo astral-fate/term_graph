@@ -1,0 +1,6 @@
+{
+    "en_term": "Deep Neural Network (DNN)",
+    "ar_term": "شبكة عصبية عميقة",
+    "en_def": "A type of artificial neural network (ANN) containing multiple layers between the input and output layers. Also called \"Deep Model.\"",
+    "ar_def": "نوع من الشبكات العصبية الاصطناعية يشتمل على عدة طبقات بين طبقتي المُدْخَلات والمخرجات. ويُطلق عليه أيضًا \"نموذج عميق\"."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Reasoning and Acting (ReAct) Prompting",
+    "ar_term": "أوامر الاستدلال والتصرف",
+    "en_def": "A prompt engineering technique that combines reasoning and acting to enable models to solve various reasoning and decision-making tasks.",
+    "ar_def": "أسلوب في هندسة الأوامر يجمع بين الاستدلال والتصرف لتمكين النماذج من حل مهام متنوعة في الاستدلال واتخاذ القرار."
+}

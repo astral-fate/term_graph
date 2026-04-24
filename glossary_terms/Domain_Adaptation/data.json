@@ -1,0 +1,6 @@
+{
+    "en_term": "Domain Adaptation",
+    "ar_term": "تكييف المجال",
+    "en_def": "A subfield of machine learning that aims to apply an algorithm trained in a source domain to another related target domain.",
+    "ar_def": "مجال فرعي من مجالات تعلُّم الآلة يهدف إلى تطبيق خوارزمية سبق تدريبها في مجال معين على مجال آخر له ارتباط بالمجال الأول."
+}

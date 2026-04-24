@@ -1,0 +1,6 @@
+{
+    "en_term": "Datalog",
+    "ar_term": "داتا لوج",
+    "en_def": "A declarative logic programming language that includes a finite set of facts and rules and can be used in deductive databases.",
+    "ar_def": "لغة برمجة منطقية تصريحية تتضمن مجموعة محدودة من الحقائق والقواعد، ويمكن استخدامها في قواعد البيانات الاستنباطية."
+}

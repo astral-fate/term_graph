@@ -1,0 +1,6 @@
+{
+    "en_term": "One-Shot Prompting",
+    "ar_term": "أوامر بمثال واحد",
+    "en_def": "A prompt engineering technique where a model is given a single example of the desired task within the input prompt.",
+    "ar_def": "أسلوب في هندسة الأوامر يُعطى فيه النموذج مثالًا واحدًا للمهمة المطلوبة ضمن الأمر المُدخَل."
+}

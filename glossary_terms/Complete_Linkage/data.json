@@ -1,0 +1,6 @@
+{
+    "en_term": "Complete Linkage",
+    "ar_term": "ربط كامل",
+    "en_def": "A clustering method that defines the distance between two clusters as the maximum distance between any pair of data points from each cluster.",
+    "ar_def": "طريقة تجميع تُعرِّف المسافة بين مجموعتين عن طريق أقصى مسافة بين أي زوج من نقاط البيانات من كل مجموعة."
+}

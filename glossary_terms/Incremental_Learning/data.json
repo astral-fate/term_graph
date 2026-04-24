@@ -1,0 +1,6 @@
+{
+    "en_term": "Incremental Learning",
+    "ar_term": "تعلُّم تدريجي",
+    "en_def": "A machine learning approach in which training and learning are performed continuously whenever new examples appear.",
+    "ar_def": "طريقة من طُرُق تعلُّم الآلة يكون التدريب والتعلُّم فيها مستمرًّا كلما ظهرت أمثلة جديدة."
+}

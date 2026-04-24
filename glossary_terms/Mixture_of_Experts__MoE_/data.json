@@ -1,0 +1,6 @@
+{
+    "en_term": "Mixture of Experts (MoE)",
+    "ar_term": "خليط من الخبراء",
+    "en_def": "A machine learning technique that splits a model into multiple sub-networks that work together on a task, each specializes in a particular subset of the input data.",
+    "ar_def": "أسلوب في تعلُّم الآلة يُقسِّم النموذج إلى شبكات فرعية متعددة تعمل معًا في مهمة ما، وتتخصص كل منها في مجموعة فرعية معينة من البيانات المُدْخَلة."
+}

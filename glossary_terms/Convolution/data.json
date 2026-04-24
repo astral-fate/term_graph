@@ -1,0 +1,6 @@
+{
+    "en_term": "Convolution",
+    "ar_term": "ترشيح",
+    "en_def": "A process of filtering to train weights by mixing the convolutional filter and the input matrix.",
+    "ar_def": "عملية ترشيح لتدريب الأوزان عن طريق خلط المُرشِّح ومصفوفة المُدْخَلات."
+}

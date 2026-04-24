@@ -1,0 +1,6 @@
+{
+    "en_term": "One-vs-All",
+    "ar_term": "واحد مقابل الكل",
+    "en_def": "A classification method to deal with multi-class problems by using multiple binary classifiers, one binary classifier for each possible outcome.",
+    "ar_def": "طريقة تصنيف للتعامل مع المشكلات المتعددة الأصناف باستخدام مصنِّفات ثنائية متعددة، بمقدار مُصنِّف ثنائي واحد لكل نتيجة محتملة."
+}

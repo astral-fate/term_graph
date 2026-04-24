@@ -1,0 +1,6 @@
+{
+    "en_term": "Radial Basis Function Network (RBFN)",
+    "ar_term": "شبكة دالة القاعدة الشعاعية",
+    "en_def": "An artificial neural network that uses radial basis function (RBF) as an activation function for non-linear classification tasks.",
+    "ar_def": "شبكة عصبية اصطناعية تستخدم دالة الأساس النصف قطرية كدالة تنشيط لمهام التصنيف غير الخطية."
+}

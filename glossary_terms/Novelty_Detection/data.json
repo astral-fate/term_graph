@@ -1,0 +1,6 @@
+{
+    "en_term": "Novelty Detection",
+    "ar_term": "اكتشاف البيانات غير المعتادة",
+    "en_def": "The process of identifying new data that differs from the rest of the training data.",
+    "ar_def": "عملية تحديد البيانات الجديدة التي تختلف عن باقي بيانات التدريب."
+}

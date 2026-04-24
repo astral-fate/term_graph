@@ -1,0 +1,6 @@
+{
+    "en_term": "Monte Carlo Tree Search (MCTS)",
+    "ar_term": "بحث مونت كارلو الشجري",
+    "en_def": "A decision-making algorithm that finds optimal decisions in a specific domain by combining Monte Carlo simulations and a tree search approach.",
+    "ar_def": "خوارزمية لصنع القرار تبحث عن القرارات المثلى في مجال معين، عن طريق الجمع بين محاكاة مونت كارلو وطريقة البحث الشجري."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Self-Labeling",
+    "ar_term": "تسمية ذاتية",
+    "en_def": "A type of semi-supervised learning methods that train a model on labeled data and then use this model to assign pseudo labels to unlabeled data.",
+    "ar_def": "نوع من طُرُق التعلُّم الشبه الموجَّه يُدرِّب نموذجًا على بيانات مُسمَّاة، ثم يستخدمه لإعطاء أسماء مستعارة للبيانات غير المُسمَّاة."
+}

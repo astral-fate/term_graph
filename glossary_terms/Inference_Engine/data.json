@@ -1,0 +1,6 @@
+{
+    "en_term": "Inference Engine",
+    "ar_term": "مُحرِّك استنتاج",
+    "en_def": "A component of an expert system that performs reasoning to conclude new information from facts and rules stored in a knowledge base.",
+    "ar_def": "مُكوِّن من مُكوِّنات النُّظُم الخبيرة يقوم بعملية الاستدلال لاستنتاج معلومات جديدة من الحقائق والقواعد المخزنة في قاعدة المعرفة."
+}

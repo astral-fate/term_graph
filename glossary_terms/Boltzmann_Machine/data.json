@@ -1,0 +1,6 @@
+{
+    "en_term": "Boltzmann Machine",
+    "ar_term": "آلة بولتزمان",
+    "en_def": "A neural network of nodes that are symmetrically connected and make their own decisions about activation.",
+    "ar_def": "شبكة عصبية من العُقَد المتصلة المتماثلة، وتتخذ قراراتها الخاصة بشأن التنشيط."
+}

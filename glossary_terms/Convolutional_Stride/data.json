@@ -1,0 +1,6 @@
+{
+    "en_term": "Convolutional Stride",
+    "ar_term": "خطوة ترشيحية",
+    "en_def": "The step size of shifting the convolution filters.",
+    "ar_def": "حجم خطوة تحريك المُرشِّحات."
+}

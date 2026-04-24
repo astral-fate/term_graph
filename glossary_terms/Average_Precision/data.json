@@ -1,0 +1,6 @@
+{
+    "en_term": "Average Precision",
+    "ar_term": "متوسط الإحكام",
+    "en_def": "A metric that summarizes the performance of a ranked sequence of results by calculating the average precision values for each relevant result.",
+    "ar_def": "مقياس يلخص أداء تسلسل مُرتَّب للنتائج عن طريق حساب متوسط قيم الدقة لكل نتيجة ذات صلة."
+}

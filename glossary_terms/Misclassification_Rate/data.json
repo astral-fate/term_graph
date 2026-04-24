@@ -1,0 +1,6 @@
+{
+    "en_term": "Misclassification Rate",
+    "ar_term": "معدل خطأ التصنيف",
+    "en_def": "A measure to determine how often a model's predictions are incorrect.",
+    "ar_def": "مقياس لتحديد عدد المرات التي تكون فيها تنبؤات النموذج غير صحيحة."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Hyperplane",
+    "ar_term": "مستوي متعدد الأبعاد",
+    "en_def": "A separating boundary between two subspaces used to separate the data space for classification.",
+    "ar_def": "حد فاصل بين مساحتين فرعيتين يُستخدم لفصل مساحة البيانات من أجل التصنيف."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Prediction Bias",
+    "ar_term": "تحيُّز تنبؤي",
+    "en_def": "A value that measures the difference between the average of predictions and the average of actual labels in a dataset.",
+    "ar_def": "قيمة تقيس الفرق بين متوسط التنبؤات ومتوسط الأسماء الفعلية في مجموعة البيانات."
+}

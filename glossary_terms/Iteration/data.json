@@ -1,0 +1,6 @@
+{
+    "en_term": "Iteration",
+    "ar_term": "تكرار",
+    "en_def": "A single update to the weights of a model during the training.",
+    "ar_def": "تحديث واحد لأوزان النموذج أثناء التدريب."
+}

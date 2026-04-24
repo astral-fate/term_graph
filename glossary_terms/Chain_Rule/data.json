@@ -1,0 +1,6 @@
+{
+    "en_term": "Chain Rule",
+    "ar_term": "قاعدة التسلسل",
+    "en_def": "A fundamental theorem in calculus that provides a method for computing the derivative of a composite function. Also used in probability to calculate the joint probability of a sequence of events.",
+    "ar_def": "نظرية أساسية في حساب التفاضل والتكامل، توفر طريقة لحساب مشتق دالة مركبة. وتُستخدم أيضًا في الاحتمالات؛ لحساب الاحتمال المشترك لتسلسل من الأحداث."
+}

@@ -1,0 +1,6 @@
+{
+    "en_term": "Hinge Loss",
+    "ar_term": "خسارة مفصلية",
+    "en_def": "A loss function for classification that aims to maximize the margin between training examples and the boundary by locating the decision boundary as far as possible from each example.",
+    "ar_def": "دالة خسارة للتصنيف الذي يهدف إلى تعظيم الهامش بين أمثلة التدريب والحد، وذلك عن طريق وضع حد القرار أبعد ما يمكن عن كل مثال."
+}
