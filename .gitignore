@@ -13,10 +13,16 @@
 !package.json
 !README.md
 !DOCKER_CLOUDFLARE_RUNBOOK.md
+!.env.example
 !build.js
 !build.ps1
 !wrangler.toml
 !.gitignore
+
+# Local secrets / env files (never commit tokens)
+.env
+.env.local
+.env.*.local
 
 # Allow data files
 !*.json

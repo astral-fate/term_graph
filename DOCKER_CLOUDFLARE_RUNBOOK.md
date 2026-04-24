@@ -18,6 +18,24 @@ If those secrets are present, pushing to `main` is enough for auto-deploy.
 
 ## 2) Local Run (No Node.js Installed)
 
+### Option 0: One-command preview with Docker Compose (recommended)
+
+From project root (PowerShell):
+
+```powershell
+docker compose up serve
+```
+
+Open:
+
+- <http://localhost:8080/index.html>
+
+Stop:
+
+```powershell
+docker compose down
+```
+
 ### Option A: Run static site directly from repo (fastest)
 
 From project root (PowerShell):
@@ -60,15 +78,50 @@ This runs `node build.js` in container and outputs files to `dist/`.
 
 ## 4) Manual Cloudflare Deploy from Your Machine (Docker Only)
 
-Set token in PowerShell:
+**You must set `CLOUDFLARE_API_TOKEN` every time (or Docker has no token and Wrangler opens OAuth in the container → `xdg-open` error).**  
+`CLOUDFLARE_ACCOUNT_ID` alone is not enough.
+
+### Recommended: project `.env` file (works in cmd and PowerShell)
+
+1. Copy the example file:
+
+   ```cmd
+   copy .env.example .env
+   ```
+
+2. Edit `.env` and set your real **API token** and **Account ID** (no quotes, no spaces around `=`).
+
+3. Build, then deploy:
+
+   ```cmd
+   docker compose run --rm build
+   docker compose run --rm deploy
+   ```
+
+Docker Compose reads `.env` in the project folder and passes those values into the `deploy` service.
+
+### Alternative: set variables only in the current terminal session
+
+**PowerShell** (use these lines only in PowerShell, not in `cmd.exe`):
 
 ```powershell
 $env:CLOUDFLARE_API_TOKEN="YOUR_TOKEN_HERE"
+$env:CLOUDFLARE_ACCOUNT_ID="YOUR_ACCOUNT_ID_HERE"
 ```
 
-Deploy using compose service:
+**cmd.exe** (use `set` only in Command Prompt, not PowerShell-style `$env:`):
 
-```powershell
+```cmd
+set CLOUDFLARE_API_TOKEN=YOUR_TOKEN_HERE
+set CLOUDFLARE_ACCOUNT_ID=YOUR_ACCOUNT_ID_HERE
+```
+
+If you run `$env:...` from **cmd**, Windows shows: `The filename, directory name, or volume label is incorrect` — that is expected; open **PowerShell** for `$env:` or use **`set`** in **cmd**.
+
+Then:
+
+```cmd
+docker compose run --rm build
 docker compose run --rm deploy
 ```
 
@@ -93,9 +146,15 @@ After push, verify deployment in:
 
 ## 6) Troubleshooting
 
+- If you see `The "CLOUDFLARE_API_TOKEN" variable is not set` when running **`build`**:
+  - That was caused by old Compose files using `${CLOUDFLARE_API_TOKEN}` in the YAML (Compose interpolates the whole file). The repo now uses pass-through `environment` for `deploy` only, so `build` no longer needs Cloudflare env vars. Update `docker-compose.yaml` or pull latest.
 - If deploy fails with auth errors:
   - Check `CLOUDFLARE_API_TOKEN` scope and validity.
   - Check `CLOUDFLARE_ACCOUNT_ID` secret in GitHub.
+- If you see OAuth + `xdg-open` errors inside Docker:
+  - Token was not passed into container.
+  - In `cmd.exe`, use `set CLOUDFLARE_API_TOKEN=...` (not `$env:...`).
+  - Then rerun `docker compose run --rm deploy`.
 - If local Docker serve is blank:
   - Confirm you are in repo root.
   - Check file exists: `index.html` (or `dist/index.html` if serving dist).
