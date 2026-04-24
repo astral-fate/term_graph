@@ -16,6 +16,16 @@ Required GitHub repository secrets:
 
 If those secrets are present, pushing to `main` is enough for auto-deploy.
 
+### NVIDIA API (rewrite + deep dive)
+
+The browser **never** stores the NVIDIA key. Chat calls go to **`/api/v1/chat/completions`**, implemented by `functions/api/v1/chat/completions.js`, which reads **`NVIDIA_API_KEY`** from the Worker/Pages environment.
+
+In the Cloudflare dashboard: **Pages → your project → Settings → Environment variables** → add **`NVIDIA_API_KEY`** (encrypt). Redeploy after saving.
+
+Local preview **with** Functions: build `dist`, then run Wrangler from repo root using **`.dev.vars`** (see `.dev.vars.example`). Plain `python -m http.server` **does not** run Functions, so chat requests will 404 until you use `wrangler pages dev` or the deployed site.
+
+If DevTools shows **CORS errors for NVIDIA’s integrate host**, the tab is almost certainly running an **old JavaScript bundle** that called NVIDIA from the browser. Deploy the latest `main`, then **hard-refresh** (Ctrl+Shift+R). The app must call only **`/api/v1/chat/completions`** on your Pages origin.
+
 ## 2) Local Run (No Node.js Installed)
 
 ### Option 0: One-command preview with Docker Compose (recommended)

@@ -265,13 +265,13 @@
       rows.push(rowHtml(labels.uml, escapeHtml(labels.na), 'ltr'));
     }
 
-    const mathRaw = (term.math_notation_latex && String(term.math_notation_latex).trim())
-      ? term.math_notation_latex
-      : (term.math_notation || '');
-    rows.push(rowHtml(labels.math, `<div class="code-block">${escapeHtml(mathRaw) || escapeHtml(labels.na)}</div>`, 'ltr'));
-
-    const code = term.code_example_python || '';
-    rows.push(rowHtml(labels.code, `<div class="code-block">${escapeHtml(code) || escapeHtml('# —')}</div>`, 'ltr'));
+    // Math + code rows disabled (were often empty / "غير متوفر").
+    // const mathRaw = (term.math_notation_latex && String(term.math_notation_latex).trim())
+    //   ? term.math_notation_latex
+    //   : (term.math_notation || '');
+    // rows.push(rowHtml(labels.math, `<div class="code-block">${escapeHtml(mathRaw) || escapeHtml(labels.na)}</div>`, 'ltr'));
+    // const code = term.code_example_python || '';
+    // rows.push(rowHtml(labels.code, `<div class="code-block">${escapeHtml(code) || escapeHtml('# —')}</div>`, 'ltr'));
 
     const chapterText = chapterBadgeText(term, lang, labels);
     const cat = term.category || labels.unknown_cat;

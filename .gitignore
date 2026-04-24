@@ -14,6 +14,7 @@
 !README.md
 !DOCKER_CLOUDFLARE_RUNBOOK.md
 !.env.example
+!.dev.vars.example
 !build.js
 !build.ps1
 !wrangler.toml
@@ -23,6 +24,7 @@
 .env
 .env.local
 .env.*.local
+.dev.vars
 
 # Allow data files
 !*.json

@@ -10,7 +10,20 @@
   let currentLang = ['ar', 'en', 'fr'].includes(storedLang) ? storedLang : 'en'; // Global language state
   let currentStoryTrackId = null;
   let currentChapterPos = null;
-  const NVIDIA_API_KEY = "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";
+  /** Last i18n dict from setLanguage — used by flashcards before next language switch. */
+  let currentUiDict = null;
+  /** Same-origin Pages Function → NVIDIA; never call NVIDIA's integrate chat host from the browser (CORS). */
+  function nvidiaChatProxyUrl() {
+    try {
+      if (typeof location !== 'undefined' && location.origin && location.protocol !== 'file:') {
+        return new URL('/api/v1/chat/completions', location.origin).href;
+      }
+    } catch (e) {}
+    return '/api/v1/chat/completions';
+  }
+  if (typeof window !== 'undefined') {
+    window.nvidiaChatProxyUrl = nvidiaChatProxyUrl;
+  }
 
   function getStoredTheme() {
     try {
@@ -85,7 +98,20 @@
         home: "الرئيسية", graph: "مخطط المعرفة", story: "مسارات القصة", anatomy: "تشريح المحول", detail: "تفاصيل المصطلح", rewrite: "أداة إعادة الكتابة", flash: "بطاقات الاستذكار",
         brand_t: "Term Graph - بيان المصطلح", brand_s: "قاموس تفاعلي يركز على العربية · بُني على 1,242 مصطلحاً من ICAIRE",
         hero: "بيان المصطلح: خريطة تفاعلية للذكاء الاصطناعي، بالعربية أولاً",
+        loading: "جارٍ تحميل بيانات المسرد…",
         status: (n) => `تم تحميل ${n} مصطلحاً بنجاح من قاعدة بياناتك. ابحث أو اختر مصطلحاً للاستكشاف.`,
+        story_h: "مسارات القصة",
+        story_p: "رحلات زمنية عبر المسرد. يجمع كل مسار المصطلحات في فصولاً مروية لتجربة تعلم أوضح.",
+        quiz_mc: "اختيار من متعدد",
+        quiz_rev: "بحث عكسي",
+        quiz_export: "تصدير لأنكي",
+        quiz_prompt_mc: "أي تعريف يطابق هذا المصطلح؟",
+        quiz_prompt_rev: "أي مصطلح يطابق هذا التعريف؟",
+        quiz_streak: (n) => `سلسلة ${n} · مراجعة قريبة`,
+        quiz_card: "بطاقة",
+        quiz_of: "من",
+        quiz_prev_title: "السابق (سهم يسار)",
+        quiz_next_title: "تخطي (سهم يمين)",
         stats_terms: "إجمالي المصطلحات", stats_tracks: "مسارات القصة", stats_edges: "روابط المخطط", stats_uml: "مخططات UML",
         featured: "مصطلحات مختارة من قاعدة بياناتك",
         search: "ابحث في 1,242 مصطلحاً بالعربية أو الإنجليزية أو الفرنسية...",
@@ -111,6 +137,20 @@
         rewrite_need_text: "الصق نصاً أولاً.",
         rewrite_matching_glossary: "مطابقة المسرد (RAG)…",
         rewrite_err: "خطأ: ",
+        rewrite_ref_kicker: "مرجع تصميم · قالب إداري (عرض توضيحي)",
+        rewrite_ref_h_before: "قبل · النص الأصلي",
+        rewrite_ref_h_after: "بعد · صياغة ICAIRE المعتمدة",
+        rewrite_ref_mock_flags: "4 تنبيهات",
+        rewrite_ref_mock_fixed: "✓ 4 تصحيحات",
+        rewrite_ref_mock_footer_before: "4 مصطلحات مُعلَّمة · 3 غير معيارية، 1 دون ترجمة",
+        rewrite_ref_mock_footer_after: "جميع المصطلحات محاذية لمسرد ICAIRE",
+        rewrite_ref_btn_changelog: "سجل التغييرات",
+        rewrite_ref_btn_export: "تصدير .docx",
+        rewrite_ref_btn_report: "تقرير التناسق",
+        rewrite_ref_btn_apply: "تطبيق كل التصحيحات",
+        rewrite_ref_actions_note: "أزرار تجريبية غير فعّالة — للعرض فقط.",
+        rewrite_live_heading: "جرب بنصك",
+        rewrite_live_sub: "أدخل فقرة عربية أدناه، ثم اضغط تشغيل لتدفق المخرجات (RAG + NVIDIA).",
         track_label: (n) => `المسار ${n}`, chapter_label: (n) => `الفصل ${n}`, in_chapter: "في هذا الفصل",
         graph_h: "مخطط المعرفة", graph_p: "كل مصطلح هو عقدة؛ كل رابط له نوع. يتم اكتشاف التكتلات تلقائياً. حجم العقدة = PageRank.",
         all_terms: "الكل",
@@ -122,7 +162,19 @@
         home: "Home", graph: "Knowledge graph", story: "Story tracks", anatomy: "Transformer anatomy", detail: "Term detail", rewrite: "Rewrite tool", flash: "Flashcards",
         brand_t: "Term Graph - بيان المصطلح", brand_s: "Arabic-first interactive glossary · built on 1,242 ICAIRE terms",
         hero: "Term Graph — an Arabic-first map of AI",
+        loading: "Loading glossary data…",
         status: (n) => `Successfully loaded ${n} terms from your database. Search or click a term below to explore.`,
+        story_h: "Story tracks", story_p: "Chronological journeys through the glossary. Each track groups terms into narrated chapters for a cinematic learning experience.",
+        quiz_mc: "Multiple choice",
+        quiz_rev: "Reverse lookup",
+        quiz_export: "Export to Anki",
+        quiz_prompt_mc: "Which definition matches this term?",
+        quiz_prompt_rev: "Which term matches this definition?",
+        quiz_streak: (n) => `streak ${n} · next review soon`,
+        quiz_card: "Card",
+        quiz_of: "of",
+        quiz_prev_title: "Previous (left arrow)",
+        quiz_next_title: "Skip (right arrow)",
         stats_terms: "Total Terms", stats_tracks: "Story Tracks", stats_edges: "Graph edges", stats_uml: "UML diagrams",
         featured: "Featured terms from your database",
         search: "Search 1,242 terms in Arabic, English, or French...",
@@ -148,7 +200,20 @@
         rewrite_need_text: "Paste some text first.",
         rewrite_matching_glossary: "Matching glossary (RAG)…",
         rewrite_err: "Error: ",
-        story_h: "Story tracks", story_p: "Chronological journeys through the glossary. Each track groups terms into narrated chapters for a cinematic learning experience.",
+        rewrite_ref_kicker: "Design reference · admin template (illustrative)",
+        rewrite_ref_h_before: "Before · original text",
+        rewrite_ref_h_after: "After · ICAIRE canonical",
+        rewrite_ref_mock_flags: "4 flags",
+        rewrite_ref_mock_fixed: "✓ 4 fixes applied",
+        rewrite_ref_mock_footer_before: "4 terms flagged · 3 non-canonical, 1 untranslated",
+        rewrite_ref_mock_footer_after: "All terms aligned with ICAIRE glossary",
+        rewrite_ref_btn_changelog: "View change log",
+        rewrite_ref_btn_export: "Export .docx",
+        rewrite_ref_btn_report: "Consistency report",
+        rewrite_ref_btn_apply: "Apply all fixes",
+        rewrite_ref_actions_note: "Demo actions — inactive (template only).",
+        rewrite_live_heading: "Try your own text",
+        rewrite_live_sub: "Paste a paragraph below, then Run for streamed output (RAG + NVIDIA proxy).",
         track_label: (n) => `Track ${n}`, chapter_label: (n) => `Chapter ${n}`, in_chapter: "In this chapter",
         graph_h: "Knowledge graph", graph_p: "Every term is a node; every edge is typed. Clusters auto-discovered. Node size = PageRank.",
         all_terms: "All",
@@ -162,7 +227,18 @@
       home: "Accueil", graph: "Graphe", story: "Parcours", anatomy: "Anatomie", detail: "Détail", rewrite: "Correction", flash: "Flashcards",
       brand_t: "Term Graph - بيان المصطلح", brand_s: "Glossaire IA interactif · basé sur 1 242 termes ICAIRE",
       hero: "Term Graph — une carte interactive de l'IA, en arabe d'abord",
+      loading: "Chargement du glossaire…",
       status: (n) => `${n} termes chargés avec succès. Recherchez ou cliquez sur un terme pour explorer.`,
+      quiz_mc: "QCM",
+      quiz_rev: "Sens inverse",
+      quiz_export: "Exporter vers Anki",
+      quiz_prompt_mc: "Quelle définition correspond à ce terme ?",
+      quiz_prompt_rev: "Quel terme correspond à cette définition ?",
+      quiz_streak: (n) => `Série ${n} · prochaine révision bientôt`,
+      quiz_card: "Carte",
+      quiz_of: "sur",
+      quiz_prev_title: "Précédent (flèche gauche)",
+      quiz_next_title: "Passer (flèche droite)",
       search: "Recherchez 1 242 termes en arabe, anglais ou français...",
       feat_graph_f: "réseau interactif", feat_story_f: "scrollytelling", feat_anatomy_f: "basé sur l'image", feat_detail_f: "vue par terme", feat_rewrite_f: "Correcteur IA", feat_flash_f: "rappel actif",
       detail_view_h: "Détail du terme",
@@ -180,6 +256,20 @@
       rewrite_need_text: "Collez d'abord du texte.",
       rewrite_matching_glossary: "Correspondance glossaire (RAG)…",
       rewrite_err: "Erreur : ",
+      rewrite_ref_kicker: "Référence design · gabarit admin (illustratif)",
+      rewrite_ref_h_before: "Avant · texte original",
+      rewrite_ref_h_after: "Après · canonique ICAIRE",
+      rewrite_ref_mock_flags: "4 signalements",
+      rewrite_ref_mock_fixed: "✓ 4 corrections",
+      rewrite_ref_mock_footer_before: "4 termes signalés · 3 non canoniques, 1 non traduit",
+      rewrite_ref_mock_footer_after: "Termes alignés sur le glossaire ICAIRE",
+      rewrite_ref_btn_changelog: "Journal des changements",
+      rewrite_ref_btn_export: "Exporter .docx",
+      rewrite_ref_btn_report: "Rapport de cohérence",
+      rewrite_ref_btn_apply: "Appliquer toutes les corrections",
+      rewrite_ref_actions_note: "Actions de démo — inactives (gabarit seulement).",
+      rewrite_live_heading: "Votre texte",
+      rewrite_live_sub: "Collez un paragraphe ci-dessous, puis Lancer pour la sortie en flux (RAG + proxy NVIDIA).",
       story_h: "Parcours", story_p: "Voyages chronologiques à travers le glossaire. Chaque parcours regroupe les termes en chapitres pour une expérience d'apprentissage.",
       track_label: (n) => `Parcours ${n}`, chapter_label: (n) => `Chapitre ${n}`, in_chapter: "Dans ce chapitre",
       graph_h: "Graphe de connaissances", graph_p: "Chaque terme est un nœud. Les clusters sont auto-découverts. Taille du nœud = PageRank.",
@@ -190,6 +280,7 @@
     };
 
     const dict = isAr ? ui.ar : (isFr ? ui.fr : ui.en);
+    currentUiDict = dict;
 
     // Update button states
     document.querySelectorAll('#global-lang-switch button').forEach((btn, idx) => {
@@ -288,9 +379,28 @@
       featCards[5].querySelector('h3').textContent = dict.feat_flash_t; featCards[5].querySelector('p').textContent = dict.feat_flash_p; featCards[5].querySelector('.feature-footer').textContent = dict.feat_flash_f;
     }
 
-    // Update Search Placeholder
+    // Home hero + load line (always follow current language)
+    const homeHero = document.querySelector('[data-view="home"] .view-header h2');
+    if (homeHero && dict.hero) homeHero.textContent = dict.hero;
     const searchInput = document.querySelector('.search input'); if(searchInput) searchInput.placeholder = dict.search;
-    const statusEl = document.getElementById('load-status'); if(statusEl && terms.length > 0) statusEl.textContent = dict.status(terms.length);
+    const statusEl = document.getElementById('load-status');
+    if (statusEl) statusEl.textContent = terms.length > 0 ? dict.status(terms.length) : dict.loading;
+
+    // Flash / quiz chrome
+    const mcBtn = document.getElementById('mode-mc');
+    const revBtn = document.getElementById('mode-rev');
+    const exBtn = document.getElementById('quiz-export-anki');
+    if (mcBtn && dict.quiz_mc) mcBtn.textContent = dict.quiz_mc;
+    if (revBtn && dict.quiz_rev) revBtn.textContent = dict.quiz_rev;
+    if (exBtn && dict.quiz_export) exBtn.textContent = dict.quiz_export;
+    const qCard = document.getElementById('quiz-progress-card');
+    const qOf = document.getElementById('quiz-progress-of');
+    if (qCard && dict.quiz_card) qCard.textContent = dict.quiz_card;
+    if (qOf && dict.quiz_of) qOf.textContent = dict.quiz_of;
+    const qPrev = document.getElementById('quiz-prev');
+    const qNext = document.getElementById('quiz-next');
+    if (qPrev && dict.quiz_prev_title) qPrev.setAttribute('title', dict.quiz_prev_title);
+    if (qNext && dict.quiz_next_title) qNext.setAttribute('title', dict.quiz_next_title);
 
     const themeWrap = document.getElementById('global-theme-switch');
     if (themeWrap) {
@@ -395,7 +505,6 @@
       const rwRoot = document.getElementById('rewrite-tool-root');
       if (rwRoot && window.RewriteToolView && typeof window.RewriteToolView.mount === 'function') {
         window.RewriteToolView.mount(rwRoot, {
-          apiKey: NVIDIA_API_KEY,
           terms: terms,
           getLang: function () { return currentLang; }
         });
@@ -680,9 +789,9 @@
       metaphor: isAr ? term.metaphor_ar : (isEn ? term.metaphor_en : term.metaphor_fr)
     };
     const labels = {
-      ar: { def: "التعريف", feel: "الإحساس", metaphor: "التشبيه", prereq: "المتطلبات", unlocks: "يفتح", uml: "مخطط UML", math: "الرياضيات", py: "بايثون", none: "لا يوجد" },
-      en: { def: "Definition", feel: "Feel", metaphor: "Metaphor", prereq: "Prerequisites", unlocks: "Unlocks", uml: "UML Flow", math: "Math", py: "Python", none: "None" },
-      fr: { def: "Définition", feel: "Intuition", metaphor: "Métaphore", prereq: "Prérequis", unlocks: "Débloque", uml: "Flux UML", math: "Math", py: "Python", none: "Aucun" }
+      ar: { def: "التعريف", feel: "الإحساس", metaphor: "التشبيه", prereq: "المتطلبات", unlocks: "يفتح", uml: "مخطط UML", none: "لا يوجد" },
+      en: { def: "Definition", feel: "Feel", metaphor: "Metaphor", prereq: "Prerequisites", unlocks: "Unlocks", uml: "UML Flow", none: "None" },
+      fr: { def: "Définition", feel: "Intuition", metaphor: "Métaphore", prereq: "Prérequis", unlocks: "Débloque", uml: "Flux UML", none: "Aucun" }
     };
     const l = labels[currentLang] || labels.en;
     const story = term.story_assignments_v2 && term.story_assignments_v2.story_assignments && term.story_assignments_v2.story_assignments[0];
@@ -702,7 +811,6 @@
         <span class="badge teal">${story ? `${story.track_name_en || story.track_name || "Track"} · ${isAr ? "الفصل" : (isEn ? "Chapter" : "Chapitre")} ${story.position_in_track || "-"}` : (isAr ? "غير مصنف" : (isEn ? "Untracked" : "Non classé"))}</span>
         <span class="badge purple">${term.category || (isAr ? "غير مصنف" : (isEn ? "Unknown category" : "Catégorie inconnue"))}</span>
         <span class="badge">${term.difficulty || (isAr ? "غير محدد" : (isEn ? "Unspecified" : "Non défini"))}</span>
-        <span class="badge">PageRank ${typeof term.pagerank === 'number' ? term.pagerank.toFixed(4) : 'N/A'}</span>
       </div>
       <div class="detail-label">${l.feel}</div>
       <p style="margin-bottom:12px; direction:${isAr ? 'rtl' : 'ltr'};"><span class="italic">${t.feel || l.none}</span></p>
@@ -715,16 +823,35 @@
       <div class="detail-label">${l.unlocks}</div>
       <p style="margin-bottom:16px;">${toPills(unlocks)}</p>
       <div class="detail-label">${l.uml}</div>
-      <div class="mermaid-block" style="margin-bottom:16px;">${term.ai_mermaid || "N/A"}</div>
-      <div class="detail-label">${l.math}</div>
-      <div class="code-block" style="margin-bottom:20px;">${term.math_notation || 'N/A'}</div>
-      <div class="detail-label">${l.py}</div>
-      <div class="code-block">${term.code_example_python || '# No code'}</div>
+      <div id="drawer-mermaid-root" class="mermaid-block" style="margin-bottom:16px;"></div>
       <div style="margin-top:16px;">
         <button class="btn primary" onclick="renderDetailByName('${encodeURIComponent(term.arabic_term || "")}')">${isAr ? "فتح صفحة التفاصيل الكاملة" : (isEn ? "Open full term detail" : "Ouvrir le détail complet")}</button>
       </div>
     `;
+    drawer.style.pointerEvents = 'auto';
+    drawer.setAttribute('aria-hidden', 'false');
     drawer.style.right = '0';
+
+    const mermaidRoot = document.getElementById('drawer-mermaid-root');
+    if (mermaidRoot) {
+      const raw = term.ai_mermaid && String(term.ai_mermaid).trim();
+      if (raw && typeof mermaid !== 'undefined') {
+        let uml = raw.replace(/\\n/g, '\n').replace(/\\"/g, '"').replace(/<\/script/gi, '<\\/script');
+        uml = uml.replace(/\[([^"\]]+)\]/g, '["$1"]');
+        mermaidRoot.innerHTML = `<div class="mermaid drawer-mermaid">${uml}</div>`;
+        try {
+          mermaidRoot.querySelectorAll('.mermaid').forEach((el) => el.removeAttribute('data-processed'));
+          mermaid.init(undefined, mermaidRoot.querySelectorAll('.mermaid'));
+        } catch (e) {
+          console.warn('drawer mermaid', e);
+          mermaidRoot.innerHTML = `<div style="color:var(--coral);font-size:12px;">${isAr ? 'تعذّر عرض المخطط.' : (isEn ? 'Could not render diagram.' : 'Impossible d’afficher le diagramme.')}</div>`;
+        }
+      } else if (raw && typeof mermaid === 'undefined') {
+        mermaidRoot.textContent = raw;
+      } else {
+        mermaidRoot.innerHTML = `<span class="italic">${l.none}</span>`;
+      }
+    }
   }
 
   function renderDetailByName(encodedName) {
@@ -737,7 +864,11 @@
 
   function closeStoryDrawer() {
     const drawer = document.getElementById('story-term-drawer');
-    if (drawer) drawer.style.right = '-400px';
+    if (!drawer) return;
+    const w = drawer.offsetWidth || 450;
+    drawer.style.right = `-${w}px`;
+    drawer.setAttribute('aria-hidden', 'true');
+    drawer.style.pointerEvents = 'none';
   }
 
   async function askDeepSeek() {
@@ -752,11 +883,15 @@
     btn.disabled = true;
     const prompt = `اشرح لي مصطلح "${currentTerm.arabic_term}" (${currentTerm.english_term || ""}) في سياق الذكاء الاصطناعي بعمق، مع ذكر أمثلة تطبيقية وتشبيهات لتقريب المعنى.`;
     try {
-      const response = await fetch("https://integrate.api.nvidia.com/v1/chat/completions", {
+      const response = await fetch(nvidiaChatProxyUrl(), {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${NVIDIA_API_KEY}` },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ model: "deepseek-ai/deepseek-v3", messages: [{role: "user", content: prompt}], temperature: 0.7, max_tokens: 4000, stream: true })
       });
+      if (!response.ok) {
+        const errBody = await response.text();
+        throw new Error(errBody || response.statusText);
+      }
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
       reasoningDiv.textContent = '';
@@ -778,7 +913,10 @@
           }
         }
       }
-    } catch (e) { contentDiv.textContent = "Error: " + e.message; }
+    } catch (e) {
+      const msg = e && typeof e.message === 'string' ? e.message : String(e);
+      contentDiv.textContent = 'Error: ' + msg;
+    }
     finally { btn.disabled = false; }
   }
 
@@ -789,8 +927,8 @@
   function filterQuiz(level) {
     quizDifficulty = level;
     document.querySelectorAll('#quiz-filters .chip').forEach(c => {
-      const isMatch = (level === 'all' && c.textContent.includes('All')) || c.textContent.toLowerCase().includes(level);
-      c.classList.toggle('active', isMatch);
+      const chipLevel = c.getAttribute('data-quiz-level');
+      c.classList.toggle('active', chipLevel === level);
     });
     setupFlashcards();
   }
@@ -881,23 +1019,22 @@
     }
 
     const isAr = currentLang === 'ar';
+    const ud = currentUiDict || {};
     if (currentMode === 'multiple-choice') {
-      const labels = { ar: "أي تعريف يطابق هذا المصطلح؟", en: "Which definition matches this term?", fr: "Quelle définition correspond à ce terme ?" };
-      if(modeLabel) modeLabel.textContent = labels[currentLang] || labels.en;
+      if (modeLabel) modeLabel.textContent = ud.quiz_prompt_mc || (isAr ? "أي تعريف يطابق هذا المصطلح؟" : "Which definition matches this term?");
       if(termEl) {
         termEl.textContent = isAr ? term.arabic_term : (currentLang === 'en' ? term.english_term : term.french_term);
         termEl.style.fontSize = '2.5rem';
       }
     } else {
-      const labels = { ar: "أي مصطلح يطابق هذا التعريف؟", en: "Which term matches this definition?", fr: "Quel terme correspond à cette تعريف ?" };
-      if(modeLabel) modeLabel.textContent = labels[currentLang] || labels.en;
+      if (modeLabel) modeLabel.textContent = ud.quiz_prompt_rev || (isAr ? "أي مصطلح يطابق هذا التعريف؟" : "Which term matches this definition?");
       if(termEl) {
         termEl.textContent = isAr ? (term.detailed_explanation_ar || term.arabic_def) : (currentLang === 'en' ? term.english_def : term.french_def);
         termEl.style.fontSize = '1.1rem';
       }
     }
-    
-    if (streakEl) streakEl.textContent = `streak ${quizStreak} · next review soon`;
+
+    if (streakEl) streakEl.textContent = typeof ud.quiz_streak === 'function' ? ud.quiz_streak(quizStreak) : `streak ${quizStreak} · next review soon`;
     if (jumpInput) {
       jumpInput.value = quizHistoryIdx + 1;
       jumpInput.max = pool.length;
@@ -915,7 +1052,7 @@
           opt.classList.add('wrong');
           quizStreak = 0;
           localStorage.setItem('mustalih_streak', 0);
-          if (streakEl) streakEl.textContent = `streak 0 · next review soon`;
+          if (streakEl) streakEl.textContent = typeof (currentUiDict && currentUiDict.quiz_streak) === 'function' ? currentUiDict.quiz_streak(0) : 'streak 0 · next review soon';
         }
       });
     });

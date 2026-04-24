@@ -32,6 +32,19 @@ jobs:
           ls -la dist
           du -sh dist
 
+      - name: Block direct NVIDIA HTTPS URL in client bundles (use same-origin /api/v1/chat/completions only)
+        run: |
+          if grep -rE 'https://[^[:space:]]*integrate[^[:space:]]*nvidia' dist/ --include="*.js" --include="*.html" 2>/dev/null; then
+            echo "::error::dist still references NVIDIA integrate over HTTPS — client must use the Pages Function proxy only."
+            exit 1
+          fi
+          echo "OK: no direct NVIDIA integrate HTTPS URL in dist."
+
+      - name: Verify Pages Function proxy file exists
+        run: |
+          test -f functions/api/v1/chat/completions.js
+          echo "OK: NVIDIA proxy function present."
+
       - name: Check Cloudflare secrets are set
         env:
           T: ${{ secrets.CLOUDFLARE_API_TOKEN }}
