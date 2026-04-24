@@ -4,7 +4,7 @@ const path = require('path');
 const distDir = path.join(__dirname, 'dist');
 
 // Folders to copy
-const folders = ['assets', 'css', 'js', 'fonts', 'images', 'glossary_terms', 'functions'];
+const folders = ['assets', 'css', 'js', 'fonts', 'images', 'glossary_terms', 'functions', 'data'];
 
 // Files to copy from root
 const files = ['index.html', 'landing.html', 'explore.html', 'glossary-ar.html', '_redirects', 'glossary_meta.json', 'glossary_enriched.json', 'glossary.jsonl'];

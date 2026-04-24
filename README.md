@@ -26,7 +26,7 @@ configs:
     path: glossary.jsonl
 ---
 
-# ICAIRE AI Glossary — Enriched (Mustalih Living)
+# ICAIRE AI Glossary — Enriched (Term Graph - بيان المصطلح)
 
 Bilingual Arabic-English AI glossary based on the ICAIRE canonical vocabulary,
 enriched through a multi-layer LLM pipeline into a fully structured
@@ -101,7 +101,7 @@ If you use this dataset, please cite:
 
 ```
 @dataset{mustalih2026,
-  title  = {Mustalih Living: Multimodal Arabic-First AI Glossary},
+  title  = {Term Graph - بيان المصطلح: Multimodal Arabic-First AI Glossary},
   author = {Emad Eldin, Fatimah and El-Marghni, Asmaa},
   year   = {2026},
   url    = {https://huggingface.co/datasets/FatimahEmadEldin/icaire-ai-glossary-enriched}

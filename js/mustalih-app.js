@@ -1,5 +1,5 @@
 /**
- * Mustalih / Term Graph — client app (was inline in index.html).
+ * Term Graph — بيان المصطلح (client app; was inline in index.html).
  * Global functions stay on window for onclick= handlers in markup.
  */
   // --- STATE ---
@@ -83,8 +83,8 @@
     const ui = {
       ar: {
         home: "الرئيسية", graph: "مخطط المعرفة", story: "مسارات القصة", anatomy: "تشريح المحول", detail: "تفاصيل المصطلح", rewrite: "أداة إعادة الكتابة", flash: "بطاقات الاستذكار",
-        brand_t: "مُصطلح الحيّ", brand_s: "قاموس تفاعلي يركز على العربية · بُني على 1,242 مصطلحاً من ICAIRE",
-        hero: "خريطة حيّة للذكاء الاصطناعي، بالعربية أولاً",
+        brand_t: "Term Graph - بيان المصطلح", brand_s: "قاموس تفاعلي يركز على العربية · بُني على 1,242 مصطلحاً من ICAIRE",
+        hero: "بيان المصطلح: خريطة تفاعلية للذكاء الاصطناعي، بالعربية أولاً",
         status: (n) => `تم تحميل ${n} مصطلحاً بنجاح من قاعدة بياناتك. ابحث أو اختر مصطلحاً للاستكشاف.`,
         stats_terms: "إجمالي المصطلحات", stats_tracks: "مسارات القصة", stats_edges: "روابط المخطط", stats_uml: "مخططات UML",
         featured: "مصطلحات مختارة من قاعدة بياناتك",
@@ -96,6 +96,21 @@
         feat_rewrite_t: "إعادة الكتابة والتصحيح", feat_rewrite_p: "صحح نصوص الذكاء الاصطناعي العربية وفقاً لمصطلحات ICAIRE المعتمدة.",
         feat_flash_t: "البطاقات والاختبارات", feat_flash_p: "اختبارات مولدة آلياً، تكرار متباعد، وتصدير لبرنامج Anki.",
         feat_graph_f: "شبكة تفاعلية", feat_story_f: "سرد قصصي", feat_anatomy_f: "مبني على الرسوم", feat_detail_f: "عرض لكل مصطلح", feat_rewrite_f: "مدقق إملائي للذكاء الاصطناعي", feat_flash_f: "استذكار نشط",
+        detail_view_h: "تفاصيل المصطلح",
+        detail_view_p: "مخرجات الإثراء لكل مصطلح: الشعور، التشبيه، التعريف، أمثلة، مخطط UML، المتطلبات وعلاقات المخطط (نوع من، يقابل، …)، الرياضيات والكود.",
+        rewrite_view_h: "إعادة الكتابة والتصحيح",
+        rewrite_view_p: "الصق نصاً عربياً. يُسترجع أولاً أقرب ثلاثيات مصطلحات (إنجليزي|عربي|فرنسي) من ملف المسرد، ثم يُستدعى نموذج NVIDIA لإعادة الصياغة (راجع المخرجات).",
+        rewrite_before_h: "قبل · النص",
+        rewrite_after_h: "بعد · مخرجات النموذج",
+        rewrite_placeholder: "الصق الفقرة العربية هنا…",
+        rewrite_run: "تشغيل",
+        rewrite_clear: "مسح",
+        rewrite_footer_hint: "المخرجات اقتراحات تحريرية؛ راجعها قبل النشر.",
+        rewrite_streaming: "جارٍ الاستلام…",
+        rewrite_done: "تم",
+        rewrite_need_text: "الصق نصاً أولاً.",
+        rewrite_matching_glossary: "مطابقة المسرد (RAG)…",
+        rewrite_err: "خطأ: ",
         track_label: (n) => `المسار ${n}`, chapter_label: (n) => `الفصل ${n}`, in_chapter: "في هذا الفصل",
         graph_h: "مخطط المعرفة", graph_p: "كل مصطلح هو عقدة؛ كل رابط له نوع. يتم اكتشاف التكتلات تلقائياً. حجم العقدة = PageRank.",
         all_terms: "الكل",
@@ -105,8 +120,8 @@
       },
       en: {
         home: "Home", graph: "Knowledge graph", story: "Story tracks", anatomy: "Transformer anatomy", detail: "Term detail", rewrite: "Rewrite tool", flash: "Flashcards",
-        brand_t: "Mustalih Living", brand_s: "Arabic-first interactive glossary · built on 1,242 ICAIRE terms",
-        hero: "A living, Arabic-first map of AI",
+        brand_t: "Term Graph - بيان المصطلح", brand_s: "Arabic-first interactive glossary · built on 1,242 ICAIRE terms",
+        hero: "Term Graph — an Arabic-first map of AI",
         status: (n) => `Successfully loaded ${n} terms from your database. Search or click a term below to explore.`,
         stats_terms: "Total Terms", stats_tracks: "Story Tracks", stats_edges: "Graph edges", stats_uml: "UML diagrams",
         featured: "Featured terms from your database",
@@ -118,6 +133,21 @@
         feat_rewrite_t: "Rewrite with correction", feat_rewrite_p: "Paste Arabic text to flag non-canonical terms against ICAIRE vocabulary.",
         feat_flash_t: "Flashcards & quizzes", feat_flash_p: "Auto-generated distractors, spaced repetition, and Anki export.",
         feat_graph_f: "interactive network", feat_story_f: "scrollytelling", feat_anatomy_f: "figure-based", feat_detail_f: "per-term view", feat_rewrite_f: "Grammarly for Arabic AI", feat_flash_f: "active recall",
+        detail_view_h: "Term detail",
+        detail_view_p: "Enrichment output per term — feel, metaphor, definition, examples, UML, prerequisites, and graph relations (is-a, part-of, contrasts, related, …), math, and code.",
+        rewrite_view_h: "Rewrite with correction",
+        rewrite_view_p: "Paste Arabic AI/ML text. Top matching glossary triplets (en|ar|fr) load from data/rag_terms_index.json, then an NVIDIA model streams a revision — review before publishing.",
+        rewrite_before_h: "Before · your text",
+        rewrite_after_h: "After · model output",
+        rewrite_placeholder: "Paste Arabic paragraph here…",
+        rewrite_run: "Run",
+        rewrite_clear: "Clear",
+        rewrite_footer_hint: "Output is machine-generated; verify terminology for your context.",
+        rewrite_streaming: "Streaming…",
+        rewrite_done: "Done",
+        rewrite_need_text: "Paste some text first.",
+        rewrite_matching_glossary: "Matching glossary (RAG)…",
+        rewrite_err: "Error: ",
         story_h: "Story tracks", story_p: "Chronological journeys through the glossary. Each track groups terms into narrated chapters for a cinematic learning experience.",
         track_label: (n) => `Track ${n}`, chapter_label: (n) => `Chapter ${n}`, in_chapter: "In this chapter",
         graph_h: "Knowledge graph", graph_p: "Every term is a node; every edge is typed. Clusters auto-discovered. Node size = PageRank.",
@@ -130,11 +160,26 @@
     ui.fr = {
       ...ui.en,
       home: "Accueil", graph: "Graphe", story: "Parcours", anatomy: "Anatomie", detail: "Détail", rewrite: "Correction", flash: "Flashcards",
-      brand_t: "Mustalih Living", brand_s: "Glossaire IA interactif · basé sur 1 242 termes ICAIRE",
-      hero: "Une carte vivante de l'IA, en arabe d'abord",
+      brand_t: "Term Graph - بيان المصطلح", brand_s: "Glossaire IA interactif · basé sur 1 242 termes ICAIRE",
+      hero: "Term Graph — une carte interactive de l'IA, en arabe d'abord",
       status: (n) => `${n} termes chargés avec succès. Recherchez ou cliquez sur un terme pour explorer.`,
       search: "Recherchez 1 242 termes en arabe, anglais ou français...",
       feat_graph_f: "réseau interactif", feat_story_f: "scrollytelling", feat_anatomy_f: "basé sur l'image", feat_detail_f: "vue par terme", feat_rewrite_f: "Correcteur IA", feat_flash_f: "rappel actif",
+      detail_view_h: "Détail du terme",
+      detail_view_p: "Données enrichies par terme — ressenti, métaphore, définition, exemples, UML, prérequis et relations du graphe, maths et code.",
+      rewrite_view_h: "Réécriture et correction",
+      rewrite_view_p: "Collez un texte arabe. Les triplets de termes (en|ar|fr) les plus proches sont chargés depuis data/rag_terms_index.json, puis un modèle NVIDIA propose une révision — à relire.",
+      rewrite_before_h: "Avant · votre texte",
+      rewrite_after_h: "Après · sortie du modèle",
+      rewrite_placeholder: "Collez le paragraphe arabe ici…",
+      rewrite_run: "Lancer",
+      rewrite_clear: "Effacer",
+      rewrite_footer_hint: "Sortie générée par un modèle : vérifiez la terminologie.",
+      rewrite_streaming: "Réception…",
+      rewrite_done: "Terminé",
+      rewrite_need_text: "Collez d'abord du texte.",
+      rewrite_matching_glossary: "Correspondance glossaire (RAG)…",
+      rewrite_err: "Erreur : ",
       story_h: "Parcours", story_p: "Voyages chronologiques à travers le glossaire. Chaque parcours regroupe les termes en chapitres pour une expérience d'apprentissage.",
       track_label: (n) => `Parcours ${n}`, chapter_label: (n) => `Chapitre ${n}`, in_chapter: "Dans ce chapitre",
       graph_h: "Graphe de connaissances", graph_p: "Chaque terme est un nœud. Les clusters sont auto-découverts. Taille du nœud = PageRank.",
@@ -180,6 +225,14 @@
     // Update Graph View
     const graphH2 = document.querySelector('[data-view="graph"] h2'); if(graphH2) graphH2.textContent = dict.graph_h;
     const graphP = document.querySelector('[data-view="graph"] p'); if(graphP) graphP.textContent = dict.graph_p;
+
+    const detailVH = document.getElementById('detail-view-title');
+    const detailVP = document.getElementById('detail-view-desc');
+    if (detailVH && dict.detail_view_h) detailVH.textContent = dict.detail_view_h;
+    if (detailVP && dict.detail_view_p) detailVP.textContent = dict.detail_view_p;
+    if (window.RewriteToolView && typeof window.RewriteToolView.applyLabels === 'function') {
+      window.RewriteToolView.applyLabels(dict);
+    }
 
     // Update Flash View
     const flashH2 = document.querySelector('[data-view="flash"] h2'); if(flashH2) flashH2.textContent = dict.flash_h;
@@ -293,8 +346,12 @@
     });
   });
 
-  document.querySelectorAll('[data-goto]').forEach(c =>
-    c.addEventListener('click', () => goto(c.dataset.goto)));
+  document.body.addEventListener('click', (e) => {
+    const t = e.target.closest('[data-goto]');
+    if (!t || !t.dataset.goto) return;
+    e.preventDefault();
+    goto(t.dataset.goto);
+  });
 
   if (typeof window.matchMedia === 'function') {
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
@@ -335,7 +392,17 @@
       setupDynamicFilters();
       initGraphEngine();
 
+      const rwRoot = document.getElementById('rewrite-tool-root');
+      if (rwRoot && window.RewriteToolView && typeof window.RewriteToolView.mount === 'function') {
+        window.RewriteToolView.mount(rwRoot, {
+          apiKey: NVIDIA_API_KEY,
+          terms: terms,
+          getLang: function () { return currentLang; }
+        });
+      }
+
       if (terms.length > 0) renderDetail(terms[0]);
+      setLanguage(currentLang);
     } catch (e) {
       console.error("Init failed:", e);
       const homeHeader = document.querySelector('[data-view="home"] .view-header');
@@ -391,97 +458,16 @@
   function renderDetail(term) {
     if (!term) return;
     currentTerm = term;
-    const view = document.querySelector('[data-view="detail"]');
-    if (!view) return;
-    
+    if (!document.getElementById('term-detail-panel')) return;
     try {
-      // Dynamic field mapping
-      const isAr = currentLang === 'ar';
-      const isEn = currentLang === 'en';
-      const isFr = currentLang === 'fr';
-
-      const t = {
-        title: isAr ? term.arabic_term : (isEn ? term.english_term : term.french_term),
-        sub: isAr ? `${term.english_term || ""} · ${term.french_term || ""}` : term.arabic_term,
-        feel: isAr ? term.one_sentence_feel_ar : (isEn ? term.one_sentence_feel_en : term.one_sentence_feel_fr),
-        explanation: isAr ? term.detailed_explanation_ar : (isEn ? term.detailed_explanation_en : term.detailed_explanation_fr),
-        metaphor: isAr ? term.metaphor_ar : (isEn ? term.metaphor_en : term.metaphor_fr)
-      };
-      const fallbackExplanation = isAr
-        ? (term.arabic_def || term.detailed_explanation_ar || "")
-        : (isEn ? (term.english_def || term.detailed_explanation_en || "") : (term.french_def || term.detailed_explanation_fr || ""));
-
-      const toTermPills = (items) => {
-        if (!items || !items.length) return `<span class="italic">${isAr ? "لا يوجد" : (isFr ? "Aucun" : "None")}</span>`;
-        return items.map(name => {
-          const encoded = encodeURIComponent(String(name || ""));
-          return `<span class="term-pill" onclick="findAndRender(decodeURIComponent('${encoded}'))">${name}</span>`;
-        }).join('');
-      };
-
-      // 1. Update Headings
-      const headAr = view.querySelector('.detail-ar');
-      if (headAr) {
-        headAr.textContent = t.title || "---";
-        headAr.style.direction = isAr ? 'rtl' : 'ltr';
-        headAr.style.fontFamily = isAr ? 'var(--font-ar)' : 'var(--font-main)';
+      if (window.MustalihTermDetail && typeof window.MustalihTermDetail.render === 'function') {
+        window.MustalihTermDetail.render(term, { lang: currentLang, afterPaint: applyMermaidThemeForDocument });
+      } else {
+        document.getElementById('term-detail-panel').innerHTML =
+          '<p class="italic" style="padding:24px;color:var(--text-secondary);">term-detail.js did not load.</p>';
       }
-      
-      const headEn = view.querySelector('.detail-en');
-      if (headEn) headEn.textContent = `${t.sub} · ${term.category || ""}`;
-      const badgeEls = view.querySelectorAll('.detail-head .badges .badge');
-      if (badgeEls.length >= 4) {
-        const chapter = term.story_assignments_v2 && term.story_assignments_v2.story_assignments && term.story_assignments_v2.story_assignments[0];
-        const chapterText = chapter
-          ? (isAr
-              ? `${chapter.track_name_ar || chapter.track_name || "مسار"} · الفصل ${chapter.position_in_track || "-"}`
-              : (isFr
-                  ? `${chapter.track_name_fr || chapter.track_name || "Parcours"} · Chapitre ${chapter.position_in_track || "-"}`
-                  : `${chapter.track_name_en || chapter.track_name || "Track"} · Chapter ${chapter.position_in_track || "-"}`))
-          : (isAr ? "غير مصنف" : (isFr ? "Non classé" : "Untracked"));
-        badgeEls[0].textContent = chapterText;
-        badgeEls[1].textContent = term.category || (isAr ? "غير مصنف" : (isFr ? "Catégorie inconnue" : "Unknown category"));
-        badgeEls[2].textContent = term.difficulty || (isAr ? "غير محدد" : (isFr ? "Non défini" : "Unspecified"));
-        badgeEls[3].textContent = `PageRank ${typeof term.pagerank === 'number' ? term.pagerank.toFixed(4) : 'N/A'}`;
-      }
-
-      // 2. Update Content Rows
-      const rows = view.querySelectorAll('.detail-row');
-      const setRow = (idx, label, html) => {
-        if (rows[idx]) {
-          const lbl = rows[idx].querySelector('.detail-label');
-          if (lbl) lbl.textContent = label;
-          const content = rows[idx].querySelector('.detail-content');
-          if (content) {
-            content.innerHTML = html;
-            content.style.direction = (isAr && idx < 2) ? 'rtl' : 'ltr'; // Feel and Expl are dir-sensitive
-          }
-        }
-      };
-
-      const labels = isAr ? 
-        ["الشعور", "التعريف", "المتطلبات", "يفتح", "مخطط UML", "الرياضيات", "الكود"] : 
-        ["Feel", "Definition", "Prerequisites", "Unlocks", "UML Flow", "Math", "Code"];
-
-      setRow(0, labels[0], `<span class="italic">${t.feel || ""}</span>`);
-      setRow(1, labels[1], t.explanation || fallbackExplanation);
-      
-      const pr = (term.graph_raw && term.graph_raw.prerequisites) || [];
-      setRow(2, labels[2], toTermPills(pr));
-      
-      const un = (term.graph_raw && term.graph_raw.unlocks) || [];
-      setRow(3, labels[3], toTermPills(un));
-
-      setRow(4, labels[4], term.ai_mermaid ? `<div class="mermaid-block">${term.ai_mermaid}</div>` : "N/A");
-      setRow(5, labels[5], `<div class="code-block">${term.math_notation || "N/A"}</div>`);
-      setRow(6, labels[6], `<div class="code-block">${term.code_example_python || "# No code"}</div>`);
-
-      // 3. Update AI Button Label
-      const nimBtn = view.querySelector('.nim-section .btn');
-      if (nimBtn) nimBtn.textContent = isAr ? "اسأل DeepSeek-V3 للمزيد" : "Ask DeepSeek-V3 for a deep dive";
-      
     } catch (err) {
-      console.error("RenderDetail error:", err);
+      console.error('RenderDetail error:', err);
     }
   }
 
@@ -1332,6 +1318,10 @@
     }
   }
 
+  if (window.HomeFeaturesView && typeof window.HomeFeaturesView.mount === 'function') {
+    const grid = document.getElementById('home-feature-grid');
+    if (grid) window.HomeFeaturesView.mount(grid);
+  }
   updateThemeSwitch();
   applyMermaidThemeForDocument();
   setLanguage(currentLang);

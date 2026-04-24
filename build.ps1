@@ -10,7 +10,7 @@ if (Test-Path $distDir) {
 New-Item -ItemType Directory -Path $distDir
 
 # Folders to copy
-$folders = @('assets', 'css', 'js', 'fonts', 'images', 'glossary_terms', 'functions')
+$folders = @('assets', 'css', 'js', 'fonts', 'images', 'glossary_terms', 'functions', 'data')
 
 # Files to copy from root
 $files = @('index.html', 'landing.html', 'explore.html', 'glossary-ar.html', '_redirects', 'glossary_meta.json', 'glossary_enriched.json', 'glossary.jsonl')

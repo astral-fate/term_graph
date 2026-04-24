@@ -74,3 +74,4 @@ dist/
 *.xlsx
 *.csv
 *.py
+!scripts/**/*.py

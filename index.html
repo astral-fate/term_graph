@@ -14,7 +14,7 @@
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Term Graph — بيان المصطلحات · MVP</title>
+<title>Term Graph - بيان المصطلح · MVP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,11 +26,14 @@
 <body>
 <!--
   Structure map (maintain separately):
-    css/mustalih-app.css  — layout, themes, components
-    js/mustalih-app.js    — data, i18n, graph, story, detail, flash, API calls
-    Optional re-split:    scripts/split-index.mjs (merge inline again then re-run)
+    css/mustalih-app.css       — layout, themes, components
+    js/mustalih-app.js         — data, i18n, graph, story, flash, navigation
+    js/views/term-detail.js    — term detail DOM from glossary_enriched + graph_raw
+    js/views/home-features.js — home feature card grid markup
+    js/rag-retrieval.js        — lexical RAG over data/rag_terms_index.json
+    js/views/rewrite-tool.js   — rewrite view + RAG + NVIDIA streaming
 -->
-<h1 class="sr-only">Term Graph — Arabic-first AI Glossary MVP</h1>
+<h1 class="sr-only">Term Graph - بيان المصطلح · Arabic-first AI glossary MVP</h1>
 
 <div class="app">
 
@@ -39,7 +42,7 @@
     <div class="brand">
       <div class="logo">ب</div>
       <div class="brand-text">
-        <div class="title">Term Graph <span style="color: var(--text-secondary); font-weight: 400;">· بيان المصطلحات</span></div>
+        <div class="title">Term Graph - بيان المصطلح</div>
         <div class="subtitle">Arabic-first interactive glossary · built on 1,242 ICAIRE terms</div>
       </div>
     </div>
@@ -110,56 +113,8 @@
       </div>
     </div>
 
-    <div class="feature-grid">
-      <button class="feature-card" data-goto="graph">
-        <div class="feature-icon" style="background: var(--purple-bg);">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple-ink)" stroke-width="2"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7 7l4 10M17 7l-4 10"/></svg>
-        </div>
-        <h3>Explore the knowledge graph</h3>
-        <p>1,242 nodes, 50+ auto-labeled clusters, typed edges for prerequisites, unlocks, and contrasts between every concept.</p>
-        <div class="feature-footer">interactive network</div>
-      </button>
-      <button class="feature-card" data-goto="story">
-        <div class="feature-icon" style="background: var(--teal-bg);">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-ink)" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
-        </div>
-        <h3>Follow a story track</h3>
-        <p>7 chronological narratives from data foundations to trustworthy AI. Each chapter narrates 10–30 terms in context.</p>
-        <div class="feature-footer">scrollytelling</div>
-      </button>
-      <button class="feature-card" data-goto="anatomy">
-        <div class="feature-icon" style="background: var(--coral-bg);">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--coral-ink)" stroke-width="2"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M10 10h4M10 14h4"/></svg>
-        </div>
-        <h3>Transformer anatomy</h3>
-        <p>Click any part of a Transformer figure to see the term, definition, Mermaid diagram, and audio explanation.</p>
-        <div class="feature-footer">figure-based</div>
-      </button>
-      <button class="feature-card" data-goto="detail">
-        <div class="feature-icon" style="background: var(--blue-bg);">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue-ink)" stroke-width="2"><path d="M4 4h16v4H4zM4 12h10v4H4zM4 20h16"/></svg>
-        </div>
-        <h3>Rich term detail</h3>
-        <p>Feel-metaphor, UML diagram, audio pronunciation, prerequisites, code example, math notation.</p>
-        <div class="feature-footer">per-term view</div>
-      </button>
-      <button class="feature-card" data-goto="rewrite">
-        <div class="feature-icon" style="background: var(--amber-bg);">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber-ink)" stroke-width="2"><path d="M4 20h16M14 4l6 6-10 10H4v-6z"/></svg>
-        </div>
-        <h3>Rewrite with correction</h3>
-        <p>Paste any Arabic AI text. Non-canonical terms get flagged against ICAIRE's vocabulary with one-click fixes.</p>
-        <div class="feature-footer">Grammarly for Arabic AI</div>
-      </button>
-      <button class="feature-card" data-goto="flash">
-        <div class="feature-icon" style="background: var(--purple-bg);">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--purple-ink)" stroke-width="2"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
-        </div>
-        <h3>Flashcards &amp; quizzes</h3>
-        <p>Auto-generated distractors, 3 quiz modes, spaced repetition, Anki export for 20M+ existing users.</p>
-        <div class="feature-footer">active recall</div>
-      </button>
-    </div>
+    <!-- Filled by js/views/home-features.js -->
+    <div class="feature-grid" id="home-feature-grid"></div>
   </section>
 
   <!-- ================================================================
@@ -360,136 +315,21 @@
        ================================================================ -->
   <section class="view" data-view="detail">
     <div class="view-header">
-      <h2>Term detail</h2>
-      <p>Everything the enrichment pipeline generated per term — metaphor, UML, prerequisites, code, audio, math notation.</p>
+      <h2 id="detail-view-title">Term detail</h2>
+      <p id="detail-view-desc">Everything the enrichment pipeline generated per term — metaphor, UML, prerequisites, graph relations, code, and math.</p>
     </div>
-
-    <div class="detail-panel">
-      <div class="detail-head">
-        <div>
-          <h1 class="detail-ar">الانحدار التدريجي</h1>
-          <div class="detail-en">Gradient Descent · Descente de gradient</div>
-          <div class="badges">
-            <span class="badge teal">How a Model Learns · Chapter 3</span>
-            <span class="badge purple">Optimization</span>
-            <span class="badge">intermediate</span>
-            <span class="badge">PageRank 0.0184</span>
-          </div>
-        </div>
-        <div style="display: flex; gap: 6px;">
-          <button class="btn" style="width: auto;">▸ Audio</button>
-          <button class="btn" style="width: auto;">Quiz me</button>
-        </div>
-      </div>
-
-      <div class="detail-row">
-        <div class="detail-label">Feel</div>
-        <div class="detail-content ar">
-          <span class="italic">مثل السير نزولاً في الضباب — تحسّ باتجاه الانخفاض، وتخطو نحوه.</span>
-        </div>
-      </div>
-
-      <div class="detail-row">
-        <div class="detail-label">Definition</div>
-        <div class="detail-content ar">
-          خوارزمية تحسين تكرّر تحديث معاملات النموذج في عكس اتجاه ميل <span class="term-pill">دالة الخسارة</span>، لتقليل قيمتها خطوةً بعد خطوة.
-        </div>
-      </div>
-
-      <div class="detail-row">
-        <div class="detail-label">Prerequisites</div>
-        <div class="detail-content">
-          <span class="term-pill">Loss function</span>
-          <span class="term-pill">Derivative</span>
-          <span class="term-pill">Learning rate</span>
-          <span class="term-pill">Parameter</span>
-        </div>
-      </div>
-
-      <div class="detail-row">
-        <div class="detail-label">Unlocks</div>
-        <div class="detail-content">
-          <span class="term-pill">Stochastic Gradient Descent</span>
-          <span class="term-pill">Adam</span>
-          <span class="term-pill">Backpropagation</span>
-          <span class="term-pill">Momentum</span>
-        </div>
-      </div>
-
-      <div class="detail-row">
-        <div class="detail-label">UML flow</div>
-        <div class="detail-content">
-          <div class="mermaid-block">
-            Initialize weights <span class="mermaid-arrow">→</span> Compute loss <span class="mermaid-arrow">→</span> Compute gradients <span class="mermaid-arrow">→</span> Update weights <span class="mermaid-arrow">↻</span> (repeat until convergence)
-          </div>
-        </div>
-      </div>
-
-      <div class="detail-row">
-        <div class="detail-label">Math</div>
-        <div class="detail-content">
-          <div class="code-block">θ<sub>t+1</sub> = θ<sub>t</sub> − η · ∇<sub>θ</sub> L(θ<sub>t</sub>)</div>
-        </div>
-      </div>
-
-      <div class="detail-row">
-        <div class="detail-label">Code</div>
-        <div class="detail-content">
-          <div class="code-block">w -= learning_rate * grad_w</div>
-        </div>
-      </div>
+    <!-- Filled by js/views/term-detail.js -->
+    <div class="detail-panel" id="term-detail-panel">
+      <p class="italic" style="padding:24px;color:var(--text-secondary);">Loading term…</p>
     </div>
   </section>
 
   <!-- ================================================================
        REWRITE TOOL
        ================================================================ -->
+  <!-- Filled by js/views/rewrite-tool.js after glossary load -->
   <section class="view" data-view="rewrite">
-    <div class="view-header">
-      <h2>Rewrite with correction</h2>
-      <p>"Grammarly for Arabic AI content." Paste any Arabic text — non-canonical terms get flagged against ICAIRE's vocabulary with one-click canonical replacements.</p>
-    </div>
-
-    <div class="rewrite-grid">
-      <div class="rewrite-pane">
-        <div class="pane-head">
-          <h4>Before · original text</h4>
-          <span style="font-size: 11px; color: var(--amber-ink);">4 flags</span>
-        </div>
-        <div class="pane-body">
-          <p>تستخدم الشبكات <span class="flag" title="Non-canonical · suggest: الشبكات العصبية">العصبونية</span> تقنية <span class="flag" title="Non-canonical · suggest: الانحدار التدريجي">الدفع المتدرج</span> لتدريب النموذج.</p>
-          <p>كما أنّ <span class="flag" title="Non-canonical · suggest: التعلم غير الخاضع للإشراف">التعلم غير الموجه</span> يُستخدم لاكتشاف الأنماط من البيانات دون تسميات.</p>
-          <p>الـ<span class="flag" title="Untranslated · suggest: نموذج اللغة الكبير">LLM</span> قد يُنتج هلوسات عند غياب البيانات الكافية.</p>
-        </div>
-        <div class="pane-footer">
-          <span class="dot-indicator" style="background: var(--amber);"></span>
-          4 terms flagged · 3 non-canonical, 1 untranslated
-        </div>
-      </div>
-
-      <div class="rewrite-pane">
-        <div class="pane-head">
-          <h4>After · ICAIRE canonical</h4>
-          <span style="font-size: 11px; color: var(--teal);">✓ 4 fixes applied</span>
-        </div>
-        <div class="pane-body">
-          <p>تستخدم <span class="fix">الشبكات العصبية</span> تقنية <span class="fix">الانحدار التدريجي</span> لتدريب النموذج.</p>
-          <p>كما أنّ <span class="fix">التعلم غير الخاضع للإشراف</span> يُستخدم لاكتشاف الأنماط من البيانات دون تسميات.</p>
-          <p>الـ<span class="fix">نموذج اللغة الكبير</span> قد يُنتج هلوسات عند غياب البيانات الكافية.</p>
-        </div>
-        <div class="pane-footer">
-          <span class="dot-indicator" style="background: var(--teal);"></span>
-          All terms aligned with ICAIRE glossary
-        </div>
-      </div>
-    </div>
-
-    <div style="display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap;">
-      <button class="btn" style="width: auto;">View change log</button>
-      <button class="btn" style="width: auto;">Export .docx</button>
-      <button class="btn" style="width: auto;">Consistency report</button>
-      <button class="btn primary" style="width: auto;">Apply all fixes</button>
-    </div>
+    <div id="rewrite-tool-root"></div>
   </section>
 
   <!-- ================================================================
@@ -538,6 +378,10 @@
 </div>
 
 <script src="js/mustalih-app.js"></script>
+<script src="js/views/term-detail.js"></script>
+<script src="js/views/home-features.js"></script>
+<script src="js/rag-retrieval.js"></script>
+<script src="js/views/rewrite-tool.js"></script>
 
 </body>
 </html>
