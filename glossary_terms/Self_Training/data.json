@@ -1,6 +1,0 @@
-{
-    "en_term": "Self-Training",
-    "ar_term": "تدريب ذاتي",
-    "en_def": "A self-supervised learning method used in classification when the unlabeled data is more than labeled data.",
-    "ar_def": "طريقة تعلُّم ذاتي التوجيه تُستخدم في التصنيف عندما تكون البيانات غير المُسمَّاة أكثر من البيانات المُسمَّاة."
-}

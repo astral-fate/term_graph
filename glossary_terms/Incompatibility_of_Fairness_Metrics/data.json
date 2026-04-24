@@ -1,6 +1,0 @@
-{
-    "en_term": "Incompatibility of Fairness Metrics",
-    "ar_term": "عدم توافق مقاييس الإنصاف",
-    "en_def": "A thought that some fairness concepts cannot be satisfied simultaneously, and therefore there is no single metric to quantify fairness in all machine learning problems.",
-    "ar_def": "تصوُّر يقوم على أن بعض مفاهيم الإنصاف لا يمكن تحقيقها في وقت واحد؛ ومِن ثَمّ لا يوجد مقياس واحد لتحديد الإنصاف في جميع مشكلات تعلُّم الآلة."
-}

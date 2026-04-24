@@ -1,6 +1,0 @@
-{
-    "en_term": "Online Machine Learning",
-    "ar_term": "تعلُّم الآلة المستمر",
-    "en_def": "A subfield of machine learning in which a model learns incrementally from new data in a sequential way.",
-    "ar_def": "مجال فرعي من تعلُّم الآلة يتعلَّم فيه النموذج تدريجيًّا من البيانات الجديدة بطريقة متسلسلة."
-}

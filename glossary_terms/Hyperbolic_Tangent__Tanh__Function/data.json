@@ -1,6 +1,0 @@
-{
-    "en_term": "Hyperbolic Tangent (Tanh) Function",
-    "ar_term": "دالة الظل الزائدي",
-    "en_def": "An activation function that maps input values to a range between -1 and 1.",
-    "ar_def": "دالة تنشيط تُعيِّن القِيَم المُدْخَلة إلى نطاق يتراوح بين -1 و1."
-}

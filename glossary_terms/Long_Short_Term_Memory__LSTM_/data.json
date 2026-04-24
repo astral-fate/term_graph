@@ -1,6 +1,0 @@
-{
-    "en_term": "Long Short-Term Memory (LSTM)",
-    "ar_term": "ذاكرة قصيرة المدى مُطَوَّلة",
-    "en_def": "A type of recurrent neural network that processes data sequences with acceptable performance for both long and short dependencies.",
-    "ar_def": "نوع من الشبكات العصبية التكرارية التي تعالج تسلسل البيانات بأداء مقبول لكل التوابع الطويلة والقصيرة."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Sparse Feature",
-    "ar_term": "خاصية متناثرة",
-    "en_def": "A feature vector that has mostly zero or empty values.",
-    "ar_def": "مُتَّجه خصائص تكون أغلب قيمه صفرية أو فارغة."
-}

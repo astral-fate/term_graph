@@ -1,6 +1,0 @@
-{
-    "en_term": "Decision Tree",
-    "ar_term": "شجرة القرار",
-    "en_def": "A supervised learning algorithm that uses a tree-like graph to perform decision analysis.",
-    "ar_def": "خوارزمية تعلُّم موجَّه تستخدم رسومًا بيانية شجرية؛ لإجراء عمليات تحليل القرار."
-}

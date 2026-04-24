@@ -1,6 +1,0 @@
-{
-    "en_term": "Equalized Odds",
-    "ar_term": "احتمالات متكافئة",
-    "en_def": "A fairness metric to examine if a classifier predicts a label equally for all the attribute's values.",
-    "ar_def": "مقياس إنصاف لفحص ما إذا كان المُصنِّف يتنبأ باسم ما بطريقة متساوية لجميع قيم السمة."
-}

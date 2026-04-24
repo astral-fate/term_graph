@@ -1,6 +1,0 @@
-{
-    "en_term": "Multi-Task Learning",
-    "ar_term": "تعلُّم متعدد المهام",
-    "en_def": "A training technique where a model is trained on multiple tasks simultaneously to improve its performance.",
-    "ar_def": "أسلوب لتدريب النموذج على مهام متعددة في وقت واحد لتحسين أدائه."
-}

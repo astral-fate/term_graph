@@ -1,6 +1,0 @@
-{
-    "en_term": "Scatter-Gather",
-    "ar_term": "توزيع-تجميع",
-    "en_def": "A form of large data processing that distributes required computation across different nodes and then combines overall results from each node.",
-    "ar_def": "نوع من معالجة البيانات الكبيرة يُوزِّع الحوسبة المطلوبة عبر عُقَد مختلفة، ثم يُجمِّع النتائج الإجمالية من كل عقدة."
-}

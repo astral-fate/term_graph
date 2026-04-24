@@ -1,6 +1,0 @@
-{
-    "en_term": "Multitask Prompt Tuning (MPT)",
-    "ar_term": "ضبط الأوامر المتعددة المهام",
-    "en_def": "A technique for adapting a model to multiple tasks by learning a single prompt that can be transferred to target tasks.",
-    "ar_def": "أسلوب لتكييف نموذج ما لمهام متعددة، عن طريق تعلُّم أمر واحد يمكن نقله إلى المهام المستهدفة."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Discriminator",
-    "ar_term": "مُميِّز",
-    "en_def": "A part of the generative adversarial network that examines whether an example created by the generator is real or fake.",
-    "ar_def": "جزء من شبكة توليدية تنافسية يفحص ما إذا كان المثال الذي أنشأه المُولِّد حقيقيًّا أم مزيفًا."
-}

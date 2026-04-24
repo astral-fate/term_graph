@@ -1,6 +1,0 @@
-{
-    "en_term": "Siamese Network",
-    "ar_term": "شبكة سيامية",
-    "en_def": "A neural network used for image classification by training two neural networks to learn simultaneously the similarity between images.",
-    "ar_def": "شبكة عصبية تُستخدم لتصنيف الصور عن طريق تدريب شبكتين عصبيتين في وقت واحد لتعلُّم التشابه بين الصور."
-}

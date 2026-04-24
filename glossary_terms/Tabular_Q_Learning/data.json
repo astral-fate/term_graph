@@ -1,6 +1,0 @@
-{
-    "en_term": "Tabular Q-Learning",
-    "ar_term": "خوارزمية كيو مُجَدْوَلَة",
-    "en_def": "A way in reinforcement learning for storing the Q-functions in a table for each combination of state and action.",
-    "ar_def": "طريقة في التعلُّم التعزيزي لتخزين دوال كيو في جدول لكل مجموعة من الحالات والأفعال."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Agglomerative Clustering",
-    "ar_term": "تجميع تكتُّلي",
-    "en_def": "A method of creating a hierarchical tree by assigning each example to its cluster and iteratively merging the closest clusters.",
-    "ar_def": "طريقة لإنشاء شجرة هرمية عن طريق تعيين كل مثال في مجموعته، ودمج أقرب المجموعات بصورة تَكرارية."
-}

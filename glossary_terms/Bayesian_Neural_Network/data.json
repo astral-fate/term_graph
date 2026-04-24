@@ -1,6 +1,0 @@
-{
-    "en_term": "Bayesian Neural Network",
-    "ar_term": "شبكة عصبية بايزية",
-    "en_def": "A probabilistic neural network that relies on Bayes' Theorem to calculate uncertainties in weights and outputs.",
-    "ar_def": "شبكة عصبية احتمالية تعتمد على نظرية بايز لحساب أوجه عدم التيقن في الأوزان والمخرجات."
-}

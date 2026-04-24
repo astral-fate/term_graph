@@ -1,6 +1,0 @@
-{
-    "en_term": "Locally Weighted Regression (LWR)",
-    "ar_term": "انحدار موزون محليًّا",
-    "en_def": "A non-parametric technique that performs regression around a point of interest using local training data.",
-    "ar_def": "أسلوب غير مُعامِلي ينفذ الانحدار حول نقطة معينة باستخدام بيانات تدريب محلية."
-}

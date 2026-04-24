@@ -1,6 +1,0 @@
-{
-    "en_term": "Semi-Supervised Learning",
-    "ar_term": "تعلُّم شبه موجَّه",
-    "en_def": "A type of machine learning that leverages both labeled and unlabeled data for training.",
-    "ar_def": "نوع من تعلُّم الآلة يستفيد من البيانات المُسمَّاة وغير المُسمَّاة للتدريب."
-}

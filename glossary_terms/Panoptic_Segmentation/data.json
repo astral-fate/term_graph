@@ -1,6 +1,0 @@
-{
-    "en_term": "Panoptic Segmentation",
-    "ar_term": "تقسيم شامل",
-    "en_def": "A computer vision task that combines semantic segmentation and instance segmentation to provide a complete and detailed understanding of an image.",
-    "ar_def": "مهمة في رؤية الحاسب تجمع بين التقسيم الدلالي وتقسيم الأشياء لتقديم فهم كامل ومفصل للصورة."
-}

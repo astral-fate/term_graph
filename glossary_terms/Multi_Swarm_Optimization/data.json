@@ -1,6 +1,0 @@
-{
-    "en_term": "Multi-Swarm Optimization",
-    "ar_term": "تحسين متعدد الأسراب",
-    "en_def": "A variant of particle swarm optimization (PSO) that estimates the solution for complex problems using multiple swarms instead of a single swarm.",
-    "ar_def": "نوع من تحسين سرب الجسيمات يُقدّر الحل للمشكلات المعقدة باستخدام أسراب متعددة بدلًا من سرب واحد."
-}

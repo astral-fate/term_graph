@@ -1,6 +1,0 @@
-{
-    "en_term": "Parallel Processing",
-    "ar_term": "معالجة متوازية",
-    "en_def": "An approach to handle heavy computation by simultaneously breaking up and running program tasks on multiple processors.",
-    "ar_def": "طريقة للتعامل مع الحوسبة العالية عن طريق تقسيم مهام البرنامج وتشغيلها في الوقت نفسه على معالجات متعددة."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Tree-of-Thoughts Prompting",
-    "ar_term": "أوامر شجرة الأفكار",
-    "en_def": "A prompt engineering technique that enables a model to generate and explore multiple reasoning paths, like branches of a tree, to find the best solution.",
-    "ar_def": "أسلوب في هندسة الأوامر يُمكِّن النموذج من توليد واستكشاف مسارات استدلال متعددة، مثل فروع الشجرة، للعثور على أفضل الحلول."
-}

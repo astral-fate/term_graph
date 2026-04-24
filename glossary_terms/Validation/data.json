@@ -1,6 +1,0 @@
-{
-    "en_term": "Validation",
-    "ar_term": "تحقق",
-    "en_def": "A process used during training to assess the quality and performance of a machine learning model using a validation set.",
-    "ar_def": "عملية تُستخدم أثناء التدريب لتقييم جودة نموذج تعلُّم الآلة وأدائه باستخدام مجموعة تحقق."
-}

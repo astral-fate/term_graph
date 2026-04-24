@@ -1,6 +1,0 @@
-{
-    "en_term": "Contrastive Language-Image Pre-training (CLIP)",
-    "ar_term": "تدريب سابق تبايني للنصوص والصور",
-    "en_def": "A neural network model that learns to associate images with their corresponding text descriptions by training on a massive dataset of image-text pairs.",
-    "ar_def": "نموذج شبكة عصبية يتعلم ربط الصور بأوصاف نصية عن طريق التدريب على مجموعة بيانات ضخمة من أزواج الصور والنصوص."
-}

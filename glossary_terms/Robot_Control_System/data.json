@@ -1,6 +1,0 @@
-{
-    "en_term": "Robot Control System",
-    "ar_term": "نظام التحكم بالروبوت",
-    "en_def": "A group of logic control and power functions that controls the robot's mechanical structure and communication with the environment.",
-    "ar_def": "مجموعة من التحكم المنطقي ووظائف الطاقة التي تتحكم في الهيكل الميكانيكي للروبوت وتواصله مع البيئة المحيطة."
-}

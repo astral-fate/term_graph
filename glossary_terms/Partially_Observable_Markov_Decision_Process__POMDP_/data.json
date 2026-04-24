@@ -1,6 +1,0 @@
-{
-    "en_term": "Partially Observable Markov Decision Process (POMDP)",
-    "ar_term": "عملية قرار ماركوف الملاحظة جزئيًّا",
-    "en_def": "A mathematical framework used to model decision-making scenarios under uncertainty about the environment's current state.",
-    "ar_def": "إطار رياضي يُستخدم لنمذجة سيناريوهات اتخاذ القرار في ظل عدم اليقين بشأن الحالة الحالية للبيئة."
-}

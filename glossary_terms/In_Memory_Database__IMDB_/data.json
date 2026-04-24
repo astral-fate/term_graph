@@ -1,6 +1,0 @@
-{
-    "en_term": "In-Memory Database (IMDB)",
-    "ar_term": "قاعدة بيانات في الذاكرة",
-    "en_def": "A database that stores data in the main memory instead of a disk drive to accelerate response times.",
-    "ar_def": "قاعدة بيانات تخزن البيانات في الذاكرة الرئيسة بدلًا من مُحرِّك الأقراص لتسريع أوقات الاستجابة."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Early Stopping",
-    "ar_term": "توقف مبكر",
-    "en_def": "A regularization method that includes stopping a model training before finishing the decrease of the training loss.",
-    "ar_def": "طريقة ضبط تتضمن إيقاف تدريب النموذج قبل الانتهاء من تقليل خسارة التدريب."
-}

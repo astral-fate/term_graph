@@ -1,6 +1,0 @@
-{
-    "en_term": "Direct Prompting",
-    "ar_term": "أوامر مباشرة",
-    "en_def": "A prompt engineering technique where a model is given a simple instruction or question without any additional examples. Also called \"Zero-Shot Prompting.\"",
-    "ar_def": "أسلوب لهندسة الأوامر يُعطى فيه النموذج تعليمات أو سؤالًا بسيطًا دون أي أمثلة إضافية. ويُطلق عليه أيضًا \"أوامر بدون أمثلة\"."
-}

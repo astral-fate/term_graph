@@ -1,6 +1,0 @@
-{
-    "en_term": "Structural Risk Minimization (SRM)",
-    "ar_term": "تقليل المخاطر الهيكلي",
-    "en_def": "An inductive principle used to address overfitting by balancing between training data fitness and model complexity.",
-    "ar_def": "مبدأ استقرائي يُستخدم لمعالجة فرط التخصيص، عن طريق الموازنة بين ملاءمة بيانات التدريب وتعقيد النموذج."
-}

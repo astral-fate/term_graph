@@ -1,6 +1,0 @@
-{
-    "en_term": "Anchor Box",
-    "ar_term": "إطار مرجعي",
-    "en_def": "A predefined bounding box with a specific height and width that helps detect overlapping objects and objects with different scales within an image.",
-    "ar_def": "إطار تحديد بارتفاع وعرض محددين سابقًا، يساعد في اكتشاف الأشياء المتداخلة والأشياء ذات المقاييس المختلفة داخل الصورة."
-}

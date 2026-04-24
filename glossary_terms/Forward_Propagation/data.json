@@ -1,6 +1,0 @@
-{
-    "en_term": "Forward Propagation",
-    "ar_term": "انتشار أمامي",
-    "en_def": "The process of calculating and storing intermediate variables in a neural network from the input layer to the output layer.",
-    "ar_def": "عملية حساب المتغيرات الوسيطة وتخزينها في شبكة عصبية من طبقة المُدْخَلات إلى طبقة المخرجات."
-}

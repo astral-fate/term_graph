@@ -1,6 +1,0 @@
-{
-    "en_term": "Transformer",
-    "ar_term": "مُحوِّل",
-    "en_def": "A neural network architecture for processing sequential data based on a self-attention mechanism. Also called \"Transformer Neural Network\" or \"Transformer Model.\"",
-    "ar_def": "معمارية شبكة عصبية لمعالجة البيانات المتسلسلة بالاعتماد على آلية الانتباه الذاتي. ويُطلق عليها أيضًا \"شبكة المُحوِّلات العصبية\" أو \"نموذج مُحوِّل\"."
-}

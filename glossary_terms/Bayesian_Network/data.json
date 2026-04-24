@@ -1,6 +1,0 @@
-{
-    "en_term": "Bayesian Network",
-    "ar_term": "شبكة بايزية",
-    "en_def": "A graphical model that represents variables and their conditional dependencies using Bayesian inference.",
-    "ar_def": "نموذج شبكي يمثل المتغيرات وتوابعها الشرطية باستخدام الاستنتاج البايزي."
-}

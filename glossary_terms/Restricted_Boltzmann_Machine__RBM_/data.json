@@ -1,6 +1,0 @@
-{
-    "en_term": "Restricted Boltzmann Machine (RBM)",
-    "ar_term": "آلة بولتزمان المقيدة",
-    "en_def": "A stochastic artificial neural network that learns a probability distribution over the inputs by applying graphical models.",
-    "ar_def": "شبكة عصبية اصطناعية عشوائية تتعلَّم توزيع الاحتمالات على المُدْخَلات، عن طريق تطبيق نماذج شبكية."
-}

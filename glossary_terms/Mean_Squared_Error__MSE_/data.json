@@ -1,6 +1,0 @@
-{
-    "en_term": "Mean Squared Error (MSE)",
-    "ar_term": "متوسط الخطأ التربيعي",
-    "en_def": "The average squared loss per example, calculated by dividing the squared loss by the number of examples.",
-    "ar_def": "متوسط الخسارة التربيعية لكل مثال، محسوبًا بقسمة الخسارة التربيعية على عدد الأمثلة."
-}

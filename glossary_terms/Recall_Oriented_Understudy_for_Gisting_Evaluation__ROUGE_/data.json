@@ -1,6 +1,0 @@
-{
-    "en_term": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE)",
-    "ar_term": "مقياس روج",
-    "en_def": "A set of metrics used to evaluate the quality of automatic summarization and machine translation by measuring the overlap between the system-generated output and human-generated references.",
-    "ar_def": "مجموعة من المقاييس المستخدمة لتقييم جودة التلخيص التلقائي وترجمة الآلة، عن طريق قياس التداخل بين المخرجات التي ينشئها النظام والمراجع التي ينشئها الإنسان."
-}

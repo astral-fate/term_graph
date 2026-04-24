@@ -1,6 +1,0 @@
-{
-    "en_term": "Downsampling",
-    "ar_term": "تقليل العيِّنات",
-    "en_def": "A technique used to balance a class-imbalanced dataset by removing examples from the majority class. Also called \"Undersampling.\"",
-    "ar_def": "أسلوب يُستخدم لموازنة البيانات غير المتوازنة الأصناف، عن طريق حذف أمثلة من صنف الأغلبية. ويُطلق عليه أيضًا \"خفض العيِّنات\"."
-}

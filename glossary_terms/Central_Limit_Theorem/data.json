@@ -1,6 +1,0 @@
-{
-    "en_term": "Central Limit Theorem",
-    "ar_term": "نظرية الحد المركزي",
-    "en_def": "A theorem states that the means distribution of independent observations gets close to a normal distribution model when the sample size becomes larger, regardless of the statistical shape of the population distribution.",
-    "ar_def": "نظرية تنص على أن توزيع المتوسطات لمشاهدات مستقلة يقترب من نموذج التوزيع الطبيعي كلما أصبح حجم العينة أكبر، بغض النظر عن الشكل الإحصائي لتوزيع المجموعة التي أُخِذت منها العينة."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Multi-Class Classification",
-    "ar_term": "تصنيف متعدد الأصناف",
-    "en_def": "A type of classification that differentiates between more than two classes. Also called \"Multinomial Classification.\"",
-    "ar_def": "نوع من التصنيف يُميّز بين أكثر من صنفين. ويُطلق عليه أيضًا \"تصنيف متعدد الحدود\"."
-}

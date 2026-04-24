@@ -1,6 +1,0 @@
-{
-    "en_term": "Bidirectional Encoder Representations From Transformers (BERT)",
-    "ar_term": "تمثيلات الترميز الثنائية الاتجاه من المُحوِّلات (بيرت)",
-    "en_def": "A deep learning technique based on transformer architecture for natural language processing (NLP).",
-    "ar_def": "أسلوب تعلُّم عميق يعتمد على معمارية المُحوِّلات؛ لمعالجة اللغات الطبيعية."
-}

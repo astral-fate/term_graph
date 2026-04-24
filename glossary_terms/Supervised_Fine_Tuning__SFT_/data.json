@@ -1,6 +1,0 @@
-{
-    "en_term": "Supervised Fine-Tuning (SFT)",
-    "ar_term": "ضبط دقيق موجَّه",
-    "en_def": "An approach to adapt a pre-trained model to a specific task by further training it on labeled data.",
-    "ar_def": "طريقة لتكييف نموذج مُدرَّب سابقًا على مهمة محددة، عن طريق تدريبه على بيانات مُسمَّاة."
-}

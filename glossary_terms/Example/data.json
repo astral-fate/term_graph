@@ -1,6 +1,0 @@
-{
-    "en_term": "Example",
-    "ar_term": "مثال",
-    "en_def": "An example in a dataset that consists of one or more features and sometimes a label. Also called \"Instance.\"",
-    "ar_def": "مثال من مجموعة البيانات يتكون من خاصية واحدة أو أكثر وقد يحوي اسمًا أيضًا. ويُطلق عليه أيضًا \"حالة\"."
-}

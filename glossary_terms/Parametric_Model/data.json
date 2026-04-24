@@ -1,6 +1,0 @@
-{
-    "en_term": "Parametric Model",
-    "ar_term": "نموذج مُعامِلي",
-    "en_def": "A machine learning model that makes specific assumptions about the form of the mapping function and assumes a finite set of parameters.",
-    "ar_def": "نموذج تعلُّم آلة يضع افتراضات محددة حول شكل دالة التعيين، ويفترض مجموعة محدودة من المُعامِلات."
-}

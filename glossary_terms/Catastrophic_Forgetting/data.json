@@ -1,6 +1,0 @@
-{
-    "en_term": "Catastrophic Forgetting",
-    "ar_term": "نسيان كارثي",
-    "en_def": "A phenomenon where a model loses previously learned information when learning new tasks. Also called \"Catastrophic Interference.\"",
-    "ar_def": "ظاهرة يفقد فيها النموذج المعلومات التي تعلَّمها سابقًا، وذلك عند تعلُّم مهام جديدة. ويُطلق عليه أيضًا \"تداخل كارثي\"."
-}

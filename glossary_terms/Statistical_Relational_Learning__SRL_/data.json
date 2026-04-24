@@ -1,6 +1,0 @@
-{
-    "en_term": "Statistical Relational Learning (SRL)",
-    "ar_term": "تعلُّم علائقي إحصائي",
-    "en_def": "A branch of machine learning that combines statistical learning and relational learning to treat uncertainty in data and handle complex relational structures.",
-    "ar_def": "فرع من تعلُّم الآلة يجمع بين التعلُّم الإحصائي والتعلُّم العلائقي لمعالجة عدم التيقن في البيانات والتعامل مع الهياكل العلائقية المعقدة."
-}

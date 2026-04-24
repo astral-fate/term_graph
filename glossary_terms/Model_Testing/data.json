@@ -1,6 +1,0 @@
-{
-    "en_term": "Model Testing",
-    "ar_term": "اختبار النموذج",
-    "en_def": "The process of evaluating the performance of a fully trained model by using a testing dataset.",
-    "ar_def": "عملية تقييم أداء نموذج مدرب تدريبًا كاملًا؛ وذلك باستخدام بيانات الاختبار."
-}

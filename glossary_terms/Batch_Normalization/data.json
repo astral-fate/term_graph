@@ -1,6 +1,0 @@
-{
-    "en_term": "Batch Normalization",
-    "ar_term": "تسوية الحُزمة",
-    "en_def": "A supervised learning technique for improving neural network performance and stability by converting interlayer outputs into a standard format.",
-    "ar_def": "أسلوب تعلُّم موجَّه لتحسين أداء الشبكة العصبية واستقرارها عن طريق تحويل مخرجات الطبقة البينية إلى صيغة موحدة."
-}

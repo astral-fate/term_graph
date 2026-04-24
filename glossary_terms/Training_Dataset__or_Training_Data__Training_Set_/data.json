@@ -1,6 +1,0 @@
-{
-    "en_term": "Training Dataset (or Training Data, Training Set)",
-    "ar_term": "بيانات التدريب (أو مجموعة التدريب)",
-    "en_def": "The data that is given to a machine learning model during the training phase.",
-    "ar_def": "البيانات التي تٌقدَّم إلى نموذج تعلُّم الآلة أثناء مرحلة التدريب."
-}

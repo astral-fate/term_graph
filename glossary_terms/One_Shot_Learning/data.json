@@ -1,6 +1,0 @@
-{
-    "en_term": "One-Shot Learning",
-    "ar_term": "تعلُّم بمثال واحد",
-    "en_def": "An approach to learn effective classifiers from a single training example. Also called \"One-Shot Classification.\"",
-    "ar_def": "طريقة لتعلُّم مصنِّفات فاعلة من مثال تدريبي واحد. ويُطلق عليها أيضًا \"تصنيف بمثال واحد\"."
-}

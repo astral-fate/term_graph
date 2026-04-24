@@ -1,6 +1,0 @@
-{
-    "en_term": "L1 Regularization",
-    "ar_term": "ضبط إل 1",
-    "en_def": "A type of regularization that adds a penalty to weights equivalent to the sum of the weights' absolute values.",
-    "ar_def": "نوع من الضبط يضيف جزاءً إلى الأوزان بقدر مكافئ لمجموع القيم المطلقة للأوزان."
-}

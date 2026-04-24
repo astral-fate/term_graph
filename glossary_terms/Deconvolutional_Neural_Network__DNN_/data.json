@@ -1,6 +1,0 @@
-{
-    "en_term": "Deconvolutional Neural Network (DNN)",
-    "ar_term": "شبكة عصبية ترشيحية عكسية",
-    "en_def": "A neural network that performs the opposite operation of a convolutional neural network.",
-    "ar_def": "شبكة عصبية تعمل بطريقة معاكسة لطريقة عمل الشبكة العصبية الترشيحية."
-}

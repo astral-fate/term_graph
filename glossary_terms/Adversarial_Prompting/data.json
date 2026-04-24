@@ -1,6 +1,0 @@
-{
-    "en_term": "Adversarial Prompting",
-    "ar_term": "أوامر عدائية",
-    "en_def": "A technique to craft prompts designed to mislead or manipulate a model into producing harmful or undesirable outputs.",
-    "ar_def": "أسلوب لصياغة أوامر مصممة لتضليل النموذج أو التلاعب به؛ لإنتاج مخرجات ضارة أو غير مرغوب فيها."
-}

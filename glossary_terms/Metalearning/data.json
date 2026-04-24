@@ -1,6 +1,0 @@
-{
-    "en_term": "Metalearning",
-    "ar_term": "تعلُّم عملية التعلُّم",
-    "en_def": "A subfield of machine learning used to discover or improve a learning algorithm by learning from a small amount of data or experiences from previous tasks. Also called \"Learning to learn.\"",
-    "ar_def": "مجال فرعي من تعلُّم الآلة يُستخدم لاكتشاف خوارزمية التعلُّم أو تحسينها عن طريق التعلُّم من كمية صغيرة من البيانات أو الخبرات من المهام السابقة."
-}

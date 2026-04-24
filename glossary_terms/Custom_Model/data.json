@@ -1,6 +1,0 @@
-{
-    "en_term": "Custom Model",
-    "ar_term": "نموذج مخصَّص",
-    "en_def": "A model that accepts inputs specific to a user and returns predictions based on those inputs.",
-    "ar_def": "نموذج يقبل المُدْخَلات الخاصة بمستخدم ما، ويُعطي تنبؤات بناءً على تلك المُدْخَلات."
-}

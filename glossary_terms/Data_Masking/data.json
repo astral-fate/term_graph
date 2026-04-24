@@ -1,6 +1,0 @@
-{
-    "en_term": "Data Masking",
-    "ar_term": "إخفاء البيانات",
-    "en_def": "The process of obscuring sensitive information by replacing it with fictitious, yet realistic-looking data. Also called \"Data Obfuscation.\"",
-    "ar_def": "عملية تعتيم المعلومات الحساسة عن طريق استبدالها ببيانات وهمية ولكنها واقعية المظهر. يُطلق عليها أيضًا \"تشويش البيانات\"."
-}

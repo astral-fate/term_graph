@@ -1,6 +1,0 @@
-{
-    "en_term": "Disparate Treatment",
-    "ar_term": "معالجة متباينة",
-    "en_def": "A situation in which sensitive attributes of subjects are factored into an algorithmic decision-making process such that different subgroups are not treated equally.",
-    "ar_def": "حالة تُحلَل فيها السمات الحساسة للأشخاص في العملية الخوارزمية لاتخاذ القرار بطريقة لا تُعامل فيها المجموعات الفرعية المختلفة على حد سواء."
-}

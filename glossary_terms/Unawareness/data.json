@@ -1,6 +1,0 @@
-{
-    "en_term": "Unawareness",
-    "ar_term": "عدم إدراك",
-    "en_def": "A case in which sensitive attributes are available but not used in the training data.",
-    "ar_def": "حالة تتوافر فيها السمات الحساسة، ولكنها ليست مستخدمة في بيانات التدريب."
-}

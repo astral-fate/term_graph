@@ -1,6 +1,0 @@
-{
-    "en_term": "Epoch",
-    "ar_term": "دورة",
-    "en_def": "A full training pass over the whole dataset.",
-    "ar_def": "عملية تدريب كاملة على مجموعة البيانات بأكملها."
-}

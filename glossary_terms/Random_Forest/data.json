@@ -1,6 +1,0 @@
-{
-    "en_term": "Random Forest",
-    "ar_term": "غابة عشوائية",
-    "en_def": "An ensemble learning method that creates many decision trees and then combines their outputs to get the best result.",
-    "ar_def": "طريقة تعلُّم تجميعي تُنشئ عددًا من أشجار القرارات، ثم تجمع مخرجاتها للحصول على أفضل نتيجة."
-}

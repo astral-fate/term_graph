@@ -1,6 +1,0 @@
-{
-    "en_term": "Root Mean Squared Error (RMSE)",
-    "ar_term": "جذر متوسط الخطأ التربيعي",
-    "en_def": "A measure of the difference between predicted values and actual values. Also called \"Root Mean Square Deviation (RMSD).\"",
-    "ar_def": "مقياس الفرق بين القيم المتوقعة والقيم الفعلية. ويُطلق عليه أيضًا \"جذر متوسط الانحراف التربيعي\"."
-}

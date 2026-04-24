@@ -1,6 +1,0 @@
-{
-    "en_term": "Environment State",
-    "ar_term": "حالة البيئة",
-    "en_def": "The parameter values in reinforcement learning that describe the environment's current configuration, which the agent uses to select an action.",
-    "ar_def": "قيم المُعامِلات في التعلُّم التعزيزي التي تصف التكوين الحالي للبيئة الذي يستخدمه الوكيل لاختيار فعل."
-}

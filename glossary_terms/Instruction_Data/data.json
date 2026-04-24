@@ -1,6 +1,0 @@
-{
-    "en_term": "Instruction Data",
-    "ar_term": "بيانات التعليمات",
-    "en_def": "The data that contains examples of tasks, desired responses, and sometimes additional context to fine-tune a trained model.",
-    "ar_def": "البيانات التي تحتوي على: أمثلة للمهام، والاستجابات المطلوبة، وأحيانًا سياق إضافي؛ لتحسين نموذج مُدرَّب."
-}

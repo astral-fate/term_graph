@@ -1,6 +1,0 @@
-{
-    "en_term": "Adaptive Boosting (AdaBoost)",
-    "ar_term": "تعزيز تَّكَيُّفيّ",
-    "en_def": "A boosting technique that combines multiple weak classifiers to create a strong classifier.",
-    "ar_def": "أسلوب تعزيز يجمع بين عدد من المصنِّفات الضعيفة؛ لإنشاء مصنِّف قوي."
-}

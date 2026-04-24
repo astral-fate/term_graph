@@ -1,6 +1,0 @@
-{
-    "en_term": "Hidden Layer",
-    "ar_term": "طبقة مخفية",
-    "en_def": "A synthetic layer that sits between the input and output layers of a neural network.",
-    "ar_def": "طبقة مصطنعة تقع بين طبقتي المُدْخَلات والمخرجات في الشبكة العصبية."
-}

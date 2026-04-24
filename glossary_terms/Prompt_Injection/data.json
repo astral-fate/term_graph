@@ -1,6 +1,0 @@
-{
-    "en_term": "Prompt Injection",
-    "ar_term": "حقن الأوامر",
-    "en_def": "A type of cyber attack on a model by manipulating the input given to it in such a way it produces unintended outputs.",
-    "ar_def": "نوع من الهجوم السيبراني ​​على نموذج، عن طريق التلاعب بالمُدْخَلات المقدمة له بطريقة تنتج مخرجات غير مرغوبة."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Dimension Reduction (or Dimensionality Reduction)",
-    "ar_term": "تقليص الأبعاد",
-    "en_def": "A method of reducing the number of variables in a feature vector to lower the complexity of a model.",
-    "ar_def": "طريقة لتقليل عدد المتغيرات في مُتَّجه الخصائص؛ لأجل تبسيط النموذج."
-}

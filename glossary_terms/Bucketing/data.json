@@ -1,6 +1,0 @@
-{
-    "en_term": "Bucketing",
-    "ar_term": "تجميع وحدات",
-    "en_def": "A process of transforming a continuous feature into multiple binary ones called buckets based on a range of values. Also called \"Binning.\"",
-    "ar_def": "عملية تحويل خاصية مستمرة إلى خاصية ثنائية متعددة تُسمَّى وحدات؛ بناءً على نطاق من القيم. ويُطلق عليها أيضًا \"تجميع صناديق\"."
-}

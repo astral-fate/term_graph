@@ -1,6 +1,0 @@
-{
-    "en_term": "Low Rank Adaptation (LoRA)",
-    "ar_term": "تَكَيُّف منخفض الرتبة",
-    "en_def": "A training technique for adapting models to new tasks by introducing a small number of trainable parameters instead of modifying the original entire parameters.",
-    "ar_def": "أسلوب تدريبي لتكييف النماذج مع مهام جديدة عن طريق تقديم عدد صغير من المُعامِلات القابلة للتدريب بدلًا من تعديل جميع المعاملات الأصلية."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Argumentation Framework",
-    "ar_term": "إطار الحُجج",
-    "en_def": "A graph that has nodes representing arguments and edges representing the conflicts between these arguments.",
-    "ar_def": "شبكة تشتمل على عُقَد تُمثِّل الحُجج، وحافات تُمثِّل التعارضات بين هذه الحُجج."
-}

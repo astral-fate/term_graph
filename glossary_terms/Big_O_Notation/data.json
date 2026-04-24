@@ -1,6 +1,0 @@
-{
-    "en_term": "Big O Notation",
-    "ar_term": "رمز (أُو) الكبرى",
-    "en_def": "A theoretical measure of the needed algorithm's execution time or memory, given the problem size.",
-    "ar_def": "مقياس نظري للوقت أو الذاكرة اللازمين لتنفيذ الخوارزمية بالنظر إلى حجم المشكلة."
-}

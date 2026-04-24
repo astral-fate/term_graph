@@ -1,6 +1,0 @@
-{
-    "en_term": "K-Fold Cross-Validation",
-    "ar_term": "تحقق تقاطعي مُجَزَّأ",
-    "en_def": "A technique for evaluating models by dividing a dataset into K subsets to iteratively train and test the models, and then averaging the results to estimate the overall performance.",
-    "ar_def": "أسلوب لتقييم النماذج عن طريق تقسيم مجموعة البيانات إلى عدد (ك) مجموعات فرعية لتدريب النماذج واختبارها بصورة تكرارية، ثم حساب متوسط ​​النتائج لتقدير الأداء العام."
-}

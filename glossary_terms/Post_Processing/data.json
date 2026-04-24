@@ -1,6 +1,0 @@
-{
-    "en_term": "Post-Processing",
-    "ar_term": "معالجة لاحقة",
-    "en_def": "The processing of the model's output after running a model.",
-    "ar_def": "معالجة مخرجات النموذج بعد تشغيل النموذج."
-}

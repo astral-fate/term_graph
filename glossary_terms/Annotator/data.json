@@ -1,6 +1,0 @@
-{
-    "en_term": "Annotator",
-    "ar_term": "مُوَصِّف",
-    "en_def": "A worker who assists in labeling data (e.g., images) on-demand. Also called \"Labeler\" or \"Rater.\"",
-    "ar_def": "عامل يساعد في تسمية البيانات (مثل الصور) عند الطلب. يُطلق عليه أيضًا \"مُسمِّي\" أو \"مُقيِّم\"."
-}

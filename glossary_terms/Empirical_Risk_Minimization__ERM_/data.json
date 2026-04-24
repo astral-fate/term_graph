@@ -1,6 +1,0 @@
-{
-    "en_term": "Empirical Risk Minimization (ERM)",
-    "ar_term": "تقليل المخاطر التجريبي",
-    "en_def": "The process of selecting a model that minimizes the average loss on a given set of training data.",
-    "ar_def": "عملية اختيار نموذج يقلل من الخسارة المتوسطة لمجموعة معينة من بيانات التدريب."
-}

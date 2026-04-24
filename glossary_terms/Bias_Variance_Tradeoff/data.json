@@ -1,6 +1,0 @@
-{
-    "en_term": "Bias–Variance Tradeoff",
-    "ar_term": "موازنة التحيُّز-التباين",
-    "en_def": "A conflict that arises when trying to minimize bias and variance, keeping supervised algorithms from generalizing beyond their training set.",
-    "ar_def": "تعارض ينشأ عند محاولة تقليل التحيُّز والتباين، يمنع الخوارزميات الموجَّهة من التعميم خارج مجموعة التدريب."
-}

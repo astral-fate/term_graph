@@ -1,6 +1,0 @@
-{
-    "en_term": "Receiver Operating Characteristic (ROC) Curve",
-    "ar_term": "منحنى دقّة الأداء",
-    "en_def": "A graphical representation of a classifier's performance at all possible thresholds.",
-    "ar_def": "تمثيل رسومي لأداء المُصنِّف في جميع الحدود الممكنة."
-}

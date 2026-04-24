@@ -1,6 +1,0 @@
-{
-    "en_term": "Feature Scaling",
-    "ar_term": "مواءمة الخصائص",
-    "en_def": "A way to change a feature's range of values to match the range of other features in a dataset.",
-    "ar_def": "طريقة لتغيير نطاق قيم خاصية لمطابقة نطاق الخصائص الأخرى في مجموعة البيانات."
-}

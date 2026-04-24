@@ -1,6 +1,0 @@
-{
-    "en_term": "Algorithmic Efficiency",
-    "ar_term": "كفاءة خوارزمية",
-    "en_def": "A metric to measure the average execution time of an algorithm to complete working on a set of data.",
-    "ar_def": "مقياس لحساب متوسط الوقت اللازم للخوارزمية لتنفذ العمل كاملًا على مجموعة من البيانات."
-}

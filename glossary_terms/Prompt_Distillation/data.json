@@ -1,6 +1,0 @@
-{
-    "en_term": "Prompt Distillation",
-    "ar_term": "تقطير الأوامر",
-    "en_def": "A technique used to simplify and optimize prompts by reducing their lengths while preserving their capabilities to elicit the desired responses.",
-    "ar_def": "أسلوب يُستخدم لتبسيط الأوامر وتحسينها، عن طريق تقليل أطوالها، مع الحفاظ على قدراتها في الحصول على الاستجابات المطلوبة."
-}

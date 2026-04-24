@@ -1,6 +1,0 @@
-{
-    "en_term": "Scoring",
-    "ar_term": "تقييم",
-    "en_def": "A recommendation system part that assigns a ranking to each item created by the candidate generation process.",
-    "ar_def": "جزء من نظام التوصية يُعيّن ترتيبًا لكل عنصر أُنشئ بواسطة عملية توليد الترشيحات."
-}

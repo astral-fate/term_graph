@@ -1,6 +1,0 @@
-{
-    "en_term": "Bias",
-    "ar_term": "تحيُّز",
-    "en_def": "A parameter in a neural network that allows neurons to shift the activation functions.",
-    "ar_def": "مُعامِل في الشبكة العصبية يُتيح للخلايا العصبية تحويل دالة التنشيط."
-}

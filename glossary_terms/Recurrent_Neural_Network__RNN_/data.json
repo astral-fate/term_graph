@@ -1,6 +1,0 @@
-{
-    "en_term": "Recurrent Neural Network (RNN)",
-    "ar_term": "شبكة عصبية تكرارية",
-    "en_def": "A type of neural network used to understand sequential information and identify patterns by running multiple times.",
-    "ar_def": "نوع من الشبكات العصبية يُستخدم لفهم المعلومات المتسلسلة، وتحديد الأنماط عن طريق التشغيل عدة مرات."
-}

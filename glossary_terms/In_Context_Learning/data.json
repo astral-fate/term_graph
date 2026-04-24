@@ -1,6 +1,0 @@
-{
-    "en_term": "In-Context Learning",
-    "ar_term": "تعلُّم سياقي",
-    "en_def": "A prompt engineering technique where a model learns to perform tasks by being provided with a few examples within the context of the prompt inputs. Also called \"Prompt-Based Learning.\"",
-    "ar_def": "أسلوب في هندسة الأوامر يتعلم فيه النموذج أداء المهام، عن طريق تزويده ببعض الأمثلة في سياق مُدْخَلات الأمر. يُطلق عليه أيضًا \"تعلُّم قائم على الأوامر\"."
-}

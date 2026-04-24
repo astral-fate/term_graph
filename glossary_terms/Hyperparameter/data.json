@@ -1,6 +1,0 @@
-{
-    "en_term": "Hyperparameter",
-    "ar_term": "مُعامِل ضبط",
-    "en_def": "A parameter that is set before the learning process begins to control the behavior of the learning algorithm.",
-    "ar_def": "مُعامِل يُضبَط قبل بدء عملية التعلُّم للتحكم في سلوك خوارزمية التعلُّم."
-}

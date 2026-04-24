@@ -1,6 +1,0 @@
-{
-    "en_term": "Error Propagation",
-    "ar_term": "انتشار الأخطاء",
-    "en_def": "A phenomenon where errors in data, parameters, or intermediate computations can affect the final output of a model.",
-    "ar_def": "ظاهرة تحدث فيها أخطاء في البيانات أو المُعامِلات أو الحسابات الوسيطة، ويمكن أن تؤثِّر في المخرجات النهائية للنموذج."
-}

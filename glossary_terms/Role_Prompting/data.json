@@ -1,6 +1,0 @@
-{
-    "en_term": "Role Prompting",
-    "ar_term": "أوامر تعيين الدور",
-    "en_def": "A prompt engineering technique where the model is instructed to adopt a specific role or persona to shape its generated output and style.",
-    "ar_def": "أسلوب لهندسة الأوامر يُوجَّه فيه النموذج لتبني دور أو شخصية محددة من أجل تشكيل مخرجاته وأسلوبه."
-}

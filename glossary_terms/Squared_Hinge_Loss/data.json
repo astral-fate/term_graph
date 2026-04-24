@@ -1,6 +1,0 @@
-{
-    "en_term": "Squared Hinge Loss",
-    "ar_term": "مربع الخسارة المفصلية",
-    "en_def": "The square of the Hinge Loss output that deals with outliers more strictly than the Hinge Loss.",
-    "ar_def": "مربع مُخرَج دالة الخسارة المفصلية الذي يتعامل مع القيم الشاذة بطريقة أكثر صرامة من دالة الخسارة المفصلية."
-}

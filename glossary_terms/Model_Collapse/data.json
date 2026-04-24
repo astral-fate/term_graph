@@ -1,6 +1,0 @@
-{
-    "en_term": "Model Collapse",
-    "ar_term": "تدهور النموذج",
-    "en_def": "The degradation of generated data quality by AI models over time, caused by models training on data produced by AI models.",
-    "ar_def": "تدهور جودة البيانات التي تولدها نماذج الذكاء الاصطناعي مع مرور الوقت؛ بسبب تدريب النماذج على بيانات أنتجتها نماذج ذكاء اصطناعي."
-}

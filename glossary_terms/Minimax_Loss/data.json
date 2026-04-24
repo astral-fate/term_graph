@@ -1,6 +1,0 @@
-{
-    "en_term": "Minimax Loss",
-    "ar_term": "خسارة التقليل-التعظيم",
-    "en_def": "A loss function used in generative adversarial networks (GANs) in which the generator attempts to minimize this function while the discriminator attempts to maximize it.",
-    "ar_def": "دالة خسارة تُستخدم في شبكة توليدية تنافسية يحاول فيها المولِّد تقليل هذه الدالة، في حين يحاول المميّز تعظيمها."
-}

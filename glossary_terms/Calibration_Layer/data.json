@@ -1,6 +1,0 @@
-{
-    "en_term": "Calibration Layer",
-    "ar_term": "طبقة المعايرة",
-    "en_def": "A post-prediction adjustment for reducing the prediction bias.",
-    "ar_def": "تعديل لاحق للتنبؤ؛ لتقليل تحيُّزه."
-}

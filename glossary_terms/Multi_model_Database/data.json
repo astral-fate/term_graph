@@ -1,6 +1,0 @@
-{
-    "en_term": "Multi-model Database",
-    "ar_term": "قاعدة بيانات متعددة النماذج",
-    "en_def": "A database that is designed to support multiple data models (such as relationals, documents, and graphs) within a single integrated system.",
-    "ar_def": "قاعدة بيانات مصممة لدعم نماذج بيانات متعددة (مثل: الجداول، والمستندات، والشبكات) ضمن نظام متكامل واحد."
-}

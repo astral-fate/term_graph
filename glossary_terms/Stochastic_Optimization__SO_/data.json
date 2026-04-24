@@ -1,6 +1,0 @@
-{
-    "en_term": "Stochastic Optimization (SO)",
-    "ar_term": "تحسين عشوائي",
-    "en_def": "A collection of methods to minimize or maximize an objective function with random variables.",
-    "ar_def": "مجموعة من الطُّرُق لتقليل دالة الهدف أو تعظيمها باستخدام متغيرات عشوائية."
-}

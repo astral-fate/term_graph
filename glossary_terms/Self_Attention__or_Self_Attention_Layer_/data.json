@@ -1,6 +1,0 @@
-{
-    "en_term": "Self-Attention (or Self-Attention Layer)",
-    "ar_term": "انتباه ذاتي (أو طبقة الانتباه الذاتي)",
-    "en_def": "A neural network layer that outputs new sequence of embeddings by applying attention mechanism to the information from the elements of the input sequence.",
-    "ar_def": "طبقة في الشبكة العصبية تُخرج تسلسلًا جديدًا من التضمينات، عن طريق تطبيق آلية الانتباه على المعلومات الواردة من عناصر تسلسل المُدْخَلات."
-}

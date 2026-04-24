@@ -1,6 +1,0 @@
-{
-    "en_term": "Spiking Neural Network (SNN)",
-    "ar_term": "شبكة عصبية نبضية",
-    "en_def": "A type of neural network that simulates the energy-efficient signal system of the brain where neurons communicate asynchronously through binary values.",
-    "ar_def": "نوع من الشبكات العصبية التي تحاكي نظام الإشارات الموفر للطاقة في الدماغ، وتتواصل فيه الخلايا العصبية بطريقة غير متزامنة، عن طريق القيم الثنائية."
-}

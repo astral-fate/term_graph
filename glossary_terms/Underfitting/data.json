@@ -1,6 +1,0 @@
-{
-    "en_term": "Underfitting",
-    "ar_term": "فرط التعميم",
-    "en_def": "A machine learning problem that occurs when the model fails to adequately model the complexity of the training data, resulting in poor predictive ability.",
-    "ar_def": "مشكلة في تعلُّم الآلة تحدث عندما يفشل النموذج في نمذجة تعقيد بيانات التدريب بطريقة كافية، وهو ما يؤدي إلى ضعف القدرة التنبؤية."
-}

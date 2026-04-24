@@ -1,6 +1,0 @@
-{
-    "en_term": "Quantile Bucketing",
-    "ar_term": "تجميع كمي",
-    "en_def": "The process of distributing values of a feature into buckets so that each bucket has approximately the same number of instances.",
-    "ar_def": "عملية توزيع قيم الخاصية في مجموعات بطريقة يكون فيها لكل مجموعة نفس عدد الحالات تقريبًا."
-}

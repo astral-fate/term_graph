@@ -1,6 +1,0 @@
-{
-    "en_term": "Backpropagation Through Time (BPTT)",
-    "ar_term": "انتشار عكسي عبر الزمن",
-    "en_def": "A method to apply backpropagation to recurrent neural networks.",
-    "ar_def": "طريقة لتطبيق الانتشار العكسي على الشبكات العصبية التكرارية."
-}

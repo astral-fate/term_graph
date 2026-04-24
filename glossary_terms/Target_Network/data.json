@@ -1,6 +1,0 @@
-{
-    "en_term": "Target Network",
-    "ar_term": "شبكة الهدف",
-    "en_def": "A copy of a neural network used in reinforcement learning and updated less frequently to stabilize learning and improve the accuracy of value estimation.",
-    "ar_def": "نسخة من شبكة عصبية تُستخدم في التعلُّم التعزيزي وتُحدَّث بوتيرة أقل لتحقيق استقرار التعلُّم وتحسين دقة تقدير القيم."
-}

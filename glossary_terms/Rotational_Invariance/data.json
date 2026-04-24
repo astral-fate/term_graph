@@ -1,6 +1,0 @@
-{
-    "en_term": "Rotational Invariance",
-    "ar_term": "انعدام تأثير الدوران",
-    "en_def": "The ability of an algorithm to properly classify images regardless of the change in their orientation.",
-    "ar_def": "قدرة الخوارزمية على تصنيف الصور تصنيفًا صحيحًا، بغضِّ النظر عن التغيّر في اتجاهها."
-}

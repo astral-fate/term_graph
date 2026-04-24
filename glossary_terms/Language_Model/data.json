@@ -1,6 +1,0 @@
-{
-    "en_term": "Language Model",
-    "ar_term": "نموذج لغوي",
-    "en_def": "A model that determines the probability of a given sequence of words occurring in a sentence.",
-    "ar_def": "نموذج يحدد احتمالية وجود تسلسل معين من كلمات في جملة."
-}

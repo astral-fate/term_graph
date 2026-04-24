@@ -1,6 +1,0 @@
-{
-    "en_term": "Prompt Chaining",
-    "ar_term": "تسلسل الأوامر",
-    "en_def": "A technique that involves breaking down a complex task into a series of prompts, the output of one prompt serves as the input for the next prompt.",
-    "ar_def": "أسلوب يتضمن تقسيم مهمة معقدة إلى سلسلة من الأوامر، ويكون مخرج الأمر الأول مُدْخَلًا للأمر الذي يليه."
-}

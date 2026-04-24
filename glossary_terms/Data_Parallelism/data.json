@@ -1,6 +1,0 @@
-{
-    "en_term": "Data Parallelism",
-    "ar_term": "توازي البيانات",
-    "en_def": "A technique used to speed up training or inference by duplicating the model on multiple devices and then splitting up the input data over these devices.",
-    "ar_def": "أسلوب يُستخدم لتسريع التدريب أو الاستنتاج عن طريق تكرار النموذج على عدة أجهزة، ثم تقسيم البيانات المُدْخَلة على هذه الأجهزة."
-}

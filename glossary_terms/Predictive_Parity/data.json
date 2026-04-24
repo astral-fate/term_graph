@@ -1,6 +1,0 @@
-{
-    "en_term": "Predictive Parity",
-    "ar_term": "تكافؤ تنبؤي",
-    "en_def": "A fairness metric that examines whether the precision rates of a classifier are equivalent for all the subgroups. Also called \"Predictive Rate Parity.\"",
-    "ar_def": "مقياس إنصاف يفحص ما إذا كانت معدلات إحكام المُصنِّف متكافئة لجميع المجموعات الفرعية. ويُطلق عليه أيضًا \"تكافؤ المعدل التنبؤي\"."
-}

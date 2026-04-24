@@ -1,6 +1,0 @@
-{
-    "en_term": "Feature Vector",
-    "ar_term": "مُتَّجه الخصائص",
-    "en_def": "A set of feature values that represent an example passed into a model.",
-    "ar_def": "مجموعة من قيم الخصائص التي تُمثِّل عينة تُمَرر إلى نموذج."
-}

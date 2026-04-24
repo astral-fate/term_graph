@@ -1,6 +1,0 @@
-{
-    "en_term": "Capsule Neural Network (CapsNet)",
-    "ar_term": "شبكة عصبية كبسولية",
-    "en_def": "An artificial neural network composed of a group of neurons (capsules) that represent the instantiation parameters of a specific entity.",
-    "ar_def": "شبكة عصبية اصطناعية تتكون من مجموعة من الخلايا العصبية (كبسولات)، تُمثِّل مُعامِلات إنشاء لكيان معين."
-}

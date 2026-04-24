@@ -1,6 +1,0 @@
-{
-    "en_term": "Precision-Recall Area Under Curve (PR AUC)",
-    "ar_term": "مساحة تحت منحنى الإحكام-الاستدعاء",
-    "en_def": "An area under the curve of precision-recall points that represent different values of the classification thresholds.",
-    "ar_def": "مساحة تحت منحنى نقاط الإحكام والاستدعاء تُمثِّل قيمًا مختلفة لحدود التصنيف."
-}

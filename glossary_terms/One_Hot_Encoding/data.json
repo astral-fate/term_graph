@@ -1,6 +1,0 @@
-{
-    "en_term": "One-Hot Encoding",
-    "ar_term": "ترميز الواحد النشط",
-    "en_def": "A method of converting data into vectors in which all elements are set to 0 except one element is set to 1.",
-    "ar_def": "طريقة لتحويل البيانات إلى مُتَّجهات تُعيَّن فيها جميع العناصر إلى 0 باستثناء عنصر واحد يُعيَّن إلى 1."
-}

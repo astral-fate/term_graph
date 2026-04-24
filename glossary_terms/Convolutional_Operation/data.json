@@ -1,6 +1,0 @@
-{
-    "en_term": "Convolutional Operation",
-    "ar_term": "عملية ترشيحية",
-    "en_def": "A mathematical operation of multiplying a slice of an input matrix and the convolutional filter and then summing all the values in the resulting matrix.",
-    "ar_def": "عملية حسابية لضرب شريحة من مصفوفة المُدْخَلات والمُرشِّح، ثم جمع كل القيم في المصفوفة الناتجة."
-}

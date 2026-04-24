@@ -1,6 +1,0 @@
-{
-    "en_term": "Bidirectional Language Model",
-    "ar_term": "نموذج لغوي ثنائي الاتجاه",
-    "en_def": "A model that defines the probability of a word's presence in a text based on the text that comes before and after it.",
-    "ar_def": "نموذج يحدد احتمالية وجود كلمة في نص ما بناءً على النص الذي يأتي قبلها وبعدها."
-}

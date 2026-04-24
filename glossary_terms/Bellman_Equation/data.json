@@ -1,6 +1,0 @@
-{
-    "en_term": "Bellman Equation",
-    "ar_term": "معادلة بلمان",
-    "en_def": "A recursive formula used in many reinforcement learning algorithms to compute the expected total reward of taking action.",
-    "ar_def": "صيغة رياضية تكرارية تُستخدم في عدد من خوارزميات التعلُّم التعزيزي؛ لحساب المكافأة الإجمالية المتوقعة إثر القيام بالفعل."
-}

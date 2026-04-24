@@ -1,6 +1,0 @@
-{
-    "en_term": "Least Square Error (LSE)",
-    "ar_term": "خطأ تربيعي أقل",
-    "en_def": "A method to find the best fit of the data to minimize the square of errors between the actual data and the fitted line.",
-    "ar_def": "طريقة للعثور على أفضل ملاءمة للبيانات لتقليل مربع الأخطاء بين البيانات الفعلية وخط الملاءمة."
-}

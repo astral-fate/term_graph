@@ -1,6 +1,0 @@
-{
-    "en_term": "Gradient",
-    "ar_term": "تدرُّج",
-    "en_def": "A vector of partial derivatives of the model function that measures the change in weights with respect to the change in error.",
-    "ar_def": "مُتَّجه للمشتقات الجزئية في دالة النموذج، يقيس التغير في الأوزان بالنظر إلى التغير في الخطأ."
-}

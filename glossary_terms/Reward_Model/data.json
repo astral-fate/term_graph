@@ -1,6 +1,0 @@
-{
-    "en_term": "Reward Model",
-    "ar_term": "نموذج المكافأة",
-    "en_def": "A specialized model that provides guidance to produce desired outcomes by providing feedback in the form of rewards.",
-    "ar_def": "نموذج متخصص يقدم التوجيه لتحقيق النتائج المرجوة، عن طريق التغذية الراجعة في شكل مكافآت."
-}

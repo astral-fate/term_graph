@@ -1,6 +1,0 @@
-{
-    "en_term": "Exploding Gradient Problem",
-    "ar_term": "مشكلة انفجار التدرج",
-    "en_def": "An issue found in training neural networks when large error gradients accumulate, leading to an unstable model due to very large updates to the weights.",
-    "ar_def": "مشكلة تحدث في تدريب الشبكات العصبية عندما تتراكم تدرجات خطأ كبير، وهو ما يؤدي إلى نموذج غير مستقر بسبب التحديثات الكبيرة جدًّا للأوزان."
-}

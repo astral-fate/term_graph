@@ -1,6 +1,0 @@
-{
-    "en_term": "Self-Consistency Prompting",
-    "ar_term": "أوامر الاتساق الذاتي",
-    "en_def": "A prompt engineering technique that improves the accuracy of models by generating multiple responses to the same prompt and selecting the most frequent or consistent one as the final answer.",
-    "ar_def": "أسلوب في هندسة الأوامر يُحسِّن دقة النماذج، عن طريق إنشاء استجابات متعددة لنفس الأمر، واختيار الإجابة الأكثر تكرارًا أو اتساقًا لتكون الإجابة النهائية."
-}

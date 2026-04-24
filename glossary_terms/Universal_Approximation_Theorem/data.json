@@ -1,6 +1,0 @@
-{
-    "en_term": "Universal Approximation Theorem",
-    "ar_term": "نظرية التقريب الشامل",
-    "en_def": "A fundamental theorem states that neural networks can approximate any continuous function under an appropriate setting.",
-    "ar_def": "نظرية أساسية تنص على أن الشبكات العصبية يمكنها تقريب أي دالة مستمرة عند توافر الإعدادات المناسبة."
-}

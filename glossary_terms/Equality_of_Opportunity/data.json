@@ -1,6 +1,0 @@
-{
-    "en_term": "Equality of Opportunity",
-    "ar_term": "تكافؤ الفرص",
-    "en_def": "A fairness metric to examine if a classifier predicts a preferred label equally for all the attribute's values.",
-    "ar_def": "مقياس إنصاف لفحص ما إذا كان المُصنِّف يتنبأ باسم مفضل بطريقة متساوية لجميع قيم السمة."
-}

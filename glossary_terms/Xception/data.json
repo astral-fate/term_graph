@@ -1,6 +1,0 @@
-{
-    "en_term": "Xception",
-    "ar_term": "إكسيبشن",
-    "en_def": "A convolutional neural network architecture based on depthwise separable convolution layers.",
-    "ar_def": "معمارية شبكة عصبية ترشيحية تعتمد على طبقات ترشيحية قابلة للفصل عمقًا."
-}

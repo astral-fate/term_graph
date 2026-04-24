@@ -1,6 +1,0 @@
-{
-    "en_term": "LayerNorm Tuning",
-    "ar_term": "ضبط طبقات التسوية",
-    "en_def": "A fine-tuning technique that only updates the normalization layers of a model.",
-    "ar_def": "أسلوب ضبط دقيق يقتصر تحديثه على طبقات التسوية في النموذج."
-}

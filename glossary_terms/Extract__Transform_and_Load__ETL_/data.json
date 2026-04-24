@@ -1,6 +1,0 @@
-{
-    "en_term": "Extract, Transform and Load (ETL)",
-    "ar_term": "استخراج وتحويل وتحميل",
-    "en_def": "The process of collecting data from different sources, converting it into an appropriate format, and storing it in a centralized repository.",
-    "ar_def": "عملية جمع البيانات من مصادر مختلفة وتحويلها إلى صيغة مناسبة وتخزينها في مستودع مركزي."
-}

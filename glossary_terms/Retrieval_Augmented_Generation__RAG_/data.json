@@ -1,6 +1,0 @@
-{
-    "en_term": "Retrieval-Augmented Generation (RAG)",
-    "ar_term": "توليد مُعَزَّز بالاسترجاع",
-    "en_def": "An AI framework that integrates retrieval of external information with generative models to produce more accurate and contextually relevant responses.",
-    "ar_def": "إطار للذكاء الاصطناعي يدمج بين استرجاع المعلومات الخارجية والنماذج التوليدية لإنتاج استجابات أكثر دقة وملاءمة للسياق."
-}

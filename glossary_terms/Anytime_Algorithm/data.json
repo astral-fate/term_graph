@@ -1,6 +1,0 @@
-{
-    "en_term": "Anytime Algorithm",
-    "ar_term": "خوارزمية فورية",
-    "en_def": "An algorithm that gives a valid result even if it is interrupted before it ends, and the quality of results improves gradually as long as it runs.",
-    "ar_def": "خوارزمية تعطي نتيجة صالحة حتى لو قوطعت قبل انتهائها، وتتحسن جودة نتائجها تدريجيًّا ما دامت تعمل."
-}

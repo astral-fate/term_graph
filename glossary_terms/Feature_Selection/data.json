@@ -1,6 +1,0 @@
-{
-    "en_term": "Feature Selection",
-    "ar_term": "انتقاء الخصائص",
-    "en_def": "A process of reducing the dimensions that the models work with by dismissing irrelevant features.",
-    "ar_def": "عملية لتقليل الأبعاد التي تعمل بها النماذج عن طريق استبعاد الخصائص غير المهمة."
-}

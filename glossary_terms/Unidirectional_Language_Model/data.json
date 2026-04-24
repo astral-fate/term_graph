@@ -1,6 +1,0 @@
-{
-    "en_term": "Unidirectional Language Model",
-    "ar_term": "نموذج لغوي أحادي الاتجاه",
-    "en_def": "A model that defines the probability of a word presence in a text based on the text that comes before it. Also called \"Causal Language Model.\"",
-    "ar_def": "نموذج يحدد احتمالية وجود كلمة في نص بناءً على النص الذي يسبقها. يُطلق عليه أيضًا \"نموذج لغوي سببي\"."
-}

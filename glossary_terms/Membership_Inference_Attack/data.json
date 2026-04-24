@@ -1,6 +1,0 @@
-{
-    "en_term": "Membership Inference Attack",
-    "ar_term": "هجوم استنتاج العضوية",
-    "en_def": "An attack that aims to determine whether a data sample was used in the training of a machine learning model or not.",
-    "ar_def": "هجوم يهدف إلى تحديد ما إذا كانت عينة بيانات استُخدمت في تدريب نموذج تعلُّم الآلة أم لا."
-}

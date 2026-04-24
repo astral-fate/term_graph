@@ -1,6 +1,0 @@
-{
-    "en_term": "Adaptive Algorithm",
-    "ar_term": "خوارزمية تَكَيُّفيَّة",
-    "en_def": "An algorithm that changes its behavior at run time based on available information and predefined criteria.",
-    "ar_def": "خوارزمية تغير سلوكها في وقت التشغيل بناءً على المعلومات المتاحة، والمعايير المحددة سابقًا."
-}

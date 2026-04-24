@@ -1,6 +1,0 @@
-{
-    "en_term": "Instruction Tuning",
-    "ar_term": "ضبط التعليمات",
-    "en_def": "A form of fine-tuning where a model is trained based on a series of instructions to improve its performance on specific tasks.",
-    "ar_def": "شكل من أشكال الضبط الدقيق يُدرَّب فيه النموذج بناءً على سلسلة من التعليمات لتحسين أدائه في مهام محددة."
-}

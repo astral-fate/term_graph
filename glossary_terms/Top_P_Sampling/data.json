@@ -1,6 +1,0 @@
-{
-    "en_term": "Top-P Sampling",
-    "ar_term": "أخذ عيِّنات أعلى (ب)",
-    "en_def": "A text generation method that selects the next word from the top most probable words whose cumulative probability reaches P. Also called \"Nucleus Sampling\".",
-    "ar_def": "طريقة لتوليد النصوص تختار الكلمة التالية من الكلمات الأكثر احتمالًا، التي مجموع احتمالاتها تقارب القيمة (ب). ويُطلق عليها أيضًا \"أخذ عيِّنات نيوكليوس\"."
-}

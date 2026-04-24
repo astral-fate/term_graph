@@ -1,6 +1,0 @@
-{
-    "en_term": "Depth",
-    "ar_term": "عُمق",
-    "en_def": "The number of layers that learn weights in a neural network.",
-    "ar_def": "عدد الطبقات التي تتعلَّم الأوزان في شبكة عصبية."
-}

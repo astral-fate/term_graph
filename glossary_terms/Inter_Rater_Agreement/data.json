@@ -1,6 +1,0 @@
-{
-    "en_term": "Inter-Rater Agreement",
-    "ar_term": "اتفاق المُقيِّمين",
-    "en_def": "A metric to calculate how often human raters agree when doing a task. Also called \"Inter-Annotator Agreement\" or \"Inter-Rater Reliability.\"",
-    "ar_def": "مقياس لحساب عدد المرات التي يتفق فيها المقيِّمون البشريون عند القيام بمهمة ما. ويُطلق عليه أيضًا \"اتفاق المُوصِّفين\" أو \"موثوقية المُقيِّمين\"."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Stochastic Gradient Descent (SGD)",
-    "ar_term": "نزول تدرجي عشوائي",
-    "en_def": "A gradient descent algorithm that has a batch size of one.",
-    "ar_def": "خوارزمية نزول تدرجي يكون حجم الحُزمة فيها واحدًا."
-}

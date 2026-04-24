@@ -1,6 +1,0 @@
-{
-    "en_term": "Co-Adaptation",
-    "ar_term": "تَكَيُّف مشترك",
-    "en_def": "A problem in neural networks when neurons are highly dependent on other specific neurons instead of the behavior of the network as a whole.",
-    "ar_def": "مشكلة في الشبكات العصبية تحدث عندما تعتمد الخلايا العصبية بصورة كبيرة على خلايا عصبية محددة بدلًا من اعتمادها على السلوك العام للشبكة."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Earth Mover's Distance (EMD)",
-    "ar_term": "مسافة نقل التوزيع",
-    "en_def": "A metric for the similarity between two probability distributions. Also called \"Wasserstein Distance.\"",
-    "ar_def": "مقياس للتشابه بين توزيعين احتماليين. ويُطلق عليه أيضًا \"مسافة واسرستين\"."
-}

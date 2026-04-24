@@ -1,6 +1,0 @@
-{
-    "en_term": "Multi-Head Self-Attention",
-    "ar_term": "انتباه ذاتي متعدد الرؤوس",
-    "en_def": "A self-attention mechanism that operates multiple attentions in parallel to focus on different positions within input data sequences.",
-    "ar_def": "آلية انتباه ذاتي تُشغِّل انتباهات متعددة بالتوازي للتركيز على مواضع مختلفة من تسلسلات البيانات المُدْخَلة."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Deep Q-Network (DQN)",
-    "ar_term": "شبكة كيو العميقة",
-    "en_def": "An algorithm that combines reinforcement learning and deep neural networks to solve complex problems and deal with high-dimensional environments.",
-    "ar_def": "خوارزمية تجمع بين التعلُّم التعزيزي والشبكات العصبية العميقة لحل المشكلات المعقدة، والتعامل مع البيئات الكثيرة الأبعاد."
-}

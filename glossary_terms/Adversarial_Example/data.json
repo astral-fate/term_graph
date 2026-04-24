@@ -1,6 +1,0 @@
-{
-    "en_term": "Adversarial Example",
-    "ar_term": "مثال عدائي",
-    "en_def": "The inputs that have been deliberately designed to trick a machine learning model into making a mistake.",
-    "ar_def": "مُدْخَلات صُمِّمت عمدًا لخداع نموذج تعلُّم الآلة، ودفعه لارتكاب الأخطاء."
-}

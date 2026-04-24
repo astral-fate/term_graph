@@ -1,6 +1,0 @@
-{
-    "en_term": "Bees Algorithm",
-    "ar_term": "خوارزمية النحل",
-    "en_def": "An algorithm that simulates the behavior of bee swarms in finding food by random search and can be used for optimization problems.",
-    "ar_def": "خوارزمية تحاكي سلوك أسراب النحل في العثور على الغذاء عن طريق البحث العشوائي، ويمكن استخدامها لحل مشكلات التحسين."
-}

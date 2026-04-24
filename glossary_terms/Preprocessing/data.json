@@ -1,6 +1,0 @@
-{
-    "en_term": "Preprocessing",
-    "ar_term": "معالجة سابقة",
-    "en_def": "A process that transforms raw data into an understandable format before it is used to train a model.",
-    "ar_def": "عملية تحويل البيانات الأولية إلى صيغة مفهومة قبل استخدامها في تدريب نموذج."
-}

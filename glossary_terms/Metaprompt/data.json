@@ -1,6 +1,0 @@
-{
-    "en_term": "Metaprompt",
-    "ar_term": "أوامر وصفية",
-    "en_def": "A higher-level directive or set of instructions given to the model that guides how it should generate desired outputs. Also called \"System Prompt\" or \"System Message.\"",
-    "ar_def": "توجيه عالي المستوى أو مجموعة من التعليمات المقدمة للنموذج لتوجيه كيفية توليد المخرجات المطلوبة. ويُطلق عليها أيضًا \"أوامر النظام\" أو \"رسائل النظام\"."
-}

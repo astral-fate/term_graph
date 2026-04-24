@@ -1,6 +1,0 @@
-{
-    "en_term": "Regularization Rate",
-    "ar_term": "معدل الضبط",
-    "en_def": "A value that determines the relative importance of the regularization function. Also called \"Lambda.\"",
-    "ar_def": "قيمة تحدد الأهمية النسبية لدالة الضبط. ويُطلق عليها أيضًا \"لامدا\"."
-}

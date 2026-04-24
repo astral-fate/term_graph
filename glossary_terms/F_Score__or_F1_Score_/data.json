@@ -1,6 +1,0 @@
-{
-    "en_term": "F-Score (or F1-Score)",
-    "ar_term": "مقياس إف (أو مقياس إف 1)",
-    "en_def": "A measure of a model's accuracy in a binary classification by calculating the harmonic average of the precision and recall.",
-    "ar_def": "مقياس لدقة النموذج في التصنيف الثنائي عن طريق حساب المتوسط التوافقي للإحكام والاستدعاء."
-}

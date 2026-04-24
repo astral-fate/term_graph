@@ -1,6 +1,0 @@
-{
-    "en_term": "Domain Shift",
-    "ar_term": "تغيُّر المجال",
-    "en_def": "A change in the data distribution between the source domain (like training data) and the target domain (like test data).",
-    "ar_def": "تغيير في توزيع البيانات بين المجال المصدر (مثل بيانات التدريب) والمجال الهدف (مثل بيانات الاختبار)."
-}

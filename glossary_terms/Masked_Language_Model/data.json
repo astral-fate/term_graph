@@ -1,6 +1,0 @@
-{
-    "en_term": "Masked Language Model",
-    "ar_term": "نموذج لغوي مقنَّع",
-    "en_def": "A language model for predicting the probability of candidate words to fill in blanks based on the surrounding context.",
-    "ar_def": "نموذج لغوي للتنبؤ باحتمالية ملء الكلمات المُرشَّحة للفراغات بناءً على السياق المحيط."
-}

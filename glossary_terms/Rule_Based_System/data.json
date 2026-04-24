@@ -1,6 +1,0 @@
-{
-    "en_term": "Rule-Based System",
-    "ar_term": "نظام قائم على قواعد",
-    "en_def": "An expert system that consists of \"if-then\" rules built by learning from real data or using expert knowledge.",
-    "ar_def": "نظام خبير يتضمن قواعد شرطية بُنيت بالتعلُّم من بيانات حقيقية أو باستخدام معرفة الخبراء."
-}

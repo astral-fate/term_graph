@@ -1,6 +1,0 @@
-{
-    "en_term": "Training Error",
-    "ar_term": "خطأ التدريب",
-    "en_def": "The error that occurs when running a model on the training data.",
-    "ar_def": "الخطأ الذي يحدث عند تشغيل نموذج على بيانات التدريب."
-}

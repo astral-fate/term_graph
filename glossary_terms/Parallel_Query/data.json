@@ -1,6 +1,0 @@
-{
-    "en_term": "Parallel Query",
-    "ar_term": "استعلام متواز",
-    "en_def": "ِA method that divides the query statement into multiple processes executed in parallel to increase the speed of the query.",
-    "ar_def": "طريقة لتقسيم جملة الاستعلام إلى عمليات متعددة تُنفَّذ بطريقة متوازية لزيادة سرعة الاستعلام."
-}

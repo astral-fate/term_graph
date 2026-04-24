@@ -1,6 +1,0 @@
-{
-    "en_term": "Learning Rate",
-    "ar_term": "معدل التعلُّم",
-    "en_def": "A hyperparameter used in optimization algorithms to define the step size at each iteration. Also called \"Step Size.\"",
-    "ar_def": "مُعامِل ضبط يُستخدم في خوارزميات التحسين لتحديد حجم الخطوة في كل تكرار. ويُطلق عليه أيضًا \"حجم الخطوة\"."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Reward Function",
-    "ar_term": "دالة المكافأة",
-    "en_def": "An incentive mechanism in reinforcement learning that defines how an agent ought to take actions in an environment.",
-    "ar_def": "آلية تحفيز في التعلُّم التعزيزي تُحدد الكيفية التي يلزم الوكيل اتباعها للقيام بأفعال في بيئة ما."
-}

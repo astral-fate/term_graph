@@ -1,6 +1,0 @@
-{
-    "en_term": "Markov Decision Process (MDP)",
-    "ar_term": "عملية قرار ماركوف",
-    "en_def": "A discrete-time stochastic control process used for modeling decision-making in optimization problems under uncertainty.",
-    "ar_def": "عملية تحكم عشوائي ذات وقت منفصل تُستخدم لنمذجة صنع القرار في مشكلات التحسين عند عدم التيقن."
-}

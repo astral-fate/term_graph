@@ -1,6 +1,0 @@
-{
-    "en_term": "Data Annotation",
-    "ar_term": "توصيف البيانات",
-    "en_def": "The process of adding descriptive information to the dataset to be used as an input for a machine learning model. Also called \"Data Labeling\" or \"Labeling.\"",
-    "ar_def": "عملية إضافة معلومات وصفية إلى مجموعة البيانات؛ لاستخدامها كمُدْخَلات لنموذج تعلُّم الآلة. ويُطلق عليها أيضًا \"تسمية البيانات\" أو \"تسمية\"."
-}

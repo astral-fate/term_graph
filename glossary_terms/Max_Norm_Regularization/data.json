@@ -1,6 +1,0 @@
-{
-    "en_term": "Max-Norm Regularization",
-    "ar_term": "ضبط تسوية أقصى",
-    "en_def": "A type of regularization that constrains the maximum norm of the weight vectors in each layer of a neural network.",
-    "ar_def": "نوع من الضبط يُقيِّد المعيار الأقصى لمتجهات الوزن في كل طبقة من الشبكة العصبية."
-}

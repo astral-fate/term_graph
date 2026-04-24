@@ -1,6 +1,0 @@
-{
-    "en_term": "Residual Sum of Squares (RSS)",
-    "ar_term": "مجموع المربعات المتبقية",
-    "en_def": "A statistical technique to measure the variance between the data and the values predicted by the estimation model. Also called \"Sum of Squared Residuals (SSR).\"",
-    "ar_def": "أسلوب إحصائي لقياس التباين بين البيانات والقيم التي تنبأ بها نموذج التقدير. ويُطلق عليه أيضًا \"مجموع المتبقيات المربعة\"."
-}

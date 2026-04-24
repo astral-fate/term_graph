@@ -1,6 +1,0 @@
-{
-    "en_term": "Candidate Sampling",
-    "ar_term": "أخذ عيِّنات المُرشَّحين",
-    "en_def": "An optimization method for training by calculating a probability for all the target classes and a random sample of other classes.",
-    "ar_def": "طريقة لتحسين التدريب؛ عن طريق حساب الاحتمالات لجميع الأصناف المستهدفة، ولعينة عشوائية من الأصناف الأخرى."
-}

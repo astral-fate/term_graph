@@ -1,6 +1,0 @@
-{
-    "en_term": "Feature Hashing",
-    "ar_term": "تهشير الخصائص",
-    "en_def": "A technique to convert high-dimensional categorical data into a fixed-size numerical vector. Also called \"Hashing Trick.\"",
-    "ar_def": "أسلوب لتحويل البيانات الفئوية الكثيرة الأبعاد إلى متجه عددي ثابت الحجم. ويُطلق عليه أيضًا \"حيلة التهشير\"."
-}

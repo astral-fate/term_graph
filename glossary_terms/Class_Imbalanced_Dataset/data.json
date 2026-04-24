@@ -1,6 +1,0 @@
-{
-    "en_term": "Class-Imbalanced Dataset",
-    "ar_term": "بيانات غير متوازنة الأصناف",
-    "en_def": "A problem in classification when the frequencies of classes in a dataset are significantly different. Also called \"Imbalanced Dataset.\"",
-    "ar_def": "مشكلة في التصنيف عندما يكون عدد الأصناف في مجموعة بيانات مختلفًا اختلافًا كبيرًا. ويُطلق عليها أيضًا \"بيانات غير متوازنة\"."
-}

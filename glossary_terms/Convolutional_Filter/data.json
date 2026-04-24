@@ -1,6 +1,0 @@
-{
-    "en_term": "Convolutional Filter",
-    "ar_term": "مُرشِّح",
-    "en_def": "A filter that performs convolution operations by scanning the input while considering its dimensions. Also called \"Kernel\" or \"Feature Detector.\"",
-    "ar_def": "مُرشِّح يقوم بعمليات الترشيح عن طريق فحص المُدْخَلات مع مراعاة أبعادها. ويُطلق عليه أيضًا \"نواة\" أو \"كاشف الخصائص\"."
-}

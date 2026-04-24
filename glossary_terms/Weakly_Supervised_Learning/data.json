@@ -1,6 +1,0 @@
-{
-    "en_term": "Weakly Supervised Learning",
-    "ar_term": "تعلُّم مُوجَّه ضعيف",
-    "en_def": "A machine learning approach where models are trained on partially or imprecisely labeled data.",
-    "ar_def": "طريقة في تعلُّم الآلة تُدرَّب فيها النماذج على بيانات مُسمَّاة بشكل جزئي أو غير دقيق."
-}

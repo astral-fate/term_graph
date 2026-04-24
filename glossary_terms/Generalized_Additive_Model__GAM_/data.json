@@ -1,6 +1,0 @@
-{
-    "en_term": "Generalized Additive Model (GAM)",
-    "ar_term": "نموذج إضافي مُعمَّم",
-    "en_def": "A statistical model that allows for flexible, non-linear relationships between the dependent variable and the independent variables by combining linear models with smooth functions.",
-    "ar_def": "نموذج إحصائي يُتيح علاقات مرنة وغير خطية بين المتغير التابع والمتغيرات المستقلة، عن طريق الجمع بين النماذج الخطية والدوال السلسة."
-}

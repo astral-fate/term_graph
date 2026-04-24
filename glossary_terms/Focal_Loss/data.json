@@ -1,6 +1,0 @@
-{
-    "en_term": "Focal Loss",
-    "ar_term": "خسارة محورية",
-    "en_def": "A loss function designed to address the class imbalance problem.",
-    "ar_def": "دالة خسارة مصممة لمعالجة مشكلة عدم توازن الأصناف."
-}

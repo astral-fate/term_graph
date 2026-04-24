@@ -1,6 +1,0 @@
-{
-    "en_term": "Matrix Factorization",
-    "ar_term": "تحليل المصفوفة إلى عوامل",
-    "en_def": "A mechanism for determining which matrices have a dot product close to a target matrix.",
-    "ar_def": "آلية لإيجاد المصفوفات التي يقترب حاصل ضربها النقطي من المصفوفة المستهدفة."
-}

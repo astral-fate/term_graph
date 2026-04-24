@@ -1,6 +1,0 @@
-{
-    "en_term": "Ranking Loss",
-    "ar_term": "خسارة ترتيبية",
-    "en_def": "A loss function that focuses on predicting the relative order of items.",
-    "ar_def": "دالة خسارة تركز على التنبؤ بالترتيب النسبي للعناصر."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Parameter Efficient Fine-Tuning (PEFT)",
-    "ar_term": "ضبط دقيق فاعل للمُعامِلات",
-    "en_def": "A technique for adapting pre-trained models to specific tasks by updating a small subset of parameters.",
-    "ar_def": "أسلوب لتكييف النماذج المُدرَّبة سابقًا على مهام محددة، عن طريق تحديث مجموعة فرعية صغيرة من المُعامِلات."
-}

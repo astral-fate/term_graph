@@ -1,6 +1,0 @@
-{
-    "en_term": "Q-Learning",
-    "ar_term": "خوارزمية كيو",
-    "en_def": "A reinforcement learning algorithm that allows an agent to learn and act optimally in controlled domains.",
-    "ar_def": "خوارزمية تعلُّم تعزيزي تُتيح للوكيل التعلُّم والعمل على النحو الأمثل في مجالات محكومة."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "False Negative (FN)",
-    "ar_term": "تصنيف سلبي خاطئ",
-    "en_def": "A result that the model incorrectly predicted as negative while it is actually positive.",
-    "ar_def": "نتيجة تنبأ النموذج بأنها سلبية، في حين هي في الواقع إيجابية."
-}

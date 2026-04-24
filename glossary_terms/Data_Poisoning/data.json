@@ -1,6 +1,0 @@
-{
-    "en_term": "Data Poisoning",
-    "ar_term": "تسميم البيانات",
-    "en_def": "A security attack where an attacker injects false or misleading data into the training dataset to corrupt or influence the model's behavior.",
-    "ar_def": "هجوم أمني يقوم فيه المهاجم بإدخال بيانات خاطئة أو مضللة في مجموعة بيانات التدريب؛ لإفساد سلوك النموذج أو التأثير عليه."
-}

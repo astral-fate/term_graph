@@ -1,6 +1,0 @@
-{
-    "en_term": "Mini Batch",
-    "ar_term": "حُزمة صغيرة",
-    "en_def": "A small subset that has been selected randomly from a batch of examples to be used in a training iteration.",
-    "ar_def": "مجموعة فرعية صغيرة اختيرت عشوائيًّا من حُزمة أمثلة لاستخدامها في عملية التدريب."
-}

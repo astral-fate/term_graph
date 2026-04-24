@@ -1,6 +1,0 @@
-{
-    "en_term": "Speculative Decoding",
-    "ar_term": "فك الترميز التخميني",
-    "en_def": "An optimization technique that accelerates inferencing by predicting multiple tokens and validating them in parallel.",
-    "ar_def": "أسلوب تحسين يُسرِّع الاستنتاج، عن طريق التنبؤ بالوحدات اللغوية والتحقق من صحتها بالتوازي."
-}

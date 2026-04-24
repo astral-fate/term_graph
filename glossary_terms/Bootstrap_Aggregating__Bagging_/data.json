@@ -1,6 +1,0 @@
-{
-    "en_term": "Bootstrap Aggregating (Bagging)",
-    "ar_term": "تجميع بوتستراب",
-    "en_def": "An ensemble learning method used to improve the stability and accuracy of the classification and regression models.",
-    "ar_def": "طريقة تعلُّم تجميعي تُستخدم لتحسين الاستقرار والدقة في نماذج التصنيف والانحدار."
-}

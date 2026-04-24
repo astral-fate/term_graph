@@ -1,6 +1,0 @@
-{
-    "en_term": "Reinforcement Learning From Human Feedback (RLHF)",
-    "ar_term": "تعلُّم تعزيزي بالتغذية الراجعة البشرية",
-    "en_def": "A technique to improve the quality of a model's output by incorporating feedback from human interactions or evaluations.",
-    "ar_def": "أسلوب لتحسين جودة مخرجات النماذج عن طريق دمج التغذية الراجعة من التفاعلات أو التقييمات البشرية."
-}

@@ -44,6 +44,10 @@
 !.github/
 !.github/**
 
+# Build / refactor helpers
+!scripts/
+!scripts/**
+
 # Exclude large/extra folders explicitly (just in case)
 bias-variance/
 cross-validation/

@@ -1,6 +1,0 @@
-{
-    "en_term": "Markov Property",
-    "ar_term": "خاصية ماركوف",
-    "en_def": "A concept that describes a stochastic process where the probability of future states depends only on the current state, not on the sequence of events that preceded it.",
-    "ar_def": "مفهوم يصف عملية عشوائية يعتمد فيها احتمال الحالات المستقبلية على الحالة الحالية فقط، وليس على تسلسل من الأحداث التي قبلها."
-}

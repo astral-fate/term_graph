@@ -1,6 +1,0 @@
-{
-    "en_term": "Label Smoothing",
-    "ar_term": "تنعيم الأسماء",
-    "en_def": "A regularization technique used to prevent overfitting and improve the generalization capabilities of models.",
-    "ar_def": "أسلوب ضبط يُستخدم لمنع فرط التخصيص وتحسين قدرات التعميم في النماذج."
-}

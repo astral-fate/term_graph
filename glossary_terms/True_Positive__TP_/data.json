@@ -1,6 +1,0 @@
-{
-    "en_term": "True Positive (TP)",
-    "ar_term": "تصنيف إيجابي صحيح",
-    "en_def": "A result that the model correctly predicted as positive.",
-    "ar_def": "نتيجة تنبأ النموذج بأنها إيجابية بصورة صحيحة."
-}

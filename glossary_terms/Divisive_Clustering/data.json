@@ -1,6 +1,0 @@
-{
-    "en_term": "Divisive Clustering",
-    "ar_term": "تجميع انقسامي",
-    "en_def": "A type of hierarchical clustering in which all examples are first grouped into a cluster, and then the cluster is iteratively divided into a hierarchical tree.",
-    "ar_def": "نوع من التجميع الهرمي تُجمَّع فيه جميع الأمثلة أولًا في مجموعة، ثم تُقسَّم المجموعة بصورة تكرارية إلى شجرة هرمية."
-}

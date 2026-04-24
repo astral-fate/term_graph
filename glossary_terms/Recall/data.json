@@ -1,6 +1,0 @@
-{
-    "en_term": "Recall",
-    "ar_term": "استدعاء",
-    "en_def": "A metric for determining the proportion of actual positives that was identified correctly. Also called \"True Positive Rate (TPR).\"",
-    "ar_def": "مقياس لتحديد نسبة القيم الإيجابية الفعلية التي حُددت تحديدًا صحيحًا. ويُطلق عليه أيضًا \"معدل إيجابي صحيح\"."
-}

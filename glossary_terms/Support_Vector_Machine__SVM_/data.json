@@ -1,6 +1,0 @@
-{
-    "en_term": "Support Vector Machine (SVM)",
-    "ar_term": "آلة المُتَّجهات الداعمة",
-    "en_def": "A supervised machine learning model used in data classification and regression analysis to find decision boundaries with maximal margins.",
-    "ar_def": "نموذج تعلُّم آلة موجَّه يُستخدم في تصنيف البيانات وتحليل الانحدار؛ لإيجاد حدود قرار ذات هوامش قصوى."
-}

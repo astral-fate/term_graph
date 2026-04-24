@@ -1,6 +1,0 @@
-{
-    "en_term": "Co-Training",
-    "ar_term": "تدريب مشترك",
-    "en_def": "A semi-supervised learning method used in classification when the unlabeled data is more than labeled data and the dataset has two independent and complementary sets of features.",
-    "ar_def": "طريقة تعلُّم شبه موجَّه، تُستخدم في التصنيف عندما تكون البيانات غير المُسمَّاة أكثر من البيانات المُسمَّاة، وتشتمل مجموعة البيانات على مجموعتين مستقلتين ومتكاملتين من الخصائص."
-}

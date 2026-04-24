@@ -1,6 +1,0 @@
-{
-    "en_term": "Individual Fairness",
-    "ar_term": "إنصاف فردي",
-    "en_def": "A fairness metric that examines whether similar individuals are classified in a similar way.",
-    "ar_def": "مقياس إنصاف لفحص ما إذا كان الأفراد المتشابهون قد صُنِّفوا بنفس الطريقة."
-}

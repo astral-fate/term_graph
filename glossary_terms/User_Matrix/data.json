@@ -1,6 +1,0 @@
-{
-    "en_term": "User Matrix",
-    "ar_term": "مصفوفة المستخدم",
-    "en_def": "A matrix in recommendation systems that contains latent factors about user preferences.",
-    "ar_def": "مصفوفة في أنظمة التوصية تشتمل على عوامل كامنة حول تفضيلات المستخدم."
-}

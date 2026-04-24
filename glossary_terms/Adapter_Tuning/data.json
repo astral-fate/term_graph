@@ -1,6 +1,0 @@
-{
-    "en_term": "Adapter Tuning",
-    "ar_term": "ضبط المُكيِّف",
-    "en_def": "A fine-tuning technique that adds small trainable layers to a pre-trained model and only updates the parameters of these layers to adapt the model to specific tasks.",
-    "ar_def": "أسلوب ضبط دقيق يضيف طبقات صغيرة قابلة للتدريب إلى نموذج مُدرَّب سابقًا، ويُحدِّث فقط مُعامِلات هذه الطبقات؛ لتكييف النموذج على مهام محددة."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Tensor Rank",
-    "ar_term": "رتبة تينسر",
-    "en_def": "The number of dimensions in a tensor. Also called \"Tensor Order\" or \"Tensor Degree.\"",
-    "ar_def": "عدد الأبعاد في تينسر. ويُطلق عليه أيضًا \"مرتبة تينسر\" أو \"درجة تينسر\"."
-}

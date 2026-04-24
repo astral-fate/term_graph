@@ -1,6 +1,0 @@
-{
-    "en_term": "Policy Gradient",
-    "ar_term": "تدرج السياسة",
-    "en_def": "A reinforcement learning technique that optimizes a parametrized policy using gradient descent to maximize the expected reward.",
-    "ar_def": "أسلوب تعلُّم مُعَزَّز يُحسِّن السياسة ذات المُعامِلات باستخدام النزول التدرجي لتعظيم المكافأة المتوقعة."
-}

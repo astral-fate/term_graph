@@ -1,6 +1,0 @@
-{
-    "en_term": "Generalized Linear Model (GLM)",
-    "ar_term": "نموذج خطي مُعمَّم",
-    "en_def": "An expansion of linear regression that allows different output distribution functions to specify the variance between observations and the predicted values.",
-    "ar_def": "توسيع للانحدار الخطي يُتيح لدوال توزيع المخرجات المختلفة تحديد التباين بين المشاهدات والقيم التنبؤية."
-}

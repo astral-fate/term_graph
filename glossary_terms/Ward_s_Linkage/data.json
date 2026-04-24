@@ -1,6 +1,0 @@
-{
-    "en_term": "Ward’s Linkage",
-    "ar_term": "ربط وورد",
-    "en_def": "A clustering method that merges clusters based on minimizing the increase in variance within the newly formed cluster.",
-    "ar_def": "طريقة تجميع تدمج المجموعات بناءً على تقليل الزيادة في التباين داخل المجموعة الجديدة."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Metric",
-    "ar_term": "مقياس",
-    "en_def": "A measure to evaluate the performance of a model during training or testing.",
-    "ar_def": "مقياس لتقييم أداء النموذج أثناء التدريب أو الاختبار."
-}

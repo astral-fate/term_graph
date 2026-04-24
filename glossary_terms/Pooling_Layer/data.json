@@ -1,6 +1,0 @@
-{
-    "en_term": "Pooling Layer",
-    "ar_term": "طبقة تجميع",
-    "en_def": "The process of reducing a matrix created by a convolutional layer to a smaller one.",
-    "ar_def": "عملية اختزال مصفوفة أُنشئت بواسطة طبقة ترشيحية إلى مصفوفة أصغر."
-}

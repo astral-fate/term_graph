@@ -1,6 +1,0 @@
-{
-    "en_term": "Frozen Model",
-    "ar_term": "نموذج مُجمَّد",
-    "en_def": "A model whose parameters have been fixed to prevent further training or modification, often to facilitate deployment or inference.",
-    "ar_def": "نموذج تُثبَّت مُعامِلاته لمنع المزيد من التدريب أو التعديل، غالبًا لتسهيل عملية النشر أو الاستنتاج."
-}

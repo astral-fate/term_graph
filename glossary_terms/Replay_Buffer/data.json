@@ -1,6 +1,0 @@
-{
-    "en_term": "Replay Buffer",
-    "ar_term": "ذاكرة إعادة التشغيل",
-    "en_def": "A memory that the agent uses to store state transitions and can be used to replay experience.",
-    "ar_def": "ذاكرة يستخدمها الوكيل لتخزين التحولات، ويمكن استخدامها لإعادة تشغيل التجربة."
-}

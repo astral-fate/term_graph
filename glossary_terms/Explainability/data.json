@@ -1,6 +1,0 @@
-{
-    "en_term": "Explainability",
-    "ar_term": "قابلية التفسير",
-    "en_def": "The ability to explain in understandable terms to humans the important factors that influence the AI system results. Also called \"Explainable Artificial Intelligence (XAI)\" or \"Interpretability.\"",
-    "ar_def": "القدرة على شرح العوامل المهمة التي تؤثِّر في نتائج نظام الذكاء الاصطناعي بعبارات مفهومة للإنسان. ويُطلق عليها أيضًا \"ذكاء اصطناعي قابل للتفسير\" أو \"قابلية الشرح\"."
-}

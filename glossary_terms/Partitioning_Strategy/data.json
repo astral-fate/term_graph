@@ -1,6 +1,0 @@
-{
-    "en_term": "Partitioning Strategy",
-    "ar_term": "إستراتيجية التقسيم",
-    "en_def": "An algorithm that divides the variables across parameter servers.",
-    "ar_def": "خوارزمية تُقسِّم المتغيرات عبر خوادم المُعامِلات."
-}

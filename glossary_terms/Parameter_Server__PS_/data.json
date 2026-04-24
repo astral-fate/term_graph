@@ -1,6 +1,0 @@
-{
-    "en_term": "Parameter Server (PS)",
-    "ar_term": "خادم المُعامِلات",
-    "en_def": "A framework for distributed deep learning that keeps track of a model's parameters.",
-    "ar_def": "إطار للتعلُّم العميق الموزَّع الذي يتتبع مُعامِلات النموذج."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Model",
-    "ar_term": "نموذج",
-    "en_def": "A representation of what a machine learning algorithm has learned from the training data. Also called \"Machine Learning Model.\"",
-    "ar_def": "تمثيل لما تعلمته خوارزمية تعلُّم الآلة من بيانات التدريب. ويُطلق عليه أيضًا \"نموذج تعلُّم الآلة\"."
-}

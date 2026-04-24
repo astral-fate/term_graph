@@ -1,6 +1,0 @@
-{
-    "en_term": "Deep Belief Network",
-    "ar_term": "شبكة الاعتقاد العميق",
-    "en_def": "A type of deep neural network that consists of multiple layers of stochastic, latent variables.",
-    "ar_def": "نوع من الشبكات العصبية العميقة التي تتكون من طبقات متعددة من المتغيرات العشوائية الكامنة."
-}

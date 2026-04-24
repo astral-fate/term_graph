@@ -1,6 +1,0 @@
-{
-    "en_term": "Momentum",
-    "ar_term": "زخم",
-    "en_def": "An optimization technique for gradient descent that speeds up learning by adding a percentage of the prior update vector to the current update vector.",
-    "ar_def": "أسلوب تحسين للنزول التدرجي يُسرِّع عملية التعلُّم، عن طريق إضافة نسبة مئوية من متجه التحديث السابق إلى متجه التحديث الحالي."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Average Linkage",
-    "ar_term": "ربط متوسط",
-    "en_def": "A clustering method that calculates the distance between two clusters as the average distance between all pairs of data points from each cluster.",
-    "ar_def": "طريقة تجميع تحسب المسافة بين مجموعتين عن طريق متوسط ​​المسافة بين جميع أزواج نقاط البيانات من كل مجموعة."
-}

@@ -1,6 +1,0 @@
-{
-    "en_term": "Semi-Supervised Anomaly Detection",
-    "ar_term": "اكتشاف الشذوذ شبه الموجَّه",
-    "en_def": "A technique used to identify unusual patterns within a dataset by using both labeled and unlabeled data.",
-    "ar_def": "أسلوب يُستخدم لتحديد الأنماط غير المعتادة داخل مجموعة البيانات باستخدام البيانات المُسمَّاة وغير المُسمَّاة."
-}

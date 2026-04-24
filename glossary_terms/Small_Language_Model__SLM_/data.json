@@ -1,6 +1,0 @@
-{
-    "en_term": "Small Language Model (SLM)",
-    "ar_term": "نموذج لغوي صغير",
-    "en_def": "A type of language model designed to operate with fewer parameters and computational resources compared to large language models (LLMs).",
-    "ar_def": "نوع من النماذج اللغوية مصمم للعمل بمُعامِلات وموارد حوسبية أقل مقارنة بالنماذج اللغوية الكبيرة."
-}

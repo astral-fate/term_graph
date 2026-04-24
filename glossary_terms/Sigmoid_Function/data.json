@@ -1,6 +1,0 @@
-{
-    "en_term": "Sigmoid Function",
-    "ar_term": "دالة سيجمويد",
-    "en_def": "A function that maps the output of logistic or multinomial regression to probabilities with a value between 0 and 1.",
-    "ar_def": "دالة تُعيّن مخرجات الانحدار اللوجستي أو المتعدد الحدود إلى احتمالات قيمتها بين الصفر والواحد."
-}

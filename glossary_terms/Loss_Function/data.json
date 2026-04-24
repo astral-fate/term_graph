@@ -1,6 +1,0 @@
-{
-    "en_term": "Loss Function",
-    "ar_term": "دالة الخسارة",
-    "en_def": "A function used to define the error between the output of an algorithm and the target value. Also called \"Cost Function.\"",
-    "ar_def": "دالة تُستخدم لتحديد الخطأ بين مخرجات الخوارزمية والقيمة المستهدفة. ويُطلق عليها أيضًا \"دالة التكلفة\"."
-}

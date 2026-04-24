@@ -1,6 +1,0 @@
-{
-    "en_term": "Similarity Learning",
-    "ar_term": "تعلُّم التشابه",
-    "en_def": "A type of supervised machine learning that trains a metric to find the similarity between two objects.",
-    "ar_def": "نوع من تعلُّم الآلة الموجَّه يُدرِّب مقياسًا للعثور على التشابه بين شيئين."
-}

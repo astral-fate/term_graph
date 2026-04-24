@@ -1,6 +1,0 @@
-{
-    "en_term": "Context Length",
-    "ar_term": "طول السياق",
-    "en_def": "The maximum number of tokens a language model can process and remember at one time.",
-    "ar_def": "الحد الأقصى لعدد الوحدات اللغوية التي يمكن للنموذج اللغوي معالجتها وتذكرها في نفس الوقت."
-}

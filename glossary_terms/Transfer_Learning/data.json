@@ -1,6 +1,0 @@
-{
-    "en_term": "Transfer Learning",
-    "ar_term": "تعلُّم منقول",
-    "en_def": "A machine learning technique in which the algorithm learns to perform a specific task and then uses that knowledge to perform other tasks.",
-    "ar_def": "أسلوب في تعلُّم الآلة تتعلَّم فيه الخوارزمية أداء مهمة محددة، ثم تستخدم تلك المعرفة في أداء مهام أخرى."
-}

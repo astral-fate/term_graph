@@ -1,6 +1,0 @@
-{
-    "en_term": "Broadcasting",
-    "ar_term": "بث",
-    "en_def": "A method in machine learning for matching the dimensions of arrays of different sizes to allow performing arithmetic operations between those arrays.",
-    "ar_def": "طريقة في تعلُّم الآلة لمطابقة أبعاد المصفوفات ذات الأحجام المختلفة، وإتاحة إجراء عمليات حسابية بين تلك المصفوفات."
-}

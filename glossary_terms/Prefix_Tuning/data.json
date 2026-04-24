@@ -1,6 +1,0 @@
-{
-    "en_term": "Prefix Tuning",
-    "ar_term": "ضبط البادئة",
-    "en_def": "A technique used for adapting pre-trained models to specific tasks by optimizing task-specific vectors that are prepended to the input.",
-    "ar_def": "أسلوب يُستخدم لتكييف النماذج المُدرَّبة سابقًا على مهام محددة، عن طريق تحسين متجهات متعلقة بمهام معينة وإضافتها كبادئة للمُدْخَلات."
-}

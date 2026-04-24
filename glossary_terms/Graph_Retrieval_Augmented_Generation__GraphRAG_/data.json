@@ -1,6 +1,0 @@
-{
-    "en_term": "Graph Retrieval-Augmented Generation (GraphRAG)",
-    "ar_term": "توليد مُعَزَّز بالاسترجاع الشبكي",
-    "en_def": "A technique that combines graph-based knowledge representation and retrieval-augmented generation to enhance the accuracy and relevance of generated text.",
-    "ar_def": "أسلوب يجمع بين تمثيل المعرفة القائم على الشبكة والتوليد المُعَزَّز بالاسترجاع لتحسين دقة النصوص المولدة وملاءمتها."
-}

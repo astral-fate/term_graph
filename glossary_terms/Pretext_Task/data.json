@@ -1,6 +1,0 @@
-{
-    "en_term": "Pretext Task",
-    "ar_term": "مهمة ذرائعية",
-    "en_def": "A self-supervised learning task designed to create a useful representation of data without requiring labeled examples.",
-    "ar_def": "مهمة في التعلُّم الذاتي التوجيه مصممة لإنشاء تمثيل مفيد للبيانات، دون الحاجة إلى أمثلة مُسمَّاة."
-}

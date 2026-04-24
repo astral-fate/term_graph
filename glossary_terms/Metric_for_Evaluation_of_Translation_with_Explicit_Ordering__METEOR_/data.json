@@ -1,6 +1,0 @@
-{
-    "en_term": "Metric for Evaluation of Translation with Explicit Ordering (METEOR)",
-    "ar_term": "مقياس ميتيور",
-    "en_def": "A measure for the quality of machine translation by comparing machine-generated text with human-generated text.",
-    "ar_def": "مقياس لجودة ترجمة الآلة، عن طريق مقارنة النصوص المولدة بواسطة الآلة بالنصوص المكتوبة بواسطة الإنسان."
-}

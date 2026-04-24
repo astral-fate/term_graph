@@ -1,6 +1,0 @@
-{
-    "en_term": "Multimodal Prompt",
-    "ar_term": "أمر متعدد الصيغ",
-    "en_def": "A type of prompt that incorporates multiple types of data, such as text and images, to guide model responses.",
-    "ar_def": "نوع من الأوامر يتضمن أنواعًا متعددة من البيانات، مثل النصوص والصور، لتوجيه استجابات النموذج."
-}

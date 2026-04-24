@@ -1,6 +1,0 @@
-{
-    "en_term": "Knowledge-Based System (KBS)",
-    "ar_term": "نظام قائم على قاعدة معرفة",
-    "en_def": "A computer system that uses a knowledge base to capture the knowledge of human experts and an inference engine to solve problems.",
-    "ar_def": "نظام حاسب يستخدم قاعدة معرفة لتخزين معرفة الخبراء البشريين، إضافة إلى مُحَرِّك استنتاج لحل المشكلات."
-}

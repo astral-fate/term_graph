@@ -1,6 +1,0 @@
-{
-    "en_term": "Fully Connected Layer",
-    "ar_term": "طبقة متصلة كليًّا",
-    "en_def": "A hidden layer in an artificial neural network where each node is connected to every node in the next hidden layer. Also called \"Dense Layer.\"",
-    "ar_def": "طبقة مخفية في شبكة عصبية اصطناعية تتصل كل عقدة فيها بكل عقدة في الطبقة المخفية التالية. ويُطلق عليها أيضًا \"طبقة كثيفة\"."
-}

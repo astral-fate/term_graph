@@ -1,6 +1,0 @@
-{
-    "en_term": "Feature Map",
-    "ar_term": "خريطة الخصائص",
-    "en_def": "The output of applying a convolution operation to input data by using a filter. Also called \"Activation Map.\"",
-    "ar_def": "ناتج لتطبيق عملية الترشيح على البيانات المُدْخَلة باستخدام مُرشِّح. ويُطلق عليه أيضًا \"خريطة التنشيط\"."
-}

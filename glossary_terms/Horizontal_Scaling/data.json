@@ -1,6 +1,0 @@
-{
-    "en_term": "Horizontal Scaling",
-    "ar_term": "توسيع أفقي",
-    "en_def": "A method of increasing the performance, storage capacity and availability by partitioning and replication datasets across clusters of servers.",
-    "ar_def": "طريقة لزيادة الأداء وسعة التخزين والتوفُّر عن طريق تقسيم مجموعات البيانات، ونسخها إلى مجموعات من الخوادم."
-}

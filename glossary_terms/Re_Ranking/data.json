@@ -1,6 +1,0 @@
-{
-    "en_term": "Re-Ranking",
-    "ar_term": "إعادة ترتيب",
-    "en_def": "A final step in a recommendation system that considers additional criteria or constraints to regrade scored items.",
-    "ar_def": "خطوة أخيرة في نظام التوصيات تأخذ في الاعتبار المعايير أو القيود الإضافية لإعادة ترتيب العناصر المسجلة."
-}

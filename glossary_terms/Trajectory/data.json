@@ -1,6 +1,0 @@
-{
-    "en_term": "Trajectory",
-    "ar_term": "مسار",
-    "en_def": "A sequence of tuples in reinforcement learning that represent a sequence of the agent's state transitions.",
-    "ar_def": "تسلسل من المجموعات في التعلُّم التعزيزي التي تُمثِّل تسلسلًا من انتقالات حالة الوكيل."
-}

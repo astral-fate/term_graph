@@ -1,6 +1,0 @@
-{
-    "en_term": "Checkpoint",
-    "ar_term": "نقطة حفظ",
-    "en_def": "A practice for saving a snapshot of the variables of a model at a given point in time to allow for exporting model weights and performing training across multiple sessions.",
-    "ar_def": "حفظ نسخة من متغيرات النموذج في نقطة زمنية معينة، على وجه يُتيح تصدير أوزان النموذج وأداء التدريب عبر جلسات متعددة."
-}

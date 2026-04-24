@@ -1,6 +1,0 @@
-{
-    "en_term": "False Negative Rate (FNR)",
-    "ar_term": "معدل سلبي خاطئ",
-    "en_def": "The proportion of actual positive examples which are predicted as negatives. Also called \"Miss Rate.\"",
-    "ar_def": "نسبة الأمثلة الإيجابية الفعلية التي يُتنبأ بأنها سلبية. ويُطلق عليها أيضًا \"معدل الخطأ\"."
-}
