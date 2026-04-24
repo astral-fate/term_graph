@@ -1,16 +1,64 @@
-.DS_Store
+# Ignore everything by default
+*
+
+# Allow directories
+!*/
+
+# Allow specific essential files
+!index.html
+!landing.html
+!glossary-ar.html
+!explore.html
+!_redirects
+!package.json
+!build.js
+!build.ps1
+!.gitignore
+
+# Allow data files
+!*.json
+!*.jsonl
+!glossary_terms/
+!glossary_terms/**
+
+# Allow essential assets/code
+!functions/
+!functions/**
+!assets/
+!assets/**
+!css/
+!js/
+!fonts/
+!images/
+
+# Allow CI/CD
+!.github/
+!.github/**
+
+# Exclude large/extra folders explicitly (just in case)
+bias-variance/
+cross-validation/
+decision-tree/
+double-descent/
+double-descent2/
+equality-of-odds/
+linear-regression/
+logistic-regression/
+neural-networks/
+nn/
+nn2/
+old/
+precision-recall/
+random-forest/
+reinforcement-learning/
+roc-auc/
+test/
+train-test-validation/
+osdr-visualizer-main/
+transformer-explainer/
 node_modules/
 dist/
 .wrangler/
-*.log
-rename_project.py
-build_*.py
-validate_json.py
-inject_meta.py
-setup_*.py
-translate_all_folders.py
-automate_translation.py
-build.js
-build.ps1
-docker-compose.yaml
-package-lock.json
+*.xlsx
+*.csv
+*.py
