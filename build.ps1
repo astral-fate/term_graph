@@ -10,7 +10,7 @@ if (Test-Path $distDir) {
 New-Item -ItemType Directory -Path $distDir
 
 # Folders to copy
-$folders = @('assets', 'css', 'js', 'bias-variance', 'cross-validation', 'decision-tree', 'double-descent', 'double-descent2', 'equality-of-odds', 'linear-regression', 'logistic-regression', 'neural-networks', 'nn', 'nn2', 'old', 'precision-recall', 'random-forest', 'reinforcement-learning', 'roc-auc', 'test', 'train-test-validation', 'osdr-visualizer-main', 'glossary_terms', 'fonts', 'images')
+$folders = @('assets', 'css', 'js', 'fonts', 'images', 'glossary_terms', 'functions')
 
 # Files to copy from root
 $files = @('index.html', 'landing.html', 'explore.html', 'glossary-ar.html', '_redirects', 'glossary_meta.json', 'glossary_enriched.json', 'glossary.jsonl')

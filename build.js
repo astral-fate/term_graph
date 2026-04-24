@@ -4,7 +4,7 @@ const path = require('path');
 const distDir = path.join(__dirname, 'dist');
 
 // Folders to copy
-const folders = ['assets', 'css', 'js', 'bias-variance', 'cross-validation', 'decision-tree', 'double-descent', 'double-descent2', 'equality-of-odds', 'linear-regression', 'logistic-regression', 'neural-networks', 'nn', 'nn2', 'old', 'precision-recall', 'random-forest', 'reinforcement-learning', 'roc-auc', 'test', 'train-test-validation', 'osdr-visualizer-main', 'glossary_terms', 'fonts', 'images'];
+const folders = ['assets', 'css', 'js', 'fonts', 'images', 'glossary_terms', 'functions'];
 
 // Files to copy from root
 const files = ['index.html', 'landing.html', 'explore.html', 'glossary-ar.html', '_redirects', 'glossary_meta.json', 'glossary_enriched.json', 'glossary.jsonl'];
