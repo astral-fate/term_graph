@@ -32,13 +32,14 @@ jobs:
           ls -la dist
           du -sh dist
 
+      # Server-side Pages Functions under dist/functions/ must call NVIDIA upstream; only client HTML/JS must stay same-origin.
       - name: Block direct NVIDIA HTTPS URL in client bundles (use same-origin /api/v1/chat/completions only)
         run: |
-          if grep -rE 'https://[^[:space:]]*integrate[^[:space:]]*nvidia' dist/ --include="*.js" --include="*.html" 2>/dev/null; then
+          if grep -rE 'https://[^[:space:]]*integrate[^[:space:]]*nvidia' dist/ --include="*.js" --include="*.html" --exclude-dir=functions 2>/dev/null; then
             echo "::error::dist still references NVIDIA integrate over HTTPS — client must use the Pages Function proxy only."
             exit 1
           fi
-          echo "OK: no direct NVIDIA integrate HTTPS URL in dist."
+          echo "OK: no direct NVIDIA integrate HTTPS URL in client bundles (dist/functions excluded)."
 
       - name: Verify Pages Function proxy file exists
         run: |
