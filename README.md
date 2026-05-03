@@ -1,3 +1,18 @@
+https://www.kaggle.com/competitions/ai-context-challenge-by-icaire
+
+
+To successfully participate in the AI Glossary Challenge, teams must ensure their submissions meet the following technical and ethical requirements on the Kaggle platform:
+Core Submission Criteria
+Technical Alignment: All submissions must be informed by and directly aligned with the ICAIRE AI Glossary to ensure cultural and ethical grounding.
+Focus Area: Projects must specifically address the detection, explanation, or mitigation of cultural hallucinations in Large Language Models (LLMs).
+Research-Driven Outcomes: Submissions should transform theoretical ethical concepts into practical, reusable digital results
+
+Track 1: Ethical AI Tools
+Practical digital components such as APIs, end-user applications, or browser extensions.
+Tools must demonstrate a clear use case for supporting responsible AI usage.
+
+Track 1: AI Glossary ToolsPracticality and Utility: Assessment of how well the tool (API, app, or extension) supports ethical AI understanding and responsible usage in a real-world context.
+
 ---
 license: cc-by-sa-4.0
 language:
