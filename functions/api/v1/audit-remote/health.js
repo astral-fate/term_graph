@@ -21,7 +21,8 @@ function upstreamAuthHeaders(env) {
   
   return {
     Authorization: `Bearer ${authVal}`,
-    'X-Audit-Secret': app,
+    'X-Audit-Secret': `Bearer ${app}`,
+    'X-Audit-Token': app,
     'X-API-Key': app
   };
 }

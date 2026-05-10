@@ -15,15 +15,13 @@ function upstreamAuthHeaders(env, extra = {}) {
   const hfRead = (getEnv(env, 'AUDIT_HF_READ_TOKEN') || '').trim();
   if (!app) return null;
   
-  // If we have an HF token, it must go in Authorization for the HF gateway.
-  // The app secret then goes in custom headers.
-  // If no HF token, the app secret goes in both.
   const authVal = hfRead ? hfRead : app;
   
   return {
     ...extra,
     Authorization: `Bearer ${authVal}`,
-    'X-Audit-Secret': app,
+    'X-Audit-Secret': `Bearer ${app}`, // Match backend doc: "X-Audit-Secret: Bearer <secret>"
+    'X-Audit-Token': app,
     'X-API-Key': app
   };
 }
