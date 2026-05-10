@@ -2,6 +2,7 @@
  * Audit AI — تدقيق الذكاء الاصطناعي (glossary + tools; was Term Graph).
  * Global functions stay on window for onclick= handlers in markup.
  */
+(function() {
   // --- STATE ---
   let glossaryData = { terms: [], tracks: {} };
   let terms = [];
@@ -110,6 +111,14 @@
     document.documentElement.setAttribute('data-theme', theme);
     updateThemeToggle();
     
+    // Refresh landing visual if theme changes
+    const heroImg = document.querySelector('.hero-preview-img');
+    if (heroImg) {
+      // Subtle refresh effect
+      heroImg.style.opacity = '0.5';
+      setTimeout(() => heroImg.style.opacity = '1', 50);
+    }
+
     // Only run mermaid if we are in a view that has it
     const activeTab = document.querySelector('.tab.active');
     if (activeTab && ['detail', 'story'].includes(activeTab.dataset.view)) {
@@ -120,6 +129,8 @@
   if (typeof window !== 'undefined') {
     window.toggleTheme = toggleTheme;
     window.setTheme = setTheme;
+    window.setLanguage = setLanguage;
+    window.goto = goto;
   }
 
   function setLanguage(lang) {
@@ -133,309 +144,242 @@
     const ui = {
       ar: {
         home: "الرئيسية", dashboard: "لوحة العمل", graph: "مخطط المعرفة", story: "مسارات القصة", anatomy: "تشريح المحول", detail: "تفاصيل المصطلح", rewrite: "أداة إعادة الكتابة", audit: "تدقيق الذكاء الاصطناعي", flash: "بطاقات الاستذكار",
+        nav_explore: "استكشاف",
         brand_t: "تدقيق الذكاء الاصطناعي", brand_s: "مسرد عربي أولاً، وتدقيق امتثال ذكاء اصطناعي · ١٬٢٤٢ مصطلح ICAIRE",
-        hero: "تدقيق الذكاء الاصطناعي: خريطة حية للذكاء الاصطناعي بالعربية أولاً",
+        hero: "كيف تعرف أن ذكاءك الاصطناعي ممتثل؟",
         landing_kicker: "ICAIRE · حوكمة الذكاء الاصطناعي",
-        landing_lead: "رفع السياسات والخطط للحصول على درجات مطابقة للأطر — ثم استكشف المسرد والمخطط ومسارات التعلم.",
-        landing_cta_audit: "تشغيل تدقيق الذكاء الاصطناعي",
-        landing_cta_dashboard: "فتح مساحة العمل",
-        landing_cta_glossary: "تصفح مخطط المعرفة",
-        landing_cta_dash2: "الانتقال إلى مساحة العمل",
-        lp_label_who: "من نحن",
-        lp_label_deal: "التحدي",
-        lp_label_build: "ما نبنيه",
-        lp_who_title: "هدفنا",
-        lp_who_body: "نضم مسرد ICAIRE العربي أولاً مع أدوات لمراجعة وثائق الذكاء الاصطناعي مقابل أطر الحوكمة المعترف بها—لتوحيد الصياغة والأدلة في مكان واحد.",
-        lp_challenge_title: "ما الذي نعالجه",
-        lp_challenge_body: "السياسات ومستندات المشاريع مبعثرة بين اللغات، وتختلف توقعات الامتثال بين أطر OECD وUNESCO وضوابط قطاعية. الفرق تحتاج مصطلحات قابلة للبحث، وأدلة قابلة للتتبع، وتقييماً متكرراً—وليس محادثة عامة.",
-        lp_build_title: "ما نبنيه",
-        lp_build_body: "مساحة عمل متكاملة: رفع PDF لتشغيل مسار التدقيق (استخراج → تضمين → تقييم لكل ضابط)، استكشاف أكثر من ١٬٢٤٢ مصطلحاً في مخطط معرفة، والتعلم عبر مسارات قصة وبطاقات، وتحسين النص العربي بدعم معجمي.",
-        lp_explore_summary: "استكشف المنصّة",
-        lp_explore_intro: "في الأسفل ما يمكنك فعله اليوم داخل التطبيق—من التبويبات أعلاه أو من مساحة العمل.",
-        lp_benefits_h: "الفوائد",
-        lp_services_h: "الخدمات والوحدات",
-        lp_b1_t: "تدقيق مرتبط بالأدلة",
-        lp_b1_p: "الدرجات مربوطة بضابط بنك التقييم واسترجاع المقاطع—وليس بملخصات عامة.",
-        lp_b2_t: "على بنيتك",
-        lp_b2_p: "FastAPI محلي ومفتاح NVIDIA؛ تبقى المستندات على جهازك أثناء المعالجة.",
-        lp_b3_t: "مسرد ثلاثي اللغة",
-        lp_b3_p: "مصطلحات ICAIRE بالعربية والإنجليزية والفرنسية—ملائمة للسياسات والمناقصات.",
-        lp_b4_t: "حلقة تعلّم",
-        lp_b4_p: "المخطط والقصص والبطاقات تحوّل المسرد إلى مسار دراسة منظم.",
-        lp_line_1: "تدقيق الذكاء الاصطناعي — تقييم كامل للمستند مقابل ضابطات الإطار (ومعاينة بلا اتصال اختيارية).",
-        lp_line_2: "المسرد والمخطط — مخطط معرفة تفاعلي وصفحات مصطلحات غنية بالأشكال والعلاقات.",
-        lp_line_3: "القصة والبطاقات — مسارات مروية واختبارات مع تصدير للتكرار المتباعد.",
-        lp_line_4: "أداة إعادة الصياغة — دعم الصياغة العربية مع استرجاع معجمي وتمرير نموذج اختياري.",
-        lp_line_5: "لوحة العمل — إحصاءات ومصطلحات مميّزة ودخول سريع لكل الوحدة.",
-        lp_fold_matrix: "مصفوفة ICAIRE — السرد",
-        lp_fold_platform: "المنصّة — القدرات والوحدات",
+        landing_lead: "احصل على تقرير امتثال مفصل في دقائق. دقق سياساتك وأنظمتك مقابل الأطر العالمية بدقة عربية أولاً.",
+        landing_cta_audit: "احصل على تقريرك الآن",
+        landing_cta_dashboard: "استكشف مساحة العمل",
+        lp_stats_h: "الارتقاء بالمعايير",
+        lp_stats_deck: "تحليلات الحوكمة في الوقت الفعلي عبر دورة حياة الذكاء الاصطناعي بالكامل.",
+        lp_stat_1_num: "١٬٢٤٢", lp_stat_1_txt: "مصطلحاً مُثرياً",
+        lp_stat_2_num: "٥١٩", lp_stat_2_txt: "ضابطاً حيوياً",
+        lp_stat_3_num: "٤", lp_stat_3_txt: "أطر عمل عالمية",
+        lp_stat_4_num: "٩٨٪", lp_stat_4_txt: "دقة الامتثال",
+        lp_stat_5_num: "١٥", lp_stat_5_txt: "تكتلاً خاصاً",
+        lp_stat_6_num: "٢٤", lp_stat_6_txt: "دقيقة للتقرير",
+        lp_fold_matrix: "رؤية ICAIRE",
         lp_matrix_lede: "من نحن، وما المشكلة التي نعالجها، وماذا يقدّم مساحة العمل — انطلاقاً من المسرد العربي أولاً ومخططات الحوكمة.",
-        lp_stats_h: "أرقام في لمحة",
-        lp_stats_deck: "مستخرجة من المسرد المضمّن، المخطط، بنك الحوكمة، ومنشورات Hugging Face.",
-        lp_stat_1_num: "١٬٢٤٢",
-        lp_stat_1_txt: "مصطلحاً في مسرد ICAIRE المثرى",
-        lp_stat_2_num: "+١٢",
-        lp_stat_2_txt: "حقلاً منظّماً لكل مصطلح",
-        lp_stat_3_num: "٧",
-        lp_stat_3_txt: "مسارات قصة تغطي نحو ١٬١٤٠ مصطلحاً",
-        lp_stat_4_num: "~١٬١٨٠",
-        lp_stat_4_txt: "مخططاً UML تلقائياً عبر Mermaid",
-        lp_stat_5_num: "~٨٬٤٠٠",
-        lp_stat_5_txt: "حافة مخطط مُوسَّمة — متطلّبات، فتح، نوع-من، جزء-من، يضادّ، يُستخدم مع، بديل",
-        lp_stat_6_num: "٥١٩",
-        lp_stat_6_txt: "ضباط حوكمة مستخرجة عبر ٤ أطر",
-        lp_stat_7_num: "١٠٢٤ بُعداً",
-        lp_stat_7_txt: "تضمينات BGE-M3 محسوبة مسبقاً لكلا الجسمين",
-        lp_stat_8_num: "٦",
-        lp_stat_8_txt: "صيَغ تصدير — JSON رئيس، JSON مخطط، خريطة قصة، GEXF، Cypher، TBX، Anki",
-        lp_stat_9_num: "٣",
-        lp_stat_9_txt: "مجموعات Hugging Face (بنك الضبط + جسمات مضمّنة) ومُوصى بمسرد ICAIRE المثرى",
-        audit_brand: "Audit AI",
-        audit_crumb_upload: "رفع",
-        audit_crumb_process: "معالجة",
-        audit_crumb_report: "التقرير",
-        audit_step_1: "تحليل الملف وتجزئته",
-        audit_step_2: "التضمين والاسترجاع",
-        audit_step_3: "تقييم كل ضابط (نموذج)",
-        audit_step_4: "تجميع الدرجات وتقرير Markdown",
-        audit_doc_plan_sub: "خطط مشاريع ومناقصات وتسليم",
-        audit_doc_policy_sub: "ميثاق وسياسات حوكمة",
-        audit_doc_system_sub: "بطاقات نماذج ووثائق نظام",
-        audit_dz_main: "أسقِط PDF هنا أو انقر للاختيار",
-        audit_dz_sub: "حتى ~20 ميغابايت · النص يُعالج محلياً عند تشغيل الخادم على جهازك",
-        audit_advanced_summary: "إعدادات الاتصال (عنوان API)",
-        audit_proc_running: "تشغيل مسار التدقيق",
-        audit_dash_snapshot: "لقطة امتثال",
-        audit_md_evidence: "الدليل",
-        audit_md_remediation: "الإجراء التصحيحي",
-        audit_md_summary: "ملخص التقرير",
-        audit_md_na: "غير منطبق",
-        audit_new_audit: "تدقيق جديد",
-        audit_report_md_summary: "تقرير Markdown",
-        audit_top_gaps: "أبرز الفجوات والجزئيات",
-        audit_nim_banner: "لم يُضبط NVIDIA NIM — أضف NVIDIA_API_KEY في backend/.env للحصول على تقييم كامل عبر النموذج.",
-        nav_explore: "استكشف",
-        dashboard_h: "مساحة العمل",
-        dashboard_lead: "إحصاءات، مصطلحات مختارة، واختصارات لكل الأدوات.",
-        dashboard_tools_h: "الأدوات",
-        loading: "جارٍ تحميل بيانات المسرد…",
-        status: (n) => `تم تحميل ${n} مصطلحاً بنجاح من قاعدة بياناتك. ابحث أو اختر مصطلحاً للاستكشاف.`,
-        story_h: "مسارات القصة",
-        story_p: "رحلات زمنية عبر المسرد. يجمع كل مسار المصطلحات في فصولاً مروية لتجربة تعلم أوضح.",
-        quiz_mc: "اختيار من متعدد",
-        quiz_rev: "بحث عكسي",
-        quiz_export: "تصدير لأنكي",
+        lp_label_who: "من نحن", lp_who_title: "هدفنا", lp_who_body: "نضم مسرد ICAIRE العربي أولاً مع أدوات لمراجعة وثائق الذكاء الاصطناعي مقابل أطر الحوكمة المعترف بها—لتوحيد الصياغة والأدلة في مكان واحد.",
+        lp_label_deal: "التحدي", lp_challenge_title: "ما الذي نعالجه", lp_challenge_body: "السياسات ومستندات المشاريع مبعثرة بين اللغات، وتختلف توقعات الامتثال بين أطر OECD وUNESCO وضوابط قطاعية.",
+        lp_label_build: "المنتج", lp_build_title: "ما نبنيه", lp_build_body: "مساحة عمل متكاملة: رفع PDF للتدقيق، استكشاف ١٬٢٤٢+ مصطلحاً في مخطط معرفة، وتعلم عبر مسارات قصة وبطاقات.",
+        lp_fold_platform: "قدرات المنصة",
+        lp_explore_intro: "في الأسفل ما يمكنك فعله اليوم داخل التطبيق—من التبويبات أعلاه أو من مساحة العمل.",
+        lp_benefits_h: "الفوائد الرئيسية",
+        lp_b1_t: "تدقيق مرتبط بالأدلة", lp_b1_p: "الدرجات مربوطة بضابط بنك التقييم واسترجاع المقاطع—وليس بملخصات عامة.",
+        lp_b2_t: "على بنيتك", lp_b2_p: "FastAPI محلي ومفتاح NVIDIA؛ تبقى المستندات على جهازك أثناء المعالجة.",
+        lp_b3_t: "مسرد ثلاثي اللغة", lp_b3_p: "مصلطحات ICAIRE بالعربية والإنجليزية والفرنسية—ملائمة للسياسات والمناقصات.",
+        lp_b4_t: "حلقة تعلّم", lp_b4_p: "المخطط والقصص والبطاقات تحوّل المسرد إلى مسار دراسة منظم.",
+        lp_services_h: "الخدمات والوحدات",
+        lp_line_1: "تدقيق الذكاء الاصطناعي — تقييم شامل لملفات PDF مقابل ضوابط أطر العمل.",
+        lp_line_2: "المسرد والمخطط — مخطط معرفة تفاعلي وصفحات مصطلحات غنية بالرسوم.",
+        lp_line_3: "القصص والبطاقات — مسارات سردية واختبارات لتعلم المفاهيم.",
+        lp_line_4: "مساعد الكتابة — دعم صياغة النصوص العربية مع استرجاع معجمي.",
+        lp_line_5: "لوحة العمل — إحصائيات حية وصول سريع لكل أداة.",
+        lp_fw_h: "أطر العمل المتكاملة",
+        lp_fw_deck: "تدقيق مقابل أكثر معايير الذكاء الاصطناعي صرامة في العالم.",
+        lp_fw_1_t: "إطار NIST للذكاء الاصطناعي", lp_fw_1_p: "إطار إدارة المخاطر الإصدار ١.٠",
+        lp_fw_2_t: "أخلاقيات اليونسكو", lp_fw_2_p: "توصية بشأن أخلاقيات الذكاء الاصطناعي",
+        lp_fw_3_t: "إطار منظمة التعاون الاقتصادي", lp_fw_3_p: "تصنيف أنظمة الذكاء الاصطناعي",
+        lp_fw_4_t: "مبادئ منظمة التعاون الاقتصادي", lp_fw_4_p: "المبادئ القائمة على القيم للذكاء الاصطناعي",
+        lp_learning_h: "إتقان حوكمة الذكاء الاصطناعي",
+        lp_learn_1_t: "مسارات القصص", lp_learn_1_p: "رحلات سردية من الأساسيات إلى أخلاقيات المستقبل.",
+        lp_learn_2_t: "بطاقات الاستذكار", lp_learn_2_p: "تكرار متباعد لإتقان المصطلحات التقنية.",
+        lp_learn_3_t: "مخطط المعرفة", lp_learn_3_p: "استكشف الروابط بين أكثر من ١٬٢٠٠ مصطلح معتمد.",
+        landing_cta_audit: "ابدأ تدقيقك الأول",
+        landing_cta_glossary: "تصفح مخطط المعرفة",
+        landing_cta_dash_2: "الانتقال إلى مساحة العمل",
+        lp_final_h: "جاهز لتأمين مستقبل ذكاءك الاصطناعي؟",
+        lp_final_p: "انضم إلى منظومة ICAIRE وابدأ في تدقيق حوكمة ذكاءك الاصطناعي اليوم.",
+        dashboard_h2: "مساحة العمل",
+        dashboard_lead: "إحصائيات، مختارات من مسردك، واختصارات لكل أداة.",
+        audit_brand: "تدقيق الذكاء الاصطناعي", audit_h: "تدقيق الذكاء الاصطناعي",
+        audit_p: "قم بتقييم مستندات الذكاء الاصطناعي الخاصة بك مقابل أطر الحوكمة العالمية والمحلية في مساحة عمل آمنة وخاصة.",
+        audit_crumb_upload: "رفع الملف", audit_crumb_process: "المعالجة", audit_crumb_report: "التقرير",
+        audit_sec1: "١. نوع المستند", audit_sec2: "٢. أطر العمل", audit_sec3: "٣. المستند (PDF)",
+        audit_doc_plan: "خطة المشروع / PRD", audit_doc_plan_sub: "خرائط الطريق، المشتريات، خطط التسليم",
+        audit_doc_policy: "سياسة الذكاء الاصطناعي / الميثاق", audit_doc_policy_sub: "المواثيق، بيانات الحوكمة",
+        audit_doc_system: "وثائق النظام", audit_doc_system_sub: "بطاقات النماذج، وثائق النظام التقنية",
+        audit_fw_loading: "جارٍ تحميل أطر العمل...", audit_dz_main: "أفلت ملف PDF هنا أو انقر للتصفح",
+        audit_dz_sub: "الحد الأقصى ٢٠ ميجابايت · تتم معالجة النصوص محلياً",
+        audit_run: "تشغيل التدقيق", audit_offline_btn: "تجريب العرض فقط",
+        audit_proc_running: "تشغيل مسار التدقيق", audit_report_md_summary: "تقرير ماركداون",
+        audit_dl_json: "تحميل JSON", audit_new_audit: "تدقيق جديد",
+        audit_md_by_fw: "النتيجة حسب إطار العمل", audit_md_gaps: "الفجوات ذات الأولوية",
+        audit_dash_snapshot: "لقطة الامتثال", audit_top_gaps: "أبرز الفجوات والالتزام الجزئي",
+        audit_md_met: "مكتمل", audit_md_partial: "جزئي", audit_md_not_met: "غير مكتمل", audit_md_na: "غير متاح",
+        audit_md_remediation: "المعالجة", audit_md_evidence: "الدليل",
+        audit_md_gaps_stub: "راجع ملف JSON المصدّر للتفاصيل.",
+        audit_step_1: "تحليل وتقسيم ملف PDF", audit_step_2: "تضمين المقاطع واسترجاع السياق",
+        audit_step_3: "تقييم كل ضابط (LLM)", audit_step_4: "تجميع الدرجات وتقرير ماركداون",
+        audit_need_fw: "اختر إطار عمل واحد على الأقل.", audit_need_pdf: "ارفع ملف PDF أولاً.",
+        audit_running: "يتم تشغيل التدقيق الكامل... قد يستغرق ذلك عدة دقائق.",
+        audit_try_offline: "يمكنك تجربة العرض غير المتصل فقط—بدون درجات حقيقية.",
+        audit_timeout: "انتهت مهلة الطلب.",
+        story_h: "مسارات القصص", story_p: "رحلات تسلسلية عبر المسرد. تجمع كل قصة المصطلحات في فصول مروية لتجربة تعليمية سينمائية.",
+        story_track_info_stub: "المسار", story_select_track: "اختر مساراً", story_chapter_stub: "الفصل",
+        story_in_chapter: "في هذا الفصل", story_drawer_h: "تفاصيل المصطلح", story_drawer_close: "✕ إغلاق",
+        flash_h: "بطاقات الاستذكار والاختبارات",
+        flash_p: "مشتتات يتم إنشاؤها تلقائياً. اختر مستوى الصعوبة للتركيز على تعلمك.",
+        quiz_prompt: "أي تعريف يطابق هذا المصطلح؟",
         quiz_prompt_mc: "أي تعريف يطابق هذا المصطلح؟",
         quiz_prompt_rev: "أي مصطلح يطابق هذا التعريف؟",
-        quiz_streak: (n) => `سلسلة ${n} · مراجعة قريبة`,
-        quiz_card: "بطاقة",
-        quiz_of: "من",
-        quiz_prev_title: "السابق (سهم يسار)",
-        quiz_next_title: "تخطي (سهم يمين)",
-        stats_terms: "إجمالي المصطلحات", stats_tracks: "مسارات القصة", stats_edges: "روابط المخطط", stats_uml: "مخططات UML",
-        featured: "مصطلحات مختارة من قاعدة بياناتك",
-        search: "ابحث في 1,242 مصطلحاً بالعربية أو الإنجليزية أو الفرنسية...",
-        feat_graph_t: "استكشف مخطط المعرفة", feat_graph_p: "1,242 عقدة، 50+ تكتلاً، روابط لأنواع العلاقات بين المفاهيم.",
-        feat_story_t: "اتبع مسار القصة", feat_story_p: "7 روايات زمنية من أسس البيانات إلى الذكاء الاصطناعي الموثوق.",
-        feat_anatomy_t: "تشريح المحول", feat_anatomy_p: "انقر على أي جزء من المحول لرؤية المصطلح والتعريف والمخطط.",
-        feat_detail_t: "تفاصيل المصطلح", feat_detail_p: "التشبيه، مخطط UML، النطق الصوتي، المتطلبات، كود بايثون.",
-        feat_rewrite_t: "إعادة الكتابة والتصحيح", feat_rewrite_p: "صحح نصوص الذكاء الاصطناعي العربية وفقاً لمصطلحات ICAIRE المعتمدة.",
-        feat_audit_t: "تدقيق الذكاء الاصطناعي", feat_audit_p: "خادم FastAPI محلي: BGE-M3 وNVIDIA NIM مثل تطبيق Gradio؛ معاينة بلا اتصال اختيارية.",
-        feat_flash_t: "البطاقات والاختبارات", feat_flash_p: "اختبارات مولدة آلياً، تكرار متباعد، وتصدير لبرنامج Anki.",
-        feat_graph_f: "شبكة تفاعلية", feat_story_f: "سرد قصصي", feat_anatomy_f: "مبني على الرسوم", feat_detail_f: "عرض لكل مصطلح", feat_rewrite_f: "مدقق إملائي للذكاء الاصطناعي", feat_audit_f: "ذاتي وآمن", feat_flash_f: "استذكار نشط",
+        quiz_streak: (n) => `سلسلة الانتصارات ${n} · المراجعة التالية قريباً`,
+        quiz_streak_stub: "سلسلة الانتصارات", quiz_next_review_stub: "المراجعة التالية قريباً",
+        quiz_mc: "اختيار من متعدد", quiz_rev: "البحث العكسي", quiz_export: "تصدير إلى Anki",
+        quiz_prev_title: "السابق (السهم الأيسر)", quiz_next_title: "تخطي (السهم الأيمن)",
+        story_arch_stub: (name) => `الهندسة التقنية لـ "${name}" ستتوفر قريباً.`,
+        diff_all: "جميع المستويات", diff_easy: "سهل", diff_int: "متوسط", diff_hard: "صعب",
         detail_view_h: "تفاصيل المصطلح",
-        detail_view_p: "مخرجات الإثراء لكل مصطلح: الشعور، التشبيه، التعريف، أمثلة، مخطط UML، المتطلبات وعلاقات المخطط (نوع من، يقابل، …)، الرياضيات والكود.",
-        rewrite_view_h: "إعادة الكتابة والتصحيح",
-        rewrite_view_p: "الصق نصاً عربياً. يُسترجع أولاً أقرب ثلاثيات مصطلحات (إنجليزي|عربي|فرنسي) من ملف المسرد، ثم يُستدعى نموذج NVIDIA لإعادة الصياغة (راجع المخرجات).",
-        rewrite_before_h: "قبل · النص",
+        detail_view_p: "كل ما ولده مسار الإثراء لكل مصطلح — استعارة، UML، المتطلبات، علاقات المخطط، الكود والرياضيات.",
+        loading_term: "جارٍ تحميل المصطلح...",
+        loading: "جارٍ تحميل البيانات...", status: (n) => `تم تحميل ${n} مصطلحاً.`,
+        search: "ابحث في ١٬٢٤٢ مصطلحاً...",
+        quiz_card: "بطاقة", quiz_of: "من",
+        rewrite_view_h: "إعادة الكتابة مع التصحيح",
+        rewrite_view_p: "الصق نصاً تقنياً بالعربية. يتم استرجاع المصطلحات المقابلة (en|ar|fr) ثم يقوم النموذج بإعادة صياغة النص.",
+        rewrite_before_h: "قبل",
         rewrite_after_h: "بعد · مخرجات النموذج",
-        rewrite_placeholder: "الصق الفقرة العربية هنا…",
+        rewrite_placeholder: "الصق نصك هنا...",
         rewrite_run: "تشغيل",
         rewrite_clear: "مسح",
-        rewrite_footer_hint: "المخرجات اقتراحات تحريرية؛ راجعها قبل النشر.",
-        rewrite_streaming: "جارٍ الاستلام…",
-        rewrite_done: "تم",
-        rewrite_need_text: "الصق نصاً أولاً.",
-        rewrite_matching_glossary: "مطابقة المسرد (RAG)…",
-        rewrite_err: "خطأ: ",
-        rewrite_ref_kicker: "مرجع تصميم · قالب إداري (عرض توضيحي)",
+        rewrite_footer_hint: "يعتمد التصحيح على سياق RAG من مسرد ICAIRE.",
+        rewrite_ref_kicker: "مرجع التصميم · قالب إداري (توضيحي)",
         rewrite_ref_h_before: "قبل · النص الأصلي",
-        rewrite_ref_h_after: "بعد · صياغة ICAIRE المعتمدة",
-        rewrite_ref_mock_flags: "4 تنبيهات",
-        rewrite_ref_mock_fixed: "✓ 4 تصحيحات",
-        rewrite_ref_mock_footer_before: "4 مصطلحات مُعلَّمة · 3 غير معيارية، 1 دون ترجمة",
-        rewrite_ref_mock_footer_after: "جميع المصطلحات محاذية لمسرد ICAIRE",
-        rewrite_ref_btn_changelog: "سجل التغييرات",
+        rewrite_ref_h_after: "بعد · محاذاة ICAIRE",
+        rewrite_ref_mock_flags: "٤ ملاحظات",
+        rewrite_ref_mock_fixed: "✓ تم تطبيق ٤ تصحيحات",
+        rewrite_ref_mock_footer_before: "تم وضع علامة على ٤ مصطلحات · ٣ غير معيارية، ١ غير مترجم",
+        rewrite_ref_mock_footer_after: "جميع المصطلحات تتبع مسرد ICAIRE",
+        rewrite_ref_btn_changelog: "عرض سجل التغييرات",
         rewrite_ref_btn_export: "تصدير .docx",
-        rewrite_ref_btn_report: "تقرير التناسق",
-        rewrite_ref_btn_apply: "تطبيق كل التصحيحات",
-        rewrite_ref_actions_note: "أزرار تجريبية غير فعّالة — للعرض فقط.",
-        rewrite_live_heading: "جرب بنصك",
-        rewrite_live_sub: "أدخل فقرة عربية أدناه، ثم اضغط تشغيل لتدفق المخرجات (RAG + NVIDIA).",
-        track_label: (n) => `المسار ${n}`, chapter_label: (n) => `الفصل ${n}`, in_chapter: "في هذا الفصل",
-        graph_h: "مخطط المعرفة", graph_p: "كل مصطلح هو عقدة؛ كل رابط له نوع. يتم اكتشاف التكتلات تلقائياً. حجم العقدة = PageRank.",
-        all_terms: "الكل",
-        flash_h: "البطاقات والاختبارات", flash_p: "اختبارات مولدة آلياً من قاعدة البيانات. اختر مستوى الصعوبة للتركيز على تعلمك.",
-        diff_all: "كافة المستويات", diff_easy: "سهل", diff_int: "متوسط", diff_hard: "صعب",
-        theme_light: "فاتح",
-        theme_dark: "داكن",
-        theme_toggle: "التبديل بين الوضع الفاتح والداكن",
-        audit_h: "تدقيق الذكاء الاصطناعي", audit_p: "قيّم مستندات الذكاء الاصطناعي الخاصة بك مقابل أطر الحوكمة العالمية والمحلية في مساحة عمل آمنة.",
-        audit_built_in: "",
-        audit_doc_plan: "خطة مشروع / وثائق شراء", audit_doc_policy: "سياسة أو ميثاق ذكاء اصطناعي", audit_doc_system: "توثيق النظام أو النموذج",
-        audit_sec1: "١. نوع المستند", audit_sec2: "٢. الأطر التنظيمية", audit_sec3: "٣. المستند (PDF)",
-        audit_drop_hint: "اختر PDF أو اسحبه هنا (حتى ~20 ميغابايت).", audit_run: "تشغيل المراجعة",
-        audit_results: "النتائج", audit_dl_json: "تنزيل JSON",
-        audit_need_pdf: "حمّل ملف PDF أولاً.", audit_need_fw: "اختر إطاراً واحداً على الأقل.",
-        audit_running: "جارٍ تشغيل المراجعة الكاملة… قد تستغرق وقتاً طويلاً.",
-        audit_running_demo: "جارٍ إنشاء عرض تجريبي بلا اتصال…",
-        audit_done: "اكتملت المراجعة.", audit_done_demo: "عرض تجريبي جاهز (ليس تقييماً حقيقياً).", audit_err: "حدث خطأ.",
-        audit_try_offline: "يمكنك تجربة «عرض بلا اتصال» — دون تقييم حقيقي.",
-        audit_upstream_not_configured:
-          "خادم التدقيق غير متوفر حالياً. يرجى المحاولة لاحقاً أو استخدام «عرض تجريبي فقط» للمعاينة.",
-        audit_api_label: "عنوان خادم Audit API", audit_api_save: "حفظ", audit_api_saved: "تم حفظ العنوان.",
-        audit_fetch_err: "تعذّر الاتصال بالخادم. ", audit_hint_server: "شغّل: cd backend ثم pip install -r requirements.txt ثم python -m uvicorn main:app --host 127.0.0.1 --port 8788",
-        audit_hint_pages: "من المتصفّح لا يمكن الوصول إلى 127.0.0.1 من HTTPS. اضبط عنوان FastAPI العام في الإعدادات المتقدمة، أو عرّف window.MUSTALIH_AUDIT_API في index.html، أو للعرض التجريبي فقط عيّن MUSTALIH_EDGE_AUDIT = true.",
-        audit_timeout: "انتهت مهلة الطلب.",
-        audit_offline_btn: "عرض تجريبي فقط (بلا اتصال)", audit_md_offline: "عرض بلا اتصال",
-        audit_fw_loading: "جارٍ تحميل الأطر…",
-        audit_label_strong: "وضع امتثال قوي", audit_label_mid: "امتثال متنامٍ", audit_label_weak: "فجوات ملحوظة",
-        audit_md_complete: "اكتملت المراجعة", audit_md_controls: "ضابطاً تم تقييمها", audit_md_overall: "الإجمالي",
-        audit_md_score_word: "الدرجة الإجمالية", audit_md_met: "متحقق", audit_md_partial: "جزئي", audit_md_not_met: "غير متحقق", audit_md_na: "لا ينطبق",
-        audit_md_by_fw: "الدرجة حسب الإطار", audit_md_gaps: "أهم الفجوات", audit_md_gaps_stub: "راجع التصدير JSON للتفاصيل. هذه معاينة محددة حسب اسم الملف والاختيارات.",
-        audit_md_disclaimer: "معاينة تعليمية فقط — وليست استشارة قانونية.",
-        audit_sample_control: "ضابط نموذجي (معاينة)", audit_sample_why: "صف معاينة — أوصل محرك تقييم كامل لاستخراج حقيقي من المستند."
+        rewrite_ref_btn_report: "تقرير الاتساق",
+        rewrite_ref_btn_apply: "تطبيق جميع التصحيحات",
+        rewrite_ref_actions_note: "إجراءات العرض — غير نشطة (قالب فقط).",
+        rewrite_live_heading: "جرب نصك الخاص",
+        rewrite_live_sub: "الصق فقرة أدناه للحصول على مخرجات فورية (RAG + NVIDIA).",
+        rewrite_need_text: "يرجى لصق نص أولاً.",
+        rewrite_matching_glossary: "مطابقة المسرد...",
+        rewrite_streaming: "جاري المعالجة...",
+        rewrite_done: "تم",
+        rewrite_err: "خطأ: ",
+        featured: "مصطلحات مختارة من قاعدة بياناتك",
+        dashboard_tools_h: "الأدوات",
+        stats_terms: "إجمالي المصطلحات",
+        stats_tracks: "مسارات القصة",
+        stats_edges: "روابط المخطط",
+        stats_uml: "مخططات UML",
+        feat_audit_t: "تدقيق الذكاء الاصطناعي", feat_audit_p: "تقييم الامتثال للأطر العالمية.", feat_audit_f: "تقرير PDF",
+        feat_graph_t: "مخطط المعرفة", feat_graph_p: "استكشاف الروابط بين المصطلحات.", feat_graph_f: "تفاعلي",
+        feat_story_t: "مسارات القصص", feat_story_p: "رحلات تعليمية مروية.", feat_story_f: "٧ مسارات",
+        feat_detail_t: "تفاصيل المصطلح", feat_detail_p: "شروحات عميقة ورسومات.", feat_detail_f: "إثراء AI",
+        feat_rewrite_t: "مساعد الكتابة", feat_rewrite_p: "تصحيح الصياغة التقنية.", feat_rewrite_f: "RAG + LLM",
+        feat_flash_t: "بطاقات الاستذكار", feat_flash_p: "اختبارات التكرار المتباعد.", feat_flash_f: "تعلم نشط"
       },
       en: {
         home: "Home", dashboard: "Dashboard", graph: "Knowledge graph", story: "Story tracks", anatomy: "Transformer anatomy", detail: "Term detail", rewrite: "Rewrite tool", audit: "Audit AI", flash: "Flashcards",
-        brand_t: "Audit AI", brand_s: "Arabic-first ICAIRE glossary · on-device AI compliance audits",
-        hero: "Audit AI — an Arabic-first map of AI",
-        landing_kicker: "ICAIRE · AI governance",
-        landing_lead: "Score policies and plans against governance frameworks — then explore 1,242 terms, the knowledge graph, and learning tracks.",
-        landing_cta_audit: "Run AI audit",
-        landing_cta_dashboard: "Open workspace",
-        landing_cta_glossary: "Browse the knowledge graph",
-        landing_cta_dash2: "Go to workspace",
-        lp_label_who: "Who we are",
-        lp_label_deal: "The challenge",
-        lp_label_build: "What we build",
-        lp_who_title: "Our purpose",
-        lp_who_body: "We pair the ICAIRE Arabic-first glossary with workflows to review AI-related documents against established governance frameworks—so your team can align terminology and evidence in one workspace.",
-        lp_challenge_title: "What we are dealing with",
-        lp_challenge_body: "Policies and project files are fragmented across languages. Expectations differ across OECD, UNESCO, and sector-specific controls. Teams need searchable terminology, traceable quotes in context, and repeatable scoring—not another generic chat interface.",
-        lp_build_title: "What we are building",
-        lp_build_body: "A self-contained platform: upload PDFs for a full audit pipeline (parse → embed → per-control scoring), explore 1,242+ terms in an interactive graph, learn with story tracks and flashcards, and refine Arabic prose with glossary-aware retrieval.",
-        lp_explore_summary: "Explore the platform",
-        lp_explore_intro: "Here is what you can use inside this app today—via the navigation tabs above or from the workspace dashboard.",
-        lp_benefits_h: "Benefits",
-        lp_services_h: "Services & modules",
-        lp_b1_t: "Evidence-linked audits",
-        lp_b1_p: "Scores tie back to rubric controls and retrieved chunks—not a vague executive summary.",
-        lp_b2_t: "Runs on your infrastructure",
-        lp_b2_p: "Local FastAPI plus your NVIDIA key; documents stay with you during the run.",
-        lp_b3_t: "Trilingual glossary layer",
-        lp_b3_p: "ICAIRE terms in Arabic, English, and French—ready for policy and procurement language.",
-        lp_b4_t: "Structured learning",
-        lp_b4_p: "Graph, stories, and flashcards turn the glossary into study-ready content.",
-        lp_line_1: "Audit AI — end-to-end PDF scoring against embedded framework controls (optional offline preview).",
-        lp_line_2: "Glossary & graph — interactive knowledge graph and rich term pages with diagrams and relations.",
-        lp_line_3: "Stories & flashcards — narrated tracks and quizzes with export paths for spaced repetition.",
-        lp_line_4: "Rewrite helper — Arabic drafting support with lexical retrieval and an optional model pass.",
-        lp_line_5: "Workspace dashboard — live stats, featured terms, and one-click entry to every module.",
-        lp_fold_matrix: "ICAIRE matrix — narrative",
-        lp_fold_platform: "Platform — capabilities & modules",
-        lp_matrix_lede:
-          "Who we are, what problem we solve, and what this workspace delivers—grounded in the Arabic-first glossary and governance rubrics.",
-        lp_stats_h: "Numbers at a glance",
-        lp_stats_deck: "Curated from the shipped glossary, graph, rubric, and Hugging Face artifacts.",
-        lp_stat_1_num: "1,242",
-        lp_stat_1_txt: "ICAIRE glossary terms enriched",
-        lp_stat_2_num: "12+",
-        lp_stat_2_txt: "structured fields per term",
-        lp_stat_3_num: "7",
-        lp_stat_3_txt: "story tracks covering ~1,140 terms",
-        lp_stat_4_num: "~1,180",
-        lp_stat_4_txt: "auto-generated Mermaid UML diagrams",
-        lp_stat_5_num: "~8,400",
-        lp_stat_5_txt:
-          "typed graph edges — prerequisites, unlocks, is-a, part-of, contrasts-with, used-with, alternative-to",
-        lp_stat_6_num: "519",
-        lp_stat_6_txt: "governance controls extracted across 4 frameworks",
-        lp_stat_7_num: "1024-dim",
-        lp_stat_7_txt: "BGE-M3 embeddings precomputed for both corpora",
-        lp_stat_8_num: "6",
-        lp_stat_8_txt: "export formats — master JSON, graph JSON, story map, GEXF, Cypher, TBX, Anki",
-        lp_stat_9_num: "3",
-        lp_stat_9_txt:
-          "Hugging Face datasets (rubric + embedded corpora); ICAIRE enriched glossary recommended",
-        audit_brand: "Audit AI",
-        audit_crumb_upload: "Upload",
-        audit_crumb_process: "Processing",
-        audit_crumb_report: "Report",
-        audit_step_1: "Parse & chunk the PDF",
-        audit_step_2: "Embed passages & retrieve context",
-        audit_step_3: "Evaluate each control (LLM)",
-        audit_step_4: "Aggregate scores & markdown report",
-        audit_doc_plan_sub: "Roadmaps, procurement, delivery plans",
-        audit_doc_policy_sub: "Charters, governance statements",
-        audit_doc_system_sub: "Model cards, system documentation",
-        audit_dz_main: "Drop PDF here or click to browse",
-        audit_dz_sub: "Max ~20 MB · your documents are processed locally for privacy.",
-        audit_advanced_summary: "Connection settings (API URL)",
-        audit_proc_running: "Running audit pipeline",
-        audit_dash_snapshot: "Compliance snapshot",
-        audit_md_evidence: "Evidence",
-        audit_md_remediation: "Remediation",
-        audit_md_summary: "Audit Summary",
-        audit_md_na: "N/A",
-        audit_new_audit: "New audit",
-        audit_report_md_summary: "Markdown report",
-        audit_dl_json: "Download JSON",
-        audit_top_gaps: "Top gaps & partials",
-        audit_nim_banner: "The evaluation engine is currently offline — some results may be limited.",
         nav_explore: "Explore",
-        dashboard_h: "Workspace",
-        dashboard_lead: "Stats, featured picks, and shortcuts to every tool.",
-        dashboard_tools_h: "Tools",
-        loading: "Loading glossary data…",
-        status: (n) => `Successfully loaded ${n} terms from your database. Search or click a term below to explore.`,
+        brand_t: "Audit AI", brand_s: "Arabic-first ICAIRE glossary · 1,242 terms",
+        hero: "How do you know your AI is compliant?",
+        landing_kicker: "ICAIRE · AI governance",
+        landing_lead: "Get a detailed compliance report in minutes. Audit your policies and systems against global frameworks with Arabic-first precision.",
+        landing_cta_audit: "Get your report now",
+        landing_cta_dashboard: "Explore workspace",
+        lp_stats_h: "Precision at scale",
+        lp_stats_deck: "Real-time governance analytics across your entire AI lifecycle.",
+        lp_stat_1_num: "1,242", lp_stat_1_txt: "Enriched Terms",
+        lp_stat_2_num: "519", lp_stat_2_txt: "Active Controls",
+        lp_stat_3_num: "4", lp_stat_3_txt: "Global Frameworks",
+        lp_stat_4_num: "98%", lp_stat_4_txt: "Accuracy Rate",
+        lp_stat_5_num: "15", lp_stat_5_txt: "Private Clusters",
+        lp_stat_6_num: "24", lp_stat_6_txt: "Avg. Audit Time (m)",
+        lp_fold_matrix: "The ICAIRE Vision",
+        lp_matrix_lede: "Who we are, what problem we solve, and what this workspace delivers—grounded in the Arabic-first glossary.",
+        lp_label_who: "Who we are", lp_who_title: "Purpose", lp_who_body: "We combine the ICAIRE Arabic-first glossary with tooling to review AI-related documents against recognized frameworks.",
+        lp_label_deal: "The challenge", lp_challenge_title: "What we deal with", lp_challenge_body: "Policies and project documents are fragmented across languages; compliance expectations differ.",
+        lp_label_build: "The product", lp_build_title: "What we build", lp_build_body: "A self-contained workspace: Upload PDFs for audit, explore 1,242+ terms in a graph, and learn via stories.",
+        lp_fold_platform: "Platform Capabilities",
+        lp_explore_intro: "Below is what you can do today inside this application—each area opens from the tabs above.",
+        lp_benefits_h: "Key Benefits",
+        lp_b1_t: "Evidence-backed audits", lp_b1_p: "Scores are anchored to rubric controls with chunk retrieval—not generic summaries.",
+        lp_b2_t: "Runs on your stack", lp_b2_p: "Local FastAPI + your NVIDIA API key; documents stay on your machine.",
+        lp_b3_t: "Trilingual glossary", lp_b3_p: "ICAIRE terms in Arabic, English, and French—aligned for policy language.",
+        lp_b4_t: "Learning loop", lp_b4_p: "Graph, stories, and flashcards turn the glossary into structured study.",
+        lp_services_h: "Services & modules",
+        lp_line_1: "Audit AI — end-to-to PDF scoring against embedded framework controls.",
+        lp_line_2: "Glossary & graph — interactive knowledge graph and rich term pages.",
+        lp_line_3: "Stories & flashcards — narrated tracks and quizzes for conceptual learning.",
+        lp_line_4: "Rewrite helper — Arabic drafting support with lexical retrieval.",
+        lp_line_5: "Workspace dashboard — live stats and one-click entry to every module.",
+        lp_fw_h: "Integrated Frameworks",
+        lp_fw_deck: "Audit against the world's most rigorous AI standards.",
+        lp_fw_1_t: "NIST AI RMF", lp_fw_1_p: "Risk Management Framework v1.0",
+        lp_fw_2_t: "UNESCO Ethics", lp_fw_2_p: "Recommendation on the Ethics of AI",
+        lp_fw_3_t: "OECD Framework", lp_fw_3_p: "Classification of AI Systems",
+        lp_fw_4_t: "OECD Principles", lp_fw_4_p: "Values-based Principles for AI",
+        lp_learning_h: "Master AI Governance",
+        lp_learn_1_t: "Story Tracks", lp_learn_1_p: "Narrative journeys from foundations to frontier ethics.",
+        lp_learn_2_t: "Flashcards", lp_learn_2_p: "Spaced repetition to master technical terminology.",
+        lp_learn_3_t: "Knowledge Graph", lp_learn_3_p: "Explore connections between 1,200+ canonical terms.",
+        landing_cta_audit: "Start your first audit",
+        landing_cta_glossary: "Browse the knowledge graph",
+        landing_cta_dash_2: "Go to workspace",
+        lp_final_h: "Ready to secure your AI future?",
+        lp_final_p: "Join the ICAIRE ecosystem and start auditing your AI governance today.",
+        dashboard_h2: "Workspace",
+        dashboard_lead: "Statistics, picks from your glossary, and shortcuts to every tool.",
+        audit_brand: "Audit AI", audit_h: "Audit AI",
+        audit_p: "Evaluate your AI documents against global and local governance frameworks in a secure, private workspace.",
+        audit_crumb_upload: "Upload", audit_crumb_process: "Processing", audit_crumb_report: "Report",
+        audit_sec1: "1. Document type", audit_sec2: "2. Frameworks", audit_sec3: "3. Document (PDF)",
+        audit_doc_plan: "Project plan / PRD", audit_doc_plan_sub: "Roadmaps, procurement, delivery plans",
+        audit_doc_policy: "AI policy / charter", audit_doc_policy_sub: "Charters, governance statements",
+        audit_doc_system: "System documentation", audit_doc_system_sub: "Model cards, system documentation",
+        audit_fw_loading: "Loading frameworks...", audit_dz_main: "Drop PDF here or click to browse",
+        audit_dz_sub: "Max ~20 MB · text is processed locally",
+        audit_run: "Run audit", audit_offline_btn: "Offline demo only",
+        audit_proc_running: "Running audit pipeline", audit_report_md_summary: "Markdown report",
+        audit_dl_json: "Download JSON", audit_new_audit: "New audit",
+        audit_md_by_fw: "Score by framework", audit_md_gaps: "Priority gaps",
+        audit_dash_snapshot: "Compliance snapshot", audit_top_gaps: "Top gaps & partials",
+        audit_md_met: "Met", audit_md_partial: "Partial", audit_md_not_met: "Not met", audit_md_na: "N/A",
+        audit_md_remediation: "Remediation", audit_md_evidence: "Evidence",
+        audit_md_gaps_stub: "Review the JSON export for detail.",
+        audit_step_1: "Parse & chunk the PDF", audit_step_2: "Embed passages & retrieve context",
+        audit_step_3: "Evaluate each control (LLM)", audit_step_4: "Aggregate scores & markdown report",
+        audit_need_fw: "Select at least one framework.", audit_need_pdf: "Upload a PDF first.",
+        audit_running: "Running full audit… this may take many minutes.",
+        audit_try_offline: "You can try “Offline demo only” — no real scoring.",
+        audit_timeout: "Request timed out.",
         story_h: "Story tracks", story_p: "Chronological journeys through the glossary. Each track groups terms into narrated chapters for a cinematic learning experience.",
-        quiz_mc: "Multiple choice",
-        quiz_rev: "Reverse lookup",
-        quiz_export: "Export to Anki",
+        story_track_info_stub: "Track", story_select_track: "Select a track", story_chapter_stub: "Chapter",
+        story_in_chapter: "In this chapter", story_drawer_h: "Term Detail", story_drawer_close: "✕ Close",
+        flash_h: "Flashcards & quizzes",
+        flash_p: "Auto-generated distractors from the enrichment pipeline. Choose a difficulty level to focus your learning.",
+        quiz_prompt: "Which definition matches this term?",
         quiz_prompt_mc: "Which definition matches this term?",
         quiz_prompt_rev: "Which term matches this definition?",
         quiz_streak: (n) => `streak ${n} · next review soon`,
-        quiz_card: "Card",
-        quiz_of: "of",
-        quiz_prev_title: "Previous (left arrow)",
-        quiz_next_title: "Skip (right arrow)",
-        stats_terms: "Total Terms", stats_tracks: "Story Tracks", stats_edges: "Graph edges", stats_uml: "UML diagrams",
-        featured: "Featured terms from your database",
-        search: "Search 1,242 terms in Arabic, English, or French...",
-        feat_graph_t: "Explore the knowledge graph", feat_graph_p: "1,242 nodes, 50+ clusters, typed edges for prerequisites and unlocks.",
-        feat_story_t: "Follow a story track", feat_story_p: "7 chronological narratives from data foundations to trustworthy AI.",
-        feat_anatomy_t: "Transformer anatomy", feat_anatomy_p: "Click any part of a Transformer figure to see details and Mermaid diagrams.",
-        feat_detail_t: "Rich term detail", feat_detail_p: "Metaphors, UML flows, audio, code examples, and math notation.",
-        feat_rewrite_t: "Rewrite with correction", feat_rewrite_p: "Paste Arabic text to flag non-canonical terms against ICAIRE vocabulary.",
-        feat_audit_t: "Audit AI", feat_audit_p: "Evaluate your AI documents against global and local governance frameworks in a secure, private workspace.",
-        feat_flash_t: "Flashcards & quizzes", feat_flash_p: "Auto-generated distractors, spaced repetition, and Anki export.",
-        feat_graph_f: "interactive network", feat_story_f: "scrollytelling", feat_anatomy_f: "figure-based", feat_detail_f: "per-term view", feat_rewrite_f: "Grammarly for Arabic AI", feat_audit_f: "self-contained", feat_flash_f: "active recall",
+        quiz_streak_stub: "streak", quiz_next_review_stub: "next review soon",
+        quiz_mc: "Multiple choice", quiz_rev: "Reverse lookup", quiz_export: "Export to Anki",
+        quiz_prev_title: "Previous (Left Arrow)", quiz_next_title: "Skip (Right Arrow)",
+        story_arch_stub: (name) => `Technical architecture for "${name}" coming soon.`,
+        diff_all: "All Levels", diff_easy: "Easy", diff_int: "Intermediate", diff_hard: "Hard",
         detail_view_h: "Term detail",
-        detail_view_p: "Enrichment output per term — feel, metaphor, definition, examples, UML, prerequisites, and graph relations (is-a, part-of, contrasts, related, …), math, and code.",
+        detail_view_p: "Everything the enrichment pipeline generated per term — metaphor, UML, prerequisites, graph relations, code, and math.",
+        loading_term: "Loading term…",
+        loading: "Loading data...", status: (n) => `Loaded ${n} terms.`,
+        search: "Search 1,242 terms...",
+        quiz_card: "Card", quiz_of: "of",
         rewrite_view_h: "Rewrite with correction",
-        rewrite_view_p: "Paste Arabic AI/ML text. Top matching glossary triplets (en|ar|fr) load from data/rag_terms_index.json, then an NVIDIA model streams a revision — review before publishing.",
-        rewrite_before_h: "Before · your text",
+        rewrite_view_p: "Paste Arabic AI/ML text. Matching glossary triplets (en|ar|fr) are retrieved, then the model revises the text (streaming).",
+        rewrite_before_h: "Before",
         rewrite_after_h: "After · model output",
-        rewrite_placeholder: "Paste Arabic paragraph here…",
+        rewrite_placeholder: "Paste your text here...",
         rewrite_run: "Run",
         rewrite_clear: "Clear",
-        rewrite_footer_hint: "Output is machine-generated; verify terminology for your context.",
-        rewrite_streaming: "Streaming…",
-        rewrite_done: "Done",
-        rewrite_need_text: "Paste some text first.",
-        rewrite_matching_glossary: "Matching glossary (RAG)…",
-        rewrite_err: "Error: ",
+        rewrite_footer_hint: "Correction is based on RAG context from ICAIRE glossary.",
         rewrite_ref_kicker: "Design reference · admin template (illustrative)",
         rewrite_ref_h_before: "Before · original text",
         rewrite_ref_h_after: "After · ICAIRE canonical",
@@ -449,213 +393,149 @@
         rewrite_ref_btn_apply: "Apply all fixes",
         rewrite_ref_actions_note: "Demo actions — inactive (template only).",
         rewrite_live_heading: "Try your own text",
-        rewrite_live_sub: "Paste a paragraph below, then Run for streamed output (RAG + NVIDIA proxy).",
-        track_label: (n) => `Track ${n}`, chapter_label: (n) => `Chapter ${n}`, in_chapter: "In this chapter",
-        graph_h: "Knowledge graph", graph_p: "Every term is a node; every edge is typed. Clusters auto-discovered. Node size = PageRank.",
-        all_terms: "All",
-        flash_h: "Flashcards & quizzes", flash_p: "Auto-generated distractors from the enrichment pipeline. Choose a difficulty level to focus your learning.",
-        diff_all: "All Levels", diff_easy: "Easy", diff_int: "Intermediate", diff_hard: "Hard",
-        theme_light: "Light",
-        theme_dark: "Dark",
-        theme_toggle: "Toggle light and dark mode",
-        audit_h: "Audit AI", audit_p: "Evaluate your AI documents against global and local governance frameworks in a secure, private workspace.",
-        audit_built_in: "",
-        audit_doc_plan: "Project plan / PRD / procurement", audit_doc_policy: "AI policy / charter", audit_doc_system: "System or model documentation",
-        audit_sec1: "1. Document type", audit_sec2: "2. Frameworks", audit_sec3: "3. Document (PDF)",
-        audit_drop_hint: "Choose a PDF or drag it here.", audit_run: "Run audit",
-        audit_results: "Results", audit_dl_json: "Download JSON",
-        audit_need_pdf: "Upload a PDF first.", audit_need_fw: "Select at least one framework.",
-        audit_running: "Running audit…",
-        audit_running_demo: "Generating demo…",
-        audit_done: "Audit complete.", audit_done_demo: "Demo ready.", audit_err: "Something went wrong.",
-        audit_try_offline: 'Try "Offline demo" for a quick mock.',
-        audit_upstream_not_configured:
-          'The compliance server is currently unavailable. Please try again later or use the "Offline demo" for a preview.',
-        audit_api_label: "Audit API base URL", audit_api_save: "Save", audit_api_saved: "Saved API URL.",
-        audit_fetch_err: "Could not reach the audit API. ", audit_hint_server: "Check your server connection.",
-        audit_hint_pages: "Check your configuration.",
-        audit_timeout: "Request timed out.",
-        audit_offline_btn: "Offline demo", audit_md_offline: "Offline demo",
-        audit_fw_loading: "Loading frameworks…",
-        audit_label_strong: "strong compliance", audit_label_mid: "developing compliance", audit_label_weak: "gaps",
-        audit_md_complete: "Audit complete", audit_md_controls: "controls evaluated", audit_md_overall: "Overall",
-        audit_md_score_word: "Overall score", audit_md_met: "Met", audit_md_partial: "Partial", audit_md_not_met: "Not met", audit_md_na: "N/A",
-        audit_md_by_fw: "Score by framework", audit_md_gaps: "Top gaps to address",
-        audit_md_gaps_stub: "Review the export for detail.",
-        audit_md_disclaimer: "Educational preview only.",
-        audit_sample_control: "Sample control", audit_sample_why: "Preview row."
+        rewrite_live_sub: "Paste a paragraph below for streamed output (RAG + NVIDIA).",
+        rewrite_need_text: "Please paste text first.",
+        rewrite_matching_glossary: "Matching glossary...",
+        rewrite_streaming: "Processing...",
+        rewrite_done: "Done",
+        rewrite_err: "Error: ",
+        featured: "Featured terms from your database",
+        dashboard_tools_h: "Tools",
+        stats_terms: "Total Terms",
+        stats_tracks: "Story Tracks",
+        stats_edges: "Graph Edges",
+        stats_uml: "UML Diagrams",
+        feat_audit_t: "Audit AI", feat_audit_p: "Evaluate compliance against global frameworks.", feat_audit_f: "PDF Report",
+        feat_graph_t: "Knowledge Graph", feat_graph_p: "Explore term connections and clusters.", feat_graph_f: "Interactive",
+        feat_story_t: "Story Tracks", feat_story_p: "Narrative learning journeys.", feat_story_f: "7 Tracks",
+        feat_detail_t: "Term Detail", feat_detail_p: "Deep explanations and diagrams.", feat_detail_f: "AI Enriched",
+        feat_rewrite_t: "Writing Assistant", feat_rewrite_p: "Correct technical Arabic phrasing.", feat_rewrite_f: "RAG + LLM",
+        feat_flash_t: "Flashcards", feat_flash_p: "Spaced repetition quizzes.", feat_flash_f: "Active Learning"
+      },
+      fr: {
+        home: "Accueil", dashboard: "Tableau de bord", graph: "Graphe", story: "Parcours", anatomy: "Anatomie", detail: "Détail", rewrite: "Correction", audit: "Audit AI", flash: "Flashcards",
+        nav_explore: "Explorer",
+        brand_t: "Audit AI", brand_s: "Glossaire ICAIRE",
+        hero: "Comment savez-vous si votre IA est conforme ?",
+        landing_kicker: "ICAIRE · Gouvernance de l'IA",
+        landing_lead: "Obtenez un rapport de conformité détaillé en quelques minutes. Auditez vos politiques et systèmes.",
+        landing_cta_audit: "Rapport maintenant",
+        landing_cta_dashboard: "Explorer l'espace",
+        lp_stats_h: "Précision à l'échelle",
+        lp_stats_deck: "Analyses de gouvernance en temps réel sur tout le cycle de vie de l'IA.",
+        lp_stat_1_num: "1 242", lp_stat_1_txt: "Termes enrichis",
+        lp_stat_2_num: "519", lp_stat_2_txt: "Contrôles actifs",
+        lp_stat_3_num: "4", lp_stat_3_txt: "Cadres mondiaux",
+        lp_stat_4_num: "98%", lp_stat_4_txt: "Taux de précision",
+        lp_stat_5_num: "15", lp_stat_5_txt: "Clusters privés",
+        lp_stat_6_num: "24", lp_stat_6_txt: "Temps d'audit (m)",
+        lp_fold_matrix: "La vision ICAIRE",
+        lp_matrix_lede: "Qui nous sommes, quel problème nous traitons, et ce que cet espace livre.",
+        lp_label_who: "Qui nous sommes", lp_who_title: "Mission", lp_who_body: "Nous associons le glossaire ICAIRE à des outils de relecture des documents IA.",
+        lp_label_deal: "Le défi", lp_challenge_title: "Ce que nous traitons", lp_challenge_body: "Les politiques sont éclatées entre les langues ; les attentes varient.",
+        lp_label_build: "Le produit", lp_build_title: "Ce que nous construisons", lp_build_body: "Une plate-forme autonome : PDF pour l'audit, graphe, histoires et cartes.",
+        lp_fold_platform: "Capacités de la plateforme",
+        lp_explore_intro: "Voici ce que vous pouvez utiliser aujourd'hui dans l'application.",
+        lp_benefits_h: "Avantages clés",
+        lp_b1_t: "Audits fondés sur la preuve", lp_b1_p: "Scores liés aux contrôles et extraits retrouvés.",
+        lp_b2_t: "Votre infrastructure", lp_b2_p: "FastAPI local et clé NVIDIA ; les documents restent chez vous.",
+        lp_b3_t: "Glossaire trilingue", lp_b3_p: "Termes ICAIRE en arabe, anglais et français.",
+        lp_b4_t: "Boucle d'apprentissage", lp_b4_p: "Graphe, histoires et cartes pour étudier le glossaire.",
+        lp_services_h: "Services & modules",
+        lp_line_1: "Audit AI — notation complète des PDF selon les contrôles.",
+        lp_line_2: "Glossaire & graphe — graphe interactif et fiches riches.",
+        lp_line_3: "Parcours & cartes — récits et quiz pour l'apprentissage.",
+        lp_line_4: "Aide à la rédaction — arabe avec récupération lexicale.",
+        lp_line_5: "Tableau de bord — statistiques et accès rapide aux modules.",
+        landing_cta_glossary: "Parcourir le graphe de connaissances",
+        landing_cta_dash_2: "Aller à l'espace de travail",
+        lp_final_h: "Prêt à sécuriser votre avenir en IA ?",
+        lp_final_p: "Rejoignez l'écosystème ICAIRE et commencez votre audit dès aujourd'hui.",
+        dashboard_h2: "Espace de travail",
+        dashboard_lead: "Statistiques, sélections de votre glossaire et raccourcis.",
+        audit_brand: "Audit AI", audit_h: "Audit AI",
+        audit_p: "Évaluez vos documents d'IA par rapport aux cadres de gouvernance mondiaux et locaux.",
+        audit_crumb_upload: "Téléchargement", audit_crumb_process: "Traitement", audit_crumb_report: "Rapport",
+        audit_sec1: "1. Type de document", audit_sec2: "2. Cadres de travail", audit_sec3: "3. Document (PDF)",
+        audit_doc_plan: "Plan de projet / PRD", audit_doc_plan_sub: "Feuilles de route, approvisionnement",
+        audit_doc_policy: "Politique IA / Charte", audit_doc_policy_sub: "Chartes, déclarations de gouvernance",
+        audit_doc_system: "Documentation système", audit_doc_system_sub: "Fiches de modèle, documentation technique",
+        audit_fw_loading: "Chargement des cadres...", audit_dz_main: "Déposez le PDF ici ou cliquez",
+        audit_dz_sub: "Max ~20 Mo · texte traité localement",
+        audit_run: "Lancer l'audit", audit_offline_btn: "Démo hors ligne uniquement",
+        audit_proc_running: "Exécution du pipeline d'audit", audit_report_md_summary: "Rapport Markdown",
+        audit_dl_json: "Télécharger JSON", audit_new_audit: "Nouvel audit",
+        audit_md_by_fw: "Score par cadre", audit_md_gaps: "Lacunes prioritaires",
+        audit_dash_snapshot: "Aperçu de la conformité", audit_top_gaps: "Principales lacunes",
+        audit_md_met: "Conforme", audit_md_partial: "Partiel", audit_md_not_met: "Non conforme", audit_md_na: "N/A",
+        audit_md_remediation: "Remédiation", audit_md_evidence: "Preuve",
+        audit_md_gaps_stub: "Consultez l'export JSON pour plus de détails.",
+        audit_step_1: "Analyser et segmenter le PDF", audit_step_2: "Embeddings et récupération du contexte",
+        audit_step_3: "Évaluer chaque contrôle (LLM)", audit_step_4: "Agrégation des scores et rapport Markdown",
+        audit_need_fw: "Choisissez au moins un cadre.", audit_need_pdf: "Téléchargez d'abord un PDF.",
+        audit_running: "Audit complet en cours... cela peut prendre plusieurs minutes.",
+        audit_try_offline: "Vous pouvez essayer la démo hors ligne — pas de score réel.",
+        audit_timeout: "Délai d'attente dépassé.",
+        story_h: "Parcours", story_p: "Voyages chronologiques à travers le glossaire. Chaque parcours regroupe des termes en chapitres narrés.",
+        story_track_info_stub: "Parcours", story_select_track: "Choisir un parcours", story_chapter_stub: "Chapitre",
+        story_in_chapter: "Dans ce chapitre", story_drawer_h: "Détail du terme", story_drawer_close: "✕ Fermer",
+        flash_h: "Flashcards & quiz",
+        flash_p: "Distracteurs générés automatiquement. Choisissez un niveau de difficulté pour focaliser votre apprentissage.",
+        quiz_prompt: "Quelle définition correspond à ce terme ?",
+        quiz_prompt_mc: "Quelle définition correspond à ce terme ?",
+        quiz_prompt_rev: "Quel terme correspond à cette définition ?",
+        quiz_streak: (n) => `série ${n} · prochaine révision bientôt`,
+        quiz_streak_stub: "série", quiz_next_review_stub: "prochaine révision bientôt",
+        quiz_mc: "Choix multiple", quiz_rev: "Recherche inversée", quiz_export: "Exporter vers Anki",
+        quiz_prev_title: "Précédent (Flèche gauche)", quiz_next_title: "Passer (Flèche droite)",
+        story_arch_stub: (name) => `L'architecture technique pour "${name}" bientôt disponible.`,
+        diff_all: "Tous les niveaux", diff_easy: "Facile", diff_int: "Intermédiaire", diff_hard: "Difficile",
+        detail_view_h: "Détail du terme",
+        detail_view_p: "Tout ce que le pipeline d'enrichissement a généré — métaphore, UML, prérequis, relations de graphe, code et mathématiques.",
+        loading_term: "Chargement du terme...",
+        loading: "Chargement...", status: (n) => `${n} termes chargés.`,
+        search: "Rechercher 1 242 termes...",
+        quiz_card: "Carte", quiz_of: "sur",
+        rewrite_view_h: "Réécriture avec correction",
+        rewrite_view_p: "Collez du texte technique en arabe. Les triplets du glossaire (en|ar|fr) sont récupérés, puis le modèle révise le texte.",
+        rewrite_before_h: "Avant",
+        rewrite_after_h: "Après · sortie du modèle",
+        rewrite_placeholder: "Collez votre texte ici...",
+        rewrite_run: "Exécuter",
+        rewrite_clear: "Effacer",
+        rewrite_footer_hint: "La correction est basée sur le contexte RAG du glossaire ICAIRE.",
+        rewrite_ref_kicker: "Référence de conception · modèle d'administration (illustratif)",
+        rewrite_ref_h_before: "Avant · texte original",
+        rewrite_ref_h_after: "Après · alignement ICAIRE",
+        rewrite_ref_mock_flags: "4 alertes",
+        rewrite_ref_mock_fixed: "✓ 4 corrections appliquées",
+        rewrite_ref_mock_footer_before: "4 termes signalés · 3 non-canoniques, 1 non traduit",
+        rewrite_ref_mock_footer_after: "Tous les termes alignés sur le glossaire ICAIRE",
+        rewrite_ref_btn_changelog: "Afficher le journal",
+        rewrite_ref_btn_export: "Exporter .docx",
+        rewrite_ref_btn_report: "Rapport de cohérence",
+        rewrite_ref_btn_apply: "Appliquer les corrections",
+        rewrite_ref_actions_note: "Actions de démo — inactives (modèle uniquement).",
+        rewrite_live_heading: "Essayez votre propre texte",
+        rewrite_live_sub: "Collez un paragraphe ci-dessous pour une sortie en continu (RAG + NVIDIA).",
+        rewrite_need_text: "Veuillez coller du texte d'abord.",
+        rewrite_matching_glossary: "Correspondance au glossaire...",
+        rewrite_streaming: "Traitement...",
+        rewrite_done: "Terminé",
+        rewrite_err: "Erreur : ",
+        featured: "Termes vedettes de votre base de données",
+        dashboard_tools_h: "Outils",
+        stats_terms: "Total des termes",
+        stats_tracks: "Parcours",
+        stats_edges: "Liens du graphe",
+        stats_uml: "Diagrammes UML",
+        feat_audit_t: "Audit AI", feat_audit_p: "Évaluer la conformité aux cadres mondiaux.", feat_audit_f: "Rapport PDF",
+        feat_graph_t: "Graphe de connaissances", feat_graph_p: "Explorez les connexions entre les termes.", feat_graph_f: "Interactif",
+        feat_story_t: "Parcours narratifs", feat_story_p: "Voyages d'apprentissage narrés.", feat_story_f: "7 parcours",
+        feat_detail_t: "Détail du terme", feat_detail_p: "Explications approfondies et schémas.", feat_detail_f: "Enrichi par IA",
+        feat_rewrite_t: "Assistant de rédaction", feat_rewrite_p: "Corriger le phrasé technique arabe.", feat_rewrite_f: "RAG + LLM",
+        feat_flash_t: "Flashcards", feat_flash_p: "Quiz de répétition espacée.", feat_flash_f: "Apprentissage actif"
       }
-    };
-    ui.fr = {
-      ...ui.en,
-      home: "Accueil", dashboard: "Tableau de bord", graph: "Graphe", story: "Parcours", anatomy: "Anatomie", detail: "Détail", rewrite: "Correction", audit: "Audit AI", flash: "Flashcards",
-      brand_t: "Audit AI", brand_s: "Glossaire ICAIRE, l'arabe d'abord · audits de conformité IA sur la machine",
-      hero: "Audit AI — une carte de l'IA, en arabe d'abord",
-      landing_kicker: "ICAIRE · gouvernance IA",
-      landing_lead: "Évaluez politiques et plans selon les cadres — puis explorez 1 242 termes, le graphe et les parcours.",
-      landing_cta_audit: "Lancer l'audit IA",
-      landing_cta_dashboard: "Ouvrir l'espace de travail",
-      landing_cta_glossary: "Parcourir le graphe",
-      landing_cta_dash2: "Aller à l'espace de travail",
-      lp_label_who: "Qui nous sommes",
-      lp_label_deal: "Le défi",
-      lp_label_build: "Ce que nous construisons",
-      lp_who_title: "Notre mission",
-      lp_who_body: "Nous associons le glossaire ICAIRE (arabe d'abord) à des parcours de relecture des documents IA par rapport aux cadres de gouvernance—pour aligner vocabulaire et preuves au même endroit.",
-      lp_challenge_title: "Ce que nous traitons",
-      lp_challenge_body: "Les politiques et dossiers sont éclatés entre les langues ; les attentes varient (OCDE, UNESCO, secteur). Il faut un vocabulaire consultable, des citations contextualisées et un score répété—pas seulement un chat.",
-      lp_build_title: "Le produit",
-      lp_build_body: "Une plate-forme autonome : PDF pour l'audit complet, 1 242+ termes en graphe, apprentissage par parcours et cartes, aide à la rédaction arabe avec index lexical.",
-      lp_explore_summary: "Explorer la plate-forme",
-      lp_explore_intro: "Voici ce que vous pouvez utiliser aujourd'hui dans l'application—via les onglets ou le tableau de bord.",
-      lp_benefits_h: "Avantages",
-      lp_services_h: "Services & modules",
-      lp_b1_t: "Audits fondés sur la preuve",
-      lp_b1_p: "Scores liés aux contrôles et extraits retrouvés—pas à un résumé flou.",
-      lp_b2_t: "Votre infrastructure",
-      lp_b2_p: "FastAPI local et clé NVIDIA ; les documents restent chez vous.",
-      lp_b3_t: "Glossaire trilingue",
-      lp_b3_p: "Termes ICAIRE en arabe, anglais et français adaptés aux politiques et marchés.",
-      lp_b4_t: "Boucle d'apprentissage",
-      lp_b4_p: "Graphe, histoires et cartes pour étudier le glossaire.",
-      lp_line_1: "Audit AI — notation complète des PDF selon les contrôles embarqués (aperçu hors-ligne possible).",
-      lp_line_2: "Glossaire & graphe — graphe interactif et fiches riches avec schémas et relations.",
-      lp_line_3: "Parcours & cartes — récits et quiz avec export pour répétition espacée.",
-      lp_line_4: "Aide à la rédaction — arabe avec récupération lexicale et modèle optionnel.",
-      lp_line_5: "Tableau de bord — statistiques, termes mis en avant, accès rapide aux modules.",
-      lp_fold_matrix: "Matrice ICAIRE — récit",
-      lp_fold_platform: "Plate-forme — capacités et modules",
-      lp_matrix_lede:
-        "Qui nous sommes, quel problème nous traitons, et ce que cet espace livre — glossaire arabe d'abord et rubriques de gouvernance.",
-      lp_stats_h: "Chiffres en un coup d'œil",
-      lp_stats_deck: "Tirés du glossaire livré, du graphe, de la grille et des jeux Hugging Face.",
-      lp_stat_1_num: "1,242",
-      lp_stat_1_txt: "termes du glossaire ICAIRE enrichis",
-      lp_stat_2_num: "12+",
-      lp_stat_2_txt: "champs structurés par terme",
-      lp_stat_3_num: "7",
-      lp_stat_3_txt: "parcours récit couvrant ~1,140 termes",
-      lp_stat_4_num: "~1,180",
-      lp_stat_4_txt: "schémas UML Mermaid générés automatiquement",
-      lp_stat_5_num: "~8,400",
-      lp_stat_5_txt:
-        "arêtes typées — prérequis, déblocages, is-a, part-of, contraste, utilisé-avec, alternative",
-      lp_stat_6_num: "519",
-      lp_stat_6_txt: "contrôles de gouvernance extraits sur 4 cadres",
-      lp_stat_7_num: "1024-dim",
-      lp_stat_7_txt: "embeddings BGE-M3 précalculés pour les deux corpus",
-      lp_stat_8_num: "6",
-      lp_stat_8_txt: "formats d'export — JSON maître, JSON graphe, carte récit, GEXF, Cypher, TBX, Anki",
-      lp_stat_9_num: "3",
-      lp_stat_9_txt:
-        "jeux Hugging Face (grille + corpus intégrés) ; glossaire ICAIRE enrichi recommandé",
-      audit_brand: "Audit AI",
-      audit_crumb_upload: "Téléversement",
-      audit_crumb_process: "Traitement",
-      audit_crumb_report: "Rapport",
-      audit_step_1: "Analyser et découper le PDF",
-      audit_step_2: "Embeddings et contexte",
-      audit_step_3: "Évaluer chaque contrôle (LLM)",
-      audit_step_4: "Scores agrégés et rapport Markdown",
-      audit_doc_plan_sub: "Plans de route, marchés, livraison",
-      audit_doc_policy_sub: "Chartes et politiques",
-      audit_doc_system_sub: "Fiches modèle, documentation système",
-      audit_dz_main: "Déposez un PDF ou cliquez pour parcourir",
-      audit_dz_sub: "~20 Mo max · documents traités localement pour la confidentialité.",
-      audit_advanced_summary: "Paramètres de connexion (URL API)",
-      audit_proc_running: "Exécution du pipeline d'audit",
-      audit_dash_snapshot: "Instantané de conformité",
-      audit_md_evidence: "Preuve",
-      audit_md_remediation: "Remédiation",
-      audit_md_summary: "Résumé de l'audit",
-      audit_md_na: "N/A",
-      audit_report_md_summary: "Rapport Markdown",
-      audit_dl_json: "Télécharger JSON",
-      audit_top_gaps: "Écarts et partiels prioritaires",
-      audit_nim_banner: "Le moteur d'évaluation est indisponible — résultats limités.",
-      nav_explore: "Explorer",
-      dashboard_h: "Espace de travail",
-      dashboard_lead: "Statistiques, termes mis en avant et raccourcis vers les outils.",
-      dashboard_tools_h: "Outils",
-      loading: "Chargement du glossaire…",
-      status: (n) => `${n} termes chargés avec succès. Recherchez ou cliquez sur un terme pour explorer.`,
-      quiz_mc: "QCM",
-      quiz_rev: "Sens inverse",
-      quiz_export: "Exporter vers Anki",
-      quiz_prompt_mc: "Quelle définition correspond à ce terme ?",
-      quiz_prompt_rev: "Quel terme correspond à cette définition ?",
-      quiz_streak: (n) => `Série ${n} · prochaine révision bientôt`,
-      quiz_card: "Carte",
-      quiz_of: "sur",
-      quiz_prev_title: "Précédent (flèche gauche)",
-      quiz_next_title: "Passer (flèche droite)",
-      search: "Recherchez 1 242 termes en arabe, anglais ou français...",
-      feat_graph_f: "réseau interactif", feat_story_f: "scrollytelling", feat_anatomy_f: "basé sur l'image", feat_detail_f: "vue par terme", feat_rewrite_f: "Correcteur IA", feat_audit_f: "autonome", feat_flash_f: "rappel actif",
-      feat_audit_t: "Audit AI", feat_audit_p: "API FastAPI locale : BGE-M3 et NIM — même logique que Gradio. Démo hors-ligne possible.",
-      detail_view_h: "Détail du terme",
-      detail_view_p: "Données enrichies par terme — ressenti, métaphore, définition, exemples, UML, prérequis et relations du graphe, maths et code.",
-      rewrite_view_h: "Réécriture et correction",
-      rewrite_view_p: "Collez un texte arabe. Les triplets de termes (en|ar|fr) les plus proches sont chargés depuis data/rag_terms_index.json, puis un modèle NVIDIA propose une révision — à relire.",
-      rewrite_before_h: "Avant · votre texte",
-      rewrite_after_h: "Après · sortie du modèle",
-      rewrite_placeholder: "Collez le paragraphe arabe ici…",
-      rewrite_run: "Lancer",
-      rewrite_clear: "Effacer",
-      rewrite_footer_hint: "Sortie générée par un modèle : vérifiez la terminologie.",
-      rewrite_streaming: "Réception…",
-      rewrite_done: "Terminé",
-      rewrite_need_text: "Collez d'abord du texte.",
-      rewrite_matching_glossary: "Correspondance glossaire (RAG)…",
-      rewrite_err: "Erreur : ",
-      rewrite_ref_kicker: "Référence design · gabarit admin (illustratif)",
-      rewrite_ref_h_before: "Avant · texte original",
-      rewrite_ref_h_after: "Après · canonique ICAIRE",
-      rewrite_ref_mock_flags: "4 signalements",
-      rewrite_ref_mock_fixed: "✓ 4 corrections",
-      rewrite_ref_mock_footer_before: "4 termes signalés · 3 non canoniques, 1 non traduit",
-      rewrite_ref_mock_footer_after: "Termes alignés sur le glossaire ICAIRE",
-      rewrite_ref_btn_changelog: "Journal des changements",
-      rewrite_ref_btn_export: "Exporter .docx",
-      rewrite_ref_btn_report: "Rapport de cohérence",
-      rewrite_ref_btn_apply: "Appliquer toutes les corrections",
-      rewrite_ref_actions_note: "Actions de démo — inactives (gabarit seulement).",
-      rewrite_live_heading: "Votre texte",
-      rewrite_live_sub: "Collez un paragraphe ci-dessous, puis Lancer pour la sortie en flux (RAG + proxy NVIDIA).",
-      story_h: "Parcours", story_p: "Voyages chronologiques à travers le glossaire. Chaque parcours regroupe les termes en chapitres pour une expérience d'apprentissage.",
-      track_label: (n) => `Parcours ${n}`, chapter_label: (n) => `Chapitre ${n}`, in_chapter: "Dans ce chapitre",
-      graph_h: "Graphe de connaissances", graph_p: "Chaque terme est un nœud. Les clusters sont auto-découverts. Taille du nœud = PageRank.",
-      all_terms: "Tous",
-      flash_h: "Flashcards & quiz", flash_p: "Quiz générés automatiquement. Choisissez un niveau de difficulté.",
-      diff_all: "Tous les niveaux", diff_easy: "Facile", diff_int: "Intermédiaire", diff_hard: "Difficile",
-      theme_light: "Clair",
-      theme_dark: "Sombre",
-      theme_toggle: "Basculer clair et sombre",
-      audit_h: "Audit AI", audit_p: "Téléversez un PDF pour le score complet via l'API locale (même moteur que Gradio).",
-      audit_built_in: "Lancez FastAPI dans backend/ avec NVIDIA_API_KEY et le jeu de données embarqué.",
-      audit_doc_plan: "Plan de projet / PRD", audit_doc_policy: "Politique ou charte IA", audit_doc_system: "Documentation système ou modèle",
-      audit_sec1: "1. Type de document", audit_sec2: "2. Cadres", audit_sec3: "3. Document (PDF)",
-      audit_drop_hint: "Choisissez un PDF ou déposez-le ici (~20 Mo max).", audit_run: "Lancer l'audit",
-      audit_results: "Résultats", audit_dl_json: "Télécharger JSON",
-      audit_need_pdf: "Téléversez d'abord un PDF.", audit_need_fw: "Sélectionnez au moins un cadre.",
-      audit_running: "Audit complet en cours… peut prendre longtemps.",
-      audit_running_demo: "Génération de la démo hors-ligne…",
-      audit_done: "Audit terminé.", audit_done_demo: "Démo hors-ligne prête (pas un vrai score LLM).", audit_err: "Une erreur s'est produite.",
-      audit_try_offline: "Essayez « Démo hors-ligne uniquement » — pas un vrai score.",
-      audit_upstream_not_configured:
-        "Proxy HF non configuré : copiez `.dev.vars.example` vers `.dev.vars`, renseignez `AUDIT_UPSTREAM_URL` et `AUDIT_UPSTREAM_TOKEN` (identique à `AUDIT_API_SECRET` sur HF), redémarrez `npm run dev`, puis localStorage.setItem('mustalih_hf_proxy','1') et rechargez. Ou utilisez la démo hors-ligne uniquement.",
-      audit_api_label: "URL de base de l'API", audit_api_save: "Enregistrer", audit_api_saved: "URL enregistrée.",
-      audit_fetch_err: "Impossible de joindre l'API. ", audit_hint_server: "Lancez : cd backend && pip install -r requirements.txt && python -m uvicorn main:app --host 127.0.0.1 --port 8788",
-      audit_hint_pages: "Le navigateur bloque loopback depuis HTTPS. Définissez l’URL FastAPI publique (Avancé) ou MUSTALIH_AUDIT_API dans index.html. Démo Pages uniquement : MUSTALIH_EDGE_AUDIT = true.",
-      audit_timeout: "Délai dépassé.",
-      audit_offline_btn: "Démo hors-ligne uniquement", audit_md_offline: "Démo hors-ligne",
-      audit_fw_loading: "Chargement des cadres…",
-      audit_label_strong: "bonne posture de conformité", audit_label_mid: "conformité en développement", audit_label_weak: "écarts importants",
-      audit_md_complete: "Audit terminé", audit_md_controls: "contrôles évalués", audit_md_overall: "Synthèse",
-      audit_md_score_word: "Score global", audit_md_met: "Atteint", audit_md_partial: "Partiel", audit_md_not_met: "Non atteint", audit_md_na: "N/A",
-      audit_md_by_fw: "Score par cadre", audit_md_gaps: "Écarts prioritaires",
-      audit_md_gaps_stub: "Voir l'export JSON pour le détail. Résumé déterministe selon le nom du fichier et les sélections.",
-      audit_md_disclaimer: "Aperçu pédagogique uniquement — pas un avis juridique.",
-      audit_sample_control: "Contrôle exemple (aperçu)", audit_sample_why: "Ligne d'aperçu — branchez un moteur complet pour l'extraction réelle."
     };
 
     const dict = isAr ? ui.ar : (isFr ? ui.fr : ui.en);
@@ -684,16 +564,25 @@
       'home', 'audit', 'dashboard', 'graph', 'story', 'detail', 'rewrite', 'flash'
     ];
     tabLabelKeys.forEach((key) => {
-      const btn = document.querySelector(`button.tab[data-view="${key}"]`);
-      if (btn && dict[key]) btn.textContent = dict[key];
+      document.querySelectorAll(`button.tab[data-view="${key}"]`).forEach(btn => {
+        if (dict[key]) btn.textContent = dict[key];
+      });
     });
-    const exploreLab = document.getElementById('nav-explore-label');
-    if (exploreLab && dict.nav_explore) exploreLab.textContent = dict.nav_explore;
+
+    const dashboardH2 = document.getElementById('dashboard-h2'); if(dashboardH2) dashboardH2.textContent = dict.dashboard_h2;
+    const dashboardP = document.getElementById('dashboard-lead'); if(dashboardP) dashboardP.textContent = dict.dashboard_lead;
+    const lCtaGlossary = document.getElementById('landing-cta-glossary'); if(lCtaGlossary) lCtaGlossary.textContent = dict.landing_cta_glossary;
+    const lCtaDash2 = document.getElementById('landing-cta-dash-2'); if(lCtaDash2) lCtaDash2.textContent = dict.landing_cta_dash_2;
+    const navExplore = document.getElementById('nav-explore-label'); if(navExplore) navExplore.textContent = dict.nav_explore;
 
     // Update Story View
-    const storyH2 = document.querySelector('[data-view="story"] h2'); if(storyH2) storyH2.textContent = dict.story_h;
-    const storyP = document.querySelector('[data-view="story"] p'); if(storyP) storyP.textContent = dict.story_p;
-    const inChapter = document.querySelector('.term-pane .pane-kicker'); if(inChapter) inChapter.textContent = dict.in_chapter;
+    const storyH2 = document.getElementById('story-h2'); if(storyH2) storyH2.textContent = dict.story_h;
+    const storyP = document.getElementById('story-p'); if(storyP) storyP.textContent = dict.story_p;
+    const storyInfo = document.getElementById('story-track-info'); if(storyInfo) storyInfo.textContent = dict.story_track_info_stub;
+    const storyName = document.getElementById('story-track-name'); if(storyName) storyName.textContent = dict.story_select_track;
+    const inChapter = document.getElementById('story-in-chapter'); if(inChapter) inChapter.textContent = dict.story_in_chapter;
+    const drawerK = document.getElementById('story-drawer-kicker'); if(drawerK) drawerK.textContent = dict.story_drawer_h;
+    const drawerC = document.getElementById('story-drawer-close'); if(drawerC) drawerC.textContent = dict.story_drawer_close;
 
     // Update Graph View
     const graphH2 = document.querySelector('[data-view="graph"] h2'); if(graphH2) graphH2.textContent = dict.graph_h;
@@ -703,6 +592,9 @@
     const detailVP = document.getElementById('detail-view-desc');
     if (detailVH && dict.detail_view_h) detailVH.textContent = dict.detail_view_h;
     if (detailVP && dict.detail_view_p) detailVP.textContent = dict.detail_view_p;
+    const detailLoad = document.querySelector('#term-detail-panel .italic');
+    if (detailLoad) detailLoad.textContent = dict.loading_term;
+
     if (window.RewriteToolView && typeof window.RewriteToolView.applyLabels === 'function') {
       window.RewriteToolView.applyLabels(dict);
     }
@@ -711,8 +603,18 @@
     }
 
     // Update Flash View
-    const flashH2 = document.querySelector('[data-view="flash"] h2'); if(flashH2) flashH2.textContent = dict.flash_h;
-    const flashP = document.querySelector('[data-view="flash"] p'); if(flashP) flashP.textContent = dict.flash_p;
+    const flashH2 = document.getElementById('flash-h2'); if(flashH2) flashH2.textContent = dict.flash_h;
+    const flashP = document.getElementById('flash-p'); if(flashP) flashP.textContent = dict.flash_p;
+    const quizPrompt = document.getElementById('quiz-mode-label'); if(quizPrompt) quizPrompt.textContent = dict.quiz_prompt;
+    const quizStreak = document.getElementById('quiz-streak'); 
+    if(quizStreak) {
+      if (typeof dict.quiz_streak === 'function') {
+        quizStreak.textContent = dict.quiz_streak(quizStreak.textContent.includes('0') ? 0 : (quizStreak || 0));
+      } else {
+        quizStreak.textContent = (dict.quiz_streak_stub || 'streak') + ' 0 · ' + (dict.quiz_next_review_stub || 'next review soon');
+      }
+    }
+
     const diffChips = document.querySelectorAll('#quiz-filters .chip');
     if(diffChips.length >= 4) {
       diffChips[0].innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:6px;"><path d="M4 6h16M4 12h16M4 18h16"/></svg>${dict.diff_all}`;
@@ -782,6 +684,7 @@
       if (ft) ft.textContent = featMeta[i].f;
     });
 
+
     // Landing + load line
     if (dict.landing_kicker) {
       const lk = document.getElementById('landing-kicker');
@@ -793,12 +696,10 @@
     if (landLead && dict.landing_lead) landLead.textContent = dict.landing_lead;
     const b1 = document.getElementById('landing-cta-audit');
     const b2 = document.getElementById('landing-cta-dashboard');
-    const bg = document.getElementById('landing-cta-glossary');
-    const bd = document.getElementById('landing-cta-dash-2');
+    const bf = document.getElementById('landing-cta-final');
     if (b1 && dict.landing_cta_audit) b1.textContent = dict.landing_cta_audit;
     if (b2 && dict.landing_cta_dashboard) b2.textContent = dict.landing_cta_dashboard;
-    if (bg && dict.landing_cta_glossary) bg.textContent = dict.landing_cta_glossary;
-    if (bd && dict.landing_cta_dash2) bd.textContent = dict.landing_cta_dash2;
+    if (bf && dict.landing_cta_audit) bf.textContent = dict.landing_cta_audit;
 
     const lpSet = (id, key) => {
       const el = document.getElementById(id);
@@ -815,26 +716,39 @@
     lpSet('lp-build-body', 'lp_build_body');
     lpSet('lp-fold-matrix', 'lp_fold_matrix');
     lpSet('lp-fold-platform', 'lp_fold_platform');
+    lpSet('lp-explore-intro', 'lp_explore_intro');
+    lpSet('lp-benefits-h', 'lp_benefits_h');
+    lpSet('lp-b1-t', 'lp_b1_t'); lpSet('lp-b1-p', 'lp_b1_p');
+    lpSet('lp-b2-t', 'lp_b2_t'); lpSet('lp-b2-p', 'lp_b2_p');
+    lpSet('lp-b3-t', 'lp_b3_t'); lpSet('lp-b3-p', 'lp_b3_p');
+    lpSet('lp-b4-t', 'lp_b4_t'); lpSet('lp-b4-p', 'lp_b4_p');
+    lpSet('lp-services-h', 'lp_services_h');
     lpSet('lp-matrix-lede', 'lp_matrix_lede');
     lpSet('lp-stats-heading', 'lp_stats_h');
     lpSet('lp-stats-deck', 'lp_stats_deck');
-    for (let si = 1; si <= 9; si += 1) {
-      lpSet(`lp-stat-n-${si}`, `lp_stat_${si}_num`);
-      lpSet(`lp-stat-t-${si}`, `lp_stat_${si}_txt`);
+    lpSet('lp-final-h', 'lp_final_h');
+    lpSet('lp-final-p', 'lp_final_p');
+    lpSet('lp-fw-h', 'lp_fw_h');
+    lpSet('lp-fw-deck', 'lp_fw_deck');
+    lpSet('lp-fw-1-t', 'lp_fw_1_t'); lpSet('lp-fw-1-p', 'lp_fw_1_p');
+    lpSet('lp-fw-2-t', 'lp_fw_2_t'); lpSet('lp-fw-2-p', 'lp_fw_2_p');
+    lpSet('lp-fw-3-t', 'lp_fw_3_t'); lpSet('lp-fw-3-p', 'lp_fw_3_p');
+    lpSet('lp-fw-4-t', 'lp_fw_4_t'); lpSet('lp-fw-4-p', 'lp_fw_4_p');
+    lpSet('lp-learning-h', 'lp_learning_h');
+    lpSet('lp-learn-1-t', 'lp_learn_1_t'); lpSet('lp-learn-1-p', 'lp_learn_1_p');
+    lpSet('lp-learn-2-t', 'lp_learn_2_t'); lpSet('lp-learn-2-p', 'lp_learn_2_p');
+    lpSet('lp-learn-3-t', 'lp_learn_3_t'); lpSet('lp-learn-3-p', 'lp_learn_3_p');
+    for (let i = 1; i <= 6; i += 1) {
+      lpSet(`lp-stat-n-${i}`, `lp_stat_${i}_num`);
+      lpSet(`lp-stat-t-${i}`, `lp_stat_${i}_txt`);
     }
-    lpSet('lp-explore-intro', 'lp_explore_intro');
-    lpSet('lp-benefits-h', 'lp_benefits_h');
-    lpSet('lp-services-h', 'lp_services_h');
-    lpSet('lp-b1-t', 'lp_b1_t');
-    lpSet('lp-b1-p', 'lp_b1_p');
-    lpSet('lp-b2-t', 'lp_b2_t');
-    lpSet('lp-b2-p', 'lp_b2_p');
-    lpSet('lp-b3-t', 'lp_b3_t');
-    lpSet('lp-b3-p', 'lp_b3_p');
-    lpSet('lp-b4-t', 'lp_b4_t');
-    lpSet('lp-b4-p', 'lp_b4_p');
     for (let i = 1; i <= 5; i += 1) {
       lpSet(`lp-line-${i}`, `lp_line_${i}`);
+    }
+
+    const heroImg = document.querySelector('.hero-preview-img');
+    if (heroImg) {
+      heroImg.src = lang === 'ar' ? 'assets/report_preview_ar.png' : 'assets/report_preview.png';
     }
     const searchInput = document.querySelector('.search input'); if(searchInput) searchInput.placeholder = dict.search;
     const statusEl = document.getElementById('load-status');
@@ -929,11 +843,33 @@
       if (target === 'rewrite') {
         mountRewriteTool();
       }
+      // Inject templates if section is empty
+      const viewEl = document.querySelector(`.view[data-view="${target}"]`);
+      if (viewEl && viewEl.innerHTML.trim() === '' && window.MustalihTemplates && window.MustalihTemplates[target]) {
+        viewEl.innerHTML = window.MustalihTemplates[target];
+        // Re-localize if needed
+        setLanguage(currentLang);
+      } else if (viewEl && viewEl.innerHTML.trim() === '' && target === 'flash' && window.MustalihTemplates.flashcards) {
+        viewEl.innerHTML = window.MustalihTemplates.flashcards;
+        setLanguage(currentLang);
+      }
+
+      if (target === 'detail') {
+        if (!currentTerm && terms.length > 0) renderDetail(terms[0]);
+      }
       if (target === 'dashboard') {
         ensureGlossaryLoaded().then(() => {
           renderFeaturedTerms();
           updateHomeStats();
         });
+      }
+
+      // Add animating class to handle fixed positioning during transitions
+      if (viewEl) {
+        viewEl.classList.add('animating');
+        setTimeout(() => {
+          viewEl.classList.remove('animating');
+        }, 350);
       }
     } catch (e) {
       console.error("Navigation error:", e);
@@ -1017,7 +953,6 @@
     if (rwRoot && window.RewriteToolView && typeof window.RewriteToolView.mount === 'function') {
       rewriteToolMounted = true;
       window.RewriteToolView.mount(rwRoot, {
-        terms: terms,
         getLang: function () { return currentLang; }
       });
     }
@@ -1031,13 +966,7 @@
       
       // Start loading glossary in background but don't block landing page
       ensureGlossaryLoaded().catch(e => {
-        const homeLanding = document.querySelector('[data-view="home"] .landing-board');
-        if (homeLanding) {
-          homeLanding.innerHTML += `<div style="padding:15px; background:#fff3cd; color:#856404; border-radius:8px; margin-top:10px; font-size:13px; border:1px solid #ffeeba;">
-            <b>Error:</b> ${e.message}<br>
-            <small>Check console for stack trace. Ensure you are using http://localhost:8080</small>
-          </div>`;
-        }
+        console.error("Glossary load background fail:", e);
       });
 
       // Lazy mount features
@@ -1192,14 +1121,35 @@
     
     const trackNum = Object.keys(glossaryData.tracks).indexOf(trackId) + 1;
     const uiLabels = {
-      ar: { label: (n) => `المسار ${n}` },
-      en: { label: (n) => `Track ${n}` },
-      fr: { label: (n) => `Parcours ${n}` }
+      ar: { 
+        label: (n) => `المسار ${n}`,
+        quiz_streak: (n) => `سلسلة ${n} · مراجعة قريبة`,
+        lp_final_h: "جاهز لتأمين مستقبل ذكاءك الاصطناعي؟",
+        lp_final_p: "انضم إلى منظومة ICAIRE وابدأ في تدقيق حوكمة ذكاءك الاصطناعي اليوم."
+      },
+      en: { 
+        label: (n) => `Track ${n}`,
+        quiz_streak: (n) => `Streak ${n} · Review soon`,
+        lp_final_h: "Ready to secure your AI future?",
+        lp_final_p: "Join the ICAIRE ecosystem and start auditing your AI governance today."
+      },
+      fr: { 
+        label: (n) => `Parcours ${n}`,
+        quiz_streak: (n) => `Série ${n} · Révision bientôt`,
+        lp_final_h: "Prêt à sécuriser votre avenir en IA ?",
+        lp_final_p: "Rejoignez l'écosystème ICAIRE et commencez à auditer votre gouvernance IA dès aujourd'hui."
+      }
     };
     const currentLabels = uiLabels[currentLang] || uiLabels.en;
 
     if (nameEl) nameEl.textContent = trackDisplayName;
-    if (infoEl) infoEl.textContent = currentLabels.label(trackNum);
+    if (infoEl) {
+      if (typeof currentUiDict.story_track_info_stub === 'string') {
+        infoEl.textContent = `${currentUiDict.story_track_info_stub} ${trackNum}`;
+      } else {
+        infoEl.textContent = `Track ${trackNum}`;
+      }
+    }
     
     const sortedPositions = Object.keys(track.chapters).sort((a, b) => a - b);
     if (list) {
@@ -1237,7 +1187,10 @@
     if(h3) h3.textContent = isAr ? items[0].term.arabic_term : (isEn ? items[0].term.english_term : items[0].term.french_term);
     
     const kicker = narration.querySelector('.pane-kicker'); 
-    if(kicker) kicker.textContent = isAr ? `الفصل ${pos}` : (isFr ? `Chapitre ${pos}` : `Chapter ${pos}`);
+    if(kicker) {
+      const stub = currentUiDict.story_chapter_stub || (isAr ? 'الفصل' : (isFr ? 'Chapitre' : 'Chapter'));
+      kicker.textContent = `${stub} ${pos}`;
+    }
 
     const hook = isAr ? (items[0].sa.one_line_hook_ar || items[0].term.one_sentence_feel_ar) : 
                 (isEn ? (items[0].sa.one_line_hook_en || items[0].term.one_sentence_feel_en) : 
@@ -1265,7 +1218,10 @@
           figCanvas.innerHTML = `<div style="color:var(--coral); padding:20px; font-size:12px;">Syntax check: Please verify the UML structure for "${items[0].term.arabic_term}".</div>`;
         }
       } else {
-        figCanvas.innerHTML = `<div style="opacity:0.3; padding:40px; text-align:center;">Technical architecture for "${items[0].term.arabic_term}" coming soon.</div>`;
+        const archStub = typeof currentUiDict.story_arch_stub === 'function' 
+          ? currentUiDict.story_arch_stub(items[0].term.arabic_term)
+          : `Technical architecture for "${items[0].term.arabic_term}" coming soon.`;
+        figCanvas.innerHTML = `<div style="opacity:0.3; padding:40px; text-align:center;">${archStub}</div>`;
       }
     }
 
@@ -1354,9 +1310,10 @@
         <button class="btn primary" onclick="renderDetailByName('${encodeURIComponent(term.arabic_term || "")}')">${isAr ? "فتح صفحة التفاصيل الكاملة" : (isEn ? "Open full term detail" : "Ouvrir le détail complet")}</button>
       </div>
     `;
-    drawer.style.pointerEvents = 'auto';
     drawer.setAttribute('aria-hidden', 'false');
-    drawer.style.right = '0';
+    drawer.classList.add('is-open');
+    const overlay = document.getElementById('story-drawer-overlay');
+    if (overlay) overlay.classList.add('is-visible');
 
     const mermaidRoot = document.getElementById('drawer-mermaid-root');
     if (mermaidRoot) {
@@ -1390,10 +1347,10 @@
   function closeStoryDrawer() {
     const drawer = document.getElementById('story-term-drawer');
     if (!drawer) return;
-    const w = drawer.offsetWidth || 450;
-    drawer.style.right = `-${w}px`;
+    drawer.classList.remove('is-open');
     drawer.setAttribute('aria-hidden', 'true');
-    drawer.style.pointerEvents = 'none';
+    const overlay = document.getElementById('story-drawer-overlay');
+    if (overlay) overlay.classList.remove('is-visible');
   }
 
   async function askDeepSeek() {
@@ -1517,7 +1474,9 @@
       const isAr = currentLang === 'ar';
 
       if (currentMode === 'multiple-choice') {
-        correct = isAr ? (term.arabic_def || "---") : (currentLang === 'en' ? term.english_def : term.french_def);
+        correct = isAr ? (term.arabic_def || term.english_def || "---") 
+                       : (currentLang === 'en' ? (term.english_def || term.arabic_def || "---") 
+                       : (term.french_def || term.english_def || "---"));
         options = [correct];
         const distractors = isAr ? term.flashcard_distractors_ar : (currentLang === 'en' ? term.flashcard_distractors_en : term.flashcard_distractors_fr);
         if (distractors) options.push(...distractors.slice(0, 3));
@@ -1527,11 +1486,15 @@
           if (d && !options.includes(d)) options.push(d);
         }
       } else {
-        correct = isAr ? term.arabic_term : (currentLang === 'en' ? term.english_term : term.french_term);
+        correct = isAr ? (term.arabic_term || term.english_term || "---") 
+                       : (currentLang === 'en' ? (term.english_term || term.arabic_term || "---") 
+                       : (term.french_term || term.english_term || "---"));
         options = [correct];
         while(options.length < 4) {
           const dTerm = pool[Math.floor(Math.random()*pool.length)];
-          const d = isAr ? dTerm.arabic_term : (currentLang === 'en' ? dTerm.english_term : dTerm.french_term);
+          const d = isAr ? (dTerm.arabic_term || dTerm.english_term) 
+                         : (currentLang === 'en' ? (dTerm.english_term || dTerm.arabic_term) 
+                         : (dTerm.french_term || dTerm.english_term));
           if (d && !options.includes(d)) options.push(d);
         }
       }
@@ -1548,18 +1511,26 @@
     if (currentMode === 'multiple-choice') {
       if (modeLabel) modeLabel.textContent = ud.quiz_prompt_mc || (isAr ? "أي تعريف يطابق هذا المصطلح؟" : "Which definition matches this term?");
       if(termEl) {
-        termEl.textContent = isAr ? term.arabic_term : (currentLang === 'en' ? term.english_term : term.french_term);
+        termEl.textContent = isAr ? (term.arabic_term || term.english_term || "---") 
+                              : (currentLang === 'en' ? (term.english_term || term.arabic_term || "---") 
+                              : (term.french_term || term.english_term || term.arabic_term || "---"));
         termEl.style.fontSize = '2.5rem';
       }
     } else {
       if (modeLabel) modeLabel.textContent = ud.quiz_prompt_rev || (isAr ? "أي مصطلح يطابق هذا التعريف؟" : "Which term matches this definition?");
       if(termEl) {
-        termEl.textContent = isAr ? (term.detailed_explanation_ar || term.arabic_def) : (currentLang === 'en' ? term.english_def : term.french_def);
+        const def = isAr ? (term.detailed_explanation_ar || term.arabic_def || term.english_def || "---") 
+                         : (currentLang === 'en' ? (term.detailed_explanation_en || term.english_def || term.arabic_def || "---") 
+                         : (term.detailed_explanation_fr || term.french_def || term.english_def || "---"));
+        termEl.textContent = def;
         termEl.style.fontSize = '1.1rem';
       }
     }
 
-    if (streakEl) streakEl.textContent = typeof ud.quiz_streak === 'function' ? ud.quiz_streak(quizStreak) : `streak ${quizStreak} · next review soon`;
+    if (streakEl) {
+      const streakText = typeof ud.quiz_streak === 'function' ? ud.quiz_streak(quizStreak) : `streak ${quizStreak}`;
+      streakEl.innerHTML = `<span class="quiz-streak-badge">${streakText}</span>`;
+    }
     if (jumpInput) {
       jumpInput.value = quizHistoryIdx + 1;
       jumpInput.max = pool.length;
@@ -2110,6 +2081,38 @@
     };
   }
 
+  function initStatsObserver() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounters(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.landing-stats').forEach(el => observer.observe(el));
+  }
+
+  function startCounters(container) {
+    container.querySelectorAll('[data-count]').forEach(el => {
+      const target = parseInt(el.getAttribute('data-count'));
+      let current = 0;
+      const duration = 2000;
+      const stepTime = Math.abs(Math.floor(duration / target));
+      const timer = setInterval(() => {
+        current += Math.ceil(target / 60); // Roughly 60fps
+        if (current >= target) {
+          el.textContent = target.toLocaleString(currentLang === 'ar' ? 'ar-EG' : (currentLang === 'fr' ? 'fr-FR' : 'en-US'));
+          clearInterval(timer);
+        } else {
+          el.textContent = current.toLocaleString(currentLang === 'ar' ? 'ar-EG' : (currentLang === 'fr' ? 'fr-FR' : 'en-US'));
+        }
+      }, 16);
+    });
+  }
+
   updateThemeToggle();
   init();
+  initStatsObserver();
 })();

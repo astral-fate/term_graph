@@ -45,7 +45,7 @@
       chapter: 'Chapter'
     },
     ar: {
-      feel: 'الشعور',
+      feel: 'الانطباع',
       metaphor: 'التشبيه',
       definition: 'التعريف',
       examples: 'أمثلة',
@@ -62,12 +62,12 @@
       code: 'الكود',
       none: 'لا يوجد',
       na: 'غير متوفر',
-      audio: '▸ صوت',
+      audio: '▸ استمع',
       quiz: 'اختبرني',
-      untracked: 'غير مصنف',
-      unknown_cat: 'غير مصنف',
+      untracked: 'غير مخصص لمسار',
+      unknown_cat: 'فئة غير معروفة',
       unspecified: 'غير محدد',
-      track: 'مسار',
+      track: 'المسار',
       chapter: 'الفصل'
     },
     fr: {

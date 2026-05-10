@@ -37,6 +37,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>mermaid.initialize({ startOnLoad: false, theme: 'neutral', securityLevel: 'loose' });</script>
+  <script src="js/views/templates.js"></script>
 </head>
 <body class="is-landing-home">
 <!--
@@ -118,134 +119,183 @@
   <section class="view active" data-view="home">
     <div class="landing-board">
       <header class="landing-hero-compact">
-        <p class="landing-kicker" id="landing-kicker">ICAIRE · AI governance</p>
-        <h1 class="landing-title" id="landing-title">Audit AI</h1>
-        <p class="landing-lead" id="landing-lead">An Arabic-first glossary and compliance workspace.</p>
+        <div class="hero-container">
+          <div class="hero-text">
+            <p class="landing-kicker" id="landing-kicker">ICAIRE · AI governance</p>
+            <h1 class="landing-title" id="landing-title">How do you know your AI is compliant?</h1>
+            <p class="landing-lead" id="landing-lead">Get a detailed compliance report in minutes. Audit your policies and systems against global frameworks with Arabic-first precision.</p>
+            
+            <div class="landing-actions landing-actions-primary">
+              <button type="button" class="btn primary btn-lg" data-goto="audit" id="landing-cta-audit">Get your report now</button>
+              <button type="button" class="btn landing-btn-cream btn-lg" data-goto="dashboard" id="landing-cta-dashboard">Explore workspace</button>
+            </div>
+          </div>
+          
+          <div class="landing-hero-visual">
+            <img src="assets/report_preview.png" alt="Report Preview" class="hero-preview-img" />
+          </div>
+        </div>
       </header>
-
-      <div class="landing-actions landing-actions-primary">
-        <button type="button" class="btn primary" data-goto="audit" id="landing-cta-audit">Run AI audit</button>
-        <button type="button" class="btn landing-btn-cream" data-goto="dashboard" id="landing-cta-dashboard">Open workspace</button>
-      </div>
 
       <section class="landing-stats" aria-labelledby="lp-stats-heading">
         <div class="landing-stats-head">
-          <h2 class="landing-stats-title" id="lp-stats-heading">Numbers at a glance</h2>
-          <p class="landing-stats-deck" id="lp-stats-deck">Curated from the shipped glossary, graph, rubric, and Hugging Face artifacts.</p>
+          <h2 class="landing-stats-title" id="lp-stats-heading">Precision at scale</h2>
+          <p class="landing-stats-deck" id="lp-stats-deck">Real-time governance analytics across your entire AI lifecycle.</p>
         </div>
         <ul class="landing-stats-grid">
+          <li class="landing-stat-card">
+            <span class="landing-stat-num" data-count="1242" id="lp-stat-n-1">0</span>
+            <span class="landing-stat-txt" id="lp-stat-t-1">Enriched Terms</span>
+          </li>
           <li class="landing-stat-card landing-stat-card--feature">
-            <span class="landing-stat-num" id="lp-stat-n-1">1,242</span>
-            <span class="landing-stat-txt" id="lp-stat-t-1">ICAIRE glossary terms enriched</span>
+            <span class="landing-stat-num" data-count="519" id="lp-stat-n-2">0</span>
+            <span class="landing-stat-txt" id="lp-stat-t-2">Active Controls</span>
           </li>
           <li class="landing-stat-card">
-            <span class="landing-stat-num" id="lp-stat-n-2">12+</span>
-            <span class="landing-stat-txt" id="lp-stat-t-2">structured fields per term</span>
+            <span class="landing-stat-num" data-count="4" id="lp-stat-n-3">0</span>
+            <span class="landing-stat-txt" id="lp-stat-t-3">Global Frameworks</span>
           </li>
           <li class="landing-stat-card">
-            <span class="landing-stat-num" id="lp-stat-n-3">7</span>
-            <span class="landing-stat-txt" id="lp-stat-t-3">story tracks covering ~1,140 terms</span>
+            <span class="landing-stat-num" data-count="98" id="lp-stat-n-4">0</span>
+            <span class="landing-stat-txt" id="lp-stat-t-4">Accuracy Rate %</span>
           </li>
           <li class="landing-stat-card">
-            <span class="landing-stat-num" id="lp-stat-n-4">~1,180</span>
-            <span class="landing-stat-txt" id="lp-stat-t-4">auto-generated Mermaid UML diagrams</span>
-          </li>
-          <li class="landing-stat-card landing-stat-card--wide">
-            <span class="landing-stat-num" id="lp-stat-n-5">~8,400</span>
-            <span class="landing-stat-txt" id="lp-stat-t-5">typed graph edges (prerequisites, unlocks, is-a, part-of, contrasts-with, used-with, alternative-to)</span>
+            <span class="landing-stat-num" data-count="15" id="lp-stat-n-5">0</span>
+            <span class="landing-stat-txt" id="lp-stat-t-5">Private Clusters</span>
           </li>
           <li class="landing-stat-card">
-            <span class="landing-stat-num" id="lp-stat-n-6">519</span>
-            <span class="landing-stat-txt" id="lp-stat-t-6">governance controls extracted across 4 frameworks</span>
-          </li>
-          <li class="landing-stat-card">
-            <span class="landing-stat-num" id="lp-stat-n-7">1024-dim</span>
-            <span class="landing-stat-txt" id="lp-stat-t-7">BGE-M3 embeddings precomputed for both corpora</span>
-          </li>
-          <li class="landing-stat-card landing-stat-card--wide">
-            <span class="landing-stat-num" id="lp-stat-n-8">6</span>
-            <span class="landing-stat-txt" id="lp-stat-t-8">export formats (master JSON, graph JSON, story map, GEXF, Cypher, TBX, Anki)</span>
-          </li>
-          <li class="landing-stat-card landing-stat-card--wide">
-            <span class="landing-stat-num" id="lp-stat-n-9">3</span>
-            <span class="landing-stat-txt" id="lp-stat-t-9">Hugging Face datasets (rubric + embedded corpora); ICAIRE enriched glossary recommended</span>
+            <span class="landing-stat-num" data-count="24" id="lp-stat-n-6">0</span>
+            <span class="landing-stat-txt" id="lp-stat-t-6">Avg. Audit Time (m)</span>
           </li>
         </ul>
       </section>
 
-      <details class="landing-fold" open>
-        <summary class="landing-fold-summary">
-          <span class="landing-fold-summary-text" id="lp-fold-matrix">ICAIRE matrix — narrative</span>
-          <span class="landing-fold-chevron" aria-hidden="true"></span>
-        </summary>
-        <div class="landing-fold-inner">
-          <p class="landing-fold-lede" id="lp-matrix-lede">Who we are, what problem we solve, and what this workspace delivers—grounded in the Arabic-first glossary and governance rubrics.</p>
-          <div class="landing-narrative-grid" role="list">
-            <article class="landing-panel" role="listitem">
-              <span class="landing-panel-label" id="lp-label-who">Who we are</span>
-              <h2 class="landing-panel-h" id="lp-who-title">Purpose</h2>
-              <p class="landing-panel-p" id="lp-who-body">We combine the ICAIRE Arabic-first glossary with tooling to review AI-related documents against recognized governance frameworks—so teams can align language and evidence in one place.</p>
-            </article>
-            <article class="landing-panel" role="listitem">
-              <span class="landing-panel-label" id="lp-label-deal">The challenge</span>
-              <h2 class="landing-panel-h" id="lp-challenge-title">What we are dealing with</h2>
-              <p class="landing-panel-p" id="lp-challenge-body">Policies and project documents are fragmented across languages; compliance expectations differ by OECD, UNESCO, and sector-specific controls. Teams need searchable terminology, traceable evidence, and repeatable scoring—not another generic chat.</p>
-            </article>
-            <article class="landing-panel" role="listitem">
-              <span class="landing-panel-label" id="lp-label-build">The product</span>
-              <h2 class="landing-panel-h" id="lp-build-title">What we are building</h2>
-              <p class="landing-panel-p" id="lp-build-body">A self-contained workspace: Upload PDFs for a full audit pipeline (parse → embed → per-control LLM scoring), explore 1,242+ terms in a knowledge graph, learn via story tracks and flashcards, and refine Arabic text with glossary-aware support.</p>
-            </article>
+      <section class="landing-frameworks">
+        <h2 class="landing-stats-title" id="lp-fw-h">Integrated Frameworks</h2>
+        <p class="landing-stats-deck" id="lp-fw-deck">Audit against the world's most rigorous AI standards.</p>
+        <div class="framework-grid">
+          <div class="framework-card">
+            <div class="fw-icon-wrap"><img src="assets/nist.png" alt="NIST" /></div>
+            <h4 id="lp-fw-1-t">NIST AI RMF</h4>
+            <p id="lp-fw-1-p">Risk Management Framework v1.0</p>
+          </div>
+          <div class="framework-card">
+            <div class="fw-icon-wrap"><img src="assets/unesco.png" alt="UNESCO" /></div>
+            <h4 id="lp-fw-2-t">UNESCO Ethics</h4>
+            <p id="lp-fw-2-p">Recommendation on the Ethics of AI</p>
+          </div>
+          <div class="framework-card">
+            <div class="fw-icon-wrap"><img src="assets/oecd.png" alt="OECD" /></div>
+            <h4 id="lp-fw-3-t">OECD Framework</h4>
+            <p id="lp-fw-3-p">Classification of AI Systems</p>
+          </div>
+          <div class="framework-card">
+            <div class="fw-icon-wrap"><img src="assets/framework_logo.png" alt="OECD Principles" /></div>
+            <h4 id="lp-fw-4-t">OECD Principles</h4>
+            <p id="lp-fw-4-p">Values-based Principles for AI</p>
           </div>
         </div>
-      </details>
+      </section>
 
-      <details class="landing-fold" open>
-        <summary class="landing-fold-summary">
-          <span class="landing-fold-summary-text" id="lp-fold-platform">Platform — capabilities &amp; modules</span>
-          <span class="landing-fold-chevron" aria-hidden="true"></span>
-        </summary>
-        <div class="landing-fold-inner">
-          <p class="landing-explore-intro" id="lp-explore-intro">Below is what you can do today inside this application—each area opens from the tabs above or from the workspace.</p>
+      <section class="landing-narrative">
+        <div class="landing-stats-head">
+          <h2 class="landing-stats-title" id="lp-fold-matrix">The ICAIRE Vision</h2>
+          <p class="landing-stats-deck" id="lp-matrix-lede">Who we are, what problem we solve, and what this workspace delivers—grounded in the Arabic-first glossary and governance rubrics.</p>
+        </div>
+        <div class="landing-narrative-grid" role="list">
+          <article class="landing-panel" role="listitem">
+            <span class="landing-panel-label" id="lp-label-who">Who we are</span>
+            <h2 class="landing-panel-h" id="lp-who-title">Purpose</h2>
+            <p class="landing-panel-p" id="lp-who-body">We combine the ICAIRE Arabic-first glossary with tooling to review AI-related documents against recognized governance frameworks—so teams can align language and evidence in one place.</p>
+          </article>
+          <article class="landing-panel" role="listitem">
+            <span class="landing-panel-label" id="lp-label-deal">The challenge</span>
+            <h2 class="landing-panel-h" id="lp-challenge-title">What we are dealing with</h2>
+            <p class="landing-panel-p" id="lp-challenge-body">Policies and project documents are fragmented across languages; compliance expectations differ by OECD, UNESCO, and sector-specific controls. Teams need searchable terminology, traceable evidence, and repeatable scoring—not another generic chat.</p>
+          </article>
+          <article class="landing-panel" role="listitem">
+            <span class="landing-panel-label" id="lp-label-build">The product</span>
+            <h2 class="landing-panel-h" id="lp-build-title">What we are building</h2>
+            <p class="landing-panel-p" id="lp-build-body">A self-contained workspace: Upload PDFs for a full audit pipeline (parse → embed → per-control LLM scoring), explore 1,242+ terms in a knowledge graph, learn via story tracks and flashcards, and refine Arabic text with glossary-aware support.</p>
+          </article>
+        </div>
+      </section>
 
-          <h3 class="landing-explore-h" id="lp-benefits-h">Benefits</h3>
-          <div class="landing-benefits">
-            <div class="landing-benefit">
-              <span class="landing-benefit-n">01</span>
-              <h4 class="landing-benefit-t" id="lp-b1-t">Evidence-backed audits</h4>
-              <p class="landing-benefit-p" id="lp-b1-p">Scores are anchored to rubric controls with chunk retrieval—not generic summaries.</p>
-            </div>
-            <div class="landing-benefit">
-              <span class="landing-benefit-n">02</span>
-              <h4 class="landing-benefit-t" id="lp-b2-t">Runs on your stack</h4>
-              <p class="landing-benefit-p" id="lp-b2-p">Local FastAPI + your NVIDIA API key; documents stay on your machine during processing.</p>
-            </div>
-            <div class="landing-benefit">
-              <span class="landing-benefit-n">03</span>
-              <h4 class="landing-benefit-t" id="lp-b3-t">Trilingual glossary</h4>
-              <p class="landing-benefit-p" id="lp-b3-p">ICAIRE terms in Arabic, English, and French—aligned for policy and procurement language.</p>
-            </div>
-            <div class="landing-benefit">
-              <span class="landing-benefit-n">04</span>
-              <h4 class="landing-benefit-t" id="lp-b4-t">Learning loop</h4>
-              <p class="landing-benefit-p" id="lp-b4-p">Graph, stories, and flashcards turn the glossary into structured study.</p>
+      <section class="landing-platform">
+        <div class="landing-stats-head">
+          <h2 class="landing-stats-title" id="lp-fold-platform">Platform Capabilities</h2>
+          <p class="landing-stats-deck" id="lp-explore-intro">Below is what you can do today inside this application—each area opens from the tabs above or from the workspace.</p>
+        </div>
+        
+        <div class="platform-container">
+          <div class="platform-main">
+            <h3 class="landing-explore-h" id="lp-benefits-h">Key Benefits</h3>
+            <div class="landing-benefits">
+              <div class="landing-benefit">
+                <span class="landing-benefit-n">01</span>
+                <h4 class="landing-benefit-t" id="lp-b1-t">Evidence-backed audits</h4>
+                <p class="landing-benefit-p" id="lp-b1-p">Scores are anchored to rubric controls with chunk retrieval—not generic summaries.</p>
+              </div>
+              <div class="landing-benefit">
+                <span class="landing-benefit-n">02</span>
+                <h4 class="landing-benefit-t" id="lp-b2-t">Runs on your stack</h4>
+                <p class="landing-benefit-p" id="lp-b2-p">Local FastAPI + your NVIDIA API key; documents stay on your machine during processing.</p>
+              </div>
+              <div class="landing-benefit">
+                <span class="landing-benefit-n">03</span>
+                <h4 class="landing-benefit-t" id="lp-b3-t">Trilingual glossary</h4>
+                <p class="landing-benefit-p" id="lp-b3-p">ICAIRE terms in Arabic, English, and French—aligned for policy and procurement language.</p>
+              </div>
+              <div class="landing-benefit">
+                <span class="landing-benefit-n">04</span>
+                <h4 class="landing-benefit-t" id="lp-b4-t">Learning loop</h4>
+                <p class="landing-benefit-p" id="lp-b4-p">Graph, stories, and flashcards turn the glossary into structured study.</p>
+              </div>
             </div>
           </div>
 
-          <h3 class="landing-explore-h" id="lp-services-h">Services &amp; modules</h3>
-          <ul class="landing-service-list">
-            <li class="landing-svc-line" id="lp-line-1"></li>
-            <li class="landing-svc-line" id="lp-line-2"></li>
-            <li class="landing-svc-line" id="lp-line-3"></li>
-            <li class="landing-svc-line" id="lp-line-4"></li>
-            <li class="landing-svc-line" id="lp-line-5"></li>
-          </ul>
-          <div class="landing-explore-footer">
-            <button type="button" class="btn ghost btn-sm" data-goto="graph" id="landing-cta-glossary">Browse the knowledge graph</button>
-            <button type="button" class="btn ghost btn-sm" data-goto="dashboard" id="landing-cta-dash-2">Go to workspace</button>
+          <aside class="platform-sidebar">
+            <h3 class="landing-explore-h" id="lp-services-h">Services &amp; modules</h3>
+            <ul class="landing-service-list">
+              <li class="landing-svc-line" id="lp-line-1"></li>
+              <li class="landing-svc-line" id="lp-line-2"></li>
+              <li class="landing-svc-line" id="lp-line-3"></li>
+              <li class="landing-svc-line" id="lp-line-4"></li>
+            </ul>
+            <div class="landing-explore-footer">
+              <button type="button" class="btn ghost btn-sm" data-goto="graph" id="landing-cta-glossary">Browse the knowledge graph</button>
+              <button type="button" class="btn ghost btn-sm" data-goto="dashboard" id="landing-cta-dash-2">Go to workspace</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Learning Materials -->
+      <section class="landing-learning">
+        <h3 class="landing-explore-h" id="lp-learning-h">Master AI Governance</h3>
+        <div class="learning-grid">
+          <div class="learning-card" data-goto="story">
+            <div class="learning-icon"><i class="ti ti-map-2"></i></div>
+            <h4 id="lp-learn-1-t">Story Tracks</h4>
+            <p id="lp-learn-1-p">Narrative journeys from foundations to frontier ethics.</p>
+          </div>
+          <div class="learning-card" data-goto="flash">
+            <div class="learning-icon"><i class="ti ti-cards"></i></div>
+            <h4 id="lp-learn-2-t">Flashcards</h4>
+            <p id="lp-learn-2-p">Spaced repetition to master technical terminology.</p>
+          </div>
+          <div class="learning-card" data-goto="graph">
+            <div class="learning-icon"><i class="ti ti-network"></i></div>
+            <h4 id="lp-learn-3-t">Knowledge Graph</h4>
+            <p id="lp-learn-3-p">Explore connections between 1,200+ canonical terms.</p>
           </div>
         </div>
-      </details>
+      </section>
+
+      <div class="landing-final-cta">
+        <h2 id="lp-final-h">Ready to secure your AI future?</h2>
+        <button type="button" class="btn primary btn-xl" data-goto="audit" id="landing-cta-final">Start your first audit</button>
+      </div>
 
       <p class="landing-status" id="load-status">Loading glossary data...</p>
     </div>
@@ -254,126 +304,18 @@
   <!-- ================================================================
        DASHBOARD (workspace: stats, featured, tools)
        ================================================================ -->
-  <section class="view" data-view="dashboard">
-    <div class="view-header dashboard-intro">
-      <h2 id="dashboard-h2">Workspace</h2>
-      <p id="dashboard-lead">Statistics, picks from your glossary, and shortcuts to every tool.</p>
-    </div>
+  <section class="view" data-view="dashboard"></section>
 
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-label">Total Terms</div>
-        <div class="stat-value" id="stat-count">0</div>
-      </div>
-      <div class="stat">
-        <div class="stat-label">Story Tracks</div>
-        <div class="stat-value">7</div>
-      </div>
-      <div class="stat">
-        <div class="stat-label">Graph edges</div>
-        <div class="stat-value">8,400</div>
-        <div class="stat-hint">8 edge types</div>
-      </div>
-      <div class="stat">
-        <div class="stat-label">UML diagrams</div>
-        <div class="stat-value">1,180</div>
-        <div class="stat-hint">auto-generated</div>
-      </div>
-    </div>
-
-    <div class="card dashboard-featured">
-      <h3 class="dashboard-featured-title" id="dashboard-featured-heading">Featured terms from your database</h3>
-      <div id="featured-terms" class="featured-terms-grid">
-        <!-- Dynamic terms -->
-      </div>
-    </div>
-
-    <h3 class="tools-heading" id="dashboard-tools-heading">Tools</h3>
-    <div class="feature-grid" id="dashboard-feature-grid"></div>
-  </section>
 
   <!-- ================================================================
        KNOWLEDGE GRAPH
        ================================================================ -->
-  <section class="view" data-view="graph">
-    <div class="view-header">
-      <h2>Knowledge graph</h2>
-      <p>Every term is a node; every edge is typed. Clusters auto-discovered via Louvain community detection. Node size = PageRank.</p>
-    </div>
-
-    <div class="graph-panel">
-      <div class="graph-toolbar" id="graph-filters">
-        <!-- Filter chips will be injected here -->
-      </div>
-
-      <div class="graph-legend" id="graph-legend-dynamic">
-        <!-- Clusters will be listed here -->
-      </div>
-
-      <div id="graph-container" style="background: var(--surface); position: relative; height: 600px; cursor: crosshair; overflow: hidden; border-radius: var(--radius-lg); border: 0.5px solid var(--border);">
-        <canvas id="graph-canvas" style="width: 100%; height: 100%;"></canvas>
-        <div id="graph-tooltip" style="position: absolute; pointer-events: none; background: var(--bg); border: 1px solid var(--border); padding: 8px; border-radius: 6px; display: none; font-size: 12px; z-index: 1000; box-shadow: var(--shadow-lg);"></div>
-      </div>
-    </div>
-  </section>
+  <section class="view" data-view="graph"></section>
 
   <!-- ================================================================
        STORY TRACKS
        ================================================================ -->
-  <section class="view" data-view="story">
-    <div class="view-header">
-      <h2>Story tracks</h2>
-      <p>Chronological journeys through the glossary. Each track groups terms into narrated chapters for a cinematic learning experience.</p>
-    </div>
-
-    <div class="chips" id="story-track-switcher" style="margin-bottom: 20px;">
-      <!-- Dynamic tracks will go here -->
-    </div>
-
-    <div class="story-grid">
-      <aside class="story-pane">
-        <div class="pane-kicker" id="story-track-info">Track 1</div>
-        <h3 class="pane-title" id="story-track-name">Select a track</h3>
-        <ul class="chapter-list" id="story-chapter-list">
-          <!-- Dynamic chapters will go here -->
-        </ul>
-      </aside>
-
-      <section class="story-pane story-main">
-        <div class="narration">
-          <div class="pane-kicker" style="direction:ltr">Chapter 4</div>
-          <h3>الترميز الموضعي</h3>
-          <p>الآن لدينا سلسلة من <span class="term-pill">المتجهات</span>. ولكنّ المحول لا يعرف أيّها كان أولاً — فآليّة <span class="term-pill">الانتباه</span> تنظر إلى كل <span class="term-pill">الرموز</span> دفعةً واحدة.</p>
-          <div class="hook">هنا يأتي دور الترميز الموضعي: نُضيف إلى كل متجه بصمةً رياضيةً تخبره بموقعه في الجملة.</div>
-          <p>قد تكون هذه البصمة <span class="term-pill">دوال جيبية</span> أو متجهات <span class="term-pill">مُتَعَلَّمة</span>. النتيجة واحدة: الرمز الأول يختلف عن الرمز العاشر، حتى لو كانا نفس الكلمة.</p>
-        </div>
-
-        <div class="live-figure" id="live-figure-container">
-          <div class="kicker">Logic Architecture</div>
-          <div class="fig-canvas" id="main-fig-canvas">
-            <div style="opacity:0.2; padding:80px; text-align:center;">Select a chapter to render its architecture.</div>
-          </div>
-          <div class="fig-caption">Local JS Rendering · No external tokens used</div>
-        </div>
-      </section>
-
-      <aside class="term-pane">
-        <div class="pane-kicker">In this chapter</div>
-        <div class="term-mini-list">
-          <!-- Dynamic terms will be injected here -->
-        </div>
-      </aside>
-    </div>
-
-    <!-- Term Drawer for Story View -->
-    <div id="story-term-drawer" aria-hidden="true" style="position: fixed; top: 0; right: -450px; width: 450px; max-width: 100%; height: 100%; background: var(--bg); z-index: 2000; box-shadow: -10px 0 30px rgba(0,0,0,0.15); transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; padding: 40px; border-left: 1px solid var(--border); pointer-events: none;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-        <span class="pane-kicker" style="margin-bottom: 0;">Term Detail</span>
-        <button class="btn" onclick="closeStoryDrawer()" style="width: auto; padding: 8px 16px;">✕ Close</button>
-      </div>
-      <div id="drawer-content"></div>
-    </div>
-  </section>
+  <section class="view" data-view="story"></section>
 
   <!-- ================================================================
        TRANSFORMER ANATOMY (disabled — uncomment section + nav tab to restore)
@@ -490,16 +432,7 @@
   <!-- ================================================================
        TERM DETAIL
        ================================================================ -->
-  <section class="view" data-view="detail">
-    <div class="view-header">
-      <h2 id="detail-view-title">Term detail</h2>
-      <p id="detail-view-desc">Everything the enrichment pipeline generated per term — metaphor, UML, prerequisites, graph relations, code, and math.</p>
-    </div>
-    <!-- Filled by js/views/term-detail.js -->
-    <div class="detail-panel" id="term-detail-panel">
-      <p class="italic" style="padding:24px;color:var(--text-secondary);">Loading term…</p>
-    </div>
-  </section>
+  <section class="view" data-view="detail"></section>
 
   <!-- ================================================================
        REWRITE TOOL
@@ -519,45 +452,7 @@
   <!-- ================================================================
        FLASHCARDS
        ================================================================ -->
-  <section class="view" data-view="flash">
-    <div class="view-header">
-      <h2>Flashcards &amp; quizzes</h2>
-      <p>Auto-generated distractors from the enrichment pipeline. Choose a difficulty level to focus your learning.</p>
-    </div>
-
-    <div class="filter-row" id="quiz-filters" style="margin-bottom: 20px; display: flex; gap: 8px;">
-      <button type="button" class="chip active" data-quiz-level="all" onclick="filterQuiz('all')">All Levels</button>
-      <button type="button" class="chip" data-quiz-level="beginner" onclick="filterQuiz('beginner')">Easy</button>
-      <button type="button" class="chip" data-quiz-level="intermediate" onclick="filterQuiz('intermediate')">Intermediate</button>
-      <button type="button" class="chip" data-quiz-level="advanced" onclick="filterQuiz('advanced')">Hard</button>
-    </div>
-
-    <div class="flash-wrap">
-      <div class="flash-nav">
-        <button class="nav-btn" id="quiz-prev" onclick="prevQuestion()" title="Previous (Left Arrow)">←</button>
-        <div class="flash-prompt" id="quiz-mode-label">Which definition matches this term?</div>
-        <button class="nav-btn" id="quiz-next" onclick="setupFlashcards(true)" title="Skip (Right Arrow)">→</button>
-      </div>
-      
-      <div class="flash-term" id="quiz-term-display">---</div>
-      <div class="flash-options" id="quiz-options-container">
-        <!-- Dynamic options -->
-      </div>
-      <div class="flash-progress">
-        <span id="quiz-progress-text">
-          <span id="quiz-progress-card">Card</span> <input type="number" id="quiz-jump" min="1" value="1" onchange="jumpToQuestion(this.value)" style="width: 50px; background: transparent; border: 0.5px solid var(--border); border-radius: 4px; color: inherit; font: inherit; text-align: center; padding: 2px;">
-          <span id="quiz-progress-of">of</span> <span id="quiz-total">--</span>
-        </span>
-        <span id="quiz-streak">streak 0 · next review soon</span>
-      </div>
-    </div>
-
-    <div class="mode-tabs" style="display: flex; gap: 8px; margin-top: 16px;">
-      <button type="button" class="btn active" id="mode-mc" onclick="setQuizMode('multiple-choice')">Multiple choice</button>
-      <button type="button" class="btn" id="mode-rev" onclick="setQuizMode('reverse')">Reverse lookup</button>
-      <button type="button" class="btn primary" id="quiz-export-anki" onclick="exportToAnki()">Export to Anki</button>
-    </div>
-  </section>
+  <section class="view" data-view="flash"></section>
 
 </div>
 
