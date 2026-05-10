@@ -3,9 +3,18 @@
  * Secrets (Pages / .dev.vars): AUDIT_UPSTREAM_URL, AUDIT_UPSTREAM_TOKEN (= AUDIT_API_SECRET on HF).
  * Private HF Space gateway: set AUDIT_HF_READ_TOKEN (hf_*); app secret is sent as X-Audit-Secret (see backend middleware).
  */
+function getEnv(env, key) {
+  if (env[key] !== undefined) return env[key];
+  const trimmed = key.trim();
+  for (const k in env) {
+    if (k.trim() === trimmed) return env[k];
+  }
+  return undefined;
+}
+
 function upstreamAuthHeaders(env) {
-  const app = (env.AUDIT_UPSTREAM_TOKEN || '').trim();
-  const hfRead = (env.AUDIT_HF_READ_TOKEN || '').trim();
+  const app = (getEnv(env, 'AUDIT_UPSTREAM_TOKEN') || '').trim();
+  const hfRead = (getEnv(env, 'AUDIT_HF_READ_TOKEN') || '').trim();
   if (!app) return null;
   if (hfRead) {
     return {
@@ -18,7 +27,7 @@ function upstreamAuthHeaders(env) {
 
 export async function onRequestGet(context) {
   const { env } = context;
-  const base = (env.AUDIT_UPSTREAM_URL || '').trim().replace(/\/$/, '');
+  const base = (getEnv(env, 'AUDIT_UPSTREAM_URL') || '').trim().replace(/\/$/, '');
   const authHeaders = upstreamAuthHeaders(env);
 
   if (!base || !authHeaders) {

@@ -6,6 +6,15 @@
 export async function onRequestGet(context) {
   const { env } = context;
   
+  function getEnv(key) {
+    if (env[key] !== undefined) return { val: env[key], exact: true };
+    const trimmed = key.trim();
+    for (const k in env) {
+      if (k.trim() === trimmed) return { val: env[k], exact: false, keyFound: k };
+    }
+    return { val: undefined, exact: false };
+  }
+
   function mask(s) {
     if (!s) return "(empty)";
     const val = String(s).trim();
@@ -14,6 +23,9 @@ export async function onRequestGet(context) {
   }
 
   const allKeys = Object.keys(env).sort();
+  const urlRes = getEnv('AUDIT_UPSTREAM_URL');
+  const tokRes = getEnv('AUDIT_UPSTREAM_TOKEN');
+  const hfRes = getEnv('AUDIT_HF_READ_TOKEN');
   
   return new Response(
     JSON.stringify({
@@ -24,14 +36,17 @@ export async function onRequestGet(context) {
         count: allKeys.length
       },
       expectedVariables: {
-        AUDIT_UPSTREAM_URL: env.AUDIT_UPSTREAM_URL ? env.AUDIT_UPSTREAM_URL.replace(/(https?:\/\/)(.*)/, "$1***") : "(missing)",
-        AUDIT_UPSTREAM_TOKEN: mask(env.AUDIT_UPSTREAM_TOKEN),
-        AUDIT_HF_READ_TOKEN: mask(env.AUDIT_HF_READ_TOKEN)
+        AUDIT_UPSTREAM_URL: urlRes.val ? urlRes.val.replace(/(https?:\/\/)(.*)/, "$1***") : "(missing)",
+        AUDIT_UPSTREAM_URL_EXACT: urlRes.exact,
+        AUDIT_UPSTREAM_URL_KEY: urlRes.keyFound || 'AUDIT_UPSTREAM_URL',
+        AUDIT_UPSTREAM_TOKEN: mask(tokRes.val),
+        AUDIT_UPSTREAM_TOKEN_EXACT: tokRes.exact,
+        AUDIT_HF_READ_TOKEN: mask(hfRes.val)
       },
       check: {
-        hasBase: !!(env.AUDIT_UPSTREAM_URL && env.AUDIT_UPSTREAM_URL.trim()),
-        hasToken: !!(env.AUDIT_UPSTREAM_TOKEN && env.AUDIT_UPSTREAM_TOKEN.trim()),
-        willFail: !(env.AUDIT_UPSTREAM_URL && env.AUDIT_UPSTREAM_TOKEN)
+        hasBase: !!(urlRes.val && urlRes.val.trim()),
+        hasToken: !!(tokRes.val && tokRes.val.trim()),
+        willFail: !(urlRes.val && tokRes.val)
       }
     }),
     {

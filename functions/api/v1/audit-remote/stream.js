@@ -1,9 +1,18 @@
 /**
  * Proxies multipart POST → upstream `/api/v1/audit/run/stream` (SSE). Secrets never reach the browser.
  */
+function getEnv(env, key) {
+  if (env[key] !== undefined) return env[key];
+  const trimmed = key.trim();
+  for (const k in env) {
+    if (k.trim() === trimmed) return env[k];
+  }
+  return undefined;
+}
+
 function upstreamAuthHeaders(env, extra = {}) {
-  const app = (env.AUDIT_UPSTREAM_TOKEN || '').trim();
-  const hfRead = (env.AUDIT_HF_READ_TOKEN || '').trim();
+  const app = (getEnv(env, 'AUDIT_UPSTREAM_TOKEN') || '').trim();
+  const hfRead = (getEnv(env, 'AUDIT_HF_READ_TOKEN') || '').trim();
   if (!app) return null;
   if (hfRead) {
     return {
@@ -17,7 +26,7 @@ function upstreamAuthHeaders(env, extra = {}) {
 
 export async function onRequestPost(context) {
   const { request, env } = context;
-  const base = (env.AUDIT_UPSTREAM_URL || '').trim().replace(/\/$/, '');
+  const base = (getEnv(env, 'AUDIT_UPSTREAM_URL') || '').trim().replace(/\/$/, '');
   const ctIn = request.headers.get('Content-Type') || '';
 
   const headers = upstreamAuthHeaders(env, ctIn ? { 'Content-Type': ctIn } : {});
