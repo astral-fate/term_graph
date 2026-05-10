@@ -18,7 +18,7 @@ function upstreamAuthHeaders(env, extra = {}) {
     return {
       ...extra,
       Authorization: `Bearer ${hfRead}`,
-      'X-Audit-Secret': `Bearer ${app}`
+      'X-Audit-Secret': app
     };
   }
   return { ...extra, Authorization: `Bearer ${app}` };
