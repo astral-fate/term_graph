@@ -159,5 +159,13 @@ window.MustalihTemplates = {
         <p class="italic" style="padding:24px; color:var(--text-secondary);">Loading term...</p>
       </div>
     </div>
+  `,
+
+  rewrite: `
+    <div id="rewrite-tool-root"></div>
+  `,
+
+  audit: `
+    <div id="audit-view-root"></div>
   `
 };
