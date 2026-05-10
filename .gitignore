@@ -1,0 +1,89 @@
+# Ignore everything by default
+*
+
+# Allow directories
+!*/
+
+# Allow specific essential files
+!index.html
+!landing.html
+!glossary-ar.html
+!explore.html
+!_redirects
+!package.json
+!README.md
+!DOCKER_CLOUDFLARE_RUNBOOK.md
+!.env.example
+!.dev.vars.example
+!build.js
+!build.ps1
+!wrangler.toml
+!.gitignore
+
+# Local secrets / env files (never commit tokens)
+.env
+.env.local
+.env.*.local
+.dev.vars
+
+# Allow data files
+!*.json
+!*.jsonl
+!glossary_terms/
+!glossary_terms/**
+
+# Allow essential assets/code
+!functions/
+!functions/**
+!assets/**
+!css/**
+!js/**
+!fonts/**
+!images/**
+
+# Allow CI/CD
+!.github/
+!.github/**
+
+# Build / refactor helpers
+!scripts/
+!scripts/**
+
+# Hugging Face Space (Docker) — bundle includes copied backend/ + data/
+!huggingface-space/
+!huggingface-space/**
+!huggingface-space/backend/**
+!huggingface-space/data/**
+
+# Exclude large/extra folders explicitly (just in case)
+bias-variance/
+cross-validation/
+decision-tree/
+double-descent/
+double-descent2/
+equality-of-odds/
+linear-regression/
+logistic-regression/
+neural-networks/
+nn/
+nn2/
+old/
+precision-recall/
+random-forest/
+reinforcement-learning/
+roc-auc/
+test/
+train-test-validation/
+osdr-visualizer-main/
+transformer-explainer/
+node_modules/
+dist/
+.wrangler/
+*.xlsx
+*.csv
+*.py
+!scripts/**/*.py
+!backend/**/*.py
+
+__pycache__/
+*.pyc

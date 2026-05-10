@@ -1,0 +1,82 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Build and Deploy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build Project
+        run: node build.js
+
+      - name: Verify dist output
+        run: |
+          test -d dist
+          test -f dist/index.html
+          echo "---- dist (top level) ----"
+          ls -la dist
+          du -sh dist
+
+      # Server-side Pages Functions under dist/functions/ must call NVIDIA upstream; only client HTML/JS must stay same-origin.
+      - name: Block direct NVIDIA HTTPS URL in client bundles (use same-origin /api/v1/chat/completions only)
+        run: |
+          if grep -rE 'https://[^[:space:]]*integrate[^[:space:]]*nvidia' dist/ --include="*.js" --include="*.html" --exclude-dir=functions 2>/dev/null; then
+            echo "::error::dist still references NVIDIA integrate over HTTPS — client must use the Pages Function proxy only."
+            exit 1
+          fi
+          echo "OK: no direct NVIDIA integrate HTTPS URL in client bundles (dist/functions excluded)."
+
+      - name: Verify Pages Function proxy file exists
+        run: |
+          test -f functions/api/v1/chat/completions.js
+          test -f functions/health.js
+          test -f functions/api/v1/audit/run/stream.js
+          test -f functions/api/v1/audit-remote/health.js
+          test -f functions/api/v1/audit-remote/stream.js
+          test -f functions/api/v1/audit-remote/debug.js
+          echo "OK: Pages Functions present (chat proxy, audit edge demo, HF audit proxy)."
+
+      - name: Check Cloudflare secrets are set
+        env:
+          T: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          A: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$T" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN is missing. Add it under: Settings > Secrets and variables > Actions (same repo, not your PC env vars)"
+            exit 1
+          fi
+          if [ -z "$A" ]; then
+            echo "::error::CLOUDFLARE_ACCOUNT_ID is missing in GitHub Actions secrets"
+            exit 1
+          fi
+          echo "Cloudflare repository secrets are non-empty (not printing values)."
+
+      - name: Test Cloudflare auth (whoami)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: npx --yes wrangler@4.85.0 whoami
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4.85.0"
+          command: pages deploy --project-name=term-graph --branch=main
+        env:
+          WRANGLER_LOG: debug

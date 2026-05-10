@@ -1,0 +1,7 @@
+/result /result
+/result2 /result2
+/input /osdr-visualizer-main/templates/index.html 200
+/input2 /osdr-visualizer-main/templates/index2.html 200
+/comingsoon /osdr-visualizer-main/templates/ComingSoon.html 200
+/visualize /osdr-visualizer-main/templates/VisualizeSpaceScience.html 200
+/static/* /osdr-visualizer-main/static/:splat 200

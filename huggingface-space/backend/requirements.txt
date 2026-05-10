@@ -1,0 +1,13 @@
+# Audit AI API — same stack as the Gradio reference (no gradio in API path)
+python-dotenv>=1.0
+fastapi>=0.109
+uvicorn[standard]>=0.27
+python-multipart>=0.0.6
+numpy>=1.24
+huggingface_hub>=0.20
+openai>=1.0
+pypdf>=4.0
+sentence-transformers>=2.6
+tenacity>=8.0
+torch
+# sentence-transformers pulls torch; pin optional per your CUDA/CPU environment

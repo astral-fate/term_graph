@@ -1,0 +1,6 @@
+# Cloudflare Pages: static assets from dist/, Functions from ./functions (default).
+# Use: npx wrangler pages deploy --project-name=term-graph --branch=main
+# (Do not pass "dist" on the CLI — let pages_build_output_dir pick it up so Functions deploy.)
+name = "term-graph"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-11-01"

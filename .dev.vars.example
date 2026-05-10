@@ -1,0 +1,20 @@
+# Rename/copy this file to:  .dev.vars   (same folder as wrangler.toml). Restart Wrangler after edits.
+# From repo root:
+#   npm run dev
+# Without AUDIT_UPSTREAM_URL + AUDIT_UPSTREAM_TOKEN uncommented here, /api/v1/audit-remote/* returns 503 — use Offline demo or set both vars.
+# Uses wrangler.toml (dist + ./functions).
+#
+# Cloudflare production: set the same name in Pages → Settings → Environment variables.
+
+NVIDIA_API_KEY=replace_with_your_nvapi_token
+
+# Audit AI → Hugging Face (same-origin proxy; secrets stay in Wrangler / Pages — never in browser)
+# AUDIT_UPSTREAM_URL=https://YOUR_USER-YOUR_SPACE.hf.space
+# AUDIT_UPSTREAM_TOKEN=same_as_AUDIT_API_SECRET_on_hf_space
+#
+# Private Space (HF gateway expects hf_* read token on Authorization):
+# AUDIT_HF_READ_TOKEN=hf_xxxxxxxx
+# When set, Wrangler sends Authorization: Bearer hf_* and X-Audit-Secret: Bearer <AUDIT_UPSTREAM_TOKEN>
+#
+# Local UI test: npm run dev → http://127.0.0.1:8788 then in browser console:
+#   localStorage.setItem('mustalih_hf_proxy','1'); location.reload();

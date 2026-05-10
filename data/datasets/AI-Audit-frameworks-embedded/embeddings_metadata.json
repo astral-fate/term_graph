@@ -1,0 +1,11 @@
+{
+  "embedding_model": "BAAI/bge-m3",
+  "dimension": 1024,
+  "normalized": true,
+  "distance": "cosine (== dot product on normalized vectors)",
+  "controls_count": 519,
+  "icaire_terms_count": 1242,
+  "index_alignment": "row i of ctrl_embeddings.npy corresponds to controls[i] in controls.json (same order). Same for term_embeddings.npy and icaire_terms.json.",
+  "reproduction": "See loader.py for the canonical load + similarity computation.",
+  "version": "1.0.0"
+}

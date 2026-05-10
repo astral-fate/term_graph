@@ -1,0 +1,4532 @@
+{
+  "framework_id": "oecd",
+  "count": 52,
+  "controls": [
+    {
+      "control_id": "oecd::PRINCIPLE-1.1",
+      "control_title": "Human-centric, user-defined AI that guarantees benefits for people and planet",
+      "control_text_full": "AI brings significant opportunities to mitigate risks and to help adapt. These and other dimensions of universal well-being call for responsible AI that is based on algorithms and optimisation functions that are human-centric, user-defined, guarantee benefits for people and planet (Principle 1.1) and maintain accountability (Principle 1.5).",
+      "intent_summary": "AI systems must be designed to prioritize human well-being and environmental sustainability, with algorithms that are defined by user needs and deliver tangible benefits to both people and the planet. This is a foundational ethical requirement for responsible AI development.",
+      "evidence_signals": [
+        "Documentation showing user involvement in defining AI system objectives",
+        "Environmental impact assessments tied to AI deployment",
+        "System design documents specifying human-centric goals",
+        "Evidence of benefit-sharing mechanisms for affected communities",
+        "Alignment statements with UN Sustainable Development Goals"
+      ],
+      "evidence_anti_signals": [
+        "Absence of any mention of human well-being or environmental impact in design docs",
+        "Only profit-driven metrics used to evaluate system success",
+        "No stakeholder input documented in development lifecycle"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "human-centric",
+        "user-defined",
+        "benefits",
+        "planet",
+        "well-being"
+      ],
+      "remediation_template": "The AI system must be explicitly designed and documented to guarantee benefits for people and the planet, with user-defined objectives and measurable outcomes aligned to human and environmental well-being.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 27,
+      "source_page_end": 32,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.7239999771118164
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.7009999752044678
+        },
+        {
+          "term_id": "icaire_0063",
+          "term_en": "Artificial Intelligence Ethics",
+          "term_ar": "أخلاقيات الذكاء الاصطناعي",
+          "similarity": 0.6949999928474426
+        },
+        {
+          "term_id": "icaire_0521",
+          "term_en": "Friendly Artificial Intelligence (FAI)",
+          "term_ar": "ذكاء اصطناعي ودِّي",
+          "similarity": 0.6710000038146973
+        },
+        {
+          "term_id": "icaire_0467",
+          "term_en": "Explainability",
+          "term_ar": "قابلية التفسير",
+          "similarity": 0.6669999957084656
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6660000085830688
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6610000133514404
+        },
+        {
+          "term_id": "icaire_0228",
+          "term_en": "Constitutional Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي دستوري",
+          "similarity": 0.6589999794960022
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-1.2",
+      "control_title": "Fairness and absence of bias",
+      "control_text_full": "The business function for which the AI system is used will thus have a specific impact on economic and social benefits (Principle 1.1); fairness and absence of bias (Principle 1.2); security, safety and robustness (Principle 1.4); and jobs and skills (Principle 2.4)",
+      "intent_summary": "AI systems must be designed and evaluated to ensure they do not introduce or amplify unfair discrimination or bias, particularly when used in sensitive contexts like hiring, credit, or law enforcement.",
+      "evidence_signals": [
+        "Bias audit reports for training data and model outputs",
+        "Fairness metrics documented in model cards (e.g., disparate impact ratios)",
+        "Diverse training data sourcing and representation analysis",
+        "Documentation of steps taken to mitigate bias in decision logic",
+        "Third-party fairness certifications or evaluations"
+      ],
+      "evidence_anti_signals": [
+        "No mention of bias testing or mitigation in technical documentation",
+        "Training data sources not disclosed or known to be homogenous",
+        "Outcomes show statistically significant disparities across demographic groups"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "fairness",
+        "bias",
+        "discrimination",
+        "equity",
+        "algorithmic justice"
+      ],
+      "remediation_template": "The AI system must include documented evidence of fairness assessments and bias mitigation strategies, particularly when deployed in contexts affecting individuals' rights or opportunities.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 27,
+      "source_page_end": 32,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0478",
+          "term_en": "Fairness Constraint",
+          "term_ar": "قيد الإنصاف",
+          "similarity": 0.675000011920929
+        },
+        {
+          "term_id": "icaire_0062",
+          "term_en": "Artificial Intelligence Bias",
+          "term_ar": "تحيُّز الذكاء الاصطناعي",
+          "similarity": 0.6420000195503235
+        },
+        {
+          "term_id": "icaire_0063",
+          "term_en": "Artificial Intelligence Ethics",
+          "term_ar": "أخلاقيات الذكاء الاصطناعي",
+          "similarity": 0.640999972820282
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6399999856948853
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6330000162124634
+        },
+        {
+          "term_id": "icaire_0131",
+          "term_en": "Bias Mitigation Algorithm",
+          "term_ar": "خوارزمية تخفيف التحيز",
+          "similarity": 0.6230000257492065
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6209999918937683
+        },
+        {
+          "term_id": "icaire_1032",
+          "term_en": "Selection Bias",
+          "term_ar": "تحيُّز الاختيار",
+          "similarity": 0.6119999885559082
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-1.3",
+      "control_title": "Transparency about AI role and human involvement",
+      "control_text_full": "Such high-stakes situations often require formal transparency and accountability mechanisms (Principles 1.3 and 1.5), including transparency about the role of AI and human involvement in the process (e.g. human-in-the-loop), the full consequences of the AI system’s action on all stakeholders and the availability of appeals processes, particularly where life and liberty are at stake.",
+      "intent_summary": "In high-stakes applications, organizations must clearly disclose when and how AI is used in decision-making, ensure meaningful human oversight, and provide accessible appeal mechanisms for affected individuals.",
+      "evidence_signals": [
+        "User-facing disclosures stating AI involvement in decisions",
+        "Documentation of human-in-the-loop protocols and decision thresholds",
+        "Appeals process procedures published for end-users",
+        "Audit trails showing human review of AI recommendations",
+        "Training materials for human reviewers on AI limitations"
+      ],
+      "evidence_anti_signals": [
+        "No disclosure to users that AI influenced a decision",
+        "Human review is a formality with no real authority",
+        "No documented appeals process for adverse outcomes"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "transparency",
+        "human-in-the-loop",
+        "accountability",
+        "appeals",
+        "high-stakes"
+      ],
+      "remediation_template": "Where AI affects rights or life-altering outcomes, the system must provide clear transparency about AI involvement, ensure meaningful human oversight, and offer a documented, accessible appeals process.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 27,
+      "source_page_end": 32,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6869999766349792
+        },
+        {
+          "term_id": "icaire_1181",
+          "term_en": "Transparency",
+          "term_ar": "شفافية",
+          "similarity": 0.6779999732971191
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6690000295639038
+        },
+        {
+          "term_id": "icaire_0467",
+          "term_en": "Explainability",
+          "term_ar": "قابلية التفسير",
+          "similarity": 0.6520000100135803
+        },
+        {
+          "term_id": "icaire_0063",
+          "term_en": "Artificial Intelligence Ethics",
+          "term_ar": "أخلاقيات الذكاء الاصطناعي",
+          "similarity": 0.6480000019073486
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.6359999775886536
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.6349999904632568
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6290000081062317
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-1.5",
+      "control_title": "Accountability for AI outcomes",
+      "control_text_full": "Such high-stakes situations often require formal transparency and accountability mechanisms (Principles 1.3 and 1.5), including transparency about the role of AI and human involvement in the process (e.g. human-in-the-loop), the full consequences of the AI system’s action on all stakeholders and the availability of appeals processes, particularly where life and liberty are at stake. ... AI brings significant opportunities to mitigate risks and to help adapt. These and other dimensions of universal well-being call for responsible AI that is based on algorithms and optimisation functions that are human-centric, user-defined, guarantee benefits for people and planet (Principle 1.1) and maintain accountability (Principle 1.5).",
+      "intent_summary": "Organizations deploying AI systems must establish clear lines of responsibility for outcomes, ensuring that someone is accountable for harms, errors, or unintended consequences, especially in high-risk contexts.",
+      "evidence_signals": [
+        "Assigned roles and responsibilities for AI system governance",
+        "Liability clauses in contracts or procurement agreements",
+        "Internal audit logs linking decisions to responsible actors",
+        "Publicly available accountability framework or charter",
+        "Training for personnel on accountability obligations"
+      ],
+      "evidence_anti_signals": [
+        "No designated accountable party for AI decisions",
+        "Blame shifted to 'the algorithm' without human oversight",
+        "No mechanism to trace decisions back to responsible actors"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "accountability",
+        "responsibility",
+        "governance",
+        "liability",
+        "oversight"
+      ],
+      "remediation_template": "There must be a clearly identified accountable party or entity responsible for the outcomes of the AI system, with documented processes for redress, auditing, and responsibility assignment.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 27,
+      "source_page_end": 32,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.7260000109672546
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.722000002861023
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6890000104904175
+        },
+        {
+          "term_id": "icaire_0063",
+          "term_en": "Artificial Intelligence Ethics",
+          "term_ar": "أخلاقيات الذكاء الاصطناعي",
+          "similarity": 0.6850000023841858
+        },
+        {
+          "term_id": "icaire_0467",
+          "term_en": "Explainability",
+          "term_ar": "قابلية التفسير",
+          "similarity": 0.6669999957084656
+        },
+        {
+          "term_id": "icaire_0006",
+          "term_en": "Accountability",
+          "term_ar": "مسؤولية",
+          "similarity": 0.6499999761581421
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.6499999761581421
+        },
+        {
+          "term_id": "icaire_0240",
+          "term_en": "Controllability",
+          "term_ar": "قابلية التحكم",
+          "similarity": 0.6439999938011169
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-2.4",
+      "control_title": "Impact on work, jobs, and skills",
+      "control_text_full": "An AI system’s capacity to automate tasks and improve worker productivity can impact the world of work (Principle 2.4). This impact of AI will have implications for education strategies for affected groups as well as potential policies to share the benefits of increased worker productivity. ... The business function for which the AI system is used will thus have a specific impact on ... jobs and skills (Principle 2.4).",
+      "intent_summary": "Organizations must assess and mitigate the impact of AI on employment, including potential displacement, and develop strategies to reskill workers and ensure equitable sharing of productivity gains.",
+      "evidence_signals": [
+        "Workforce impact assessments prior to AI deployment",
+        "Reskilling or upskilling programs for displaced workers",
+        "Documentation of job transition plans or redeployment strategies",
+        "Stakeholder consultations with labor unions or worker representatives",
+        "Metrics tracking changes in job roles or employment levels post-deployment"
+      ],
+      "evidence_anti_signals": [
+        "No assessment of job displacement risks",
+        "No training or transition support offered to affected workers",
+        "AI deployment announced without consultation with workforce"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "job displacement",
+        "automation",
+        "reskilling",
+        "workforce",
+        "productivity"
+      ],
+      "remediation_template": "Organizations must conduct workforce impact assessments and implement reskilling or transition plans for employees affected by AI automation, ensuring equitable sharing of productivity benefits.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 27,
+      "source_page_end": 32,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6110000014305115
+        },
+        {
+          "term_id": "icaire_0085",
+          "term_en": "Augmented Research",
+          "term_ar": "بحث مُعزَّز",
+          "similarity": 0.6060000061988831
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.5960000157356262
+        },
+        {
+          "term_id": "icaire_0067",
+          "term_en": "Artificial Intelligence Operations (AIOps)",
+          "term_ar": "ذكاء اصطناعي للعمليات",
+          "similarity": 0.593999981880188
+        },
+        {
+          "term_id": "icaire_0059",
+          "term_en": "Artificial Intelligence (AI)",
+          "term_ar": "ذكاء اصطناعي",
+          "similarity": 0.593999981880188
+        },
+        {
+          "term_id": "icaire_0584",
+          "term_en": "Human-Machine Teaming",
+          "term_ar": "تكامل بين الإنسان والآلة",
+          "similarity": 0.5920000076293945
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.5899999737739563
+        },
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.5870000123977661
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-2.5",
+      "control_title": "International cooperation",
+      "control_text_full": "International cooperation (Principle 2.5) is a must in the face of urgent global challenges.",
+      "intent_summary": "Given the global nature of AI impacts, stakeholders are expected to collaborate across borders to address shared risks and opportunities, particularly in areas like climate change, human rights, and economic equity.",
+      "evidence_signals": [
+        "Participation in international AI governance initiatives",
+        "Cross-border data sharing agreements with ethical safeguards",
+        "Collaborative research or standards development with international partners",
+        "Public statements or commitments to global AI principles",
+        "Alignment with OECD, UN, or EU AI policy frameworks"
+      ],
+      "evidence_anti_signals": [
+        "Isolationist approach with no engagement in global AI dialogues",
+        "Deployment of AI systems that violate international norms or treaties",
+        "No mention of global impact or cooperation in policy documents"
+      ],
+      "applies_to_doc_types": [
+        "policy",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "international",
+        "cooperation",
+        "global",
+        "cross-border",
+        "harmonization"
+      ],
+      "remediation_template": "Organizations must actively engage in international cooperation efforts to address global AI challenges, aligning practices with recognized multilateral frameworks and standards.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 27,
+      "source_page_end": 32,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0203",
+          "term_en": "Collaborative Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي تعاوني",
+          "similarity": 0.6480000019073486
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6039999723434448
+        },
+        {
+          "term_id": "icaire_0521",
+          "term_en": "Friendly Artificial Intelligence (FAI)",
+          "term_ar": "ذكاء اصطناعي ودِّي",
+          "similarity": 0.5989999771118164
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.5989999771118164
+        },
+        {
+          "term_id": "icaire_0040",
+          "term_en": "Ambient Intelligence (AmI)",
+          "term_ar": "ذكاء محيطي",
+          "similarity": 0.597000002861023
+        },
+        {
+          "term_id": "icaire_0063",
+          "term_en": "Artificial Intelligence Ethics",
+          "term_ar": "أخلاقيات الذكاء الاصطناعي",
+          "similarity": 0.5899999737739563
+        },
+        {
+          "term_id": "icaire_0240",
+          "term_en": "Controllability",
+          "term_ar": "قابلية التحكم",
+          "similarity": 0.5889999866485596
+        },
+        {
+          "term_id": "icaire_0585",
+          "term_en": "Human-Robot Interaction (HRI)",
+          "term_ar": "تفاعل بين الإنسان والروبوت",
+          "similarity": 0.5860000252723694
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::REQUIREMENT-GDPR-HUMAN-IN-LOOP",
+      "control_title": "Human-in-the-loop for legal or significant decisions",
+      "control_text_full": "For example, the GDPR stipulates that a human must be in the loop if a decision has legal or similarly significant effects on people.",
+      "intent_summary": "When AI systems make decisions that have legal consequences or significantly affect individuals (e.g., credit denial, hiring, parole), a human must review and confirm the decision before it is finalized.",
+      "evidence_signals": [
+        "Explicit human review step documented in decision workflow",
+        "Legal compliance documentation referencing GDPR Article 22",
+        "User notifications stating 'a human reviewed this decision'",
+        "Audit logs showing human override of AI recommendations",
+        "Training materials for human reviewers on legal obligations"
+      ],
+      "evidence_anti_signals": [
+        "Fully automated decisions with no human involvement in high-stakes contexts",
+        "No reference to GDPR or equivalent legal requirements in compliance docs",
+        "Users denied the right to request human review"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "GDPR",
+        "human-in-the-loop",
+        "legal effects",
+        "automated decision",
+        "rights"
+      ],
+      "remediation_template": "Where AI decisions have legal or similarly significant effects, a human must be actively involved in the decision-making process, with documented review and the right to human appeal.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 27,
+      "source_page_end": 32,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0034",
+          "term_en": "Algorithm in the Loop",
+          "term_ar": "خوارزمية في الحلقة",
+          "similarity": 0.7070000171661377
+        },
+        {
+          "term_id": "icaire_0583",
+          "term_en": "Human-in-the-Loop (HITL)",
+          "term_ar": "إنسان في الحلقة",
+          "similarity": 0.6869999766349792
+        },
+        {
+          "term_id": "icaire_0606",
+          "term_en": "In-Processing Algorithm",
+          "term_ar": "خوارزمية أثناء المعالجة",
+          "similarity": 0.6269999742507935
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6169999837875366
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.6079999804496765
+        },
+        {
+          "term_id": "icaire_0228",
+          "term_en": "Constitutional Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي دستوري",
+          "similarity": 0.6019999980926514
+        },
+        {
+          "term_id": "icaire_0197",
+          "term_en": "Cognitive Automation",
+          "term_ar": "أتمتة إدراكية",
+          "similarity": 0.6000000238418579
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.597000002861023
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-1.4",
+      "control_title": "Business function and critical function impact security, safety and robustness",
+      "control_text_full": "The business function for which the AI system is used will thus have a specific impact on economic and social benefits (Principle 1.1); fairness and absence of bias (Principle 1.2); security, safety and robustness (Principle 1.4); and jobs and skills (Principle 2.4). ... The critical function will have a particular impact on security, safety and robustness (Principle 1.4).",
+      "intent_summary": "AI systems must be designed with heightened security, safety, and robustness controls when deployed in critical functions (e.g., healthcare, law enforcement) or high-risk business functions, due to potential for serious harm.",
+      "evidence_signals": [
+        "Risk assessment identifying critical function status and associated safety requirements",
+        "Security certification or compliance evidence (e.g., NIS Directive alignment)",
+        "Robustness testing results under failure scenarios relevant to function",
+        "Documentation of safety margins or fail-safes for critical function deployments",
+        "Incident response plan specific to critical function AI system"
+      ],
+      "evidence_anti_signals": [
+        "No distinction made between critical and non-critical function deployments",
+        "Absence of safety testing for high-stakes functions like medical or law enforcement",
+        "Claims of 'general purpose' use despite deployment in critical infrastructure"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "security",
+        "safety",
+        "robustness",
+        "critical function",
+        "Principle 1.4"
+      ],
+      "remediation_template": "For AI systems deployed in critical functions or high-risk business contexts, documented safety, security, and robustness controls must be implemented and validated against recognized standards (e.g., NIS, CISA).",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 31,
+      "source_page_end": 35,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.625
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6010000109672546
+        },
+        {
+          "term_id": "icaire_0067",
+          "term_en": "Artificial Intelligence Operations (AIOps)",
+          "term_ar": "ذكاء اصطناعي للعمليات",
+          "similarity": 0.5929999947547913
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.5839999914169312
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.5830000042915344
+        },
+        {
+          "term_id": "icaire_0157",
+          "term_en": "Business Intelligence",
+          "term_ar": "ذكاء الأعمال",
+          "similarity": 0.578000009059906
+        },
+        {
+          "term_id": "icaire_0240",
+          "term_en": "Controllability",
+          "term_ar": "قابلية التحكم",
+          "similarity": 0.5740000009536743
+        },
+        {
+          "term_id": "icaire_0521",
+          "term_en": "Friendly Artificial Intelligence (FAI)",
+          "term_ar": "ذكاء اصطناعي ودِّي",
+          "similarity": 0.5730000138282776
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-2.1",
+      "control_title": "AI system maturity affects R&D investment and safety",
+      "control_text_full": "AI system maturity is particularly relevant to safety, robustness and security (Principle 1.4); accountability (Principle 1.5); and R&D investment (Principle 2.1).",
+      "intent_summary": "The technical maturity of an AI system (e.g., TRL level) must inform R&D investment decisions and risk management, ensuring that immature systems are not deployed in high-stakes contexts without adequate validation.",
+      "evidence_signals": [
+        "TRL assessment report for the AI system",
+        "R&D budget allocation tied to TRL stage and risk profile",
+        "Validation evidence matching TRL level to deployment context",
+        "Governance approval requiring minimum TRL before production use",
+        "Development roadmap with milestones aligned to TRL progression"
+      ],
+      "evidence_anti_signals": [
+        "Deployment of TRL 3–4 system in critical function without justification",
+        "No TRL assessment conducted or documented",
+        "R&D spending not linked to system maturity or risk level"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "technical maturity",
+        "TRL",
+        "R&D investment",
+        "Principle 2.1"
+      ],
+      "remediation_template": "The AI system’s technical maturity (TRL) must be formally assessed and documented, with R&D investment and deployment decisions aligned to its readiness level and associated risks.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 31,
+      "source_page_end": 35,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6460000276565552
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6290000081062317
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6200000047683716
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.6169999837875366
+        },
+        {
+          "term_id": "icaire_0063",
+          "term_en": "Artificial Intelligence Ethics",
+          "term_ar": "أخلاقيات الذكاء الاصطناعي",
+          "similarity": 0.6110000014305115
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.5989999771118164
+        },
+        {
+          "term_id": "icaire_0228",
+          "term_en": "Constitutional Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي دستوري",
+          "similarity": 0.5870000123977661
+        },
+        {
+          "term_id": "icaire_0059",
+          "term_en": "Artificial Intelligence (AI)",
+          "term_ar": "ذكاء اصطناعي",
+          "similarity": 0.5830000042915344
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::CRITICAL-FUNCTION-DEFINITION",
+      "control_title": "Define and classify critical functions and sectors",
+      "control_text_full": "Critical functions are economic and social activities for which ‘the interruption or disruption would have serious consequences.’ They include: 1) the health, safety, and security of citizens; 2) the effective functioning of services essential to the economy and society, and of the government; or 3) economic and social prosperity more broadly. ... Critical systems and activities are defined as follows:  AI system deployed in a critical sector or infrastructure (e.g. energy, transport, water, health, digital infrastructure and finance).  AI system performs or serves a critical function independent from its sector (e.g. conducting elections, maintaining supply chains, law enforcement, providing medical care, supporting the financial system).",
+      "intent_summary": "Organizations must identify and classify whether their AI systems are deployed in critical sectors or perform critical functions, as this triggers heightened regulatory and safety obligations.",
+      "evidence_signals": [
+        "List of AI systems mapped to critical sectors or functions per OECD definition",
+        "Internal classification policy defining critical functions for the organization",
+        "Regulatory compliance matrix referencing NIS Directive or CISA critical functions",
+        "Risk assessment explicitly flagging critical function status",
+        "Audit trail showing classification decisions and rationale"
+      ],
+      "evidence_anti_signals": [
+        "No classification of any AI system as critical or non-critical",
+        "All systems treated uniformly regardless of function or sector",
+        "Misclassification of high-risk systems (e.g., medical diagnosis) as non-critical"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "critical function",
+        "critical sector",
+        "health",
+        "safety",
+        "security",
+        "infrastructure"
+      ],
+      "remediation_template": "All AI systems must be formally classified as critical or non-critical based on OECD definitions, with documented rationale and alignment to recognized regulatory frameworks (e.g., NIS, CISA).",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 31,
+      "source_page_end": 35,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6470000147819519
+        },
+        {
+          "term_id": "icaire_0067",
+          "term_en": "Artificial Intelligence Operations (AIOps)",
+          "term_ar": "ذكاء اصطناعي للعمليات",
+          "similarity": 0.6460000276565552
+        },
+        {
+          "term_id": "icaire_0279",
+          "term_en": "Data Classification",
+          "term_ar": "تصنيف البيانات",
+          "similarity": 0.6269999742507935
+        },
+        {
+          "term_id": "icaire_0059",
+          "term_en": "Artificial Intelligence (AI)",
+          "term_ar": "ذكاء اصطناعي",
+          "similarity": 0.6240000128746033
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6230000257492065
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6129999756813049
+        },
+        {
+          "term_id": "icaire_0180",
+          "term_en": "Classification",
+          "term_ar": "تصنيف",
+          "similarity": 0.6129999756813049
+        },
+        {
+          "term_id": "icaire_0197",
+          "term_en": "Cognitive Automation",
+          "term_ar": "أتمتة إدراكية",
+          "similarity": 0.6100000143051147
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.1",
+      "control_title": "Transparent, accessible information about the AI system’s objectives and assumptions",
+      "control_text_full": "Transparent, accessible information about the AI system’s objectives and assumptions: Provide interested stakeholders with access to useful information.",
+      "intent_summary": "AI system operators must make clear and accessible information available to stakeholders about the system's goals and underlying assumptions to support accountability and trust. This ensures transparency and enables external oversight.",
+      "evidence_signals": [
+        "Publicly accessible documentation detailing system objectives",
+        "Stakeholder portals with explanations of model assumptions",
+        "Documentation referenced in system user manuals or API guides",
+        "Audit logs showing how assumptions were documented during development",
+        "Publicly posted system fact sheets or model cards"
+      ],
+      "evidence_anti_signals": [
+        "No documentation of system objectives exists",
+        "Information is buried in internal reports or requires NDAs to access",
+        "Assumptions are described only in technical jargon without plain-language summaries"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "transparency",
+        "accessibility",
+        "objectives",
+        "assumptions",
+        "stakeholders"
+      ],
+      "remediation_template": "If transparent information about the AI system’s objectives and assumptions is not provided to stakeholders, the operator should publish a clear, accessible document explaining these elements in non-technical language.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 34,
+      "source_page_end": 37,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_1181",
+          "term_en": "Transparency",
+          "term_ar": "شفافية",
+          "similarity": 0.7289999723434448
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.7210000157356262
+        },
+        {
+          "term_id": "icaire_0467",
+          "term_en": "Explainability",
+          "term_ar": "قابلية التفسير",
+          "similarity": 0.6890000104904175
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6629999876022339
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6610000133514404
+        },
+        {
+          "term_id": "icaire_0063",
+          "term_en": "Artificial Intelligence Ethics",
+          "term_ar": "أخلاقيات الذكاء الاصطناعي",
+          "similarity": 0.6439999938011169
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.6399999856948853
+        },
+        {
+          "term_id": "icaire_0731",
+          "term_en": "Machine Perception",
+          "term_ar": "منظور الآلة",
+          "similarity": 0.6370000243186951
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.2",
+      "control_title": "Performance monitoring mechanisms for AI systems",
+      "control_text_full": "Performance monitoring mechanisms: Such as metrics to assess the performance and accuracy of the AI system.",
+      "intent_summary": "Operators must implement measurable metrics to continuously evaluate the performance and accuracy of AI systems in operation, ensuring they function as intended and detect degradation over time.",
+      "evidence_signals": [
+        "Defined KPIs for model accuracy, precision, recall, or F1-score",
+        "Dashboards showing real-time or batch performance metrics",
+        "Alerting systems triggered by performance drift or threshold breaches",
+        "Regular performance reports submitted to governance bodies",
+        "Benchmarking against baseline or control models"
+      ],
+      "evidence_anti_signals": [
+        "No performance metrics are defined or tracked",
+        "Metrics are only measured during development, not in production",
+        "Performance data is not retained or auditable"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "performance",
+        "monitoring",
+        "metrics",
+        "accuracy",
+        "degradation"
+      ],
+      "remediation_template": "If performance monitoring mechanisms are absent, the operator must define and implement measurable metrics to track system accuracy and performance continuously during operation.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 34,
+      "source_page_end": 37,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0881",
+          "term_en": "Performance",
+          "term_ar": "أداء",
+          "similarity": 0.6890000104904175
+        },
+        {
+          "term_id": "icaire_0037",
+          "term_en": "Algorithmic Efficiency",
+          "term_ar": "كفاءة خوارزمية",
+          "similarity": 0.6859999895095825
+        },
+        {
+          "term_id": "icaire_0757",
+          "term_en": "Metric",
+          "term_ar": "مقياس",
+          "similarity": 0.6840000152587891
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6729999780654907
+        },
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.6729999780654907
+        },
+        {
+          "term_id": "icaire_0067",
+          "term_en": "Artificial Intelligence Operations (AIOps)",
+          "term_ar": "ذكاء اصطناعي للعمليات",
+          "similarity": 0.6620000004768372
+        },
+        {
+          "term_id": "icaire_0082",
+          "term_en": "Augmented Analytics",
+          "term_ar": "تحليلات مُعَزَّزة",
+          "similarity": 0.6399999856948853
+        },
+        {
+          "term_id": "icaire_0107",
+          "term_en": "Average Precision",
+          "term_ar": "متوسط الإحكام",
+          "similarity": 0.6349999904632568
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.3",
+      "control_title": "Tools or processes for developing or maintaining trustworthy AI",
+      "control_text_full": "Tools or processes for developing or maintaining trustworthy AI: Using tools like guidelines; governance frameworks; product development or lifecycle tools including for model robustness; risk management frameworks; sector-specific codes of conduct; process standards; technical validation approaches; technical documentation; technical standards; toolkits, toolboxes or software tools; educational material; change-management processes; certification (technical and/or process-related); or tools for protection against adverse attacks.",
+      "intent_summary": "Operators must use established tools and processes—such as risk frameworks, validation methods, documentation standards, and security tools—to ensure AI systems are developed and maintained in a trustworthy, accountable, and secure manner throughout their lifecycle.",
+      "evidence_signals": [
+        "Use of a documented risk management framework (e.g., ISO/IEC 23053)",
+        "Technical documentation following IEEE or NIST standards",
+        "Evidence of certification (e.g., ISO/IEC 42001 compliance)",
+        "Use of adversarial testing toolkits (e.g., Adversarial Robustness Toolbox)",
+        "Change-management logs tied to model updates and approvals"
+      ],
+      "evidence_anti_signals": [
+        "No formal governance or lifecycle process documented",
+        "Reliance on ad-hoc or undocumented practices",
+        "Absence of any validation, testing, or certification records"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "trustworthy AI",
+        "risk management",
+        "validation",
+        "certification",
+        "robustness",
+        "security"
+      ],
+      "remediation_template": "If tools or processes for trustworthy AI are not in place, the operator must adopt and document at least one recognized governance framework, technical standard, or validation process to support responsible AI development and operation.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 34,
+      "source_page_end": 37,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.7239999771118164
+        },
+        {
+          "term_id": "icaire_0063",
+          "term_en": "Artificial Intelligence Ethics",
+          "term_ar": "أخلاقيات الذكاء الاصطناعي",
+          "similarity": 0.6959999799728394
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.6660000085830688
+        },
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.6589999794960022
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6579999923706055
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6320000290870667
+        },
+        {
+          "term_id": "icaire_0067",
+          "term_en": "Artificial Intelligence Operations (AIOps)",
+          "term_ar": "ذكاء اصطناعي للعمليات",
+          "similarity": 0.6309999823570251
+        },
+        {
+          "term_id": "icaire_0228",
+          "term_en": "Constitutional Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي دستوري",
+          "similarity": 0.6309999823570251
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::DATA-1.1",
+      "control_title": "Data provenance must be documented and understood",
+      "control_text_full": "Core characteristics of the Data & Input dimension are data provenance (where the data comes from); data collection and origin (e.g. data collection, origin, dynamic nature and scale); domain (e.g. personal, proprietary or public); data quality and appropriateness; and their technical characteristics (e.g. structure and encoding).",
+      "intent_summary": "Operators must document the origin, collection method, domain, and technical properties of all data used in AI systems to ensure traceability, appropriateness, and compliance with ethical and legal standards.",
+      "evidence_signals": [
+        "Data lineage diagrams showing source to model input",
+        "Metadata tags indicating data origin (e.g., 'human-collected', 'synthetic')",
+        "Data quality assessments (e.g., completeness, bias, noise levels)",
+        "Documentation of data domain classification (personal, public, proprietary)",
+        "Audit trails of data ingestion and preprocessing steps"
+      ],
+      "evidence_anti_signals": [
+        "No record of where data originated",
+        "Data sources described only as 'internal' or 'third-party' without specifics",
+        "Absence of data quality or bias assessments"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "provenance",
+        "data origin",
+        "domain",
+        "quality",
+        "technical characteristics"
+      ],
+      "remediation_template": "If data provenance is not documented, the operator must establish and maintain a clear record of the source, collection method, domain, and technical properties of all data used in the AI system.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 34,
+      "source_page_end": 37,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6460000276565552
+        },
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.6320000290870667
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6209999918937683
+        },
+        {
+          "term_id": "icaire_0287",
+          "term_en": "Data Ethics",
+          "term_ar": "أخلاقيات البيانات",
+          "similarity": 0.6169999837875366
+        },
+        {
+          "term_id": "icaire_0135",
+          "term_en": "Big Data",
+          "term_ar": "بيانات ضخمة",
+          "similarity": 0.6159999966621399
+        },
+        {
+          "term_id": "icaire_0338",
+          "term_en": "Data Source",
+          "term_ar": "مصدر البيانات",
+          "similarity": 0.6140000224113464
+        },
+        {
+          "term_id": "icaire_0301",
+          "term_en": "Data Intelligence",
+          "term_ar": "ذكاء البيانات",
+          "similarity": 0.6110000014305115
+        },
+        {
+          "term_id": "icaire_0282",
+          "term_en": "Data Control",
+          "term_ar": "تحكم في البيانات",
+          "similarity": 0.6100000143051147
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::DATA-1.2",
+      "control_title": "Data collection methods must be identified and justified",
+      "control_text_full": "Humans or machines can detect and collect (“track”) data and input from the context or environment by:  Collected by humans : This takes place when a human is needed to observe and collect information that requires subjective judgment, such as a person’s mental state . Other examples of data collected by humans are crowd-sourcing data and human-based computation, where certain steps of the computation process are conducted by humans.  Collected by automated sensors: Devices that automatically monitor and record data include cameras, microphones, thermometers, laboratory instruments and other sensors such as Internet of Things (IoT) devices, but also the automated recording of information from online log files, mobile phones, GPS watches and activity wristbands.  Collected by humans and automated sensors : Some data are collected by humans together with automated tools. In healthcare applications, data from sensors such as heartbeat or blood pressure detectors will often be combined with a doctor’s assessment.",
+      "intent_summary": "Operators must identify and justify how data is collected—whether by humans, automated sensors, or hybrid methods—to ensure appropriate consent, privacy safeguards, and ethical alignment, especially when involving sensitive contexts like health or surveillance.",
+      "evidence_signals": [
+        "Documentation specifying collection method for each data type",
+        "Ethical review board approvals for human-collected data",
+        "Privacy impact assessments for sensor-based data collection",
+        "Consent records for crowd-sourced or opt-in data",
+        "System architecture diagrams showing data ingestion points"
+      ],
+      "evidence_anti_signals": [
+        "Collection method unspecified or labeled generically as 'data input'",
+        "No distinction between human and automated collection in documentation",
+        "Use of sensitive sensors (e.g., cameras, biometrics) without justification"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "data collection",
+        "human input",
+        "sensors",
+        "IoT",
+        "hybrid collection"
+      ],
+      "remediation_template": "If data collection methods are not clearly identified and justified, the operator must document the method used for each data type and demonstrate ethical and legal justification, particularly for sensitive or automated collection.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 34,
+      "source_page_end": 37,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0281",
+          "term_en": "Data Collection",
+          "term_ar": "جمع البيانات",
+          "similarity": 0.7310000061988831
+        },
+        {
+          "term_id": "icaire_0272",
+          "term_en": "Data Aggregation",
+          "term_ar": "تجميع البيانات",
+          "similarity": 0.6869999766349792
+        },
+        {
+          "term_id": "icaire_0429",
+          "term_en": "Edge Analytics",
+          "term_ar": "تحليلات طرفية",
+          "similarity": 0.6620000004768372
+        },
+        {
+          "term_id": "icaire_0274",
+          "term_en": "Data Analytics",
+          "term_ar": "تحليلات البيانات",
+          "similarity": 0.6589999794960022
+        },
+        {
+          "term_id": "icaire_0301",
+          "term_en": "Data Intelligence",
+          "term_ar": "ذكاء البيانات",
+          "similarity": 0.6579999923706055
+        },
+        {
+          "term_id": "icaire_0082",
+          "term_en": "Augmented Analytics",
+          "term_ar": "تحليلات مُعَزَّزة",
+          "similarity": 0.656000018119812
+        },
+        {
+          "term_id": "icaire_0330",
+          "term_en": "Data Sampling",
+          "term_ar": "أخذ عيِّنات البيانات",
+          "similarity": 0.6539999842643738
+        },
+        {
+          "term_id": "icaire_0273",
+          "term_en": "Data Analysis",
+          "term_ar": "تحليل البيانات",
+          "similarity": 0.6499999761581421
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::DATA-1.3",
+      "control_title": "Data provenance categories must be applied and disclosed",
+      "control_text_full": "Provenance of data and input: The following list draws on the data provenance categorisation made by Abrams (Abrams, 2014[16]) and the OECD (OECD, 2019[15]) of data collected with decreasing levels of awareness. It should be noted that these categories can overlap and most systems will combine data from different sources. Here, we broaden the original categorisation that focused on personal data to also cover expert input and non-personal data, as well as data that are synthetically generated.  Expert input: Human knowledge that is codified into rules and structures such as ontologies (concepts and properties), knowledge graphs and analytical functions (e.g. the objective function or rewards an AI model will optimise for).  Provided data: Data that originate from actions by individuals or by organisations that are aware of the data being provided. They include “initiated” (e.g. a license application), “transactional” (e.g. bills paid) and “posted” (e.g. social networking posts) data.  Observed data: Collected through observation of a behaviour or activity through human observation or the use of automated instruments or sensors. Examples include website visitor provenance and browsing patterns observed by a website administrator. Observed data also include sounds, scents, temperature, GPS position or soil acidity. Observed data about individuals can be “engaged” (e.g. voluntarily accepting cookie tracking on a website), “unanticipated” (e.g. the tracking of seconds spent looking at a specific image online) or “passive” (e.g. CCTV images of individuals).  Synthetic data : Usually generated by computer simulations, including data collected through reinforcement learning. Synthetic data allow for simulation of scenarios that are difficult to observe or replicate in real life (e.g. a car accident) or are otherwise too expensive to collect at scale (e.g. millions of miles of driving time for self-driving cars). They include most applications of physical modelling, such as music synthesisers or flight simulators. AI system output of synthetic data approximates reality but is generated algorithmically.  Derived data : Data taken from other data to become a new data element. Derived data include computational (e.g. a credit score) and categorical data (e.g. age group of a buyer). They can be inferred (e.g. the product of a probability-based analytic process like a fraud score or risk of accident) or aggregated (e.g. abstracted from more fine-grained data). Proprietary data are often characterised as derived data.",
+      "intent_summary": "Operators must classify and disclose the provenance category of all data used (expert, provided, observed, synthetic, derived) to ensure transparency about how data was generated and whether individuals were aware of its collection or use.",
+      "evidence_signals": [
+        "Data catalog with provenance labels for each dataset",
+        "Disclosure of synthetic data use in model cards or documentation",
+        "Explicit labeling of inferred or derived data (e.g., credit scores)",
+        "Consent records for 'provided' or 'engaged' data",
+        "Audit trail showing transformation from observed to derived data"
+      ],
+      "evidence_anti_signals": [
+        "All data labeled generically as 'training data' without provenance",
+        "Synthetic or inferred data used without disclosure",
+        "No distinction between observed and provided data in documentation"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "provenance",
+        "synthetic data",
+        "derived data",
+        "expert input",
+        "observed data"
+      ],
+      "remediation_template": "If data provenance categories are not applied or disclosed, the operator must classify all data inputs by provenance type and clearly document this classification in system documentation for transparency and accountability.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 34,
+      "source_page_end": 37,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0279",
+          "term_en": "Data Classification",
+          "term_ar": "تصنيف البيانات",
+          "similarity": 0.6859999895095825
+        },
+        {
+          "term_id": "icaire_0974",
+          "term_en": "Reference Data",
+          "term_ar": "بيانات مرجعية",
+          "similarity": 0.6520000100135803
+        },
+        {
+          "term_id": "icaire_0338",
+          "term_en": "Data Source",
+          "term_ar": "مصدر البيانات",
+          "similarity": 0.6510000228881836
+        },
+        {
+          "term_id": "icaire_0301",
+          "term_en": "Data Intelligence",
+          "term_ar": "ذكاء البيانات",
+          "similarity": 0.6499999761581421
+        },
+        {
+          "term_id": "icaire_0299",
+          "term_en": "Data Integration",
+          "term_ar": "تكامل البيانات",
+          "similarity": 0.6499999761581421
+        },
+        {
+          "term_id": "icaire_0166",
+          "term_en": "Causal Inference",
+          "term_ar": "استنتاج سببي",
+          "similarity": 0.6430000066757202
+        },
+        {
+          "term_id": "icaire_0857",
+          "term_en": "Output Data (Or Output)",
+          "term_ar": "بيانات مُخرَجة (أو مخرجات)",
+          "similarity": 0.6420000195503235
+        },
+        {
+          "term_id": "icaire_0624",
+          "term_en": "Input Data (or Input)",
+          "term_ar": "بيانات مُدْخَلة (أو مُدْخَلات)",
+          "similarity": 0.6399999856948853
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::DATA-1.4",
+      "control_title": "Dynamic nature of data must be assessed and managed",
+      "control_text_full": "Data can be “static” or “dynamic”, to varying degrees:  Static data: These data do not change after they are collected (e.g. a given publication, a product’s batch number or the geographic latitudes and longitudes of a fixed element like a building or a mountain).  Dynamic data updated from time-to-time: Dynamic data continually change after they are recorded in order to maintain their integrity. Models relying on dynamic data can leverage “incremental algorithms” that update the model frequently based on incoming data. Dynamic data can be updated from time-to-time without necessarily being real-time data. Examples include timetables of flights’ estimated time of arrival using batch processing.  Dynamic real-time data : Dynamic real-time data are delivered immediately after collection with no delay. Examples of systems that use real-time data processing include an alarm system triggered by an entry signal, a recommender system that evolves in real-time as it is being used (e.g. with a streaming video service like YouTube) and an autonomous driving system that reacts to real-time environmental data.",
+      "intent_summary": "Operators must assess whether data used by the AI system is static, periodically updated, or real-time, and implement appropriate mechanisms to handle data evolution to prevent model drift or unsafe behavior.",
+      "evidence_signals": [
+        "Classification of data as static, periodic, or real-time in system design docs",
+        "Use of incremental learning or retraining pipelines for dynamic data",
+        "Monitoring for model drift in real-time systems",
+        "Latency specifications for data ingestion in system architecture",
+        "Alerts triggered by unexpected changes in dynamic data streams"
+      ],
+      "evidence_anti_signals": [
+        "No distinction made between static and dynamic data",
+        "Real-time systems without monitoring for data drift or feedback loops",
+        "Dynamic data used without any update or validation mechanism"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "dynamic data",
+        "real-time",
+        "static data",
+        "model drift",
+        "incremental updates"
+      ],
+      "remediation_template": "If the dynamic nature of data is not assessed, the operator must classify data as static, periodic, or real-time and implement corresponding data update, retraining, or monitoring mechanisms to maintain system reliability.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 34,
+      "source_page_end": 37,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0424",
+          "term_en": "Dynamic Model",
+          "term_ar": "نموذج ديناميكي",
+          "similarity": 0.7059999704360962
+        },
+        {
+          "term_id": "icaire_0021",
+          "term_en": "Adaptive Data Governance",
+          "term_ar": "حَوْكمة تَكَيُّفيَّة للبيانات",
+          "similarity": 0.6869999766349792
+        },
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.6679999828338623
+        },
+        {
+          "term_id": "icaire_0301",
+          "term_en": "Data Intelligence",
+          "term_ar": "ذكاء البيانات",
+          "similarity": 0.6639999747276306
+        },
+        {
+          "term_id": "icaire_0042",
+          "term_en": "Analog Data",
+          "term_ar": "بيانات تناظرية",
+          "similarity": 0.6620000004768372
+        },
+        {
+          "term_id": "icaire_0135",
+          "term_en": "Big Data",
+          "term_ar": "بيانات ضخمة",
+          "similarity": 0.6579999923706055
+        },
+        {
+          "term_id": "icaire_0285",
+          "term_en": "Data Drift",
+          "term_ar": "انحراف البيانات",
+          "similarity": 0.6520000100135803
+        },
+        {
+          "term_id": "icaire_0774",
+          "term_en": "Model Collapse",
+          "term_ar": "تدهور النموذج",
+          "similarity": 0.6489999890327454
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::DATA-1.5",
+      "control_title": "Scale of data must be documented and justified",
+      "control_text_full": "The scale of a dataset is a continuous variable that has an ever-increasing upper limit. If real-time, scale can be roughly measured as the order of magnitude of bytes per time unit (e.g. tens of petabytes per second) or the number of requests to the AI system per second. If static, size is measured in bytes (e.g. hundreds of gigabytes). The scale of data continues to change as technology advances. [...] The scale of data can be:  Very large: One exabyte (one billion gigabytes) or larger. Extremely large volumes of data take time to gather/accumulate and require complex systems to operate and process.  Large: Tens of petabytes (per second if real-time).  Medium: Hundreds of gigabytes.  Small: Tens of gigabytes or smaller.",
+      "intent_summary": "Operators must document the scale of data used by the AI system—whether small, medium, large, or very large—to enable assessment of computational requirements, fairness implications, and environmental impact.",
+      "evidence_signals": [
+        "Dataset size reported in system documentation (e.g., '500 GB training set')",
+        "Throughput metrics for real-time systems (e.g., '10K requests/sec')",
+        "Justification for data scale based on model performance needs",
+        "Environmental impact assessments tied to data volume",
+        "Comparison of model performance across data scales"
+      ],
+      "evidence_anti_signals": [
+        "Data scale described vaguely as 'large' without quantification",
+        "No justification provided for why massive data volumes are needed",
+        "Scale not considered in procurement or infrastructure planning"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 1,
+      "severity": "low",
+      "keywords": [
+        "data scale",
+        "dataset size",
+        "throughput",
+        "exabyte",
+        "petabyte"
+      ],
+      "remediation_template": "If data scale is not documented, the operator should quantify and report the size and throughput of data used by the AI system, and justify its necessity in relation to model performance and resource efficiency.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 34,
+      "source_page_end": 37,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0135",
+          "term_en": "Big Data",
+          "term_ar": "بيانات ضخمة",
+          "similarity": 0.746999979019165
+        },
+        {
+          "term_id": "icaire_0349",
+          "term_en": "Data Volume",
+          "term_ar": "حجم البيانات",
+          "similarity": 0.6819999814033508
+        },
+        {
+          "term_id": "icaire_0137",
+          "term_en": "Big Data Intelligence",
+          "term_ar": "ذكاء البيانات الضخمة",
+          "similarity": 0.6729999780654907
+        },
+        {
+          "term_id": "icaire_0496",
+          "term_en": "Feature Scaling",
+          "term_ar": "مواءمة الخصائص",
+          "similarity": 0.6589999794960022
+        },
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.6539999842643738
+        },
+        {
+          "term_id": "icaire_1216",
+          "term_en": "Vertical Scaling",
+          "term_ar": "توسيع عمودي",
+          "similarity": 0.6470000147819519
+        },
+        {
+          "term_id": "icaire_0326",
+          "term_en": "Data Quality",
+          "term_ar": "جودة البيانات",
+          "similarity": 0.6460000276565552
+        },
+        {
+          "term_id": "icaire_0343",
+          "term_en": "Data Variability",
+          "term_ar": "تباين البيانات",
+          "similarity": 0.6430000066757202
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-2.2",
+      "control_title": "Data availability, compute capacity, and data-sharing policies",
+      "control_text_full": "Data size also relates to the efforts to build the technology infrastructure to process, transfer and share large volumes of data for AI (Principle 2.2). ... Proprietary data ... confer an advantage to large companies entering new domains ... Public data is relevant to ... data availability and compute capacity (Principle 2.2). ... Structured data ... influences data-sharing policies (Principle 2.2).",
+      "intent_summary": "Organizations must ensure adequate infrastructure and policies to support data availability, sharing, and compute capacity, particularly when using public or proprietary data at scale.",
+      "evidence_signals": [
+        "Infrastructure plans detailing data storage, transfer, and compute resources",
+        "Data-sharing agreements or policies for public or cross-organizational data use",
+        "Cloud or on-premise compute capacity assessments aligned with AI workload needs",
+        "Policies enabling access to public datasets for model development",
+        "Documentation of data transfer protocols and bandwidth capabilities"
+      ],
+      "evidence_anti_signals": [
+        "No documented infrastructure plan for AI data processing",
+        "Restrictive data-sharing policies that prevent public data use",
+        "Inadequate compute resources leading to model underperformance",
+        "Failure to document how data access rights are managed across stakeholders"
+      ],
+      "applies_to_doc_types": [
+        "policy",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "data availability",
+        "compute capacity",
+        "data sharing",
+        "infrastructure",
+        "proprietary data",
+        "public data"
+      ],
+      "remediation_template": "If this control is not met, the organization should develop a data infrastructure and sharing policy that ensures sufficient compute resources and legal/compliance pathways for accessing and transferring necessary data.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 37,
+      "source_page_end": 41,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0135",
+          "term_en": "Big Data",
+          "term_ar": "بيانات ضخمة",
+          "similarity": 0.6930000185966492
+        },
+        {
+          "term_id": "icaire_0349",
+          "term_en": "Data Volume",
+          "term_ar": "حجم البيانات",
+          "similarity": 0.6610000133514404
+        },
+        {
+          "term_id": "icaire_0294",
+          "term_en": "Data Governance",
+          "term_ar": "حوكمة البيانات",
+          "similarity": 0.6489999890327454
+        },
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.6290000081062317
+        },
+        {
+          "term_id": "icaire_0316",
+          "term_en": "Data Observability",
+          "term_ar": "قابلية مراقبة البيانات",
+          "similarity": 0.6259999871253967
+        },
+        {
+          "term_id": "icaire_0137",
+          "term_en": "Big Data Intelligence",
+          "term_ar": "ذكاء البيانات الضخمة",
+          "similarity": 0.6240000128746033
+        },
+        {
+          "term_id": "icaire_0341",
+          "term_en": "Data Structure",
+          "term_ar": "هياكل البيانات",
+          "similarity": 0.621999979019165
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6209999918937683
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-1.2-SENSITIVE-DATA",
+      "control_title": "Handling of sensitive personal data",
+      "control_text_full": "In addition, some regimes such as the EU’s GDPR, distinguish ‘sensitive personal data’ that consist of racial or ethnic origin, political opinions, religious or philosophical beliefs, trade union membership, genetic data, biometric data, health data or data concerning a person's sex life or sexual orientation. In the United States, personal data considered sensitive include data about children and financial and health information.",
+      "intent_summary": "AI systems must apply heightened protections to sensitive personal data as defined by legal frameworks like GDPR or U.S. regulations, including strict access controls and purpose limitation.",
+      "evidence_signals": [
+        "Explicit classification of sensitive data in data inventory",
+        "Access controls and encryption for sensitive data fields",
+        "Data processing agreements compliant with GDPR or equivalent laws",
+        "Consent mechanisms for collection of sensitive personal data",
+        "Differential privacy or anonymization applied to sensitive attributes"
+      ],
+      "evidence_anti_signals": [
+        "Use of biometric or health data without legal basis",
+        "No distinction between general and sensitive personal data in policies",
+        "Lack of encryption or access logs for sensitive data",
+        "Failure to obtain explicit consent where required"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "sensitive personal data",
+        "GDPR",
+        "biometric data",
+        "health data",
+        "children's data",
+        "consent"
+      ],
+      "remediation_template": "If this control is not met, the organization must immediately classify all sensitive personal data, implement legal compliance controls aligned with GDPR or equivalent standards, and restrict access to authorized personnel only.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 37,
+      "source_page_end": 41,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0334",
+          "term_en": "Data Security Governance",
+          "term_ar": "حوكمة أمن البيانات",
+          "similarity": 0.6439999938011169
+        },
+        {
+          "term_id": "icaire_1055",
+          "term_en": "Sensitive Data",
+          "term_ar": "بيانات حساسة",
+          "similarity": 0.6370000243186951
+        },
+        {
+          "term_id": "icaire_0883",
+          "term_en": "Personal Data",
+          "term_ar": "بيانات شخصية",
+          "similarity": 0.6269999742507935
+        },
+        {
+          "term_id": "icaire_0919",
+          "term_en": "Privacy",
+          "term_ar": "خصوصية",
+          "similarity": 0.6110000014305115
+        },
+        {
+          "term_id": "icaire_0276",
+          "term_en": "Data Anonymization",
+          "term_ar": "إخفاء بيانات الهوية",
+          "similarity": 0.6110000014305115
+        },
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.609000027179718
+        },
+        {
+          "term_id": "icaire_0287",
+          "term_en": "Data Ethics",
+          "term_ar": "أخلاقيات البيانات",
+          "similarity": 0.609000027179718
+        },
+        {
+          "term_id": "icaire_0301",
+          "term_en": "Data Intelligence",
+          "term_ar": "ذكاء البيانات",
+          "similarity": 0.6079999804496765
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-2.2-DATA-QUALITY",
+      "control_title": "Data quality and appropriateness criteria",
+      "control_text_full": "Data appropriateness (or ‘qualification’) is about defining criteria to ensure that the data are appropriate for use in a project, fit for purpose, and relevant to the system or process following standard practice in the industry sector. ... Data quality also plays a key role for AI systems, as do the standards and procedures to manage data quality and appropriateness. ... Sample representativeness: Selected variables and training or evaluation data accurately depict/reflect the population in the AI system environment. ... Adequate sample size: Sample size displays an appropriate level of granularity, coverage and sufficiency of data. ... Completeness and coherence of sample: Sample is complete, with minimal missing or partial values. Outliers must not affect the quality of data. ... Low data ‘noise’: Data is infrequently incorrect, corrupted or distorted (e.g. intentional or unintentional mistakes in survey data, data from defective sensors).",
+      "intent_summary": "AI systems must use data that is appropriate, representative, complete, and of high quality, with defined standards for sample size, noise levels, and data integrity to ensure reliable outcomes.",
+      "evidence_signals": [
+        "Data quality assessment reports with metrics for completeness, noise, and representativeness",
+        "Sample size justification based on statistical power analysis",
+        "Outlier detection and handling procedures documented",
+        "Industry-standard data quality protocols adopted (e.g., ISO 8000)",
+        "Data validation rules applied during ingestion and preprocessing"
+      ],
+      "evidence_anti_signals": [
+        "No defined criteria for data quality or appropriateness",
+        "Use of small or non-representative samples without justification",
+        "High rates of missing data or unaddressed outliers",
+        "No documentation of data cleaning or preprocessing steps"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "data quality",
+        "appropriateness",
+        "representativeness",
+        "sample size",
+        "data noise",
+        "completeness"
+      ],
+      "remediation_template": "If this control is not met, the organization must define and enforce data quality criteria aligned with industry standards, validate sample representativeness, and document all data preprocessing and validation steps.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 37,
+      "source_page_end": 41,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.7390000224113464
+        },
+        {
+          "term_id": "icaire_0326",
+          "term_en": "Data Quality",
+          "term_ar": "جودة البيانات",
+          "similarity": 0.7350000143051147
+        },
+        {
+          "term_id": "icaire_0300",
+          "term_en": "Data Integrity",
+          "term_ar": "صحة البيانات",
+          "similarity": 0.6729999780654907
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6589999794960022
+        },
+        {
+          "term_id": "icaire_0774",
+          "term_en": "Model Collapse",
+          "term_ar": "تدهور النموذج",
+          "similarity": 0.6349999904632568
+        },
+        {
+          "term_id": "icaire_0301",
+          "term_en": "Data Intelligence",
+          "term_ar": "ذكاء البيانات",
+          "similarity": 0.6330000162124634
+        },
+        {
+          "term_id": "icaire_0316",
+          "term_en": "Data Observability",
+          "term_ar": "قابلية مراقبة البيانات",
+          "similarity": 0.6309999823570251
+        },
+        {
+          "term_id": "icaire_0135",
+          "term_en": "Big Data",
+          "term_ar": "بيانات ضخمة",
+          "similarity": 0.6299999952316284
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-2.2-DATA-STRUCTURE",
+      "control_title": "Data and input structure classification",
+      "control_text_full": "Structure and format of data and input: Unstructured data: ... Semi-structured data: ... Structured data: ... Complex structured data: ... Data labelling is the process of tagging data samples, which generally require human knowledge to build training data.",
+      "intent_summary": "AI systems must classify and document the structure of input data (unstructured, semi-structured, structured, complex) and ensure proper labeling practices to support model selection and auditability.",
+      "evidence_signals": [
+        "Data structure classification in system architecture diagrams",
+        "Labeling guidelines and human annotation protocols",
+        "Metadata tagging for semi-structured data (e.g., timestamps, geolocation)",
+        "Documentation of complex structured inputs (e.g., knowledge graphs, rules)",
+        "Audit trails showing how data structure influenced model choice"
+      ],
+      "evidence_anti_signals": [
+        "No classification of data structure in documentation",
+        "Use of unstructured data without labeling or metadata",
+        "Failure to document how complex structured inputs are generated or used",
+        "Lack of labeling standards or human-in-the-loop validation"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "data structure",
+        "unstructured data",
+        "semi-structured data",
+        "structured data",
+        "complex data",
+        "data labeling"
+      ],
+      "remediation_template": "If this control is not met, the organization should classify all input data by structure type, document labeling methodologies, and ensure that data structure is explicitly linked to model selection and system design decisions.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 37,
+      "source_page_end": 41,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0279",
+          "term_en": "Data Classification",
+          "term_ar": "تصنيف البيانات",
+          "similarity": 0.7369999885559082
+        },
+        {
+          "term_id": "icaire_0787",
+          "term_en": "Multi-structured Analytics",
+          "term_ar": "تحليلات متعددة الهياكل",
+          "similarity": 0.7229999899864197
+        },
+        {
+          "term_id": "icaire_1051",
+          "term_en": "Semi-Structured Data",
+          "term_ar": "بيانات شبه مهيكلة",
+          "similarity": 0.722000002861023
+        },
+        {
+          "term_id": "icaire_0341",
+          "term_en": "Data Structure",
+          "term_ar": "هياكل البيانات",
+          "similarity": 0.7200000286102295
+        },
+        {
+          "term_id": "icaire_0344",
+          "term_en": "Data Variety",
+          "term_ar": "تنوُّع البيانات",
+          "similarity": 0.7170000076293945
+        },
+        {
+          "term_id": "icaire_1113",
+          "term_en": "Structured Data",
+          "term_ar": "بيانات مهيكلة",
+          "similarity": 0.7020000219345093
+        },
+        {
+          "term_id": "icaire_1202",
+          "term_en": "Unstructured Data",
+          "term_ar": "بيانات غير مهيكلة",
+          "similarity": 0.6930000185966492
+        },
+        {
+          "term_id": "icaire_0275",
+          "term_en": "Data Annotation",
+          "term_ar": "توصيف البيانات",
+          "similarity": 0.6909999847412109
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-2.2-DATA-FORMAT",
+      "control_title": "Standardized data and metadata formats",
+      "control_text_full": "Data format (or encoding) refers to the format of the data themselves. ... Standardised data format: Standardised data have a format pre-agreed to by the providers of the data, which allows for easier comparability, i.e. for a dataset to be compared to other datasets. ... Standardised dataset metadata.",
+      "intent_summary": "AI systems must use standardized data formats and metadata to ensure interoperability, comparability, and traceability across datasets and systems.",
+      "evidence_signals": [
+        "Use of open, standardized formats (e.g., CSV, JSON, Parquet, TFRecord)",
+        "Metadata following recognized standards (e.g., DCAT, ISO 19115)",
+        "Documentation of data format choices and rationale",
+        "Interoperability testing between datasets from different sources",
+        "Metadata schemas published and version-controlled"
+      ],
+      "evidence_anti_signals": [
+        "Use of proprietary or ad hoc data formats without documentation",
+        "Absence of metadata or inconsistent metadata schemas",
+        "Inability to compare datasets due to incompatible formats",
+        "No policy requiring standardization of data formats"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "data format",
+        "metadata",
+        "standardized format",
+        "interoperability",
+        "data encoding"
+      ],
+      "remediation_template": "If this control is not met, the organization should adopt widely recognized data and metadata standards, document format choices, and ensure all datasets are encoded in interoperable formats for reuse and audit.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 37,
+      "source_page_end": 41,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0295",
+          "term_en": "Data Harmonization",
+          "term_ar": "تنسيق البيانات",
+          "similarity": 0.7080000042915344
+        },
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.6880000233650208
+        },
+        {
+          "term_id": "icaire_0753",
+          "term_en": "Metadata Management",
+          "term_ar": "إدارة البيانات الوصفيَّة",
+          "similarity": 0.6869999766349792
+        },
+        {
+          "term_id": "icaire_0135",
+          "term_en": "Big Data",
+          "term_ar": "بيانات ضخمة",
+          "similarity": 0.6769999861717224
+        },
+        {
+          "term_id": "icaire_0363",
+          "term_en": "Dataset (or Data Set)",
+          "term_ar": "مجموعة البيانات",
+          "similarity": 0.6660000085830688
+        },
+        {
+          "term_id": "icaire_0344",
+          "term_en": "Data Variety",
+          "term_ar": "تنوُّع البيانات",
+          "similarity": 0.6620000004768372
+        },
+        {
+          "term_id": "icaire_0279",
+          "term_en": "Data Classification",
+          "term_ar": "تصنيف البيانات",
+          "similarity": 0.6610000133514404
+        },
+        {
+          "term_id": "icaire_0271",
+          "term_en": "Data",
+          "term_ar": "بيانات",
+          "similarity": 0.6600000262260437
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.4",
+      "control_title": "Documentation of dataset characteristics",
+      "control_text_full": "Documenting data and dataset characteristics. Dataset characteristics include information on how a dataset was created, composition, intended uses and how it was maintained over time (OECD, 2019[15]).",
+      "intent_summary": "All datasets used in AI systems must be thoroughly documented with details on creation, composition, intended use, and maintenance to ensure accountability, reproducibility, and responsible use.",
+      "evidence_signals": [
+        "Dataset cards or datasheets following the Model Cards or Datasheets for Datasets format",
+        "Documentation of data collection methods and sampling strategies",
+        "Records of dataset updates, version history, and maintenance logs",
+        "Clear statements on intended use cases and known limitations",
+        "Provenance tracking of dataset modifications over time"
+      ],
+      "evidence_anti_signals": [
+        "No documentation of dataset origin or composition",
+        "Use of datasets with unknown or unverified provenance"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "dataset documentation",
+        "provenance",
+        "composition",
+        "intended use",
+        "maintenance"
+      ],
+      "remediation_template": "If this control is not met, the organization should create and maintain comprehensive documentation for all datasets, including origin, structure, usage limits, and version history.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 40,
+      "source_page_end": 44,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.6639999747276306
+        },
+        {
+          "term_id": "icaire_0282",
+          "term_en": "Data Control",
+          "term_ar": "تحكم في البيانات",
+          "similarity": 0.6589999794960022
+        },
+        {
+          "term_id": "icaire_0753",
+          "term_en": "Metadata Management",
+          "term_ar": "إدارة البيانات الوصفيَّة",
+          "similarity": 0.6589999794960022
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6480000019073486
+        },
+        {
+          "term_id": "icaire_0340",
+          "term_en": "Data Storytelling",
+          "term_ar": "سرد قصصي للبيانات",
+          "similarity": 0.6470000147819519
+        },
+        {
+          "term_id": "icaire_0301",
+          "term_en": "Data Intelligence",
+          "term_ar": "ذكاء البيانات",
+          "similarity": 0.6430000066757202
+        },
+        {
+          "term_id": "icaire_0082",
+          "term_en": "Augmented Analytics",
+          "term_ar": "تحليلات مُعَزَّزة",
+          "similarity": 0.6420000195503235
+        },
+        {
+          "term_id": "icaire_0137",
+          "term_en": "Big Data Intelligence",
+          "term_ar": "ذكاء البيانات الضخمة",
+          "similarity": 0.6420000195503235
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.5",
+      "control_title": "Consistency and integrity of AI outcomes",
+      "control_text_full": "Do two similar-looking cases verifiably result in similar outcomes, i.e. can the consistency and integrity of AI system outcomes be verified?",
+      "intent_summary": "The AI system must produce consistent outcomes for similar inputs to ensure fairness, reliability, and freedom from arbitrary or discriminatory behavior.",
+      "evidence_signals": [
+        "Test suite with paired similar inputs and expected similar outputs",
+        "Statistical analysis of outcome variance across similar cases",
+        "Fairness audits comparing outcomes across demographic groups",
+        "Input perturbation tests showing stable outputs",
+        "Documentation of consistency thresholds and tolerance levels"
+      ],
+      "evidence_anti_signals": [
+        "Significant outcome variation for near-identical inputs",
+        "No testing performed for outcome consistency"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "consistency",
+        "integrity",
+        "fairness",
+        "outcome stability",
+        "robustness"
+      ],
+      "remediation_template": "If outcomes are inconsistent for similar cases, the system must be tested with controlled input variations and retrained or adjusted to minimize unjustified variance in outputs.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 43,
+      "source_page_end": 46,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.656000018119812
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.6349999904632568
+        },
+        {
+          "term_id": "icaire_0300",
+          "term_en": "Data Integrity",
+          "term_ar": "صحة البيانات",
+          "similarity": 0.6060000061988831
+        },
+        {
+          "term_id": "icaire_0395",
+          "term_en": "Deterministic Algorithm",
+          "term_ar": "خوارزمية حتمية النتائج",
+          "similarity": 0.5989999771118164
+        },
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.5979999899864197
+        },
+        {
+          "term_id": "icaire_0478",
+          "term_en": "Fairness Constraint",
+          "term_ar": "قيد الإنصاف",
+          "similarity": 0.597000002861023
+        },
+        {
+          "term_id": "icaire_0607",
+          "term_en": "Incompatibility of Fairness Metrics",
+          "term_ar": "عدم توافق مقاييس الإنصاف",
+          "similarity": 0.5920000076293945
+        },
+        {
+          "term_id": "icaire_0610",
+          "term_en": "Individual Fairness",
+          "term_ar": "إنصاف فردي",
+          "similarity": 0.5920000076293945
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.6",
+      "control_title": "Existence of safety metrics for AI use cases",
+      "control_text_full": "Do safety metrics exist that can evaluate the safety of an AI system for a given use case?",
+      "intent_summary": "The AI system must be evaluated using defined, measurable safety metrics tailored to its specific application context to prevent harm or failure.",
+      "evidence_signals": [
+        "Safety performance indicators documented in risk assessment",
+        "Metrics such as failure rate, latency under stress, or error bounds",
+        "Safety certification standards referenced (e.g., ISO 13849, IEC 61508)",
+        "Test scenarios designed to simulate hazardous conditions",
+        "Safety thresholds defined and monitored in production"
+      ],
+      "evidence_anti_signals": [
+        "No safety metrics defined or documented",
+        "Reliance on generic accuracy metrics instead of safety-specific ones"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "safety metrics",
+        "risk evaluation",
+        "use case safety",
+        "hazard mitigation"
+      ],
+      "remediation_template": "If safety metrics are absent, the developer must define and validate use-case-specific safety indicators and integrate them into testing and monitoring protocols.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 43,
+      "source_page_end": 46,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6110000014305115
+        },
+        {
+          "term_id": "icaire_0063",
+          "term_en": "Artificial Intelligence Ethics",
+          "term_ar": "أخلاقيات الذكاء الاصطناعي",
+          "similarity": 0.6100000143051147
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.5839999914169312
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.574999988079071
+        },
+        {
+          "term_id": "icaire_1031",
+          "term_en": "Security",
+          "term_ar": "أمن",
+          "similarity": 0.5740000009536743
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.5720000267028809
+        },
+        {
+          "term_id": "icaire_0607",
+          "term_en": "Incompatibility of Fairness Metrics",
+          "term_ar": "عدم توافق مقاييس الإنصاف",
+          "similarity": 0.5709999799728394
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.5690000057220459
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.7",
+      "control_title": "Testing for safety during development",
+      "control_text_full": "How does the entity deploying the AI system test for safety during development?",
+      "intent_summary": "Safety must be actively tested throughout the AI system’s development lifecycle, not just at deployment, to identify and mitigate risks early.",
+      "evidence_signals": [
+        "Safety testing plan integrated into development roadmap",
+        "Results from stress tests, edge case simulations, or failure mode analyses",
+        "Safety-focused CI/CD pipeline checks",
+        "Documentation of safety test cases and pass/fail criteria",
+        "Independent safety audits conducted during development"
+      ],
+      "evidence_anti_signals": [
+        "Safety testing only performed post-deployment",
+        "No documented safety testing procedures"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "safety testing",
+        "development lifecycle",
+        "risk mitigation",
+        "testing protocol"
+      ],
+      "remediation_template": "If safety testing is not conducted during development, a structured safety testing plan must be created and embedded into the development workflow with defined checkpoints.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 43,
+      "source_page_end": 46,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.5920000076293945
+        },
+        {
+          "term_id": "icaire_0777",
+          "term_en": "Model Testing",
+          "term_ar": "اختبار النموذج",
+          "similarity": 0.5820000171661377
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.5820000171661377
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.5799999833106995
+        },
+        {
+          "term_id": "icaire_1211",
+          "term_en": "Validation",
+          "term_ar": "تحقق",
+          "similarity": 0.5789999961853027
+        },
+        {
+          "term_id": "icaire_0063",
+          "term_en": "Artificial Intelligence Ethics",
+          "term_ar": "أخلاقيات الذكاء الاصطناعي",
+          "similarity": 0.5680000185966492
+        },
+        {
+          "term_id": "icaire_0085",
+          "term_en": "Augmented Research",
+          "term_ar": "بحث مُعزَّز",
+          "similarity": 0.5619999766349792
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.5529999732971191
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.8",
+      "control_title": "Adversarial evaluation of AI systems",
+      "control_text_full": "What measures has the entity deploying the AI system taken to do an adversarial evaluation – that is, explore the AI system through the lens of being a 'bad actor' and trying to break it?",
+      "intent_summary": "The AI system must be subjected to adversarial testing to uncover vulnerabilities that malicious actors could exploit, ensuring resilience against intentional manipulation or attacks.",
+      "evidence_signals": [
+        "Adversarial attack simulations documented (e.g., perturbation, poisoning, evasion)",
+        "Penetration testing reports or red team exercises",
+        "Use of adversarial training techniques",
+        "Vulnerability disclosure process in place",
+        "Results of adversarial evaluations shared in model card"
+      ],
+      "evidence_anti_signals": [
+        "No adversarial testing performed",
+        "Claims of security without any testing evidence"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "adversarial evaluation",
+        "security testing",
+        "robustness",
+        "penetration testing",
+        "red team"
+      ],
+      "remediation_template": "If adversarial evaluation is not conducted, the system must undergo structured adversarial testing using recognized methodologies, with results documented and addressed before deployment.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 43,
+      "source_page_end": 46,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0027",
+          "term_en": "Adversarial Machine Learning",
+          "term_ar": "تعلُّم الآلة العدائي",
+          "similarity": 0.6620000004768372
+        },
+        {
+          "term_id": "icaire_0026",
+          "term_en": "Adversarial Example",
+          "term_ar": "مثال عدائي",
+          "similarity": 0.656000018119812
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6029999852180481
+        },
+        {
+          "term_id": "icaire_0028",
+          "term_en": "Adversarial Prompting",
+          "term_ar": "أوامر عدائية",
+          "similarity": 0.597000002861023
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.5849999785423279
+        },
+        {
+          "term_id": "icaire_0044",
+          "term_en": "Analysis of Algorithms",
+          "term_ar": "تحليل الخوارزميات",
+          "similarity": 0.5820000171661377
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.5809999704360962
+        },
+        {
+          "term_id": "icaire_0058",
+          "term_en": "Artificial Immune System (AIS)",
+          "term_ar": "نظام المناعة الاصطناعي",
+          "similarity": 0.5809999704360962
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.9",
+      "control_title": "Robustness to data variation",
+      "control_text_full": "Does the AI system change significantly if it is trained with variations of the data available?",
+      "intent_summary": "The AI system must demonstrate robustness to variations in training data to ensure reliability under real-world conditions and prevent performance collapse due to data drift or noise.",
+      "evidence_signals": [
+        "Results from data augmentation tests",
+        "Performance metrics across multiple data subsets or perturbations",
+        "Documentation of data distribution sensitivity analysis",
+        "Use of cross-validation with varied data splits",
+        "Monitoring of model drift in production"
+      ],
+      "evidence_anti_signals": [
+        "Model performance collapses with minor data changes",
+        "No testing performed on data variability or distribution shifts"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "robustness",
+        "data variation",
+        "data drift",
+        "generalization",
+        "stability"
+      ],
+      "remediation_template": "If the system is sensitive to data variations, it must be retrained with diverse and augmented datasets, and monitored for performance degradation under real-world data shifts.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 43,
+      "source_page_end": 46,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0774",
+          "term_en": "Model Collapse",
+          "term_ar": "تدهور النموذج",
+          "similarity": 0.6269999742507935
+        },
+        {
+          "term_id": "icaire_0416",
+          "term_en": "Distributional Robustness",
+          "term_ar": "متانة التوزيع",
+          "similarity": 0.6060000061988831
+        },
+        {
+          "term_id": "icaire_1032",
+          "term_en": "Selection Bias",
+          "term_ar": "تحيُّز الاختيار",
+          "similarity": 0.5920000076293945
+        },
+        {
+          "term_id": "icaire_0021",
+          "term_en": "Adaptive Data Governance",
+          "term_ar": "حَوْكمة تَكَيُّفيَّة للبيانات",
+          "similarity": 0.5920000076293945
+        },
+        {
+          "term_id": "icaire_0343",
+          "term_en": "Data Variability",
+          "term_ar": "تباين البيانات",
+          "similarity": 0.5849999785423279
+        },
+        {
+          "term_id": "icaire_0285",
+          "term_en": "Data Drift",
+          "term_ar": "انحراف البيانات",
+          "similarity": 0.5809999704360962
+        },
+        {
+          "term_id": "icaire_0019",
+          "term_en": "Adaptive Algorithm",
+          "term_ar": "خوارزمية تَكَيُّفيَّة",
+          "similarity": 0.5799999833106995
+        },
+        {
+          "term_id": "icaire_0348",
+          "term_en": "Data Volatility",
+          "term_ar": "تقلُّب البيانات",
+          "similarity": 0.5720000267028809
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.10",
+      "control_title": "Validation and verification of AI outcomes",
+      "control_text_full": "Are there measures in place to validate and verify the AI system’s outcomes?",
+      "intent_summary": "The AI system’s outputs must be independently validated and verified to ensure correctness, reliability, and alignment with intended purposes before and after deployment.",
+      "evidence_signals": [
+        "Validation protocol with pass/fail criteria",
+        "Independent third-party verification reports",
+        "Cross-validation with human expert judgments",
+        "Automated verification pipelines",
+        "Audit logs of validation results"
+      ],
+      "evidence_anti_signals": [
+        "No formal validation process documented",
+        "Reliance solely on training accuracy as proof of correctness"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "validation",
+        "verification",
+        "outcome correctness",
+        "audit",
+        "testing"
+      ],
+      "remediation_template": "If validation and verification measures are absent, a formal process must be established to independently confirm system outputs against ground truth or expert standards.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 43,
+      "source_page_end": 46,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6899999976158142
+        },
+        {
+          "term_id": "icaire_1211",
+          "term_en": "Validation",
+          "term_ar": "تحقق",
+          "similarity": 0.6679999828338623
+        },
+        {
+          "term_id": "icaire_1212",
+          "term_en": "Validation Dataset (or Validation Data, Validation Set)",
+          "term_ar": "بيانات التحقق (أو مجموعة التحقق)",
+          "similarity": 0.6480000019073486
+        },
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.6449999809265137
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.6439999938011169
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6320000290870667
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6140000224113464
+        },
+        {
+          "term_id": "icaire_0085",
+          "term_en": "Augmented Research",
+          "term_ar": "بحث مُعزَّز",
+          "similarity": 0.6140000224113464
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.11",
+      "control_title": "Traceability in AI system lifecycle",
+      "control_text_full": "What measures are in place to facilitate traceability in the AI system, including in relation to datasets, processes and decisions made during the AI system lifecycle?",
+      "intent_summary": "Full traceability must be maintained across all stages of the AI lifecycle — from data collection to decision output — to enable auditing, debugging, and accountability.",
+      "evidence_signals": [
+        "End-to-end lineage tracking of data and model versions",
+        "Version-controlled repositories for models, data, and code",
+        "Audit logs linking decisions to specific inputs and model versions",
+        "Documentation of process steps and responsible parties",
+        "Metadata tagging of all artifacts in the pipeline"
+      ],
+      "evidence_anti_signals": [
+        "No version control or audit trail for model or data changes",
+        "Decisions cannot be traced back to training data or model iterations"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "traceability",
+        "lifecycle",
+        "data lineage",
+        "audit trail",
+        "version control"
+      ],
+      "remediation_template": "If traceability is lacking, the system must implement version-controlled, metadata-rich pipelines that log all data, model, and decision artifacts throughout the lifecycle.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 43,
+      "source_page_end": 46,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6899999976158142
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.5989999771118164
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.593999981880188
+        },
+        {
+          "term_id": "icaire_0063",
+          "term_en": "Artificial Intelligence Ethics",
+          "term_ar": "أخلاقيات الذكاء الاصطناعي",
+          "similarity": 0.5899999737739563
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.5799999833106995
+        },
+        {
+          "term_id": "icaire_0282",
+          "term_en": "Data Control",
+          "term_ar": "تحكم في البيانات",
+          "similarity": 0.5770000219345093
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.5759999752044678
+        },
+        {
+          "term_id": "icaire_0240",
+          "term_en": "Controllability",
+          "term_ar": "قابلية التحكم",
+          "similarity": 0.5600000023841858
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.12",
+      "control_title": "Availability of model information",
+      "control_text_full": "Detailed information about the model(s) used in the system is available. / Some information about the model(s) used in the system is available. / No information about the model(s) used in the system is available.",
+      "intent_summary": "The level of transparency regarding the AI model’s architecture, design, and components must be disclosed to enable assessment of its reliability, fairness, and safety.",
+      "evidence_signals": [
+        "Model card with architecture, training data, and limitations",
+        "Publicly accessible model documentation",
+        "Disclosure of model size, type, and training methodology",
+        "Access to model weights or API specifications",
+        "Documentation of assumptions and constraints"
+      ],
+      "evidence_anti_signals": [
+        "Model described only as 'proprietary' with no details",
+        "No documentation provided beyond marketing claims"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "model transparency",
+        "information availability",
+        "model documentation",
+        "disclosure"
+      ],
+      "remediation_template": "If model information is not available, the developer must publish a comprehensive model card or technical documentation detailing architecture, training, and limitations.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 43,
+      "source_page_end": 46,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_1181",
+          "term_en": "Transparency",
+          "term_ar": "شفافية",
+          "similarity": 0.7139999866485596
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.675000011920929
+        },
+        {
+          "term_id": "icaire_0467",
+          "term_en": "Explainability",
+          "term_ar": "قابلية التفسير",
+          "similarity": 0.6430000066757202
+        },
+        {
+          "term_id": "icaire_0772",
+          "term_en": "Model Card",
+          "term_ar": "بطاقة النموذج",
+          "similarity": 0.6420000195503235
+        },
+        {
+          "term_id": "icaire_0774",
+          "term_en": "Model Collapse",
+          "term_ar": "تدهور النموذج",
+          "similarity": 0.6079999804496765
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6050000190734863
+        },
+        {
+          "term_id": "icaire_0240",
+          "term_en": "Controllability",
+          "term_ar": "قابلية التحكم",
+          "similarity": 0.6029999852180481
+        },
+        {
+          "term_id": "icaire_0769",
+          "term_en": "Model",
+          "term_ar": "نموذج",
+          "similarity": 0.6019999980926514
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.13",
+      "control_title": "Licensing regime of AI model",
+      "control_text_full": "A model can be available under open-source or proprietary licensing regimes... Common types of licensing rights: Self-managed OSS, Third-party managed OSS, Self-managed proprietary, Third-party managed proprietary.",
+      "intent_summary": "The licensing regime of the AI model must be clearly identified to determine rights to inspect, modify, redistribute, or audit the system, which affects transparency and accountability.",
+      "evidence_signals": [
+        "License file included with model distribution",
+        "Clear statement of license type in documentation",
+        "Public repository with open-source code and license",
+        "Contractual terms specifying usage rights for third-party models"
+      ],
+      "evidence_anti_signals": [
+        "License type undisclosed or labeled as 'internal use only' without clarity",
+        "Model distributed without any licensing information"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 1,
+      "severity": "low",
+      "keywords": [
+        "licensing",
+        "open-source",
+        "proprietary",
+        "rights",
+        "distribution"
+      ],
+      "remediation_template": "If the licensing regime is unclear, the developer must explicitly state the license type and terms under which the model is distributed or used.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 43,
+      "source_page_end": 46,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6489999890327454
+        },
+        {
+          "term_id": "icaire_0240",
+          "term_en": "Controllability",
+          "term_ar": "قابلية التحكم",
+          "similarity": 0.6449999809265137
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6349999904632568
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.6299999952316284
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6240000128746033
+        },
+        {
+          "term_id": "icaire_0061",
+          "term_en": "Artificial Intelligence as a Service (AIaaS)",
+          "term_ar": "ذكاء اصطناعي كخدمة",
+          "similarity": 0.6159999966621399
+        },
+        {
+          "term_id": "icaire_0635",
+          "term_en": "Intelligent Control",
+          "term_ar": "تحكم ذكي",
+          "similarity": 0.6129999756813049
+        },
+        {
+          "term_id": "icaire_0059",
+          "term_en": "Artificial Intelligence (AI)",
+          "term_ar": "ذكاء اصطناعي",
+          "similarity": 0.6119999885559082
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.14",
+      "control_title": "Model type classification (symbolic, statistical, hybrid)",
+      "control_text_full": "Symbolic AI models... Statistical AI models... Hybrid AI models...",
+      "intent_summary": "The type of AI model used must be classified to assess its explainability, reliability, and suitability for the intended application, as different types have distinct strengths and risks.",
+      "evidence_signals": [
+        "Model architecture classified as symbolic, statistical, or hybrid in documentation",
+        "Justification for model type selection based on use case",
+        "Explanation of how hybrid components interact",
+        "Comparison of model type to alternatives considered"
+      ],
+      "evidence_anti_signals": [
+        "Model type not specified or labeled generically as 'AI'",
+        "No rationale provided for choosing a black-box model over an explainable one"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "model type",
+        "symbolic",
+        "statistical",
+        "hybrid",
+        "explainability"
+      ],
+      "remediation_template": "If the model type is not classified, the developer must identify and document whether the system is symbolic, statistical, or hybrid, and justify the choice based on transparency and risk requirements.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 43,
+      "source_page_end": 46,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0408",
+          "term_en": "Discriminative Model",
+          "term_ar": "نموذج تمييزي",
+          "similarity": 0.718999981880188
+        },
+        {
+          "term_id": "icaire_0180",
+          "term_en": "Classification",
+          "term_ar": "تصنيف",
+          "similarity": 0.6880000233650208
+        },
+        {
+          "term_id": "icaire_0559",
+          "term_en": "Graphical Model",
+          "term_ar": "نموذج شبكي",
+          "similarity": 0.6880000233650208
+        },
+        {
+          "term_id": "icaire_0181",
+          "term_en": "Classification Model",
+          "term_ar": "نموذج تصنيف",
+          "similarity": 0.6869999766349792
+        },
+        {
+          "term_id": "icaire_1101",
+          "term_en": "Statistical Classification",
+          "term_ar": "تصنيف إحصائي",
+          "similarity": 0.6869999766349792
+        },
+        {
+          "term_id": "icaire_0871",
+          "term_en": "Parametric Model",
+          "term_ar": "نموذج مُعامِلي",
+          "similarity": 0.6669999957084656
+        },
+        {
+          "term_id": "icaire_0222",
+          "term_en": "Conditional Model",
+          "term_ar": "نموذج شَرطي",
+          "similarity": 0.6660000085830688
+        },
+        {
+          "term_id": "icaire_0769",
+          "term_en": "Model",
+          "term_ar": "نموذج",
+          "similarity": 0.6639999747276306
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.15",
+      "control_title": "Discriminative vs. generative model classification",
+      "control_text_full": "Discriminative model... Generative model... Models combining both discriminative and generative properties...",
+      "intent_summary": "The system must be classified as discriminative, generative, or hybrid to clarify the nature of its outputs (predictions vs. artifacts) and associated risks such as deepfakes or misinformation.",
+      "evidence_signals": [
+        "Clear labeling of model as discriminative or generative in documentation",
+        "Output type specified (e.g., classification vs. image generation)",
+        "Risk assessment addressing generative output misuse",
+        "Use case alignment with output type (e.g., diagnostic tool = discriminative)"
+      ],
+      "evidence_anti_signals": [
+        "Output type not specified, leading to ambiguity about system function",
+        "Generative outputs deployed without safeguards against misuse"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "discriminative",
+        "generative",
+        "output type",
+        "deepfake",
+        "prediction"
+      ],
+      "remediation_template": "If the model type is not classified as discriminative or generative, the developer must document the output nature and implement appropriate safeguards based on whether the system generates new content or makes predictions.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 43,
+      "source_page_end": 46,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0408",
+          "term_en": "Discriminative Model",
+          "term_ar": "نموذج تمييزي",
+          "similarity": 0.7210000157356262
+        },
+        {
+          "term_id": "icaire_0181",
+          "term_en": "Classification Model",
+          "term_ar": "نموذج تصنيف",
+          "similarity": 0.6949999928474426
+        },
+        {
+          "term_id": "icaire_0222",
+          "term_en": "Conditional Model",
+          "term_ar": "نموذج شَرطي",
+          "similarity": 0.6899999976158142
+        },
+        {
+          "term_id": "icaire_0409",
+          "term_en": "Discriminator",
+          "term_ar": "مُميِّز",
+          "similarity": 0.6840000152587891
+        },
+        {
+          "term_id": "icaire_0540",
+          "term_en": "Generative Model",
+          "term_ar": "نموذج توليدي",
+          "similarity": 0.6629999876022339
+        },
+        {
+          "term_id": "icaire_0782",
+          "term_en": "Multi-Class Classification",
+          "term_ar": "تصنيف متعدد الأصناف",
+          "similarity": 0.6610000133514404
+        },
+        {
+          "term_id": "icaire_0539",
+          "term_en": "Generative Image Model",
+          "term_ar": "نموذج توليدي للصور",
+          "similarity": 0.6579999923706055
+        },
+        {
+          "term_id": "icaire_0400",
+          "term_en": "Diffusion Model",
+          "term_ar": "نموذج انتشاري",
+          "similarity": 0.6570000052452087
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.16",
+      "control_title": "Model ensembles and system complexity",
+      "control_text_full": "Model ensembles: In some cases, the system is underpinned by an AI model interacting independently with other AI models... System is composed of a single AI model.",
+      "intent_summary": "The complexity of the AI system — whether composed of a single model or multiple interacting ensembles — must be documented to assess failure risks, error propagation, and auditability.",
+      "evidence_signals": [
+        "System architecture diagram showing model interactions",
+        "Documentation of ensemble composition and decision aggregation method",
+        "Risk analysis of error propagation in multi-model systems",
+        "Performance comparison between single-model and ensemble versions"
+      ],
+      "evidence_anti_signals": [
+        "No documentation of whether the system is an ensemble",
+        "Claims of high accuracy without acknowledging increased complexity risks"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "model ensemble",
+        "system complexity",
+        "error propagation",
+        "multi-model",
+        "single model"
+      ],
+      "remediation_template": "If the system uses multiple interacting models without documentation, the developer must map the architecture, document interaction logic, and assess risks of error propagation.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 43,
+      "source_page_end": 46,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6470000147819519
+        },
+        {
+          "term_id": "icaire_0774",
+          "term_en": "Model Collapse",
+          "term_ar": "تدهور النموذج",
+          "similarity": 0.6460000276565552
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6430000066757202
+        },
+        {
+          "term_id": "icaire_0446",
+          "term_en": "Ensemble",
+          "term_ar": "تجميع النماذج",
+          "similarity": 0.6340000033378601
+        },
+        {
+          "term_id": "icaire_0467",
+          "term_en": "Explainability",
+          "term_ar": "قابلية التفسير",
+          "similarity": 0.6259999871253967
+        },
+        {
+          "term_id": "icaire_0137",
+          "term_en": "Big Data Intelligence",
+          "term_ar": "ذكاء البيانات الضخمة",
+          "similarity": 0.6240000128746033
+        },
+        {
+          "term_id": "icaire_0044",
+          "term_en": "Analysis of Algorithms",
+          "term_ar": "تحليل الخوارزميات",
+          "similarity": 0.6209999918937683
+        },
+        {
+          "term_id": "icaire_1129",
+          "term_en": "System",
+          "term_ar": "نظام",
+          "similarity": 0.6200000047683716
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::GOVERN-1.17",
+      "control_title": "Model-building approach (human-encoded vs. machine-learned)",
+      "control_text_full": "Acquisition from human-encoded knowledge... Acquisition from data through supervised learning... unsupervised learning... semi-supervised learning... reinforcement-learning... Acquisition from data, augmented by human-encoded knowledge...",
+      "intent_summary": "The method used to build the AI model — whether through human rules, data-driven learning, or hybrid approaches — must be disclosed to assess transparency, bias potential, and interpretability.",
+      "evidence_signals": [
+        "Documentation of training methodology (e.g., supervised, reinforcement)",
+        "Description of human rules integrated into model",
+        "Data labeling process and source documented",
+        "Hybrid approach justification with balance of human and machine inputs"
+      ],
+      "evidence_anti_signals": [
+        "Training method described vaguely as 'machine learning' without specifics",
+        "No mention of human knowledge integration in rule-based systems"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "model-building",
+        "training method",
+        "supervised learning",
+        "human-encoded",
+        "hybrid"
+      ],
+      "remediation_template": "If the model-building approach is not specified, the developer must document the learning paradigm used and the role of human knowledge in shaping the model’s behavior.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 43,
+      "source_page_end": 46,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_1167",
+          "term_en": "Training",
+          "term_ar": "تدريب",
+          "similarity": 0.7099999785423279
+        },
+        {
+          "term_id": "icaire_0014",
+          "term_en": "Active Learning",
+          "term_ar": "تعلُّم نشط",
+          "similarity": 0.7080000042915344
+        },
+        {
+          "term_id": "icaire_0726",
+          "term_en": "Machine Learning Algorithm",
+          "term_ar": "خوارزمية تعلُّم الآلة",
+          "similarity": 0.7059999704360962
+        },
+        {
+          "term_id": "icaire_1120",
+          "term_en": "Supervised Learning",
+          "term_ar": "تعلُّم موجَّه",
+          "similarity": 0.7009999752044678
+        },
+        {
+          "term_id": "icaire_0848",
+          "term_en": "Ontology Learning",
+          "term_ar": "تعلُّم التوصيف المعرفي",
+          "similarity": 0.6980000138282776
+        },
+        {
+          "term_id": "icaire_0769",
+          "term_en": "Model",
+          "term_ar": "نموذج",
+          "similarity": 0.6959999799728394
+        },
+        {
+          "term_id": "icaire_0265",
+          "term_en": "Curriculum Learning",
+          "term_ar": "تعلُّم منهجي",
+          "similarity": 0.6880000233650208
+        },
+        {
+          "term_id": "icaire_0608",
+          "term_en": "Incremental Learning",
+          "term_ar": "تعلُّم تدريجي",
+          "similarity": 0.6850000023841858
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-1.3-2",
+      "control_title": "Explainability for Probabilistic Models",
+      "control_text_full": "For policy purposes, whether a model is probabilistic is relevant to testing and testability (Principle 1.4) as well as to explainability (Principle 1.3). Probabilistic models can generate multiple outcomes with information about their uncertainty. Given the randomness element in probabilistic models, a specific outcome may not easily be reproducible (Principle 1.3 and 1.4).",
+      "intent_summary": "When using probabilistic AI models, organizations must document and communicate the uncertainty of outcomes to users and auditors, ensuring that decisions based on such models are transparent about their confidence levels and are not falsely presented as deterministic.",
+      "evidence_signals": [
+        "Output interfaces displaying confidence scores or probability ranges",
+        "Documentation stating whether model outputs are deterministic or probabilistic",
+        "Testing protocols that evaluate model calibration and uncertainty quantification",
+        "User warnings when predictions have low confidence thresholds",
+        "Audit reports evaluating reproducibility of probabilistic outcomes"
+      ],
+      "evidence_anti_signals": [
+        "Probabilistic outputs presented as single, certain values without uncertainty metrics",
+        "No mention of model type (deterministic vs. probabilistic) in technical specs",
+        "Claims of '100% accuracy' for models known to be probabilistic"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "probabilistic models",
+        "uncertainty",
+        "reproducibility",
+        "confidence scores"
+      ],
+      "remediation_template": "If probabilistic outputs are presented without uncertainty measures, revise all user-facing outputs and documentation to clearly indicate confidence levels and avoid misrepresenting stochastic outcomes as certain.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 46,
+      "source_page_end": 50,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0467",
+          "term_en": "Explainability",
+          "term_ar": "قابلية التفسير",
+          "similarity": 0.7089999914169312
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.7009999752044678
+        },
+        {
+          "term_id": "icaire_0921",
+          "term_en": "Probabilistic Regression Model",
+          "term_ar": "نموذج انحدار احتمالي",
+          "similarity": 0.6859999895095825
+        },
+        {
+          "term_id": "icaire_0920",
+          "term_en": "Probabilistic Model",
+          "term_ar": "نموذج احتمالي",
+          "similarity": 0.6629999876022339
+        },
+        {
+          "term_id": "icaire_0907",
+          "term_en": "Predictive Model",
+          "term_ar": "نموذج تنبؤي",
+          "similarity": 0.6579999923706055
+        },
+        {
+          "term_id": "icaire_0903",
+          "term_en": "Predictability",
+          "term_ar": "قدرة على التنبؤ",
+          "similarity": 0.6520000100135803
+        },
+        {
+          "term_id": "icaire_0531",
+          "term_en": "Generalization",
+          "term_ar": "تعميم",
+          "similarity": 0.628000020980835
+        },
+        {
+          "term_id": "icaire_0240",
+          "term_en": "Controllability",
+          "term_ar": "قابلية التحكم",
+          "similarity": 0.6200000047683716
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::PRINCIPLE-1.4-2",
+      "control_title": "Model Testing and Validation",
+      "control_text_full": "Model-building and inferencing involve human experts such as modellers, model engineers, data scientists, developers and domain experts. Currently, model verification and validation involves data scientists, data/model/systems engineers and governance experts.",
+      "intent_summary": "AI models must undergo formal verification and validation by qualified teams to ensure performance across safety, accuracy, fairness, and robustness dimensions before deployment. This process must be documented and include diverse expertise to mitigate bias.",
+      "evidence_signals": [
+        "Validation reports signed off by data scientists and governance experts",
+        "Test suites covering edge cases, adversarial inputs, and demographic diversity",
+        "Team composition records showing multidisciplinary involvement",
+        "Checklists for model validation aligned with OECD principles",
+        "Audit trails of model tuning and performance metrics over time"
+      ],
+      "evidence_anti_signals": [
+        "Validation performed solely by developers without independent review",
+        "Absence of documented test cases or pass/fail criteria",
+        "Homogeneous development teams with no diversity documentation"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "verification",
+        "validation",
+        "testing",
+        "model tuning",
+        "bias mitigation"
+      ],
+      "remediation_template": "If model validation is undocumented or performed by a narrow team, establish a formal validation protocol involving diverse experts and document all test results, criteria, and approvals prior to deployment.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 46,
+      "source_page_end": 50,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0777",
+          "term_en": "Model Testing",
+          "term_ar": "اختبار النموذج",
+          "similarity": 0.7049999833106995
+        },
+        {
+          "term_id": "icaire_1211",
+          "term_en": "Validation",
+          "term_ar": "تحقق",
+          "similarity": 0.7049999833106995
+        },
+        {
+          "term_id": "icaire_0773",
+          "term_en": "Model Checking",
+          "term_ar": "فحص النموذج",
+          "similarity": 0.6830000281333923
+        },
+        {
+          "term_id": "icaire_1212",
+          "term_en": "Validation Dataset (or Validation Data, Validation Set)",
+          "term_ar": "بيانات التحقق (أو مجموعة التحقق)",
+          "similarity": 0.652999997138977
+        },
+        {
+          "term_id": "icaire_0774",
+          "term_en": "Model Collapse",
+          "term_ar": "تدهور النموذج",
+          "similarity": 0.6420000195503235
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6349999904632568
+        },
+        {
+          "term_id": "icaire_1167",
+          "term_en": "Training",
+          "term_ar": "تدريب",
+          "similarity": 0.6330000162124634
+        },
+        {
+          "term_id": "icaire_0128",
+          "term_en": "Belief-Desire-Intention Software Model (BDI)",
+          "term_ar": "نموذج برمجي للمعتقدات والرغبات والمقاصد",
+          "similarity": 0.6320000290870667
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::OECD-CLASS-1.1",
+      "control_title": "Model verification and validation must involve testing performance across dimensions and considerations",
+      "control_text_full": "Model-building and inferencing involve verification and validation, whereby models are executed and tuned (maximising performance) with tests to assess performance across various dimensions and considerations.",
+      "intent_summary": "Developers must systematically test AI models to evaluate their performance across multiple dimensions such as accuracy, fairness, and robustness before deployment. This ensures models are not only functional but also aligned with ethical and operational standards.",
+      "evidence_signals": [
+        "Documentation of test cases covering fairness, accuracy, and robustness metrics",
+        "Records of model tuning processes based on validation results",
+        "Sign-off by data scientists and governance experts on validation outcomes",
+        "Audit trails showing iterations of model testing and refinement",
+        "Use of standardized benchmarks for performance evaluation"
+      ],
+      "evidence_anti_signals": [
+        "Absence of documented validation procedures",
+        "Claims of model readiness without empirical testing data"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "verification",
+        "validation",
+        "performance testing",
+        "model tuning",
+        "governance"
+      ],
+      "remediation_template": "If verification and validation are not documented, implement a standardized testing protocol with measurable performance criteria across fairness, accuracy, and robustness, and ensure sign-off by governance experts before deployment.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 49,
+      "source_page_end": 52,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0777",
+          "term_en": "Model Testing",
+          "term_ar": "اختبار النموذج",
+          "similarity": 0.703000009059906
+        },
+        {
+          "term_id": "icaire_1211",
+          "term_en": "Validation",
+          "term_ar": "تحقق",
+          "similarity": 0.703000009059906
+        },
+        {
+          "term_id": "icaire_0773",
+          "term_en": "Model Checking",
+          "term_ar": "فحص النموذج",
+          "similarity": 0.6959999799728394
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6439999938011169
+        },
+        {
+          "term_id": "icaire_0881",
+          "term_en": "Performance",
+          "term_ar": "أداء",
+          "similarity": 0.6420000195503235
+        },
+        {
+          "term_id": "icaire_0757",
+          "term_en": "Metric",
+          "term_ar": "مقياس",
+          "similarity": 0.6380000114440918
+        },
+        {
+          "term_id": "icaire_1167",
+          "term_en": "Training",
+          "term_ar": "تدريب",
+          "similarity": 0.6290000081062317
+        },
+        {
+          "term_id": "icaire_0264",
+          "term_en": "Cross-Validation",
+          "term_ar": "تحقق تقاطعي",
+          "similarity": 0.6269999742507935
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::OECD-CLASS-1.2",
+      "control_title": "Diversity in development teams must be advocated to mitigate unconscious bias in AI systems",
+      "control_text_full": "Characteristics of the team of AI system developers – such as gender, country, cultural background – have been shown to impact the way AI systems are built, as developers can incorporate unconscious biases (Freire, 2021[20]). This may result in advocacy for diversity in teams that create AI systems.",
+      "intent_summary": "Organizations should actively promote diverse teams in AI development to reduce the risk of embedding unconscious biases into system design and outcomes, recognizing that homogenous teams may produce discriminatory or skewed results.",
+      "evidence_signals": [
+        "Diversity metrics for AI development teams (e.g., gender, ethnicity, geography)",
+        "Policies or statements committing to inclusive hiring for AI roles",
+        "Training programs on bias awareness for developers",
+        "Public reports on team composition and bias mitigation efforts",
+        "Inclusion of diverse stakeholders in model design reviews"
+      ],
+      "evidence_anti_signals": [
+        "All-homogeneous development teams with no diversity reporting",
+        "Absence of any mention of team composition in project documentation"
+      ],
+      "applies_to_doc_types": [
+        "policy",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "diversity",
+        "unconscious bias",
+        "team composition",
+        "bias mitigation",
+        "inclusion"
+      ],
+      "remediation_template": "If team diversity is not addressed, establish a diversity and inclusion policy for AI development teams, track demographic metrics, and integrate bias awareness training into onboarding and project reviews.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 49,
+      "source_page_end": 52,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0062",
+          "term_en": "Artificial Intelligence Bias",
+          "term_ar": "تحيُّز الذكاء الاصطناعي",
+          "similarity": 0.6259999871253967
+        },
+        {
+          "term_id": "icaire_0131",
+          "term_en": "Bias Mitigation Algorithm",
+          "term_ar": "خوارزمية تخفيف التحيز",
+          "similarity": 0.6000000238418579
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.5979999899864197
+        },
+        {
+          "term_id": "icaire_0096",
+          "term_en": "Automation Bias",
+          "term_ar": "تحيُّز الأتمتة",
+          "similarity": 0.5899999737739563
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.5870000123977661
+        },
+        {
+          "term_id": "icaire_0435",
+          "term_en": "Embedded Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مضمَّن",
+          "similarity": 0.5849999785423279
+        },
+        {
+          "term_id": "icaire_0059",
+          "term_en": "Artificial Intelligence (AI)",
+          "term_ar": "ذكاء اصطناعي",
+          "similarity": 0.5830000042915344
+        },
+        {
+          "term_id": "icaire_1032",
+          "term_en": "Selection Bias",
+          "term_ar": "تحيُّز الاختيار",
+          "similarity": 0.5820000171661377
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::OECD-CLASS-2.1",
+      "control_title": "AI systems must be classified by task type using the seven defined categories",
+      "control_text_full": "The following seven categories cover most tasks performed by AI systems (Table 5): Recognition, Event detection, Forecasting, Personalisation, Interaction support, Goal-driven optimisation, Reasoning with knowledge structures.",
+      "intent_summary": "AI systems must be categorized according to one or more of the seven defined task types to enable appropriate risk assessment, governance, and policy alignment. This classification is foundational for applying context-specific safeguards.",
+      "evidence_signals": [
+        "System documentation explicitly labeling the primary task(s) using OECD categories",
+        "Mapping of system functionality to the seven task types in technical specifications",
+        "Risk assessments tied to specific task categories (e.g., facial recognition = Recognition)",
+        "Procurement or procurement specs requiring task classification before deployment",
+        "Model cards or system descriptions referencing Table 5 categories"
+      ],
+      "evidence_anti_signals": [
+        "Vague descriptions like 'AI-powered system' without task classification",
+        "Use of proprietary or undefined task labels instead of OECD categories"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "task classification",
+        "AI task types",
+        "system functionality",
+        "OECD categories",
+        "model taxonomy"
+      ],
+      "remediation_template": "If task classification is missing, revise system documentation to explicitly map the AI system’s function to one or more of the seven OECD-defined task categories and justify the classification in risk assessments.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 49,
+      "source_page_end": 52,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6980000138282776
+        },
+        {
+          "term_id": "icaire_0180",
+          "term_en": "Classification",
+          "term_ar": "تصنيف",
+          "similarity": 0.6809999942779541
+        },
+        {
+          "term_id": "icaire_0059",
+          "term_en": "Artificial Intelligence (AI)",
+          "term_ar": "ذكاء اصطناعي",
+          "similarity": 0.671999990940094
+        },
+        {
+          "term_id": "icaire_0068",
+          "term_en": "Artificial Intelligence Planning",
+          "term_ar": "تخطيط الذكاء الاصطناعي",
+          "similarity": 0.6679999828338623
+        },
+        {
+          "term_id": "icaire_0279",
+          "term_en": "Data Classification",
+          "term_ar": "تصنيف البيانات",
+          "similarity": 0.6650000214576721
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6539999842643738
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.652999997138977
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.6460000276565552
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::OECD-CLASS-2.2",
+      "control_title": "Policy considerations must be addressed for each AI task type based on associated principles",
+      "control_text_full": "Why does this matter? A few policy considerations associated with the tasks performed by AI systems include: Recognition systems require data that is representative and unbiased... Personalisation can impact social structures... Interaction support tasks... may require higher transparency... Goal-driven optimisation... may require humans in or 'on the loop'... Reasoning with knowledge structures is promising to help inclusive and sustainable growth...",
+      "intent_summary": "For each AI task type, organizations must identify and address specific policy risks and ethical implications tied to OECD principles (e.g., fairness, transparency, human oversight), ensuring governance measures are tailored to the task’s societal impact.",
+      "evidence_signals": [
+        "Risk register mapping each task type to relevant OECD principles (e.g., Recognition → Principle 1.2)",
+        "Policy documents referencing task-specific requirements (e.g., human-in-the-loop for goal-driven systems)",
+        "Transparency disclosures for interaction support systems (e.g., 'you are chatting with an AI')",
+        "Bias audits for personalization systems",
+        "Human oversight protocols for goal-driven optimization systems"
+      ],
+      "evidence_anti_signals": [
+        "Generic policies applied uniformly across all AI tasks",
+        "Absence of principle-to-task mapping in governance documentation"
+      ],
+      "applies_to_doc_types": [
+        "policy",
+        "system"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "task-specific policy",
+        "OECD principles",
+        "risk mapping",
+        "human oversight",
+        "transparency"
+      ],
+      "remediation_template": "If task-specific policy considerations are not addressed, create a mapping table linking each OECD task category to the relevant principles and implement corresponding controls (e.g., transparency notices, human review thresholds).",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 49,
+      "source_page_end": 52,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6899999976158142
+        },
+        {
+          "term_id": "icaire_0063",
+          "term_en": "Artificial Intelligence Ethics",
+          "term_ar": "أخلاقيات الذكاء الاصطناعي",
+          "similarity": 0.6890000104904175
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.6869999766349792
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.671999990940094
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.652999997138977
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6480000019073486
+        },
+        {
+          "term_id": "icaire_0228",
+          "term_en": "Constitutional Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي دستوري",
+          "similarity": 0.6380000114440918
+        },
+        {
+          "term_id": "icaire_0467",
+          "term_en": "Explainability",
+          "term_ar": "قابلية التفسير",
+          "similarity": 0.6320000290870667
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::OECD-CLASS-3.1",
+      "control_title": "Composite AI systems must be identified and assessed for unpredictable boundaries and impacts",
+      "control_text_full": "AI systems frequently perform several tasks... A composite AI is essentially an interlinked network of agents... It may be difficult to anticipate and test composite AIs, which, like any complex system, will have unpredictable boundaries and impacts and will be hard or impossible to fit into a formula.",
+      "intent_summary": "When AI systems combine multiple tasks (e.g., recognition + forecasting), organizations must explicitly identify them as composite systems and conduct enhanced testing and risk assessments due to emergent, unpredictable behaviors that single-task evaluations cannot capture.",
+      "evidence_signals": [
+        "Explicit labeling of systems as 'composite' in system architecture diagrams",
+        "Testing protocols specifically designed for multi-task interdependencies",
+        "Risk assessments addressing emergent behaviors in composite systems",
+        "Documentation of boundary limitations and failure modes unique to composite systems",
+        "Stakeholder reviews focused on unintended consequences of system combinations"
+      ],
+      "evidence_anti_signals": [
+        "Treating composite systems as the sum of individual tasks without holistic analysis",
+        "No mention of system complexity or emergent behavior in documentation"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "high",
+      "keywords": [
+        "composite AI",
+        "multi-task system",
+        "emergent behavior",
+        "system complexity",
+        "unpredictable impacts"
+      ],
+      "remediation_template": "If composite systems are not identified, revise system documentation to classify any multi-task AI as composite, and implement boundary testing, scenario-based stress tests, and independent review for emergent risks.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 49,
+      "source_page_end": 52,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0212",
+          "term_en": "Composite Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مُرَكَّب",
+          "similarity": 0.7260000109672546
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6840000152587891
+        },
+        {
+          "term_id": "icaire_0137",
+          "term_en": "Big Data Intelligence",
+          "term_ar": "ذكاء البيانات الضخمة",
+          "similarity": 0.6769999861717224
+        },
+        {
+          "term_id": "icaire_0082",
+          "term_en": "Augmented Analytics",
+          "term_ar": "تحليلات مُعَزَّزة",
+          "similarity": 0.671999990940094
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6700000166893005
+        },
+        {
+          "term_id": "icaire_0910",
+          "term_en": "Predictive System",
+          "term_ar": "نظام تنبؤي",
+          "similarity": 0.6620000004768372
+        },
+        {
+          "term_id": "icaire_0435",
+          "term_en": "Embedded Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مضمَّن",
+          "similarity": 0.6600000262260437
+        },
+        {
+          "term_id": "icaire_0068",
+          "term_en": "Artificial Intelligence Planning",
+          "term_ar": "تخطيط الذكاء الاصطناعي",
+          "similarity": 0.6549999713897705
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::OECD-CLASS-3.2",
+      "control_title": "Content generation systems must be recognized as combining forecasting and recognition tasks",
+      "control_text_full": "Content generation (also referred to as synthesis): Includes generating new images, video, text, assessment and audio. This task combines forecasting and recognition tasks.",
+      "intent_summary": "Systems that generate synthetic content (e.g., deepfakes, AI art, automated news) must be classified as combining forecasting and recognition tasks, triggering specific governance requirements due to their potential for misinformation and manipulation.",
+      "evidence_signals": [
+        "Classification of content generation systems under 'forecasting + recognition' in technical docs",
+        "Watermarking or disclosure mechanisms for synthetic content",
+        "Risk assessments addressing misinformation potential",
+        "Training data provenance logs for generative models",
+        "Policies restricting use of generative AI in high-risk contexts (e.g., elections)"
+      ],
+      "evidence_anti_signals": [
+        "Labeling generative AI as a single 'content creation' task without decomposition",
+        "No disclosure or provenance controls for synthetic outputs"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 2,
+      "severity": "high",
+      "keywords": [
+        "content generation",
+        "synthetic media",
+        "deepfake",
+        "forecasting + recognition",
+        "misinformation"
+      ],
+      "remediation_template": "If content generation systems are not classified as composite tasks, update documentation to reflect their dual nature (forecasting + recognition), and implement synthetic content labeling and misuse mitigation controls.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 49,
+      "source_page_end": 52,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0230",
+          "term_en": "Content Generator",
+          "term_ar": "مولِّد محتوى",
+          "similarity": 0.6830000281333923
+        },
+        {
+          "term_id": "icaire_0537",
+          "term_en": "Generative Artificial Intelligence (GenAI)",
+          "term_ar": "ذكاء اصطناعي توليدي",
+          "similarity": 0.6819999814033508
+        },
+        {
+          "term_id": "icaire_1000",
+          "term_en": "Retrieval-Augmented Generation (RAG)",
+          "term_ar": "توليد مُعَزَّز بالاسترجاع",
+          "similarity": 0.6710000038146973
+        },
+        {
+          "term_id": "icaire_0557",
+          "term_en": "Graph Retrieval-Augmented Generation (GraphRAG)",
+          "term_ar": "توليد مُعَزَّز بالاسترجاع الشبكي",
+          "similarity": 0.6499999761581421
+        },
+        {
+          "term_id": "icaire_0082",
+          "term_en": "Augmented Analytics",
+          "term_ar": "تحليلات مُعَزَّزة",
+          "similarity": 0.6489999890327454
+        },
+        {
+          "term_id": "icaire_0197",
+          "term_en": "Cognitive Automation",
+          "term_ar": "أتمتة إدراكية",
+          "similarity": 0.6439999938011169
+        },
+        {
+          "term_id": "icaire_1091",
+          "term_en": "Speech Synthesis",
+          "term_ar": "توليد الكلام",
+          "similarity": 0.640999972820282
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6359999775886536
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::OECD-CLASS-3.3",
+      "control_title": "Autonomous systems must distinguish between task execution and decision autonomy",
+      "control_text_full": "In an autonomous vehicle, this could be a recommendation to turn left or right to minimise travel time, followed by the execution of the action. This system is autonomous in the sense that it does not require human supervision to act on its environment, but the way in which it performs its task (recognition) is not autonomous, as it relies on supervised learning.",
+      "intent_summary": "Organizations must clearly differentiate between the autonomy of action (e.g., driving a car) and the autonomy of decision-making (e.g., recognizing objects), ensuring that reliance on supervised learning for perception does not obscure the need for human accountability in high-stakes autonomous systems.",
+      "evidence_signals": [
+        "Architectural diagrams distinguishing perception (non-autonomous) from action (autonomous) components",
+        "Documentation stating level of autonomy per OECD definitions",
+        "Human override mechanisms for autonomous decision execution",
+        "Risk assessments addressing over-reliance on supervised learning in safety-critical perception",
+        "Labels or certifications indicating autonomy level (e.g., SAE Level 2 vs 4)"
+      ],
+      "evidence_anti_signals": [
+        "Using 'autonomous' as a blanket term without technical clarification",
+        "No distinction between perception and action autonomy in system specs"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "high",
+      "keywords": [
+        "autonomous systems",
+        "perception vs action",
+        "supervised learning",
+        "human accountability",
+        "autonomy level"
+      ],
+      "remediation_template": "If autonomy is ambiguously defined, revise system documentation to clearly separate perception (non-autonomous) and action (autonomous) components, and document human oversight mechanisms for critical decisions.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 49,
+      "source_page_end": 52,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0099",
+          "term_en": "Autonomous Driving",
+          "term_ar": "قيادة ذاتية",
+          "similarity": 0.722000002861023
+        },
+        {
+          "term_id": "icaire_0101",
+          "term_en": "Autonomous System",
+          "term_ar": "نظام ذاتي التحكم",
+          "similarity": 0.7110000252723694
+        },
+        {
+          "term_id": "icaire_0102",
+          "term_en": "Autonomous Vehicle",
+          "term_ar": "مركبة ذاتية التحكم",
+          "similarity": 0.6899999976158142
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6880000233650208
+        },
+        {
+          "term_id": "icaire_1038",
+          "term_en": "Self-Driving Car",
+          "term_ar": "سيارة ذاتية القيادة",
+          "similarity": 0.6869999766349792
+        },
+        {
+          "term_id": "icaire_0103",
+          "term_en": "Autonomy",
+          "term_ar": "تحكم ذاتي",
+          "similarity": 0.6779999732971191
+        },
+        {
+          "term_id": "icaire_0100",
+          "term_en": "Autonomous Robot",
+          "term_ar": "روبوت ذاتي التحكم",
+          "similarity": 0.6579999923706055
+        },
+        {
+          "term_id": "icaire_1042",
+          "term_en": "Self-Supervised Learning",
+          "term_ar": "تعلُّم ذاتي التوجيه",
+          "similarity": 0.6549999713897705
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::OECD-CLASS-3.4",
+      "control_title": "Monitoring and control systems must link task detection to actionable outcomes",
+      "control_text_full": "Control systems generally assess environments through recognition, event detection or forecasting and propose a goal-driven action. They range from domestic heating controllers to large industrial control systems... One example of a control system is a fraud detection system with an event detection task combined with an action (e.g. freezing a bank account).",
+      "intent_summary": "Systems that detect events or patterns and then trigger automated actions (e.g., freezing accounts, adjusting thermostats) must explicitly link the detection task to the resulting action, ensuring accountability and proportionality in automated responses.",
+      "evidence_signals": [
+        "Flowcharts showing detection → decision → action chain",
+        "Audit logs of detection events and corresponding automated actions",
+        "Thresholds and justification for automated actions (e.g., why freeze an account?)",
+        "Human review pathways for high-impact automated decisions",
+        "Documentation of action limits (e.g., 'freeze only after 3 alerts') "
+      ],
+      "evidence_anti_signals": [
+        "Automated actions without documented detection triggers",
+        "No logging or audit trail of detection-to-action links"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy"
+      ],
+      "weight": 2,
+      "severity": "high",
+      "keywords": [
+        "control systems",
+        "event detection",
+        "automated action",
+        "fraud detection",
+        "action linkage"
+      ],
+      "remediation_template": "If detection-action links are not documented, create a clear workflow mapping each detection task to its corresponding automated action, define thresholds, and implement audit trails and human review options for high-impact decisions.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 49,
+      "source_page_end": 52,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_1007",
+          "term_en": "Robot Control System",
+          "term_ar": "نظام التحكم بالروبوت",
+          "similarity": 0.6539999842643738
+        },
+        {
+          "term_id": "icaire_0635",
+          "term_en": "Intelligent Control",
+          "term_ar": "تحكم ذكي",
+          "similarity": 0.6480000019073486
+        },
+        {
+          "term_id": "icaire_0239",
+          "term_en": "Control Theory",
+          "term_ar": "نظرية التحكم",
+          "similarity": 0.6439999938011169
+        },
+        {
+          "term_id": "icaire_0910",
+          "term_en": "Predictive System",
+          "term_ar": "نظام تنبؤي",
+          "similarity": 0.6259999871253967
+        },
+        {
+          "term_id": "icaire_0010",
+          "term_en": "Action Recognition",
+          "term_ar": "تعرُّف على الأفعال",
+          "similarity": 0.625
+        },
+        {
+          "term_id": "icaire_0127",
+          "term_en": "Behavioral Analytics",
+          "term_ar": "تحليلات سلوكية",
+          "similarity": 0.621999979019165
+        },
+        {
+          "term_id": "icaire_0082",
+          "term_en": "Augmented Analytics",
+          "term_ar": "تحليلات مُعَزَّزة",
+          "similarity": 0.6209999918937683
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6209999918937683
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::AUTONOMY-LEVEL-1",
+      "control_title": "No-action autonomy (human support)",
+      "control_text_full": "No-action autonomy (also referred to as \"human support\"): System cannot act on its recommendations or output. The human uses or disregards the AI system’s recommendations or output at will.",
+      "intent_summary": "When an AI system operates with no-action autonomy, it must be designed so that it cannot execute any action without explicit human approval — ensuring human control over all outcomes.",
+      "evidence_signals": [
+        "System architecture prevents automated execution of recommendations",
+        "User interface requires manual confirmation before any action is taken",
+        "Logs show all recommendations were reviewed and manually approved",
+        "System design documentation explicitly states no autonomous action capability",
+        "Training materials emphasize human override as mandatory"
+      ],
+      "evidence_anti_signals": [
+        "System automatically executes recommendations without human input",
+        "No user confirmation step in workflow for AI outputs",
+        "Documentation claims human oversight but system behavior contradicts this"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "no-action autonomy",
+        "human support",
+        "manual override",
+        "non-autonomous",
+        "human-in-control"
+      ],
+      "remediation_template": "If your system is classified as no-action autonomy, ensure its design physically or logically prevents any automated action — all outputs must require explicit human confirmation before execution.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 52,
+      "source_page_end": 56,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0101",
+          "term_en": "Autonomous System",
+          "term_ar": "نظام ذاتي التحكم",
+          "similarity": 0.7549999952316284
+        },
+        {
+          "term_id": "icaire_0634",
+          "term_en": "Intelligent Automation",
+          "term_ar": "أتمتة ذكية",
+          "similarity": 0.7120000123977661
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6890000104904175
+        },
+        {
+          "term_id": "icaire_0095",
+          "term_en": "Automation",
+          "term_ar": "أتمتة",
+          "similarity": 0.6880000233650208
+        },
+        {
+          "term_id": "icaire_0103",
+          "term_en": "Autonomy",
+          "term_ar": "تحكم ذاتي",
+          "similarity": 0.6819999814033508
+        },
+        {
+          "term_id": "icaire_0097",
+          "term_en": "Autonomic Computing",
+          "term_ar": "حوسبة ذاتية",
+          "similarity": 0.675000011920929
+        },
+        {
+          "term_id": "icaire_0240",
+          "term_en": "Controllability",
+          "term_ar": "قابلية التحكم",
+          "similarity": 0.656000018119812
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.652999997138977
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::AUTONOMY-LEVEL-2",
+      "control_title": "Low-action autonomy (human-in-the-loop)",
+      "control_text_full": "Low-action autonomy (also referred to as \"human-in-the-loop\"): System evaluates input and acts upon its recommendations or output if the human agrees.",
+      "intent_summary": "In low-action autonomy systems, the AI can only act after a human explicitly approves its recommendation — ensuring human judgment remains the final gatekeeper for all actions.",
+      "evidence_signals": [
+        "System requires human click/confirmation before executing any action",
+        "Audit logs record human approval decisions for each AI recommendation",
+        "UI design enforces mandatory human review before action",
+        "System documentation specifies human-in-the-loop as operational requirement",
+        "Training protocols require operators to validate every AI output"
+      ],
+      "evidence_anti_signals": [
+        "System auto-executes recommendations without visible human approval",
+        "Approval steps are hidden or easily bypassed in workflow",
+        "Logs show actions taken without corresponding human approval records"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "human-in-the-loop",
+        "low-action autonomy",
+        "human approval",
+        "action gating",
+        "manual validation"
+      ],
+      "remediation_template": "For low-action autonomy systems, ensure every AI-generated action requires explicit, documented human approval before execution — and design the interface to prevent bypassing this step.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 52,
+      "source_page_end": 56,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0101",
+          "term_en": "Autonomous System",
+          "term_ar": "نظام ذاتي التحكم",
+          "similarity": 0.671999990940094
+        },
+        {
+          "term_id": "icaire_0583",
+          "term_en": "Human-in-the-Loop (HITL)",
+          "term_ar": "إنسان في الحلقة",
+          "similarity": 0.6520000100135803
+        },
+        {
+          "term_id": "icaire_0034",
+          "term_en": "Algorithm in the Loop",
+          "term_ar": "خوارزمية في الحلقة",
+          "similarity": 0.6499999761581421
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6480000019073486
+        },
+        {
+          "term_id": "icaire_0103",
+          "term_en": "Autonomy",
+          "term_ar": "تحكم ذاتي",
+          "similarity": 0.640999972820282
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.640999972820282
+        },
+        {
+          "term_id": "icaire_0634",
+          "term_en": "Intelligent Automation",
+          "term_ar": "أتمتة ذكية",
+          "similarity": 0.6370000243186951
+        },
+        {
+          "term_id": "icaire_0067",
+          "term_en": "Artificial Intelligence Operations (AIOps)",
+          "term_ar": "ذكاء اصطناعي للعمليات",
+          "similarity": 0.6349999904632568
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::AUTONOMY-LEVEL-3",
+      "control_title": "Medium-action autonomy (human-on-the-loop)",
+      "control_text_full": "Medium-action autonomy (also referred to as \"human-on-the-loop\"): System evaluates input and acts upon its recommendations or output unless the human vetoes.",
+      "intent_summary": "In medium-action autonomy systems, the AI executes actions automatically unless a human actively intervenes to stop it — requiring robust monitoring and easy veto mechanisms.",
+      "evidence_signals": [
+        "System logs show human veto events and reasons",
+        "UI includes a prominent, one-click veto button for operators",
+        "Alerts trigger when system actions exceed predefined thresholds",
+        "System documentation specifies default action behavior and override protocol",
+        "Operator training includes emergency veto procedures"
+      ],
+      "evidence_anti_signals": [
+        "No visible or accessible veto mechanism for operators",
+        "Veto events are not logged or tracked",
+        "System operates without monitoring or alerting for potential errors"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "human-on-the-loop",
+        "medium-action autonomy",
+        "veto mechanism",
+        "active monitoring",
+        "default action"
+      ],
+      "remediation_template": "For medium-action autonomy systems, implement a clear, accessible, and logged human veto mechanism that allows operators to immediately halt any AI action — and train users on its critical importance.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 52,
+      "source_page_end": 56,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0101",
+          "term_en": "Autonomous System",
+          "term_ar": "نظام ذاتي التحكم",
+          "similarity": 0.7179999947547913
+        },
+        {
+          "term_id": "icaire_0634",
+          "term_en": "Intelligent Automation",
+          "term_ar": "أتمتة ذكية",
+          "similarity": 0.6759999990463257
+        },
+        {
+          "term_id": "icaire_0103",
+          "term_en": "Autonomy",
+          "term_ar": "تحكم ذاتي",
+          "similarity": 0.6660000085830688
+        },
+        {
+          "term_id": "icaire_0095",
+          "term_en": "Automation",
+          "term_ar": "أتمتة",
+          "similarity": 0.6639999747276306
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6629999876022339
+        },
+        {
+          "term_id": "icaire_0100",
+          "term_en": "Autonomous Robot",
+          "term_ar": "روبوت ذاتي التحكم",
+          "similarity": 0.6610000133514404
+        },
+        {
+          "term_id": "icaire_0099",
+          "term_en": "Autonomous Driving",
+          "term_ar": "قيادة ذاتية",
+          "similarity": 0.6470000147819519
+        },
+        {
+          "term_id": "icaire_0102",
+          "term_en": "Autonomous Vehicle",
+          "term_ar": "مركبة ذاتية التحكم",
+          "similarity": 0.6439999938011169
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::AUTONOMY-LEVEL-4",
+      "control_title": "High-action autonomy (human-out-of-the-loop)",
+      "control_text_full": "High-action autonomy (also referred to as \"human-out-of-the-loop\"): System evaluates input and acts upon its recommendations or output without human involvement.",
+      "intent_summary": "High-action autonomy systems operate entirely without human intervention — requiring the highest level of safety validation, accountability, and ethical review due to their potential for uncontrolled impact.",
+      "evidence_signals": [
+        "Independent safety certification for fully autonomous operation",
+        "Continuous monitoring and logging of all autonomous decisions",
+        "Ethics review board approval for deployment in high-risk contexts",
+        "System designed with multiple layers of fail-safes and redundancy",
+        "Regulatory compliance documentation for unattended operation"
+      ],
+      "evidence_anti_signals": [
+        "No safety or ethics review documented for autonomous deployment",
+        "System operates without monitoring, logging, or rollback capability",
+        "Deployment in safety-critical environments without regulatory approval"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 3,
+      "severity": "high",
+      "keywords": [
+        "high-action autonomy",
+        "human-out-of-the-loop",
+        "fully autonomous",
+        "unattended operation",
+        "safety-critical"
+      ],
+      "remediation_template": "If deploying a high-action autonomy system, you must obtain independent safety and ethics certification, implement comprehensive monitoring and fail-safes, and secure regulatory approval — especially in contexts affecting human life or rights.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 52,
+      "source_page_end": 56,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0101",
+          "term_en": "Autonomous System",
+          "term_ar": "نظام ذاتي التحكم",
+          "similarity": 0.7829999923706055
+        },
+        {
+          "term_id": "icaire_0100",
+          "term_en": "Autonomous Robot",
+          "term_ar": "روبوت ذاتي التحكم",
+          "similarity": 0.7310000061988831
+        },
+        {
+          "term_id": "icaire_0634",
+          "term_en": "Intelligent Automation",
+          "term_ar": "أتمتة ذكية",
+          "similarity": 0.7149999737739563
+        },
+        {
+          "term_id": "icaire_0103",
+          "term_en": "Autonomy",
+          "term_ar": "تحكم ذاتي",
+          "similarity": 0.7059999704360962
+        },
+        {
+          "term_id": "icaire_0095",
+          "term_en": "Automation",
+          "term_ar": "أتمتة",
+          "similarity": 0.7039999961853027
+        },
+        {
+          "term_id": "icaire_0099",
+          "term_en": "Autonomous Driving",
+          "term_ar": "قيادة ذاتية",
+          "similarity": 0.6890000104904175
+        },
+        {
+          "term_id": "icaire_0097",
+          "term_en": "Autonomic Computing",
+          "term_ar": "حوسبة ذاتية",
+          "similarity": 0.6830000281333923
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6790000200271606
+        }
+      ]
+    },
+    {
+      "control_id": "oecd::EVALUATION-STD-1",
+      "control_title": "Use of agreed standards for AI system evaluation",
+      "control_text_full": "In some cases, there are agreed standards or general methods to assess an AI system or application within a given industry context and for a type of task(s):  There are industry standards for evaluating AI systems as applied to this specific task and context.",
+      "intent_summary": "When industry standards exist for evaluating AI systems, organizations must use them to ensure consistent, reliable, and accountable assessment of system performance and safety.",
+      "evidence_signals": [
+        "Reference to ISO, NIST, IEC, or other recognized standards in evaluation plan",
+        "Test results aligned with standardized benchmarks (e.g., F1-score, ROUGE, fairness metrics)",
+        "Third-party validation using industry-accepted evaluation protocols",
+        "Documentation showing compliance with sector-specific AI evaluation guidelines",
+        "Audit reports referencing standardized evaluation criteria"
+      ],
+      "evidence_anti_signals": [
+        "Evaluation methods are proprietary or undefined",
+        "Claims of 'high accuracy' without reference to any standard metric",
+        "Use of custom metrics not validated or peer-reviewed"
+      ],
+      "applies_to_doc_types": [
+        "system",
+        "policy",
+        "plan"
+      ],
+      "weight": 2,
+      "severity": "med",
+      "keywords": [
+        "evaluation standards",
+        "industry benchmarks",
+        "performance metrics",
+        "validation protocols",
+        "standardized assessment"
+      ],
+      "remediation_template": "When industry standards exist for evaluating your AI system’s task, you must adopt and document their use in your evaluation plan — and avoid relying on unvalidated or opaque metrics.",
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي",
+      "source_page_start": 52,
+      "source_page_end": 56,
+      "related_icaire_terms": [
+        {
+          "term_id": "icaire_0083",
+          "term_en": "Augmented Data Quality",
+          "term_ar": "جودة البيانات المُعَزَّزة",
+          "similarity": 0.6690000295639038
+        },
+        {
+          "term_id": "icaire_0063",
+          "term_en": "Artificial Intelligence Ethics",
+          "term_ar": "أخلاقيات الذكاء الاصطناعي",
+          "similarity": 0.6650000214576721
+        },
+        {
+          "term_id": "icaire_0060",
+          "term_en": "Artificial Intelligence Alignment",
+          "term_ar": "مواءمة الذكاء الاصطناعي",
+          "similarity": 0.6639999747276306
+        },
+        {
+          "term_id": "icaire_0069",
+          "term_en": "Artificial Intelligence System",
+          "term_ar": "نظام ذكاء اصطناعي",
+          "similarity": 0.6589999794960022
+        },
+        {
+          "term_id": "icaire_0081",
+          "term_en": "Auditability",
+          "term_ar": "قابلية التدقيق",
+          "similarity": 0.6449999809265137
+        },
+        {
+          "term_id": "icaire_0996",
+          "term_en": "Responsible Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي مسؤول",
+          "similarity": 0.6349999904632568
+        },
+        {
+          "term_id": "icaire_0064",
+          "term_en": "Artificial Intelligence Governance",
+          "term_ar": "حوكمة الذكاء الاصطناعي",
+          "similarity": 0.6349999904632568
+        },
+        {
+          "term_id": "icaire_0430",
+          "term_en": "Edge Artificial Intelligence",
+          "term_ar": "ذكاء اصطناعي طرفي",
+          "similarity": 0.6320000290870667
+        }
+      ]
+    }
+  ]
+}

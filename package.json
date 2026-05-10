@@ -1,0 +1,19 @@
+{
+  "name": "audit-ai",
+  "version": "1.0.0",
+  "description": "Audit AI — glossary + local FastAPI compliance audit (same pipeline as Gradio reference).",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js && wrangler pages dev dist --port 8788",
+    "deploy": "wrangler pages deploy dist --project-name=term-graph --branch=main",
+    "dev:web": "python -m http.server 8080",
+    "dev:api": "cd backend && python -m uvicorn main:app --host 127.0.0.1 --port 8788"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

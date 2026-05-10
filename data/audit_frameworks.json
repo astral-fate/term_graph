@@ -1,0 +1,24 @@
+{
+  "frameworks": [
+    {
+      "framework_id": "oecd",
+      "framework_name_en": "OECD Framework for the Classification of AI Systems",
+      "framework_name_ar": "إطار منظمة التعاون الاقتصادي والتنمية لتصنيف أنظمة الذكاء الاصطناعي"
+    },
+    {
+      "framework_id": "nist_interop",
+      "framework_name_en": "Common Guideposts to Promote Interoperability in AI Risk Management",
+      "framework_name_ar": "مرتكزات مشتركة لتعزيز قابلية التشغيل البيني في إدارة مخاطر الذكاء الاصطناعي"
+    },
+    {
+      "framework_id": "unesco",
+      "framework_name_en": "UNESCO Recommendation on the Ethics of Artificial Intelligence",
+      "framework_name_ar": "توصية اليونسكو بشأن أخلاقيات الذكاء الاصطناعي"
+    },
+    {
+      "framework_id": "oecd_principles",
+      "framework_name_en": "OECD AI Principles",
+      "framework_name_ar": "مبادئ منظمة التعاون الاقتصادي والتنمية للذكاء الاصطناعي"
+    }
+  ]
+}
