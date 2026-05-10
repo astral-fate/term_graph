@@ -51,7 +51,9 @@
   /** Mermaid v10+ often returns a Promise from run/init; swallow rejections so DevTools stays clean. */
   function runMermaidOn(nodeList) {
     if (typeof mermaid === 'undefined' || !nodeList || nodeList.length === 0) return;
-    const nodes = Array.from(nodeList);
+    const nodes = Array.from(nodeList).filter(el => !el.hasAttribute('data-processed'));
+    if (nodes.length === 0) return;
+    
     nodes.forEach((el) => el.removeAttribute('data-processed'));
     try {
       if (typeof mermaid.run === 'function') {
@@ -75,7 +77,14 @@
         securityLevel: 'loose'
       });
     } catch (e) {}
-    runMermaidOn(document.querySelectorAll('.mermaid'));
+    
+    // Only re-process mermaid diagrams in the active view to save resources
+    const activeView = document.querySelector('.view.active');
+    if (activeView) {
+      const activeMermaids = activeView.querySelectorAll('.mermaid');
+      activeMermaids.forEach(el => el.removeAttribute('data-processed'));
+      runMermaidOn(activeMermaids);
+    }
   }
 
   function updateThemeToggle() {
@@ -100,7 +109,12 @@
     } catch (e) {}
     document.documentElement.setAttribute('data-theme', theme);
     updateThemeToggle();
-    applyMermaidThemeForDocument();
+    
+    // Only run mermaid if we are in a view that has it
+    const activeTab = document.querySelector('.tab.active');
+    if (activeTab && ['detail', 'story'].includes(activeTab.dataset.view)) {
+      applyMermaidThemeForDocument();
+    }
   }
 
   if (typeof window !== 'undefined') {
@@ -870,18 +884,45 @@
 
       syncLandingBodyClass();
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      
-      if (target === 'story') renderStoryTrack();
-      if (target === 'flash' && terms.length > 0) setupFlashcards();
+      if (target === 'story') {
+        ensureGlossaryLoaded().then(() => {
+          setupStoryTracks();
+          renderStoryTrack();
+        });
+      }
+      if (target === 'flash') {
+        ensureGlossaryLoaded().then(() => {
+          if (terms.length > 0) setupFlashcards();
+        });
+      }
       if (target === 'graph') {
-        setTimeout(() => {
-          const canvas = document.getElementById('graph-canvas');
-          if (canvas && typeof graphResize === 'function') graphResize();
-          startGraphAnimationLoop();
-        }, 50);
+        ensureGlossaryLoaded().then(() => {
+          if (graphNodes.length === 0) {
+            setupGraphData();
+            setupDynamicFilters();
+            initGraphEngine();
+          }
+          setTimeout(() => {
+            const canvas = document.getElementById('graph-canvas');
+            if (canvas && typeof graphResize === 'function') graphResize();
+            startGraphAnimationLoop();
+          }, 50);
+        });
       } else {
         stopGraphAnimationLoop();
+      }
+
+      if (target === 'audit') {
+        mountAuditView();
+      }
+      if (target === 'rewrite') {
+        mountRewriteTool();
+      }
+      if (target === 'dashboard') {
+        ensureGlossaryLoaded().then(() => {
+          renderFeaturedTerms();
+          updateHomeStats();
+        });
       }
     } catch (e) {
       console.error("Navigation error:", e);
@@ -903,61 +944,99 @@
     goto(t.dataset.goto);
   });
 
+  let glossaryLoadPromise = null;
+  async function ensureGlossaryLoaded() {
+    if (glossaryLoadPromise) return glossaryLoadPromise;
+    
+    glossaryLoadPromise = (async () => {
+      try {
+        console.log("Loading glossary_enriched.json...");
+        const response = await fetch('glossary_enriched.json');
+        if (!response.ok) throw new Error("Fetch failed: " + response.statusText);
+        
+        const data = await response.json();
+        glossaryData = data;
+        terms = data.terms || [];
+        console.log(`Loaded ${terms.length} terms.`);
+        
+        const statusEl = document.getElementById('load-status');
+        const ui = {
+          ar: (n) => `تم تحميل ${n} مصطلحاً بنجاح من قاعدة بياناتك. ابحث أو اختر مصطلحاً للاستكشاف.`,
+          en: (n) => `Successfully loaded ${n} terms from your database. Search or click a term below to explore.`,
+          fr: (n) => `${n} termes chargés avec succès. Recherchez ou cliquez sur un terme pour explorer.`
+        };
+        if (statusEl) statusEl.textContent = ui[currentLang](terms.length);
+
+        setupSearch();
+        
+        // Background tasks
+        if (typeof window.requestIdleCallback === 'function') {
+          window.requestIdleCallback(() => {
+            if (!glossaryData.tracks || Object.keys(glossaryData.tracks).length === 0) {
+              setupStoryTracks();
+            }
+          });
+        }
+
+        return data;
+      } catch (e) {
+        console.error("Glossary load failed:", e);
+        throw e;
+      }
+    })();
+    
+    return glossaryLoadPromise;
+  }
+
+  let auditViewMounted = false;
+  async function mountAuditView() {
+    if (auditViewMounted) return;
+    const auditRoot = document.getElementById('audit-view-root');
+    if (auditRoot && window.AuditView && typeof window.AuditView.mount === 'function') {
+      auditViewMounted = true;
+      await window.AuditView.mount(auditRoot);
+    }
+  }
+
+  let rewriteToolMounted = false;
+  async function mountRewriteTool() {
+    if (rewriteToolMounted) return;
+    await ensureGlossaryLoaded();
+    const rwRoot = document.getElementById('rewrite-tool-root');
+    if (rwRoot && window.RewriteToolView && typeof window.RewriteToolView.mount === 'function') {
+      rewriteToolMounted = true;
+      window.RewriteToolView.mount(rwRoot, {
+        terms: terms,
+        getLang: function () { return currentLang; }
+      });
+    }
+  }
+
   // --- INITIALIZATION ---
   async function init() {
     try {
       syncLandingBodyClass();
-      console.log("Loading glossary_enriched.json...");
-      const response = await fetch('glossary_enriched.json');
-      if (!response.ok) throw new Error("Fetch failed: " + response.statusText);
-      
-      const data = await response.json();
-      glossaryData = data;
-      terms = data.terms || [];
-      console.log(`Loaded ${terms.length} terms.`);
-      
-      const statusEl = document.getElementById('load-status');
-      const ui = {
-        ar: (n) => `تم تحميل ${n} مصطلحاً بنجاح من قاعدة بياناتك. ابحث أو اختر مصطلحاً للاستكشاف.`,
-        en: (n) => `Successfully loaded ${n} terms from your database. Search or click a term below to explore.`,
-        fr: (n) => `${n} termes chargés avec succès. Recherchez ou cliquez sur un terme pour explorer.`
-      };
-      if (statusEl) statusEl.textContent = ui[currentLang](terms.length);
-
-      updateHomeStats();
-      setupSearch();
-      renderFeaturedTerms();
-      setupStoryTracks();
-      
-      // Initialize Graph Data
-      setupGraphData();
-      setupDynamicFilters();
-      initGraphEngine();
-
-      const rwRoot = document.getElementById('rewrite-tool-root');
-      if (rwRoot && window.RewriteToolView && typeof window.RewriteToolView.mount === 'function') {
-        window.RewriteToolView.mount(rwRoot, {
-          terms: terms,
-          getLang: function () { return currentLang; }
-        });
-      }
-
-      const auditRoot = document.getElementById('audit-view-root');
-      if (auditRoot && window.AuditView && typeof window.AuditView.mount === 'function') {
-        await window.AuditView.mount(auditRoot);
-      }
-
-      if (terms.length > 0) renderDetail(terms[0]);
       setLanguage(currentLang);
+      
+      // Start loading glossary in background but don't block landing page
+      ensureGlossaryLoaded().catch(e => {
+        const homeLanding = document.querySelector('[data-view="home"] .landing-board');
+        if (homeLanding) {
+          homeLanding.innerHTML += `<div style="padding:15px; background:#fff3cd; color:#856404; border-radius:8px; margin-top:10px; font-size:13px; border:1px solid #ffeeba;">
+            <b>Error:</b> ${e.message}<br>
+            <small>Check console for stack trace. Ensure you are using http://localhost:8080</small>
+          </div>`;
+        }
+      });
+
+      // Lazy mount features
+      if (window.HomeFeaturesView && typeof window.HomeFeaturesView.mount === 'function') {
+        const grid = document.getElementById('dashboard-feature-grid');
+        if (grid) window.HomeFeaturesView.mount(grid);
+      }
+
     } catch (e) {
       console.error("Init failed:", e);
-      const homeLanding = document.querySelector('[data-view="home"] .landing-board');
-      if (homeLanding) {
-        homeLanding.innerHTML += `<div style="padding:15px; background:#fff3cd; color:#856404; border-radius:8px; margin-top:10px; font-size:13px; border:1px solid #ffeeba;">
-          <b>Error:</b> ${e.message}<br>
-          <small>Check console for stack trace. Ensure you are using http://localhost:8080</small>
-        </div>`;
-      }
     }
   }
 
@@ -2009,11 +2088,5 @@
     }
   }
 
-  if (window.HomeFeaturesView && typeof window.HomeFeaturesView.mount === 'function') {
-    const grid = document.getElementById('dashboard-feature-grid');
-    if (grid) window.HomeFeaturesView.mount(grid);
-  }
   updateThemeToggle();
-  applyMermaidThemeForDocument();
-  setLanguage(currentLang);
   init();

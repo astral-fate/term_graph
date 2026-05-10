@@ -307,10 +307,14 @@
 
   /* ============ VIEWS ============ */
   .view { display: none; }
-  .view.active { display: block; animation: fadeIn 0.2s ease; }
+  .view.active { 
+    display: block; 
+    animation: fadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1); 
+    will-change: opacity, transform;
+  }
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(4px); }
-    to { opacity: 1; transform: none; }
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .view-header { margin-bottom: 20px; }
@@ -2153,4 +2157,42 @@
   @media (max-width: 780px) {
     .stats { grid-template-columns: repeat(2, 1fr); }
     .feature-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ============ PERFORMANCE & MOBILE OPTIMIZATION ============ */
+  @media (max-width: 640px) {
+    .landing-board {
+      background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, transparent 42%);
+      background-size: 100% 100%;
+      padding: 24px 16px;
+    }
+    .landing-stats {
+      background: var(--lb-parchment-deep);
+      padding: 20px 16px;
+    }
+    .landing-stat-card {
+      min-height: auto;
+    }
+    .feature-grid {
+      grid-template-columns: 1fr;
+    }
+    .topbar {
+      padding: 10px 14px;
+    }
+  }
+
+  /* Reduce motion if requested */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* GPU Acceleration for Graph Canvas */
+  #graph-canvas {
+    will-change: transform;
+    backface-visibility: hidden;
   }
