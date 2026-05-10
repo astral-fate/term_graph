@@ -37,7 +37,6 @@
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>mermaid.initialize({ startOnLoad: false, theme: 'neutral', securityLevel: 'loose' });</script>
-  <script src="js/views/templates.js"></script>
 </head>
 <body class="is-landing-home">
 <!--
@@ -438,16 +437,8 @@
        REWRITE TOOL
        ================================================================ -->
   <!-- Filled by js/views/rewrite-tool.js after glossary load -->
-  <section class="view" data-view="rewrite">
-    <div id="rewrite-tool-root"></div>
-  </section>
-
-  <!-- ================================================================
-       AUDIT AI (in-browser preview; bundled data/audit_frameworks.json)
-       ================================================================ -->
-  <section class="view" data-view="audit">
-    <div id="audit-view-root"></div>
-  </section>
+  <section class="view" data-view="rewrite"></section>
+  <section class="view" data-view="audit"></section>
 
   <!-- ================================================================
        FLASHCARDS

@@ -139,7 +139,6 @@
     window.filterQuiz = filterQuiz;
     window.setupFlashcards = setupFlashcards;
     window.prevQuestion = prevQuestion;
-    window.nextQuestion = nextQuestion;
     window.jumpToQuestion = jumpToQuestion;
     window.setQuizMode = setQuizMode;
     window.exportToAnki = exportToAnki;
@@ -822,6 +821,16 @@
       views.forEach(v => v.classList.toggle('active', v.dataset.view === target));
 
       syncLandingBodyClass();
+      
+      // Inject templates if section is empty
+      const viewEl = document.querySelector(`.view[data-view="${target}"]`);
+      const templateKey = (target === 'flash' && !window.MustalihTemplates.flash) ? 'flashcards' : target;
+      
+      if (viewEl && viewEl.innerHTML.trim() === '' && window.MustalihTemplates && window.MustalihTemplates[templateKey]) {
+        viewEl.innerHTML = window.MustalihTemplates[templateKey];
+        // Re-localize if needed
+        setLanguage(currentLang);
+      }
 
       if (target === 'story') {
         ensureGlossaryLoaded().then(() => {
@@ -857,17 +866,6 @@
       if (target === 'rewrite') {
         mountRewriteTool();
       }
-      // Inject templates if section is empty
-      const viewEl = document.querySelector(`.view[data-view="${target}"]`);
-      if (viewEl && viewEl.innerHTML.trim() === '' && window.MustalihTemplates && window.MustalihTemplates[target]) {
-        viewEl.innerHTML = window.MustalihTemplates[target];
-        // Re-localize if needed
-        setLanguage(currentLang);
-      } else if (viewEl && viewEl.innerHTML.trim() === '' && target === 'flash' && window.MustalihTemplates.flashcards) {
-        viewEl.innerHTML = window.MustalihTemplates.flashcards;
-        setLanguage(currentLang);
-      }
-
       if (target === 'detail') {
         if (!currentTerm && terms.length > 0) renderDetail(terms[0]);
       }
