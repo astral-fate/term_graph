@@ -46,14 +46,28 @@ app = FastAPI(title="Audit AI API", version="1.0.0", description="PDF → BGE-M3
 def _audit_secret_matches(request: Request, secret: str) -> bool:
     """Accept Authorization: Bearer <secret>, or HF read token in Authorization + X-Audit-Secret: Bearer <secret>."""
     x = (request.headers.get("x-audit-secret") or "").strip()
+    if not x:
+        # Fallback to other variants
+        x = (request.headers.get("x-audit-token") or request.headers.get("x-api-key") or "").strip()
+    
     if x.startswith("Bearer "):
         x = x[7:].strip()
-    if x and x == secret:
-        return True
+    
     auth = (request.headers.get("authorization") or "").strip()
     if auth.startswith("Bearer "):
         auth = auth[7:].strip()
-    return auth == secret
+
+    matches = (x == secret) or (auth == secret)
+    
+    if not matches:
+        # Log masked values for debugging (first 2 and last 2 chars)
+        def _m(s):
+            if not s: return "(empty)"
+            if len(s) < 4: return "***"
+            return f"{s[:2]}...{s[-2:]} ({len(s)} chars)"
+        print(f"DEBUG AUTH: Expected: {_m(secret)} | Received X-Secret: {_m(x)} | Received Auth: {_m(auth)}")
+        
+    return matches
 
 
 class AuditBearerMiddleware(BaseHTTPMiddleware):
