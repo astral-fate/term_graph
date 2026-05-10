@@ -16,13 +16,14 @@ function upstreamAuthHeaders(env) {
   const app = (getEnv(env, 'AUDIT_UPSTREAM_TOKEN') || '').trim();
   const hfRead = (getEnv(env, 'AUDIT_HF_READ_TOKEN') || '').trim();
   if (!app) return null;
-  if (hfRead) {
-    return {
-      Authorization: `Bearer ${hfRead}`,
-      'X-Audit-Secret': app
-    };
-  }
-  return { Authorization: `Bearer ${app}` };
+  
+  const authVal = hfRead ? hfRead : app;
+  
+  return {
+    Authorization: `Bearer ${authVal}`,
+    'X-Audit-Secret': app,
+    'X-API-Key': app
+  };
 }
 
 export async function onRequestGet(context) {
