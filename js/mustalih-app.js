@@ -131,6 +131,20 @@
     window.setTheme = setTheme;
     window.setLanguage = setLanguage;
     window.goto = goto;
+    // Export additional UI handlers for onclick attributes
+    window.openStoryDrawer = openStoryDrawer;
+    window.closeStoryDrawer = closeStoryDrawer;
+    window.switchStoryTrack = switchStoryTrack;
+    window.selectChapter = selectChapter;
+    window.filterQuiz = filterQuiz;
+    window.setupFlashcards = setupFlashcards;
+    window.prevQuestion = prevQuestion;
+    window.nextQuestion = nextQuestion;
+    window.jumpToQuestion = jumpToQuestion;
+    window.setQuizMode = setQuizMode;
+    window.exportToAnki = exportToAnki;
+    window.renderDetailByName = renderDetailByName;
+    window.findAndRender = findAndRender;
   }
 
   function setLanguage(lang) {
@@ -955,6 +969,10 @@
       window.RewriteToolView.mount(rwRoot, {
         getLang: function () { return currentLang; }
       });
+      // Immediately localize after mounting
+      if (currentUiDict) {
+        window.RewriteToolView.applyLabels(currentUiDict);
+      }
     }
   }
 
