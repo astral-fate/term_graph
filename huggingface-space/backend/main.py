@@ -190,12 +190,14 @@ async def audit_run(
     file: UploadFile = File(...),
     doc_type: str = Form(...),
     frameworks: str = Form(...),
+    lang: str = Form("en"),
 ):
     """
     Multipart form:
       file: PDF
       doc_type: plan | policy | system
       frameworks: JSON array of framework_id strings, e.g. ["oecd","unesco"]
+      lang: en | ar | fr
     """
     try:
         selected = json.loads(frameworks)
@@ -222,7 +224,7 @@ async def audit_run(
             pass
 
         md, audit = await asyncio.to_thread(
-            run_audit_sync, tmp_path, doc_type, selected, _progress
+            run_audit_sync, tmp_path, doc_type, selected, _progress, lang=lang
         )
         return {"ok": True, "error": None, "markdown": md, "audit": audit}
     except ValueError as e:
@@ -243,6 +245,7 @@ async def audit_run_stream(
     file: UploadFile = File(...),
     doc_type: str = Form(...),
     frameworks: str = Form(...),
+    lang: str = Form("en"),
 ):
     """
     Same inputs as /api/v1/audit/run; returns Server-Sent Events (SSE) with progress
@@ -291,7 +294,7 @@ async def audit_run_stream(
 
     def worker():
         try:
-            md, audit = run_audit_sync(tmp_path, doc_type, selected, on_progress)
+            md, audit = run_audit_sync(tmp_path, doc_type, selected, on_progress, lang=lang)
             progress_q.put({"event": "complete", "ok": True, "markdown": md, "audit": audit})
         except (ValueError, RuntimeError) as e:
             progress_q.put({"event": "complete", "ok": False, "error": str(e)})

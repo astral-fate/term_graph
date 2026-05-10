@@ -377,6 +377,8 @@
         const cid = escapeHtml(g.control_id || '');
         const quote = escapeHtml((g.evidence_quote || '').trim());
         const reason = escapeHtml((g.reasoning || '').trim());
+        const remLabel = escapeHtml(t(dict, 'audit_md_remediation', 'Remediation'));
+        const evLabel = escapeHtml(t(dict, 'audit_md_evidence', 'Evidence'));
         const rem = escapeHtml((g.remediation || '').trim());
         gapsHtml += `
           <details class="audit-gap">
@@ -394,8 +396,8 @@
             </summary>
             <div class="audit-gap-body">
               ${reason ? `<p>${reason}</p>` : ''}
-              ${quote ? `<div class="audit-evidence">${quote}</div>` : ''}
-              ${rem ? `<p><strong>Remediation:</strong> ${rem}</p>` : ''}
+              ${quote ? `<div class="audit-evidence"><strong>${evLabel}:</strong> ${quote}</div>` : ''}
+              ${rem ? `<p><strong>${remLabel}:</strong> ${rem}</p>` : ''}
             </div>
           </details>`;
       });
@@ -748,7 +750,25 @@
     if (resultMsg) resultMsg.textContent = doneMsg || '';
     if (mount && audit) mount.innerHTML = renderDashboardHTML(audit, dict);
     if (out) {
-      out.textContent = markdown || '';
+      if (typeof marked !== 'undefined' && typeof marked.parse === 'function') {
+        out.innerHTML = marked.parse(markdown || '');
+        // Attach click listeners for terms
+        out.querySelectorAll('a[href^="#term="]').forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const term = link.getAttribute('href').split('=')[1];
+            if (term && global.MustalihApp && global.MustalihApp.openTerm) {
+              global.MustalihApp.openTerm(decodeURIComponent(term));
+            } else if (term && typeof findAndRender === 'function') {
+              // Fallback for direct global call
+              findAndRender(decodeURIComponent(term));
+              if (typeof goto === 'function') goto('detail');
+            }
+          });
+        });
+      } else {
+        out.textContent = markdown || '';
+      }
     }
     const dl = root.querySelector('#audit-dl-json');
     if (dl && audit) {
@@ -852,6 +872,7 @@
     fd.append('file', fileIn.files[0], fileIn.files[0].name);
     fd.append('doc_type', doc_type);
     fd.append('frameworks', JSON.stringify(fwSelected));
+    fd.append('lang', lang || 'en');
 
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), 7200000);

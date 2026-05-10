@@ -206,6 +206,10 @@
         audit_advanced_summary: "إعدادات الاتصال (عنوان API)",
         audit_proc_running: "تشغيل مسار التدقيق",
         audit_dash_snapshot: "لقطة امتثال",
+        audit_md_evidence: "الدليل",
+        audit_md_remediation: "الإجراء التصحيحي",
+        audit_md_summary: "ملخص التقرير",
+        audit_md_na: "غير منطبق",
         audit_new_audit: "تدقيق جديد",
         audit_report_md_summary: "تقرير Markdown",
         audit_top_gaps: "أبرز الفجوات والجزئيات",
@@ -380,8 +384,13 @@
         audit_advanced_summary: "Connection settings (API URL)",
         audit_proc_running: "Running audit pipeline",
         audit_dash_snapshot: "Compliance snapshot",
+        audit_md_evidence: "Evidence",
+        audit_md_remediation: "Remediation",
+        audit_md_summary: "Audit Summary",
+        audit_md_na: "N/A",
         audit_new_audit: "New audit",
         audit_report_md_summary: "Markdown report",
+        audit_dl_json: "Download JSON",
         audit_top_gaps: "Top gaps & partials",
         audit_nim_banner: "The evaluation engine is currently offline — some results may be limited.",
         nav_explore: "Explore",
@@ -556,8 +565,12 @@
       audit_advanced_summary: "Paramètres de connexion (URL API)",
       audit_proc_running: "Exécution du pipeline d'audit",
       audit_dash_snapshot: "Instantané de conformité",
-      audit_new_audit: "Nouvel audit",
+      audit_md_evidence: "Preuve",
+      audit_md_remediation: "Remédiation",
+      audit_md_summary: "Résumé de l'audit",
+      audit_md_na: "N/A",
       audit_report_md_summary: "Rapport Markdown",
+      audit_dl_json: "Télécharger JSON",
       audit_top_gaps: "Écarts et partiels prioritaires",
       audit_nim_banner: "Le moteur d'évaluation est indisponible — résultats limités.",
       nav_explore: "Explorer",
@@ -2086,5 +2099,17 @@
     }
   }
 
+  if (typeof window !== 'undefined') {
+    window.MustalihApp = {
+      openTerm: (name) => {
+        if (!name) return;
+        findAndRender(name);
+        goto('detail');
+        closeStoryDrawer();
+      }
+    };
+  }
+
   updateThemeToggle();
   init();
+})();

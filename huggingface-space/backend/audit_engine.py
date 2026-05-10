@@ -358,10 +358,12 @@ def evaluate_one_control(control: dict, user_chunks: list[dict],
         + "\n".join(f"- {s}" for s in (control.get('evidence_signals') or []))
         + "\n\nANTI-SIGNALS (what non-compliance looks like):\n"
         + "\n".join(f"- {s}" for s in (control.get('evidence_anti_signals') or []))
-        + f"\n\nRELATED ICAIRE TERMS (use these in remediation): {icaire_hints}\n\n"
+        + f"\n\nRELATED ICAIRE TERMS: {icaire_hints}\n\n"
         f"REMEDIATION TEMPLATE: {control.get('remediation_template', '')}\n\n"
         f"=== USER DOCUMENT EXCERPTS ===\n\n{excerpts_text}\n\n"
-        f"Evaluate the user's document against this control. Return only the JSON object."
+        f"Evaluate the user's document against this control. Return only the JSON object. "
+        f"IMPORTANT: The 'reasoning' and 'remediation' fields MUST be written in the following language: {control.get('target_lang', 'English')}. "
+        f"However, always use ICAIRE terms in Arabic {icaire_hints} in parentheses where appropriate."
     )
 
     try:
@@ -493,21 +495,98 @@ def severity_badge(sev: str) -> str:
     return {"high": "**HIGH**", "med": "med", "low": "low"}.get(sev, sev)
 
 
-def render_dashboard_md(agg: dict, doc_name: str) -> str:
+def render_dashboard_md(agg: dict, doc_name: str, lang: str = "en") -> str:
+    # Localization dictionary
+    T = {
+        "en": {
+            "title_met": "Audit complete — strong compliance",
+            "title_partial": "Audit complete — developing compliance",
+            "title_not_met": "Audit complete — significant gaps",
+            "evaluated": "controls evaluated",
+            "overall": "Overall",
+            "score": "Overall score",
+            "framework_score": "Score by framework",
+            "gaps": "Top gaps to address",
+            "no_gaps": "No gaps found — every control is met.",
+            "met": "Met",
+            "partial": "Partial",
+            "not_met": "Not met",
+            "na": "N/A",
+            "severity": "severity",
+            "confidence": "confidence",
+            "why": "Why",
+            "evidence": "Evidence",
+            "remediation": "Remediation",
+            "icaire": "ICAIRE terms",
+            "page_ref": "pp.",
+        },
+        "ar": {
+            "title_met": "اكتمل التدقيق — امتثال قوي",
+            "title_partial": "اكتمل التدقيق — امتثال قيد التطوير",
+            "title_not_met": "اكتمل التدقيق — ثغرات جوهرية",
+            "evaluated": "ضوابط تم تقييمها",
+            "overall": "نظرة عامة",
+            "score": "الدرجة الإجمالية",
+            "framework_score": "الدرجة حسب الإطار",
+            "gaps": "أهم الثغرات التي يجب معالجتها",
+            "no_gaps": "لم يتم العثور على ثغرات — تم استيفاء جميع الضوابط.",
+            "met": "مستوفي",
+            "partial": "مستوفي جزئياً",
+            "not_met": "غير مستوفي",
+            "na": "غير منطبق",
+            "severity": "الخطورة",
+            "confidence": "الثقة",
+            "why": "السبب",
+            "evidence": "الدليل",
+            "remediation": "الإجراء التصحيحي",
+            "icaire": "مصطلحات إيكير",
+            "page_ref": "ص.",
+        },
+        "fr": {
+            "title_met": "Audit terminé — conformité forte",
+            "title_partial": "Audit terminé — conformité en cours",
+            "title_not_met": "Audit terminé — lacunes importantes",
+            "evaluated": "contrôles évalués",
+            "overall": "Vue d'ensemble",
+            "score": "Score global",
+            "framework_score": "Score par cadre",
+            "gaps": "Principales lacunes à combler",
+            "no_gaps": "Aucune lacune trouvée — tous les contrôles sont respectés.",
+            "met": "Respecté",
+            "partial": "Partiel",
+            "not_met": "Non respecté",
+            "na": "N/A",
+            "severity": "sévérité",
+            "confidence": "confiance",
+            "why": "Pourquoi",
+            "evidence": "Preuve",
+            "remediation": "Remédiation",
+            "icaire": "Termes ICAIRE",
+            "page_ref": "pp.",
+        }
+    }
+    
+    # Fallback to English if lang not supported
+    lang = lang.lower()
+    if lang not in T: lang = "en"
+    tx = T[lang]
+
     lines = []
     score = agg["overall_score"]
-    label = ("strong compliance" if score >= 75
-             else "developing compliance" if score >= 50
-             else "significant gaps")
-    lines.append(f"# Audit complete — {label}")
-    lines.append(f"_{doc_name} · {agg['total_controls_evaluated']} controls evaluated_\n")
+    
+    if score >= 75: title = tx["title_met"]
+    elif score >= 50: title = tx["title_partial"]
+    else: title = tx["title_not_met"]
+    
+    lines.append(f"# {title}")
+    lines.append(f"_{doc_name} · {agg['total_controls_evaluated']} {tx['evaluated']}_\n")
 
     bs = agg["by_status"]
-    lines.append("## Overall")
-    lines.append(f"- **Overall score:** {score}/100")
-    lines.append(f"- 🟢 Met: {bs['met']}  🟡 Partial: {bs['partial']}  🔴 Not met: {bs['not_met']}  ⚪ N/A: {bs['na']}\n")
+    lines.append(f"## {tx['overall']}")
+    lines.append(f"- **{tx['score']}:** {score}/100")
+    lines.append(f"- 🟢 {tx['met']}: {bs['met']}  🟡 {tx['partial']}: {bs['partial']}  🔴 {tx['not_met']}: {bs['not_met']}  ⚪ {tx['na']}: {bs['na']}\n")
 
-    lines.append("## Score by framework")
+    lines.append(f"## {tx['framework_score']}")
     for fw in agg["by_framework"]:
         c = fw["counts"]
         lines.append(
@@ -515,7 +594,7 @@ def render_dashboard_md(agg: dict, doc_name: str) -> str:
             f"🟢 {c['met']}  🟡 {c['partial']}  🔴 {c['not_met']}  ⚪ {c['na']}\n"
         )
 
-    # Top gaps: high-severity not_met, then partial
+    # Top gaps
     gaps = sorted(
         [r for r in agg["all_results"] if r["status"] in {"not_met", "partial"}],
         key=lambda r: (
@@ -525,27 +604,29 @@ def render_dashboard_md(agg: dict, doc_name: str) -> str:
         ),
     )[:10]
 
-    lines.append("## Top gaps to address")
+    lines.append(f"## {tx['gaps']}")
     if not gaps:
-        lines.append("_No gaps found — every control is met._")
+        lines.append(f"_{tx['no_gaps']}_")
+    
     for g in gaps:
         lines.append(
             f"### {status_emoji(g['status'])} `{g['control_id']}` — {g['control_title']}"
         )
         lines.append(
-            f"_{g['framework_name_en']} · severity {severity_badge(g['severity'])} · {g['confidence']}% confidence_"
+            f"_{g['framework_name_en']} · {tx['severity']} {severity_badge(g['severity'])} · {g['confidence']}% {tx['confidence']}_"
         )
-        lines.append(f"**Why:** {g['reasoning']}")
+        lines.append(f"**{tx['why']}:** {g['reasoning']}")
         if g["evidence_quote"]:
             ev_pages = ""
             if g["evidence_page_start"]:
-                ev_pages = f" (pp. {g['evidence_page_start']}-{g['evidence_page_end']})"
-            lines.append(f"**Evidence{ev_pages}:** _\"{g['evidence_quote'][:400]}\"_")
+                ev_pages = f" ({tx['page_ref']} {g['evidence_page_start']}-{g['evidence_page_end']})"
+            lines.append(f"**{tx['evidence']}{ev_pages}:** _\"{g['evidence_quote'][:400]}\"_")
         if g["remediation"]:
-            lines.append(f"**Remediation:** {g['remediation']}")
+            lines.append(f"**{tx['remediation']}:** {g['remediation']}")
         if g["related_icaire_terms"]:
-            terms = ", ".join(f"`{t['term_ar']}`" for t in g["related_icaire_terms"][:4])
-            lines.append(f"**ICAIRE terms:** {terms}")
+            # Make terms clickable by using a custom hash link
+            term_links = ", ".join(f"[{t['term_ar']}](#term={t['term_ar']})" for t in g["related_icaire_terms"][:5])
+            lines.append(f"**{tx['icaire']}:** {term_links}")
         lines.append("")
 
     return "\n".join(lines)
@@ -626,6 +707,7 @@ def run_audit_sync(
     doc_type: str,
     selected_frameworks: list[str],
     progress: Callable[..., Any] | None = None,
+    lang: str = "en",
 ) -> tuple[str, dict]:
     """Parse PDF → chunk → BGE-M3 embed → per-control LLM (NIM) → aggregate → markdown + JSON dict."""
     if progress is None:
@@ -667,6 +749,12 @@ def run_audit_sync(
     if not in_scope:
         raise ValueError("No controls in scope after filtering. Try a different document type.")
 
+    # Stamp target language for LLM
+    lang_map = {"en": "English", "ar": "Arabic", "fr": "French"}
+    target_lang_full = lang_map.get(lang.lower(), "English")
+    for c in in_scope:
+        c["target_lang"] = target_lang_full
+
     results: list[dict] = []
     completed = 0
     progress(0.30, desc=f"Evaluating 0/{len(in_scope)} controls", phase="llm")
@@ -688,7 +776,7 @@ def run_audit_sync(
 
     progress(0.97, desc="Aggregating results", phase="aggregate")
     agg = aggregate(results)
-    md = render_dashboard_md(agg, doc_name)
+    md = render_dashboard_md(agg, doc_name, lang=lang)
 
     audit = {
         "document": doc_name,
