@@ -20,6 +20,9 @@
 !wrangler.toml
 !.gitignore
 
+# Dependencies
+node_modules/
+
 # Local secrets / env files (never commit tokens)
 .env
 .env.local
@@ -85,5 +88,8 @@ dist/
 !scripts/**/*.py
 !backend/**/*.py
 
+# Build outputs & caches
+dist/
+.wrangler/
 __pycache__/
 *.pyc
