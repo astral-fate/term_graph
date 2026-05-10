@@ -99,7 +99,7 @@
       return t(
         dict,
         'audit_upstream_not_configured',
-        'Copy `.dev.vars.example` to `.dev.vars`, set AUDIT_UPSTREAM_URL and AUDIT_UPSTREAM_TOKEN, restart npm run dev, then localStorage.setItem("mustalih_hf_proxy","1") and reload.'
+        'Backend not configured. Set AUDIT_UPSTREAM_URL/TOKEN in Cloudflare Pages. Check /api/v1/audit-remote/debug for diagnostics.'
       );
     }
     const errText = raw || t(dict, 'audit_err', 'Audit failed.');
