@@ -147,5 +147,17 @@ window.MustalihTemplates = {
         <button type="button" class="btn" id="quiz-export-anki" onclick="exportToAnki()">Export to Anki</button>
       </div>
     </div>
+  `,
+
+  detail: `
+    <div class="contained-view">
+      <div class="view-header">
+        <h2 id="detail-view-title">Term detail</h2>
+        <p id="detail-view-desc">Everything the enrichment pipeline generated per term — metaphor, UML, prerequisites, graph relations, code, and math.</p>
+      </div>
+      <div id="term-detail-panel" class="card" style="padding:0; min-height:600px; border:none; background:transparent;">
+        <p class="italic" style="padding:24px; color:var(--text-secondary);">Loading term...</p>
+      </div>
+    </div>
   `
 };

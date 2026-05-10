@@ -1969,7 +1969,8 @@
     GENERALIZATION_AND_OVERFITTING: { ar: "التعميم وفرط التخصيص", en: "Generalization & Overfitting", fr: "Généralisation & Surapprentissage" },
     KERNEL_METHODS_AND_SVM: { ar: "طرق النواة و SVM", en: "Kernel Methods & SVM", fr: "Méthodes à noyau & SVM" },
     PROGRAMMING_TOOLS_AND_LIBRARIES: { ar: "أدوات ومكتبات البرمجة", en: "Programming Tools & Libraries", fr: "Outils & Bibliothèques de programmation" },
-    PRIMITIVE_CONCEPTS: { ar: "المفاهيم الأولية", en: "Primitive Concepts", fr: "Concepts primitifs" }
+    PRIMITIVE_CONCEPTS: { ar: "المفاهيم الأولية", en: "Primitive Concepts", fr: "Concepts primitifs" },
+    LAYERS_AND_ACTIVATIONS: { ar: "الطبقات والنشاطات", en: "Layers & Activations", fr: "Couches & Activations" }
   };
 
   function setupDynamicFilters() {
