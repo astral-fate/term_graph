@@ -96,11 +96,7 @@
   function formatAuditHttpError(status, data, dict) {
     const raw = data && (data.error || data.message) ? String(data.error || data.message) : '';
     if (isUpstreamConfigError(status, raw)) {
-      return t(
-        dict,
-        'audit_upstream_not_configured',
-        'Backend not configured. Set AUDIT_UPSTREAM_URL/TOKEN in Cloudflare Pages. Check /api/v1/audit-remote/debug for diagnostics.'
-      );
+      return t(dict, 'audit_upstream_not_configured', 'Server unavailable.');
     }
     const errText = raw || t(dict, 'audit_err', 'Audit failed.');
     return errText + ' ' + t(dict, 'audit_try_offline', 'Try Offline demo only — not real scoring.');
@@ -508,20 +504,8 @@
         <div id="audit-page-upload">
           <h1 class="audit-hero-title" id="audit-view-title">${escapeHtml(t(dict, 'audit_h', 'Audit AI'))}</h1>
           <p class="audit-lede" id="audit-view-desc">${escapeHtml(
-            t(dict, 'audit_p', 'Upload a PDF for full scoring via the local API (same engine as Gradio: chunk, embed, LLM per control).')
+            t(dict, 'audit_p', 'Evaluate your AI documents against global and local governance frameworks in a secure, private workspace.')
           )}</p>
-          <p class="audit-builtin-hint" id="audit-builtin-hint">${escapeHtml(
-            t(dict, 'audit_built_in', 'Run the FastAPI app in backend/ with NVIDIA_API_KEY and the embedded rubric under data/datasets/.')
-          )}</p>
-
-          <details class="audit-advanced">
-            <summary id="audit-advanced-summary">${escapeHtml(t(dict, 'audit_advanced_summary', 'Connection settings (API URL)'))}</summary>
-            <div class="audit-settings-row" style="margin-top:10px">
-              <label class="audit-field-label" for="audit-api-input">${escapeHtml(t(dict, 'audit_api_label', 'Audit API base URL'))}</label>
-              <input type="url" class="audit-api-input input-grow" id="audit-api-input" value="${escapeHtml(auditApiBase())}" autocomplete="off" placeholder="${auditUseRemoteProxy() ? 'Same-origin → Hugging Face (Pages proxy)' : 'http://127.0.0.1:8788'}" />
-              <button type="button" class="btn" id="audit-api-save">${escapeHtml(t(dict, 'audit_api_save', 'Save'))}</button>
-            </div>
-          </details>
 
           <div class="audit-section">
             <div class="audit-section-label">
@@ -944,26 +928,12 @@
       } catch (err) {
         clearTimeout(timer);
         showAuditPage(root, 'upload');
-        const msg =
-          err && err.name === 'AbortError'
-            ? t(dict, 'audit_timeout', 'Request timed out.')
-            : (err && err.message) || String(err);
         if (statusEl) {
-          const loc = typeof window !== 'undefined' ? window.location : null;
-          const https =
-            loc && loc.protocol === 'https:';
-          const tail = https
-            ? t(
-                dict,
-                'audit_hint_pages',
-                'Deployed site uses an on-edge demo. For full BGE-M3 + NIM audits, run the backend locally and set API base in Advanced.'
-              )
-            : t(
-                dict,
-                'audit_hint_server',
-                'Run: cd backend && pip install -r requirements.txt && python -m uvicorn main:app --host 127.0.0.1 --port 8788'
-              );
-          statusEl.textContent = t(dict, 'audit_fetch_err', 'Could not reach the audit API. ') + msg + ' ' + tail;
+          statusEl.classList.add('err');
+          const isTimeout = err && err.name === 'AbortError';
+          statusEl.textContent = isTimeout 
+            ? t(dict, 'audit_timeout', 'Request timed out.')
+            : t(dict, 'audit_upstream_not_configured', 'The compliance server is currently unavailable. Please try again later.');
         }
       } finally {
         if (runBtn) runBtn.disabled = false;
@@ -1014,12 +984,10 @@
 
     set('audit-view-title', 'audit_h', 'Audit AI');
     set('audit-view-desc', 'audit_p', '');
-    set('audit-builtin-hint', 'audit_built_in', '');
     set('audit-brand-text', 'audit_brand', 'Audit AI');
     set('audit-crumb-upload', 'audit_crumb_upload', 'Upload');
     set('audit-crumb-process', 'audit_crumb_process', 'Processing');
     set('audit-crumb-report', 'audit_crumb_report', 'Report');
-    set('audit-advanced-summary', 'audit_advanced_summary', '');
     set('audit-dz-main', 'audit_dz_main', '');
     set('audit-dz-sub', 'audit_dz_sub', '');
     set('audit-sec1-label', 'audit_sec1', '');
@@ -1028,10 +996,6 @@
     set('audit-report-summary', 'audit_report_md_summary', '');
     fillStepLabels(root, dict);
 
-    const apiLab = root.querySelector('.audit-field-label');
-    if (apiLab) apiLab.textContent = t2('audit_api_label', apiLab.textContent);
-    const apiSave = document.getElementById('audit-api-save');
-    if (apiSave) apiSave.textContent = t2('audit_api_save', apiSave.textContent);
     const run = document.getElementById('audit-run');
     if (run) run.textContent = t2('audit_run', run.textContent);
     const offBtn = document.getElementById('audit-offline-demo');
